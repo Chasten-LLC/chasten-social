@@ -15,7 +15,8 @@ wrong detail is the kind of thing an attentive reader notices immediately.
    *walking* in the fire, so they are not standing. Exodus 14:21 says the wind blew
    *all that night*, so the crossing is at night and not at dawn.
 4. **No faces, ever.** Silhouettes, distance, or backs. This is partly reverence and
-   partly that faces are the one thing image models reliably fail at.
+   partly that faces are the one thing image models reliably fail at. Figures
+   themselves are welcome; a legible face is not.
 5. **Do not depict Jesus identifiably.** The fourth figure in the furnace stays an
    anonymous silhouette rather than a rendered Christ.
 6. **Review every new narrative set before it runs.** Thematic sets are safe to add
@@ -39,19 +40,24 @@ Anachronism is the characteristic failure of biblical scene generation. It does
 not look like a stylistic choice, it looks like a mistake, and on scripture
 content that costs more than a plain background would have.
 
-## 8. Nothing living on screen
+## 8. People belong in these scenes, faces do not
 
-Every image that has worked has been a landscape or a natural phenomenon with
-nothing alive in it. Every failure has had figures: four men in a furnace read as
-four men in a burning corridor, and the crayon attempts were worse.
+This rule used to read "nothing living on screen", and it was wrong. It came from
+one bad render, the men in parkas in the furnace, and generalised a costume
+failure into a ban on human presence.
 
-This is not a prompting problem. It is what the model is good at. So narrative
-scenes show the place and never the people. The verse already says what happened,
-and a viewer supplies the rest more vividly than a render can.
+The ban then rejected all twenty three narrative sets, including a dust road
+running to a walled city with two robed silhouettes on it, which was the best
+image of the sweep. Ordering the model to remove people it insists on drawing
+also made the images worse, not emptier.
 
-If a story cannot be told by its setting alone, it is not a candidate. Walking on
-water and the feeding of the five thousand both need a figure to mean anything,
-so neither belongs in this library.
+So the prompt now directs instead of forbidding: any people are small, far away,
+seen from behind or in silhouette, faces never visible. Distance carries the
+reverence the ban was reaching for, and it is something the model will actually
+do.
+
+Scenery Reels stay empty. That is a different format with a different look, not a
+safety rule.
 
 ## 9. Look at the still before paying to animate
 
@@ -63,13 +69,26 @@ and only animate what passes.
 ## 10. The build audits itself
 
 Every still is checked by a vision model before anything is animated. It fails an
-image that does not show the requested subject, that contains any person, face or
-animal, that shows anything modern, or that simply looks like a mistake.
+image for one of five specific defects: a legible human face, visible anatomical
+distortion, anything modern, a named subject that is missing from the frame, or a
+key object at an absurd scale.
 
-A failed beat is regenerated once with a stronger instruction. If it fails again
-the whole set is dropped and the build moves to the next story in the rotation.
-Nothing reaches a clip without passing.
+A failed beat is regenerated with a stronger instruction, up to four rolls, each
+pushing the figures further away. If the beat still fails, the set is dropped and
+the build moves to the next story.
 
-This exists because the furnace kept hallucinating people into a scene whose
-prompt said "no people" three times. Prompting alone does not hold. The audit
-costs a fraction of a cent and a clip costs about a dollar sixty five.
+Two lessons are worth keeping. A rubric with a catch-all clause, in this case
+"looks like a mistake", will eventually justify rejecting anything, so every
+criterion names a defect. And the judge matters as much as the rubric: on six
+stills with a verdict set by looking at them, gpt-4o-mini scored two out of five
+and called a face legible on backs of heads, while gpt-4.1-mini scored four.
+
+Subject fidelity is the weak criterion. The first version asked whether the image
+showed the requested scene "at all", which passed an olive leaf on driftwood for a
+scene whose subject was a dove carrying it, and a landslide in a ravine for the
+walls of Jericho. It now names the test: the specific things the scene calls for
+must be present and recognisable.
+
+Even so, this is the criterion a model is worst at, so every narrative set gets a
+human read before it goes live. `tools/reels/contact_sheet.py` lays all three
+beats of every set on one page for exactly that.

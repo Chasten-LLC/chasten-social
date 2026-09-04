@@ -1,3 +1,7 @@
 .igrun/
 .staging/
 .reelwork/
+.sweep/
+__pycache__/
+*.pyc
+reels/preview-*/

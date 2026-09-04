@@ -214,15 +214,22 @@
   "note": "Tone is the single source of truth for a Reel. themeTone picks it from the verse set's theme; voiceByTone and sceneByTone both read from it, so imagery and narration always agree.",
   "voiceByTone": {
    "intimate": {
-    "voice_id": "English_Whispering_girl",
+    "voice_id": "English_WhimsicalGirl",
     "speed": 0.9,
     "pitch": 0
    },
-   "gentle": {
-    "voice_id": "English_SereneWoman",
-    "speed": 0.88,
-    "pitch": 0
-   },
+   "gentle": [
+    {
+     "voice_id": "English_CalmWoman",
+     "speed": 0.88,
+     "pitch": 0
+    },
+    {
+     "voice_id": "English_UpsetGirl",
+     "speed": 0.88,
+     "pitch": 0
+    }
+   ],
    "grand": {
     "voice_id": "English_ManWithDeepVoice",
     "speed": 0.9,

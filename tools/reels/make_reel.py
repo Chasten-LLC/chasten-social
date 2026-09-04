@@ -22,7 +22,13 @@ VID_MODEL = "kwaivgi/kling-v2.1"
 TTS_MODEL = "minimax/speech-02-hd"
 
 FRAME = ("Vertical composition with calm empty space in the upper third for text, "
-         "no text, no words, no lettering, no watermark, no people, no faces")
+         "no text, no words, no lettering, no watermark")
+# Scenery sets are landscapes and stay empty. Narrative sets get people whether we
+# ask for them or not, so direct the model instead of forbidding it: distance and
+# turned backs give reverence, dodge faces, and stop the model fighting the prompt.
+SCENERY = ", no people, no faces"
+FIGURES = (", any people are small and far away, seen from behind or in silhouette, "
+           "faces never visible")
 MOTION_NEG = ("faces, facial features, morphing, warping, melting, distortion, extra limbs, "
               "fast motion, camera shake, zoom, text, letters, watermark, logo, style change, "
               "modern clothing, jacket, coat, hoodie, jeans, contemporary dress, modern buildings")
@@ -79,30 +85,59 @@ def run_model(model, payload, dest, poll=False, tries=4):
     return dest
 
 
-VLM = "openai/gpt-4o-mini"
+# gpt-4o-mini called a face legible on backs of heads and killed good images.
+# On six stills with a verdict I set by looking, 4.1-mini scored 4/5 to its 2/5.
+VLM = "openai/gpt-4.1-mini"
+
+
+RUBRIC = """You are judging whether this image can be published as the backdrop of a
+scripture video. Be fair. Most competent images should pass.
+
+Story: {title}
+Scene requested: {scene}
+
+Robed or cloaked human figures ARE welcome in these images. Never fail an image
+merely because people appear in it.
+
+Reply strictly as JSON with keys ok (true/false) and reason (one short sentence).
+
+Set ok to FALSE only for one of these clear defects:
+  1. A human face is legible, meaning you could make out eyes, nose and mouth well
+     enough to describe the person. Silhouettes, backs of heads, hooded or shadowed
+     faces and distant figures are all FINE.
+  2. Visible anatomical distortion: malformed hands, extra or missing limbs, melted
+     or smeared features.
+  3. Something modern: contemporary clothing such as jackets, coats, hoodies or
+     jeans, vehicles, machinery, power lines, modern buildings. Robes, tunics,
+     cloaks, sandals and ancient stonework are period correct and are NOT modern.
+  4. The scene names specific things, such as a dove, a stairway, a city wall or a
+     burning bush. If any of them is missing from the image, or is present but not
+     recognisable as that thing, fail it. A beautiful picture of the right place
+     without the thing that makes it this story is a failure.
+  5. A key object is at an absurd scale, or the image is impossible in a way a
+     viewer would read as an error rather than as style.
+
+Set ok to TRUE in every other case. Empty landscapes, moody or dark lighting,
+unusual compositions and artistic interpretation are all acceptable."""
 
 
 def audit_still(path, scene, verse_title):
     """Ask a vision model whether the image is actually usable.
 
     Stills cost four cents, clips cost about a dollar sixty five, so it is worth a
-    fraction of a cent to find out before animating. Checks the three things that
-    have actually gone wrong: wrong subject, people on screen, anachronism."""
+    fraction of a cent to find out before animating.
+
+    The first version of this rubric banned people outright and rejected all 23
+    narrative sets, including a road to a walled city with two distant silhouettes
+    that was the best image of the sweep. The failures worth catching are legible
+    faces, distortion, anachronism and absurd scale, so it now names only those.
+    """
     with open(path, "rb") as f:
         uri = "data:image/jpeg;base64," + base64.b64encode(f.read()).decode()
-    q = (f"This image is meant to illustrate a Bible story titled '{verse_title}'. "
-         f"The scene requested was: {scene}\n\n"
-         "Answer strictly as JSON with keys ok (true/false) and reason (one short sentence). "
-         "Set ok to false if ANY of these are true: "
-         "(a) the image does not clearly show the requested subject, "
-         "(b) any person, face, figure or animal is visible, "
-         "(c) anything modern or anachronistic appears such as contemporary clothing, "
-         "vehicles, or modern buildings, "
-         "(d) the image is visually confusing, distorted, or would look like a mistake. "
-         "Otherwise set ok to true.")
     try:
         p = api(f"https://api.replicate.com/v1/models/{VLM}/predictions",
-                {"input": {"prompt": q, "image_input": [uri], "temperature": 0,
+                {"input": {"prompt": RUBRIC.format(title=verse_title, scene=scene),
+                           "image_input": [uri], "temperature": 0,
                            "max_completion_tokens": 200}}, wait=True)
         out = p.get("output")
         txt = "".join(out) if isinstance(out, list) else str(out)
@@ -321,13 +356,17 @@ def main():
                 dest = os.path.join(work, f"still{idx}_{k}.jpg")
                 if roll:
                     os.remove(dest)
+                # Escalate toward distance, not toward emptiness. Ordering the
+                # model to remove people it insists on drawing produced worse
+                # images; pushing them further away produces better ones.
                 extra = ["",
-                         " Absolutely no human figures, no silhouettes, no bodies.",
-                         " Empty scene. No living thing of any kind anywhere in frame.",
-                         " Landscape and architecture only, completely deserted, nothing alive."][roll]
+                         " Push any figures further away and smaller in the frame.",
+                         " Wide establishing shot from a great distance, figures tiny.",
+                         " Landscape and architecture only, no figures at all."][roll]
                 run_model(IMG_MODEL,
                           {"prompt": f"Cinematic photograph of {sc}. "
-                                     + (PERIOD + ". " if narrative else "") + FRAME + extra,
+                                     + (PERIOD + ". " if narrative else "")
+                                     + FRAME + (FIGURES if narrative else SCENERY) + extra,
                            "aspect_ratio": "9:16", "output_format": "jpg"}, dest)
                 good, why = audit_still(dest, sc, cand["title"])
                 log(f"    beat {k}{f' retry {roll}' if roll else ''}: "
@@ -351,6 +390,10 @@ def main():
 
     idx, vset, tone, scenes, narrative, si, scene_list, stills = chosen_set
     voice = cfg["voiceByTone"][tone]
+    if isinstance(voice, list):
+        # A tone can list more than one reader. Rotate by date so the same voice
+        # does not carry every reel of that tone.
+        voice = voice[datetime.fromisoformat(today).toordinal() % len(voice)]
 
     n_verses = int(vset.get("verseCount", 1))
     chosen = vset["verses"][:n_verses]
@@ -378,7 +421,8 @@ def main():
             k = len(stills) + 1
             sc = scenes[(si + k - 1) % len(scenes)]
             dest = os.path.join(work, f"still{idx}_{k}.jpg")
-            run_model(IMG_MODEL, {"prompt": f"Cinematic photograph of {sc}. {FRAME}",
+            run_model(IMG_MODEL, {"prompt": f"Cinematic photograph of {sc}. "
+                                            f"{FRAME}{SCENERY}",
                                   "aspect_ratio": "9:16", "output_format": "jpg"}, dest)
             good, why = audit_still(dest, sc, vset["title"])
             log(f"    extra beat {k}: {'PASS' if good else 'FAIL'} {why}")
