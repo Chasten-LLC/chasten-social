@@ -1,8 +1,9 @@
 {
- "nextSetIndex": 1,
- "postCount": 1,
+ "nextSetIndex": 2,
+ "postCount": 2,
  "usedSets": [
-  0
+  0,
+  1
  ],
  "usedBackgrounds": [
   "5850090"
@@ -10,8 +11,11 @@
  "recentVerses": [
   "Philippians 4:6",
   "Philippians 4:7",
-  "Philippians 4:8"
+  "Philippians 4:8",
+  "Isaiah 41:10",
+  "Psalm 56:3",
+  "Deuteronomy 31:6"
  ],
- "lastPostId": "2026-09-03",
- "lastRunAt": "2026-09-04T02:44:25+00:00"
+ "lastPostId": "2026-09-04",
+ "lastRunAt": "2026-09-04T12:12:04+00:00"
 }
