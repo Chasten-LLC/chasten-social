@@ -202,8 +202,7 @@ def assemble(clips, verse_png, sign_png, narr, out):
         f"[{sg + 1}:a]adelay={int(NARR_IN*1000)}|{int(NARR_IN*1000)},apad=whole_dur={total:.2f},"
         f"aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
         f"atrim=duration={total:.2f},loudnorm=I=-16:TP=-1.5:LRA=11[aout]\n")
-    fp = os.path.join(os.path.dirname(out), "filter.txt")
-    open(fp, "w").write(filt)
+    graph = filt.replace("\n", "")
 
     subprocess.run([
         "ffmpeg", "-v", "error",
@@ -211,14 +210,13 @@ def assemble(clips, verse_png, sign_png, narr, out):
         "-loop", "1", "-t", f"{verse_hold:.2f}", "-i", verse_png,
         "-loop", "1", "-t", f"{sign_dur:.2f}", "-i", sign_png,
         "-i", narr,
-        "-/filter_complex", fp,
+        "-filter_complex", graph,
         "-map", "[vout]", "-map", "[aout]",
         # CRF 22 rather than 18: Instagram re-encodes on upload, so the extra bits are
         # discarded anyway, and this roughly halves the download on a phone.
         "-c:v", "libx264", "-preset", "slow", "-crf", "22", "-pix_fmt", "yuv420p", "-r", "24",
         "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
         "-movflags", "+faststart", "-y", out], check=True)
-    os.remove(fp)
     return total, n
 
 
