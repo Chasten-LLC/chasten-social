@@ -237,7 +237,21 @@ def main():
         log(f"a reel already exists for {today}, nothing to do")
         return
 
+    # Do not repeat a verse the carousel used recently. The two run independently,
+    # so without this the same passage can land in both formats in the same week.
+    carousel = os.path.join(REPO, "studio/state/pointer.json")
+    recent = set(json.load(open(carousel)).get("recentVerses", [])) if os.path.exists(carousel) else set()
+    recent |= set(ptr.get("recentVerses", []))
+
     idx = ptr.get("nextSetIndex", 0) % len(sets)
+    for skip in range(len(sets)):
+        cand = sets[(idx + skip) % len(sets)]
+        refs = {v["ref"] for v in cand["verses"][:int(cand.get("verseCount", 1))]}
+        if not (refs & recent):
+            idx = (idx + skip) % len(sets)
+            if skip:
+                log(f"  skipped {skip} set(s) whose verses appeared recently")
+            break
     vset = sets[idx]
     tone = vset.get("tone", cfg.get("defaultTone", "gentle"))
     voice = cfg["voiceByTone"][tone]
@@ -324,7 +338,11 @@ def main():
     }
     json.dump(meta, open(os.path.join(outdir, "meta.json"), "w"), ensure_ascii=False, indent=1)
 
-    ptr.update({"nextSetIndex": (idx + 1) % len(sets), "sceneIndex": ptr.get("sceneIndex", 0) if narrative else (si + n_clips) % len(scenes),
+    # Keep a rolling memory so neither format repeats itself or the other.
+    hist = (ptr.get("recentVerses", []) + [v["ref"] for v in chosen])[-90:]
+    titles = (ptr.get("recentTitles", []) + [vset["title"]])[-60:]
+    ptr.update({"recentVerses": hist, "recentTitles": titles,
+                "nextSetIndex": (idx + 1) % len(sets), "sceneIndex": ptr.get("sceneIndex", 0) if narrative else (si + n_clips) % len(scenes),
                 "postCount": ptr.get("postCount", 0) + 1, "lastReelId": today})
     json.dump(ptr, open(ptr_path, "w"), indent=1)
 

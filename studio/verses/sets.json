@@ -157,6 +157,27 @@
    "tone": "intimate"
   },
   {
+   "kind": "narrative",
+   "title": "the fourth man in the fire",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "the mouth of an enormous ancient brick furnace at night, white hot fire roaring inside, sparks streaming up into a black sky, seen from a distance, no people",
+    "four figures in complete silhouette walking unhurried through the middle of a wall of white and orange flame, unbound and unharmed, backlit so no faces are visible, embers drifting",
+    "the fire burned down to glowing embers and settling ash, quiet and still, no people"
+   ],
+   "verses": [
+    {
+     "book": "Daniel",
+     "chapter": 3,
+     "verse": 25,
+     "ref": "Daniel 3:25",
+     "text": "“Look!” he exclaimed. “I see four men, unbound and unharmed, walking around in the fire—and the fourth looks like a son of the gods! ”",
+     "chars": 134
+    }
+   ]
+  },
+  {
    "kind": "passage",
    "title": "our refuge",
    "verses": [
@@ -310,6 +331,35 @@
     }
    ],
    "tone": "grand"
+  },
+  {
+   "kind": "narrative",
+   "title": "a path through the sea",
+   "tone": "grand",
+   "verseCount": 2,
+   "scenes": [
+    "a fierce night wind driving hard across a dark sea, water beginning to draw back, storm sky, moonlight, no people",
+    "towering walls of dark water standing on either side of a wide dry seabed at night, wet sand glistening under moonlight, immense scale, no people",
+    "the long dry path between the standing walls of water under a night sky, still and vast, no people"
+   ],
+   "verses": [
+    {
+     "book": "Exodus",
+     "chapter": 14,
+     "verse": 21,
+     "ref": "Exodus 14:21",
+     "text": "Then Moses stretched out his hand over the sea, and all that night the LORD drove back the sea with a strong east wind that turned it into dry land. So the waters were divided,",
+     "chars": 176
+    },
+    {
+     "book": "Exodus",
+     "chapter": 14,
+     "verse": 22,
+     "ref": "Exodus 14:22",
+     "text": "and the Israelites went through the sea on dry ground, with walls of water on their right and on their left.",
+     "chars": 108
+    }
+   ]
   },
   {
    "kind": "theme",
@@ -467,6 +517,27 @@
    "tone": "grand"
   },
   {
+   "kind": "narrative",
+   "title": "the mouths of the lions",
+   "tone": "intimate",
+   "verseCount": 1,
+   "scenes": [
+    "a deep dark stone pit at night, a single shaft of moonlight falling to the floor far below, no people",
+    "great lions lying quietly in deep shadow at the edge of a stone chamber, calm and still, seen from a distance",
+    "morning light flooding down into the quiet empty stone pit from an opening above"
+   ],
+   "verses": [
+    {
+     "book": "Daniel",
+     "chapter": 6,
+     "verse": 22,
+     "ref": "Daniel 6:22",
+     "text": "My God sent His angel and shut the mouths of the lions. They have not hurt me, for I was found innocent in His sight, and I have done no wrong against you, O king.”",
+     "chars": 164
+    }
+   ]
+  },
+  {
    "kind": "theme",
    "title": "hope that does not disappoint",
    "verses": [
@@ -620,6 +691,27 @@
     }
    ],
    "tone": "intimate"
+  },
+  {
+   "kind": "narrative",
+   "title": "peace, be still",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "a violent black sea at night under lightning, enormous waves, a small wooden boat far off in the distance, no people",
+    "the same sea going suddenly glassy and flat, storm clouds parting, moonlight laid across still water",
+    "dawn over a completely calm sea, soft gold light, utterly quiet, no people"
+   ],
+   "verses": [
+    {
+     "book": "Mark",
+     "chapter": 4,
+     "verse": 39,
+     "ref": "Mark 4:39",
+     "text": "Then Jesus got up and rebuked the wind and the sea. “Silence!” He commanded. “Be still!” And the wind died down, and it was perfectly calm.",
+     "chars": 139
+    }
+   ]
   },
   {
    "kind": "theme",
@@ -777,6 +869,27 @@
    "tone": "intimate"
   },
   {
+   "kind": "narrative",
+   "title": "He is not here",
+   "tone": "gentle",
+   "verseCount": 1,
+   "scenes": [
+    "a great round stone rolled away from the mouth of a rock cut tomb at dawn, no people",
+    "soft morning light falling across the bare stone ledge inside an empty tomb, nothing on it",
+    "sunrise over a quiet garden outside an open and empty tomb, warm gold light"
+   ],
+   "verses": [
+    {
+     "book": "Matthew",
+     "chapter": 28,
+     "verse": 6,
+     "ref": "Matthew 28:6",
+     "text": "He is not here; He has risen, just as He said! Come, see the place where He lay.",
+     "chars": 80
+    }
+   ]
+  },
+  {
    "kind": "theme",
    "title": "loving one another",
    "verses": [
@@ -930,6 +1043,27 @@
     }
    ],
    "tone": "grand"
+  },
+  {
+   "kind": "narrative",
+   "title": "the dove and the olive leaf",
+   "tone": "gentle",
+   "verseCount": 1,
+   "scenes": [
+    "an endless calm sea under a wide grey sky at first light, no land in sight, no people",
+    "a single dove flying low over still water carrying a small green olive leaf in its beak",
+    "the first dark line of land appearing on the horizon under breaking sun, quiet and hopeful"
+   ],
+   "verses": [
+    {
+     "book": "Genesis",
+     "chapter": 8,
+     "verse": 11,
+     "ref": "Genesis 8:11",
+     "text": "And behold, the dove returned to him in the evening with a freshly plucked olive leaf in her beak. So Noah knew that the waters had receded from the earth.",
+     "chars": 155
+    }
+   ]
   },
   {
    "kind": "theme",
@@ -1087,6 +1221,27 @@
    "tone": "intimate"
   },
   {
+   "kind": "narrative",
+   "title": "the ladder between earth and heaven",
+   "tone": "gentle",
+   "verseCount": 1,
+   "scenes": [
+    "a bare stony desert hillside at night, one stone set as a pillow, vast star filled sky, no people",
+    "a great luminous stairway of light rising from the desert floor into a star filled sky, immense and silent",
+    "dawn breaking over the empty stone hillside, warm gold light, still and holy"
+   ],
+   "verses": [
+    {
+     "book": "Genesis",
+     "chapter": 28,
+     "verse": 12,
+     "ref": "Genesis 28:12",
+     "text": "And Jacob had a dream about a ladder that rested on the earth with its top reaching up to heaven, and God’s angels were going up and down the ladder.",
+     "chars": 149
+    }
+   ]
+  },
+  {
    "kind": "passage",
    "title": "trust with all your heart",
    "verses": [
@@ -1240,6 +1395,27 @@
     }
    ],
    "tone": "intimate"
+  },
+  {
+   "kind": "narrative",
+   "title": "the bush that would not burn",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "a dry rocky wilderness at midday, harsh light, scattered thorn bushes, utterly still, no people",
+    "a single thorn bush wrapped entirely in bright flame, burning fiercely yet its branches green and whole",
+    "the same bush still burning as the light shifts toward evening, unconsumed, no people"
+   ],
+   "verses": [
+    {
+     "book": "Exodus",
+     "chapter": 3,
+     "verse": 2,
+     "ref": "Exodus 3:2",
+     "text": "There the angel of the LORD appeared to him in a blazing fire from within a bush. Moses saw the bush ablaze with fire, but it was not consumed.",
+     "chars": 143
+    }
+   ]
   },
   {
    "kind": "theme",
@@ -1397,6 +1573,27 @@
    "tone": "intimate"
   },
   {
+   "kind": "narrative",
+   "title": "bread from heaven",
+   "tone": "gentle",
+   "verseCount": 1,
+   "scenes": [
+    "a vast empty desert camp at dawn, low mist lying on the sand, no people",
+    "fine white flakes like frost covering the desert floor at first light, delicate and strange",
+    "warm morning sun rising over the covered wilderness floor, quiet and provided for"
+   ],
+   "verses": [
+    {
+     "book": "Exodus",
+     "chapter": 16,
+     "verse": 14,
+     "ref": "Exodus 16:14",
+     "text": "When the layer of dew had evaporated, there were thin flakes on the desert floor, as fine as frost on the ground.",
+     "chars": 113
+    }
+   ]
+  },
+  {
    "kind": "theme",
    "title": "ask, seek, knock",
    "verses": [
@@ -1550,6 +1747,27 @@
     }
    ],
    "tone": "grand"
+  },
+  {
+   "kind": "narrative",
+   "title": "the walls came down",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "an immense ancient stone city wall standing against a bright hard sky, seen from below, no people",
+    "the great wall collapsing outward in an avalanche of stone and dust, immense scale, no people",
+    "the settled ruin of the fallen wall under clearing dust, the way through it open and empty"
+   ],
+   "verses": [
+    {
+     "book": "Joshua",
+     "chapter": 6,
+     "verse": 20,
+     "ref": "Joshua 6:20",
+     "text": "So when the rams’ horns sounded, the people shouted. When they heard the blast of the horn, the people gave a great shout, and the wall collapsed. Then all the people charged straight into the city and captured it.",
+     "chars": 214
+    }
+   ]
   },
   {
    "kind": "passage",
@@ -1707,6 +1925,27 @@
    "tone": "gentle"
   },
   {
+   "kind": "narrative",
+   "title": "the stone and the giant",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "a wide dry valley between two ridges under a hard bright sky, dust in the air, no people",
+    "one small smooth stone lying in the dust of the valley floor, shallow focus, enormous shadow falling across it",
+    "the valley empty and silent afterward, long shadows, wind moving the dust"
+   ],
+   "verses": [
+    {
+     "book": "1 Samuel",
+     "chapter": 17,
+     "verse": 45,
+     "ref": "1 Samuel 17:45",
+     "text": "But David said to the Philistine, “You come against me with sword and spear and javelin, but I come against you in the name of the LORD of Hosts, the God of the armies of Israel, whom you have defied.",
+     "chars": 200
+    }
+   ]
+  },
+  {
    "kind": "theme",
    "title": "fearfully and wonderfully made",
    "verses": [
@@ -1860,6 +2099,27 @@
     }
    ],
    "tone": "grand"
+  },
+  {
+   "kind": "narrative",
+   "title": "the still small voice",
+   "tone": "intimate",
+   "verseCount": 1,
+   "scenes": [
+    "a violent wind tearing across a bare mountainside at night, rock and dust flying, no people",
+    "fire sweeping over the mountain and then dying away to nothing, embers cooling",
+    "the mouth of a cave on a silent mountainside at dawn, utterly still air, soft light, no people"
+   ],
+   "verses": [
+    {
+     "book": "1 Kings",
+     "chapter": 19,
+     "verse": 12,
+     "ref": "1 Kings 19:12",
+     "text": "After the earthquake there was a fire, but the LORD was not in the fire. And after the fire came a still, small voice.",
+     "chars": 118
+    }
+   ]
   },
   {
    "kind": "passage",
@@ -2017,6 +2277,27 @@
    "tone": "gentle"
   },
   {
+   "kind": "narrative",
+   "title": "fed by ravens",
+   "tone": "intimate",
+   "verseCount": 1,
+   "scenes": [
+    "a narrow dry ravine with a thin brook running through it, harsh sun, no people",
+    "black ravens flying down through the ravine carrying bread, wings spread, seen from a distance",
+    "the quiet brook at evening light, bread left on a flat stone at the water's edge"
+   ],
+   "verses": [
+    {
+     "book": "1 Kings",
+     "chapter": 17,
+     "verse": 6,
+     "ref": "1 Kings 17:6",
+     "text": "The ravens would bring him bread and meat in the morning and evening, and he would drink from the brook.",
+     "chars": 104
+    }
+   ]
+  },
+  {
    "kind": "theme",
    "title": "the joy of the Lord",
    "verses": [
@@ -2170,6 +2451,27 @@
     }
    ],
    "tone": "intimate"
+  },
+  {
+   "kind": "narrative",
+   "title": "the hills full of chariots",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "a small hill town at dawn ringed by the tents and horses of an army, seen from above, tense",
+    "the surrounding hills blazing with horses and chariots of fire, immense and burning, filling the ridgelines",
+    "the fiery ridgelines fading into ordinary morning light over quiet hills"
+   ],
+   "verses": [
+    {
+     "book": "2 Kings",
+     "chapter": 6,
+     "verse": 17,
+     "ref": "2 Kings 6:17",
+     "text": "Then Elisha prayed, “O LORD, please open his eyes that he may see.” And the LORD opened the eyes of the young man, and he saw that the hills were full of horses and chariots of fire all around Elisha.",
+     "chars": 200
+    }
+   ]
   },
   {
    "kind": "theme",
@@ -2327,6 +2629,27 @@
    "tone": "grand"
   },
   {
+   "kind": "narrative",
+   "title": "out of the deep",
+   "tone": "intimate",
+   "verseCount": 1,
+   "scenes": [
+    "a black storm sea at night from below the surface, dark water above, no people",
+    "deep underwater darkness with weeds drifting and a faint distant light far above",
+    "an empty stretch of wet sand on a wide shore at sunrise, waves withdrawing, no people"
+   ],
+   "verses": [
+    {
+     "book": "Jonah",
+     "chapter": 2,
+     "verse": 10,
+     "ref": "Jonah 2:10",
+     "text": "And the LORD commanded the fish, and it vomited Jonah onto dry land.",
+     "chars": 68
+    }
+   ]
+  },
+  {
    "kind": "passage",
    "title": "in the beginning was the Word",
    "verses": [
@@ -2480,6 +2803,27 @@
     }
    ],
    "tone": "intimate"
+  },
+  {
+   "kind": "narrative",
+   "title": "the valley of dry bones",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "an immense desert valley floor covered in scattered bleached bones under a pale sky, no people",
+    "a great wind moving across the valley, dust rising, the bones drawing together, seen from a distance",
+    "the valley standing silent afterward under a vast sky, the ground swept clean"
+   ],
+   "verses": [
+    {
+     "book": "Ezekiel",
+     "chapter": 37,
+     "verse": 7,
+     "ref": "Ezekiel 37:7",
+     "text": "So I prophesied as I had been commanded. And as I prophesied, there was suddenly a noise, a rattling, and the bones came together, bone to bone.",
+     "chars": 144
+    }
+   ]
   },
   {
    "kind": "passage",
@@ -2637,6 +2981,27 @@
    "tone": "grand"
   },
   {
+   "kind": "narrative",
+   "title": "the writing on the wall",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "a great torchlit banquet hall at night, gold vessels on long tables, warm flickering light, no people",
+    "glowing letters appearing on the plaster of the palace wall beside the lampstand, light falling on the writing, no faces",
+    "the hall silent and empty afterward, lamps guttering, the writing still faintly glowing"
+   ],
+   "verses": [
+    {
+     "book": "Daniel",
+     "chapter": 5,
+     "verse": 5,
+     "ref": "Daniel 5:5",
+     "text": "At that moment the fingers of a human hand appeared and wrote on the plaster of the wall, near the lampstand in the royal palace. As the king watched the hand that was writing,",
+     "chars": 176
+    }
+   ]
+  },
+  {
    "kind": "passage",
    "title": "a living sacrifice",
    "verses": [
@@ -2790,6 +3155,27 @@
     }
    ],
    "tone": "grand"
+  },
+  {
+   "kind": "narrative",
+   "title": "out of the whirlwind",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "an enormous dark whirlwind crossing an empty plain under a torn sky, immense scale, no people",
+    "the foundations of the earth seen from impossibly high, mountains and deep ocean trenches, vast",
+    "the storm passing and clear cold starlight opening over the quiet plain"
+   ],
+   "verses": [
+    {
+     "book": "Job",
+     "chapter": 38,
+     "verse": 4,
+     "ref": "Job 38:4",
+     "text": "Where were you when I laid the foundations of the earth? Tell Me, if you have understanding.",
+     "chars": 92
+    }
+   ]
   },
   {
    "kind": "theme",
@@ -2947,6 +3333,27 @@
    "tone": "grand"
   },
   {
+   "kind": "narrative",
+   "title": "the star that stopped",
+   "tone": "intimate",
+   "verseCount": 1,
+   "scenes": [
+    "a vast desert night sky crowded with stars, low dunes, one star noticeably brighter, no people",
+    "the bright star hanging low and still directly above the rooftops of a small sleeping town",
+    "first light over the quiet town, the star fading, warm and ordinary"
+   ],
+   "verses": [
+    {
+     "book": "Matthew",
+     "chapter": 2,
+     "verse": 9,
+     "ref": "Matthew 2:9",
+     "text": "After they had heard the king, they went on their way, and the star they had seen in the east went ahead of them until it stood over the place where the Child was.",
+     "chars": 163
+    }
+   ]
+  },
+  {
    "kind": "theme",
    "title": "He is coming back",
    "verses": [
@@ -3100,6 +3507,27 @@
     }
    ],
    "tone": "grand"
+  },
+  {
+   "kind": "narrative",
+   "title": "Lazarus, come out",
+   "tone": "intimate",
+   "verseCount": 1,
+   "scenes": [
+    "a rock cut tomb sealed with a heavy stone on a quiet hillside, olive trees, late afternoon light, no people",
+    "the stone rolled back and the dark opening of the tomb, light falling into it, no people",
+    "the empty grave clothes lying loose on the ground outside the open tomb, warm evening light"
+   ],
+   "verses": [
+    {
+     "book": "John",
+     "chapter": 11,
+     "verse": 43,
+     "ref": "John 11:43",
+     "text": "After Jesus had said this, He called out in a loud voice, “Lazarus, come out!”",
+     "chars": 78
+    }
+   ]
   },
   {
    "kind": "theme",
@@ -3257,6 +3685,27 @@
    "tone": "intimate"
   },
   {
+   "kind": "narrative",
+   "title": "the prison doors opened",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "a deep stone prison corridor at midnight, iron doors, one small torch, no people",
+    "the stone floor and walls cracking as every iron door swings wide and chains fall loose from the walls",
+    "the corridor standing open and empty with night air moving through it, chains on the floor"
+   ],
+   "verses": [
+    {
+     "book": "Acts",
+     "chapter": 16,
+     "verse": 26,
+     "ref": "Acts 16:26",
+     "text": "Suddenly a strong earthquake shook the foundations of the prison. At once all the doors flew open and everyone’s chains came loose.",
+     "chars": 131
+    }
+   ]
+  },
+  {
    "kind": "passage",
    "title": "the Lord bless you",
    "verses": [
@@ -3412,6 +3861,27 @@
    "tone": "gentle"
   },
   {
+   "kind": "narrative",
+   "title": "the light on the road",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "a long dusty road running toward a walled city under a hard midday sky, heat haze, no people",
+    "an overwhelming column of white light breaking over the road, bleaching the landscape, no figures",
+    "the empty road afterward under ordinary light, dust settling, quiet"
+   ],
+   "verses": [
+    {
+     "book": "Acts",
+     "chapter": 9,
+     "verse": 3,
+     "ref": "Acts 9:3",
+     "text": "As Saul drew near to Damascus on his journey, suddenly a light from heaven flashed around him.",
+     "chars": 94
+    }
+   ]
+  },
+  {
    "kind": "theme",
    "title": "stand firm",
    "verses": [
@@ -3565,6 +4035,27 @@
     }
    ],
    "tone": "intimate"
+  },
+  {
+   "kind": "narrative",
+   "title": "tongues of fire",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "an upper room at dawn, plain walls, shuttered window, dust in the light, no people",
+    "small flames of fire separating in the air and resting above empty seats around the room, warm and strange",
+    "the room quiet and full of morning light afterward, the flames gone"
+   ],
+   "verses": [
+    {
+     "book": "Acts",
+     "chapter": 2,
+     "verse": 3,
+     "ref": "Acts 2:3",
+     "text": "They saw tongues like flames of fire that separated and came to rest on each of them.",
+     "chars": 85
+    }
+   ]
   },
   {
    "kind": "theme",
@@ -4681,119 +5172,6 @@
     }
    ],
    "tone": "grand"
-  },
-  {
-   "kind": "narrative",
-   "title": "the fourth man in the fire",
-   "tone": "grand",
-   "verseCount": 1,
-   "scenes": [
-    "the mouth of an enormous ancient brick furnace at night, white hot fire roaring inside, sparks streaming up into a black sky, seen from a distance, no people",
-    "four figures in complete silhouette walking unhurried through the middle of a wall of white and orange flame, unbound and unharmed, backlit so no faces are visible, embers drifting",
-    "the fire burned down to glowing embers and settling ash, quiet and still, no people"
-   ],
-   "verses": [
-    {
-     "book": "Daniel",
-     "chapter": 3,
-     "verse": 25,
-     "ref": "Daniel 3:25",
-     "text": "“Look!” he exclaimed. “I see four men, unbound and unharmed, walking around in the fire—and the fourth looks like a son of the gods! ”",
-     "chars": 134
-    }
-   ]
-  },
-  {
-   "kind": "narrative",
-   "title": "a path through the sea",
-   "tone": "grand",
-   "verseCount": 2,
-   "scenes": [
-    "a fierce night wind driving hard across a dark sea, water beginning to draw back, storm sky, moonlight, no people",
-    "towering walls of dark water standing on either side of a wide dry seabed at night, wet sand glistening under moonlight, immense scale, no people",
-    "the long dry path between the standing walls of water under a night sky, still and vast, no people"
-   ],
-   "verses": [
-    {
-     "book": "Exodus",
-     "chapter": 14,
-     "verse": 21,
-     "ref": "Exodus 14:21",
-     "text": "Then Moses stretched out his hand over the sea, and all that night the LORD drove back the sea with a strong east wind that turned it into dry land. So the waters were divided,",
-     "chars": 176
-    },
-    {
-     "book": "Exodus",
-     "chapter": 14,
-     "verse": 22,
-     "ref": "Exodus 14:22",
-     "text": "and the Israelites went through the sea on dry ground, with walls of water on their right and on their left.",
-     "chars": 108
-    }
-   ]
-  },
-  {
-   "kind": "narrative",
-   "title": "the mouths of the lions",
-   "tone": "intimate",
-   "verseCount": 1,
-   "scenes": [
-    "a deep dark stone pit at night, a single shaft of moonlight falling to the floor far below, no people",
-    "great lions lying quietly in deep shadow at the edge of a stone chamber, calm and still, seen from a distance",
-    "morning light flooding down into the quiet empty stone pit from an opening above"
-   ],
-   "verses": [
-    {
-     "book": "Daniel",
-     "chapter": 6,
-     "verse": 22,
-     "ref": "Daniel 6:22",
-     "text": "My God sent His angel and shut the mouths of the lions. They have not hurt me, for I was found innocent in His sight, and I have done no wrong against you, O king.”",
-     "chars": 164
-    }
-   ]
-  },
-  {
-   "kind": "narrative",
-   "title": "peace, be still",
-   "tone": "grand",
-   "verseCount": 1,
-   "scenes": [
-    "a violent black sea at night under lightning, enormous waves, a small wooden boat far off in the distance, no people",
-    "the same sea going suddenly glassy and flat, storm clouds parting, moonlight laid across still water",
-    "dawn over a completely calm sea, soft gold light, utterly quiet, no people"
-   ],
-   "verses": [
-    {
-     "book": "Mark",
-     "chapter": 4,
-     "verse": 39,
-     "ref": "Mark 4:39",
-     "text": "Then Jesus got up and rebuked the wind and the sea. “Silence!” He commanded. “Be still!” And the wind died down, and it was perfectly calm.",
-     "chars": 139
-    }
-   ]
-  },
-  {
-   "kind": "narrative",
-   "title": "He is not here",
-   "tone": "gentle",
-   "verseCount": 1,
-   "scenes": [
-    "a great round stone rolled away from the mouth of a rock cut tomb at dawn, no people",
-    "soft morning light falling across the bare stone ledge inside an empty tomb, nothing on it",
-    "sunrise over a quiet garden outside an open and empty tomb, warm gold light"
-   ],
-   "verses": [
-    {
-     "book": "Matthew",
-     "chapter": 28,
-     "verse": 6,
-     "ref": "Matthew 28:6",
-     "text": "He is not here; He has risen, just as He said! Come, see the place where He lay.",
-     "chars": 80
-    }
-   ]
   }
  ],
  "translation": "BSB"

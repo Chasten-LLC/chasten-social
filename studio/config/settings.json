@@ -265,21 +265,42 @@
     "clear shallow water running over smooth stones, warm afternoon light glinting on the surface",
     "a single candle burning in a dark still room, soft warm glow falling on worn wood",
     "soft window light falling across folded linen, dust motes drifting in the beam",
-    "rain running slowly down a window with warm blurred light beyond"
+    "rain running slowly down a window with warm blurred light beyond",
+    "a narrow forest path at dusk under low mist, soft blue light, utterly quiet",
+    "frost on bare branches at sunrise, delicate and still, pale gold light",
+    "a small lamp burning in a window seen from outside on a dark evening",
+    "still water in a woodland pool reflecting overhanging leaves, deep green calm",
+    "morning light across an unmade bed and a quiet room, soft and ordinary",
+    "a single wildflower standing in long grass at dawn, shallow focus, dew",
+    "embers glowing low in a stone hearth, warm dark room, soft light"
    ],
    "gentle": [
     "a lush green pasture in soft morning light, gently rolling grass and distant trees",
     "sunlight falling through a forest canopy, dappled warm light across the floor",
     "a field of wildflowers in warm late afternoon light, a gentle breeze moving through",
     "a quiet river bank at golden hour, still water and tall reeds",
-    "soft clouds drifting over open farmland at sunrise, warm and unhurried"
+    "soft clouds drifting over open farmland at sunrise, warm and unhurried",
+    "an old stone path winding through summer grass, warm light, no people",
+    "wheat fields moving in a slow wind under a wide blue sky",
+    "a broad valley in soft evening light, long shadows, distant hills",
+    "olive trees on a warm hillside in late light, silver leaves turning",
+    "a shallow stream crossing a meadow, sunlight scattering on the water",
+    "an orchard in blossom under soft overcast light, quiet and full",
+    "a wide sky of slow moving cloud over green hills at midday"
    ],
    "grand": [
     "vast mountain peaks rising above a sea of cloud at sunrise, immense scale",
     "towering storm clouds over a wide ocean with a single shaft of sunlight breaking through",
     "an immense night sky crowded with stars above a dark mountain ridge",
     "huge slow waves on an open sea under dramatic light, weight and scale",
-    "sunrise over an endless desert canyon, vast and utterly still"
+    "sunrise over an endless desert canyon, vast and utterly still",
+    "an enormous waterfall falling into cloud and spray, seen from a distance",
+    "a great glacier under cold blue light, immense and ancient",
+    "lightning over a vast empty plain at night, enormous sky",
+    "the sun breaking over a range of snow covered peaks, gold on white",
+    "an immense forest seen from far above, mist lying in the valleys",
+    "a wide river delta from high altitude at golden hour, vast and intricate",
+    "storm light over towering sea cliffs, spray rising, immense scale"
    ]
   },
   "audioSearch": {
