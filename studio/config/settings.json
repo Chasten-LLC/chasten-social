@@ -1,0 +1,213 @@
+{
+  "audio": {
+    "byTheme": {
+      "Jesus, cross, resurrection, eternity": [
+        "King of Kings by Hillsong Worship",
+        "Living Hope by Phil Wickham",
+        "O Praise the Name (Anastasis) by Hillsong Worship"
+      ],
+      "comfort, grief, healing, tears": [
+        "Rest On Us by Maverick City Music",
+        "Same God by Elevation Worship",
+        "Honey in the Rock by Brooke Ligertwood"
+      ],
+      "hope, waiting, morning, new": [
+        "Goodness of God by Bethel Music",
+        "Way Maker by Sinach",
+        "Praise by Elevation Worship"
+      ],
+      "identity, chosen, children of God": [
+        "Who You Say I Am by Hillsong Worship",
+        "No Longer Slaves by Bethel Music"
+      ],
+      "joy, gratitude, worship, creation, majesty": [
+        "How Great Is Our God by Chris Tomlin",
+        "Praise by Elevation Worship",
+        "Goodness of God by Bethel Music"
+      ],
+      "love, grace, mercy, forgiveness, gospel, salvation": [
+        "Gratitude by Brandon Lake",
+        "Reckless Love by Cory Asbury",
+        "Living Hope by Phil Wickham"
+      ],
+      "mission, light, witness": [
+        "Great Are You Lord by All Sons and Daughters",
+        "Here I Am to Worship by Tim Hughes"
+      ],
+      "peace, anxiety, fear, rest, sleep": [
+        "Peace Be Still by Hope Darst",
+        "It Is Well by Kristene DiMarco",
+        "Be Still by Hillsong Worship"
+      ],
+      "prayer, faith, presence": [
+        "Oceans (Where Feet May Fail) by Hillsong UNITED",
+        "Holy Forever by Chris Tomlin",
+        "Build My Life by Housefires"
+      ],
+      "strength, courage, weakness, battle, stand": [
+        "Battle Belongs by Phil Wickham",
+        "Firm Foundation (He Won't) by Cody Carnes",
+        "Same God by Elevation Worship"
+      ],
+      "trust, guidance, purpose, provision": [
+        "Trust in God by Elevation Worship",
+        "I Will Trust in You by Lauren Daigle",
+        "Jireh by Elevation Worship and Maverick City"
+      ]
+    },
+    "fallback": [
+      "soft worship piano instrumental",
+      "gentle acoustic worship"
+    ],
+    "rule": "Pick one song that fits the set's theme (or the fallback) and write one line in the email: Audio idea: search 'song' in Instagram's music library."
+  },
+  "captionRules": [
+    "Voice: warm, reverent, plain. Written like a friend, never a sermon. Nothing that scolds or pressures.",
+    "No em dashes anywhere. No hype words. No exclamation marks. At most one emoji, and only the candle (🕯️) on the sign-off line, or none.",
+    "Line 1 is the hook and must stand alone in under 110 characters, because Instagram cuts the caption there: name a felt need or a quiet truth in plain words.",
+    "Then one to three short sentences that open the theme. You may echo a few words of the first verse. Do not retype whole verses; they are on the cards.",
+    "Then the references on one line, e.g. 'Philippians 4:6, 4:7 and 4:8 (BSB)' or 'Isaiah 41:10, Psalm 56:3, Deuteronomy 31:6 (BSB)'.",
+    "Then one primary call to action and one secondary, rotating across days: save it for the day you need it; send it to someone carrying a lot; comment which slide you needed (1, 2 or 3); read the whole chapter free in Chasten.",
+    "Sign-off line: 'Chasten is a free Bible app. chasten.ai' (the candle emoji may go before it).",
+    "Hashtags on their own line at the end: the core set plus two or three theme tags, twelve to fifteen total, lowercase.",
+    "Keep the whole caption under 1,200 characters including hashtags."
+  ],
+  "dashboardUrl": "https://claude.ai/code/artifact/5c46d039-2e10-43b4-a8d4-993d9645f4c2",
+  "email": "ricardo@chasten.ai",
+  "emailRules": [
+    "Subject: 'Chasten IG · <Mon DD> · posted: <set title>' when published, or 'Chasten IG · <Mon DD> · needs a hand: <set title>' when publishing failed.",
+    "Keep it short. Ric wants to know it went out and what audio to put on it, nothing more. Four things in this order and nothing else: (1) one line saying it posted, with the Instagram permalink as a link, or if it failed, one line naming what failed and saying the cards are on the dashboard to post by hand; (2) one line reading Audio idea: search SONG in Instagram music library, choosing SONG from the audio map by theme; (3) the three cards inline as <img> tags whose src is the public raw.githubusercontent.com URL, width 170, side by side; (4) the dashboard link. No recipe line, no verse list, no caption block, no explanation of what the run did.",
+    "Never read image bytes or base64 into the message and never send attachments. The cards are already public URLs, so reference them with <img src>. Attaching base64 has hung the run before.",
+    "No em dashes anywhere."
+  ],
+  "hashtags": {
+    "core": [
+      "#bibleverse",
+      "#scripture",
+      "#dailybread",
+      "#verseoftheday",
+      "#bible",
+      "#faith",
+      "#jesus",
+      "#christianquotes",
+      "#biblestudy",
+      "#godisgood",
+      "#bibleapp",
+      "#chasten"
+    ],
+    "themes": {
+      "character": [
+        "#fruitofthespirit",
+        "#kindness"
+      ],
+      "comfort": [
+        "#comfort",
+        "#healing",
+        "#grief"
+      ],
+      "creation": [
+        "#creation",
+        "#godsmajesty"
+      ],
+      "encouragement": [
+        "#encouragement",
+        "#dailyencouragement"
+      ],
+      "eternity": [
+        "#eternallife",
+        "#heaven"
+      ],
+      "faith": [
+        "#faithjourney",
+        "#believe"
+      ],
+      "fear": [
+        "#donotfear",
+        "#courage",
+        "#faithoverfear"
+      ],
+      "grace": [
+        "#grace",
+        "#forgiven",
+        "#gospel"
+      ],
+      "gratitude": [
+        "#gratitude",
+        "#thankful",
+        "#worship"
+      ],
+      "hope": [
+        "#hope",
+        "#hopeinchrist"
+      ],
+      "identity": [
+        "#childofgod",
+        "#identityinchrist"
+      ],
+      "jesus": [
+        "#jesuschrist",
+        "#heisrisen"
+      ],
+      "love": [
+        "#godslove",
+        "#loveoneanother"
+      ],
+      "mission": [
+        "#sharethegospel",
+        "#greatcommission"
+      ],
+      "peace": [
+        "#peace",
+        "#anxiety",
+        "#bestill"
+      ],
+      "prayer": [
+        "#prayer",
+        "#pray"
+      ],
+      "provision": [
+        "#godprovides",
+        "#contentment"
+      ],
+      "rest": [
+        "#rest",
+        "#sabbath"
+      ],
+      "strength": [
+        "#strength",
+        "#godisfaithful"
+      ],
+      "trust": [
+        "#trustgod",
+        "#guidance"
+      ],
+      "word": [
+        "#wordofgod",
+        "#bibleverses"
+      ]
+    }
+  },
+  "host": {
+    "github": {
+      "branch": "main",
+      "folder": "posts",
+      "repo": "Chasten-LLC/chasten-social"
+    },
+    "mode": "github",
+    "note": "github = push the JPEGs to the repo above, then publish through Composio using the raw.githubusercontent.com URLs. Set mode to none to prepare and email only."
+  },
+  "recipeMeaning": {
+    "night": "three night cards in one ink",
+    "paper": "three paper cards in one ink",
+    "photo": "three photo cards on three different backgrounds",
+    "photo-lead": "slide 1 is a photo card with the hook verse, slides 2 and 3 are paper cards in one ink"
+  },
+  "recipes": [
+    "photo-lead",
+    "night",
+    "photo",
+    "paper"
+  ],
+  "timezone": "America/Chicago",
+  "translation": "BSB"
+}
