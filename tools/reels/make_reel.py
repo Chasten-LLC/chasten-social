@@ -241,14 +241,18 @@ def main():
     vset = sets[idx]
     tone = vset.get("tone", cfg.get("defaultTone", "gentle"))
     voice = cfg["voiceByTone"][tone]
-    scenes = cfg["scenes"][tone]
-    si = ptr.get("sceneIndex", 0)
+    scenes = vset.get("scenes") or cfg["scenes"][tone]
+    narrative = bool(vset.get("scenes"))
+    si = 0 if narrative else ptr.get("sceneIndex", 0)   # narrative scenes are ordered
 
-    # One verse per Reel. Three belong on a carousel, where people read at their own
-    # pace; a Reel is watched, and shorter finishes better, which is what drives reach.
-    verse = vset["verses"][0]
-    text = " ".join(verse["text"].split())
-    ref_line = f"{verse['ref']}  ·  {settings.get('translation', 'BSB')}"
+    # One verse by default: a Reel is watched, and shorter finishes better. A set can
+    # ask for more when it is telling a story that needs the beats.
+    n_verses = int(vset.get("verseCount", 1))
+    chosen = vset["verses"][:n_verses]
+    text = " ".join(" ".join(v["text"].split()) for v in chosen)
+    refs = [v["ref"] for v in chosen]
+    ref_line = (refs[0] if len(refs) == 1 else f"{refs[0]} to {refs[-1]}") + \
+        f"  ·  {settings.get('translation', 'BSB')}"
 
     work = os.path.join(REPO, ".reelwork")
     outdir = os.path.join(REPO, "reels", today)
@@ -259,7 +263,7 @@ def main():
 
     log("  narration")
     narr = os.path.join(work, "narr.mp3")
-    speech = re.sub(r"(?<=[,;])\s+", " <#0.35#> ", text)   # a beat at each clause
+    speech = re.sub(r"(?<=[,;.])\s+", " <#0.35#> ", text)   # a beat at each clause
     run_model(TTS_MODEL, {"text": speech, "voice_id": voice["voice_id"],
                           "speed": voice.get("speed", 0.9), "pitch": voice.get("pitch", 0),
                           "emotion": "auto", "audio_format": "mp3"}, narr)
@@ -308,7 +312,8 @@ def main():
     meta = {
         "date": today, "setIndex": idx, "title": vset["title"], "kind": vset["kind"],
         "tone": tone, "voice": voice["voice_id"],
-        "verses": [{"ref": verse["ref"], "text": text}],
+        "verses": [{"ref": v["ref"], "text": " ".join(v["text"].split())} for v in chosen],
+        "narrative": narrative,
         "refLine": ref_line, "onScreenText": text,
         "audioSearch": cfg["audioSearch"][tone],
         "scenes": scene_list, "clips": n_clips,
@@ -319,7 +324,7 @@ def main():
     }
     json.dump(meta, open(os.path.join(outdir, "meta.json"), "w"), ensure_ascii=False, indent=1)
 
-    ptr.update({"nextSetIndex": (idx + 1) % len(sets), "sceneIndex": (si + n_clips) % len(scenes),
+    ptr.update({"nextSetIndex": (idx + 1) % len(sets), "sceneIndex": ptr.get("sceneIndex", 0) if narrative else (si + n_clips) % len(scenes),
                 "postCount": ptr.get("postCount", 0) + 1, "lastReelId": today})
     json.dump(ptr, open(ptr_path, "w"), indent=1)
 

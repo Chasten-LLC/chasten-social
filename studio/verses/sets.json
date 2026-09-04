@@ -4681,6 +4681,119 @@
     }
    ],
    "tone": "grand"
+  },
+  {
+   "kind": "narrative",
+   "title": "the fourth man in the fire",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "the mouth of an enormous ancient brick furnace at night, white hot fire roaring inside, sparks streaming up into a black sky, seen from a distance, no people",
+    "four tall figures in complete silhouette standing calmly inside a wall of white and orange flame, unbound and unharmed, backlit so no faces are visible, embers drifting around them",
+    "the fire burned down to glowing embers and settling ash at first light, quiet and still, no people"
+   ],
+   "verses": [
+    {
+     "book": "Daniel",
+     "chapter": 3,
+     "verse": 25,
+     "ref": "Daniel 3:25",
+     "text": "“Look!” he exclaimed. “I see four men, unbound and unharmed, walking around in the fire—and the fourth looks like a son of the gods! ”",
+     "chars": 134
+    }
+   ]
+  },
+  {
+   "kind": "narrative",
+   "title": "a path through the sea",
+   "tone": "grand",
+   "verseCount": 2,
+   "scenes": [
+    "a fierce night wind driving across a dark sea, water beginning to draw back, dramatic storm sky, no people",
+    "towering walls of dark water standing on either side of a wide dry seabed, wet sand glistening under moonlight, immense scale, no people",
+    "dawn breaking over the open dry path between the walls of water, gold light on wet sand, vast and silent"
+   ],
+   "verses": [
+    {
+     "book": "Exodus",
+     "chapter": 14,
+     "verse": 21,
+     "ref": "Exodus 14:21",
+     "text": "Then Moses stretched out his hand over the sea, and all that night the LORD drove back the sea with a strong east wind that turned it into dry land. So the waters were divided,",
+     "chars": 176
+    },
+    {
+     "book": "Exodus",
+     "chapter": 14,
+     "verse": 22,
+     "ref": "Exodus 14:22",
+     "text": "and the Israelites went through the sea on dry ground, with walls of water on their right and on their left.",
+     "chars": 108
+    }
+   ]
+  },
+  {
+   "kind": "narrative",
+   "title": "the mouths of the lions",
+   "tone": "intimate",
+   "verseCount": 1,
+   "scenes": [
+    "a deep dark stone pit at night, a single shaft of moonlight falling to the floor far below, no people",
+    "great lions lying quietly in deep shadow at the edge of a stone chamber, calm and still, seen from a distance",
+    "morning light flooding down into the quiet empty stone pit from an opening above"
+   ],
+   "verses": [
+    {
+     "book": "Daniel",
+     "chapter": 6,
+     "verse": 22,
+     "ref": "Daniel 6:22",
+     "text": "My God sent His angel and shut the mouths of the lions. They have not hurt me, for I was found innocent in His sight, and I have done no wrong against you, O king.”",
+     "chars": 164
+    }
+   ]
+  },
+  {
+   "kind": "narrative",
+   "title": "peace, be still",
+   "tone": "grand",
+   "verseCount": 1,
+   "scenes": [
+    "a violent black sea at night under lightning, enormous waves, a small wooden boat far off in the distance, no people",
+    "the same sea going suddenly glassy and flat, storm clouds parting, moonlight laid across still water",
+    "dawn over a completely calm sea, soft gold light, utterly quiet, no people"
+   ],
+   "verses": [
+    {
+     "book": "Mark",
+     "chapter": 4,
+     "verse": 39,
+     "ref": "Mark 4:39",
+     "text": "Then Jesus got up and rebuked the wind and the sea. “Silence!” He commanded. “Be still!” And the wind died down, and it was perfectly calm.",
+     "chars": 139
+    }
+   ]
+  },
+  {
+   "kind": "narrative",
+   "title": "He is not here",
+   "tone": "gentle",
+   "verseCount": 1,
+   "scenes": [
+    "a great round stone rolled away from the mouth of a rock cut tomb at dawn, no people",
+    "soft morning light spilling into an empty stone tomb, folded linen resting on the ledge",
+    "sunrise over a quiet garden outside an open tomb, warm gold light through olive branches"
+   ],
+   "verses": [
+    {
+     "book": "Matthew",
+     "chapter": 28,
+     "verse": 6,
+     "ref": "Matthew 28:6",
+     "text": "He is not here; He has risen, just as He said! Come, see the place where He lay.",
+     "chars": 80
+    }
+   ]
   }
  ],
  "translation": "BSB"

@@ -55,10 +55,12 @@ htmlBody, in this order and nothing else:
 
 1. One line: today's Reel is ready, with the `url` from the metadata as a link labelled "Download the video".
 2. One line: `Audio: search '<first phrase from audioSearch>' in Instagram's music library and pick an instrumental you like.` Add that it must be instrumental, because the verse is already narrated.
-3. The caption inside `<pre style="white-space:pre-wrap;font-family:inherit">` so Ric can copy it in one go.
+3. A bold heading `<strong>Description</strong>` on its own line, then immediately below it the
+   caption inside `<pre style="white-space:pre-wrap;font-family:inherit;margin-top:6px">` so Ric
+   can see at a glance which block is the one to copy.
 4. One short line: the tone and voice used, and the length in seconds. Nothing more.
 
-Plain text `body`: the download link, the audio line, then the caption. No em dashes.
+Plain text `body`: the download link, the audio line, then a line reading `Description:` and the caption beneath it. No em dashes.
 
 Do not attach the video. Do not embed it. The link is the delivery mechanism.
 
