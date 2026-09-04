@@ -1,0 +1,136 @@
+{
+ "tracks": [
+  {
+   "file": "darren_hirst-prayer-for-souls-120-bpm-c-major-365603.mp3",
+   "artist": "darren_hirst",
+   "title": "prayer for souls 120 bpm c major",
+   "seconds": 8.0,
+   "themes": [
+    "prayer, faith, presence"
+   ],
+   "fit": "reverent",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "dobcommunications-beautiful-choir-170206.mp3",
+   "artist": "dobcommunications",
+   "title": "beautiful choir",
+   "seconds": 38.6,
+   "themes": [
+    "joy, gratitude, worship, creation, majesty"
+   ],
+   "fit": "reverent",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "dobcommunications-beautiful-church-chorus-175359.mp3",
+   "artist": "dobcommunications",
+   "title": "beautiful church chorus",
+   "seconds": 38.6,
+   "themes": [
+    "joy, gratitude, worship, creation, majesty",
+    "mission, light, witness"
+   ],
+   "fit": "reverent",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "dobcommunications-catholic-church-hymn-sanctus-in-cathedral-248264.mp3",
+   "artist": "dobcommunications",
+   "title": "catholic church hymn sanctus in cathedral",
+   "seconds": 50.0,
+   "themes": [
+    "Jesus, cross, resurrection, eternity"
+   ],
+   "fit": "reverent",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "farran_ez-minimal-piano-underscore-456148.mp3",
+   "artist": "farran_ez",
+   "title": "minimal piano underscore",
+   "seconds": 25.8,
+   "themes": [
+    "peace, anxiety, fear, rest, sleep"
+   ],
+   "fit": "reverent",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "freesound_community-afternoon-ambient-piano-solo-24367.mp3",
+   "artist": "freesound_community",
+   "title": "afternoon ambient piano solo",
+   "seconds": 128.2,
+   "themes": [
+    "peace, anxiety, fear, rest, sleep",
+    "trust, guidance, purpose, provision"
+   ],
+   "fit": "reverent",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "freesound_community-sad-piano-love-story-71443.mp3",
+   "artist": "freesound_community",
+   "title": "sad piano love story",
+   "seconds": 48.8,
+   "themes": [
+    "comfort, grief, healing, tears"
+   ],
+   "fit": "reverent",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "grand_project-deep-epic-cinematic-when-time-collapses_outro-501526.mp3",
+   "artist": "grand_project",
+   "title": "deep epic cinematic when time collapses_outro",
+   "seconds": 33.7,
+   "themes": [
+    "strength, courage, weakness, battle, stand"
+   ],
+   "fit": "reverent",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "jtwayne-old-skool-piano-495397.mp3",
+   "artist": "jtwayne",
+   "title": "old skool piano",
+   "seconds": 44.2,
+   "themes": [],
+   "fit": "off-brand",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "lucadialessandro-dark-street-groove-490624.mp3",
+   "artist": "lucadialessandro",
+   "title": "dark street groove",
+   "seconds": 25.4,
+   "themes": [],
+   "fit": "off-brand",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  },
+  {
+   "file": "royalty_free_music-soft-piano-100-bpm-121529.mp3",
+   "artist": "royalty_free_music",
+   "title": "soft piano 100 bpm",
+   "seconds": 19.3,
+   "themes": [
+    "hope, waiting, morning, new",
+    "identity, chosen, children of God"
+   ],
+   "fit": "reverent",
+   "source": "pixabay (inferred from filename pattern, unverified)",
+   "license": "Pixabay Content License: commercial use allowed, no attribution required"
+  }
+ ],
+ "default": "freesound_community-afternoon-ambient-piano-solo-24367.mp3"
+}
