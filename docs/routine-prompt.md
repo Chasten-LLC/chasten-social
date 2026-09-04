@@ -59,8 +59,11 @@ It prints the recipe, ink, set title, verse refs, and a line `need bg docs: [...
 
 ## STEP 3. Render
 
+    python3 -c "import PIL" 2>/dev/null || pip install --quiet pillow
     python3 tool/ig_run.py render $W
     python3 tool/ig_run.py preview $W
+
+Pillow is not preinstalled in this sandbox, so the install line above is required, not optional.
 
 Read `$W/work/card1.jpg` once with the Read tool to confirm the verse is legible. This is the only image you may open. If a card is clearly broken, note it in the email and continue.
 
@@ -74,12 +77,16 @@ Check it mechanically before moving on: hook under 110 chars, total under 2200 c
 
 The repository is already checked out at R, which is this session's working directory. Do not clone it again.
 
-    cd $R && git pull --rebase -q
+    cd $R && git fetch -q origin main && git checkout -B main origin/main -q
     mkdir -p $R/posts/<today>
     cp $W/work/card1.jpg $R/posts/<today>/1.jpg
     cp $W/work/card2.jpg $R/posts/<today>/2.jpg
     cp $W/work/card3.jpg $R/posts/<today>/3.jpg
-    cd $R && git add posts && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -m "Cards for <today>" && git push origin HEAD:main
+    cd $R && git add posts && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -m "Cards for <today>" && git push origin main
+
+The checkout arrives on a detached HEAD, so `git checkout -B main origin/main` above is required before committing. A bare `git pull --rebase` fails with "You are not currently on a branch".
+
+If the push returns 403 saying Claude has no GitHub access to the org, the Claude GitHub App is not installed for Chasten-LLC. That is a repo permission problem, not something this run can fix: set status "failed" with that reason, skip STEP 6, and say so in the email.
 
 Confirm each of the three public URLs returns 200:
 
