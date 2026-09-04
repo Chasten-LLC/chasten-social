@@ -55,10 +55,16 @@ htmlBody, in this order and nothing else:
 
 1. One line: today's Reel is ready, with the `url` from the metadata as a link labelled "Download the video".
 2. One line: `Audio: search '<first phrase from audioSearch>' in Instagram's music library and pick an instrumental you like.` Add that it must be instrumental, because the verse is already narrated.
-3. A bold heading `<strong>Description</strong>` on its own line, then immediately below it the
+3. When the metadata has a non-empty `context` array, a bold heading
+   `<strong>Story notes</strong>` followed by two or three short bullet points drawn
+   ONLY from those context verses, each ending with its reference in brackets. Never
+   state a fact that is not in `context` or `verses`, and never add tradition or
+   commentary that scripture does not say. These give Ric something substantial to
+   put in the post beyond the verse itself.
+4. A bold heading `<strong>Description</strong>` on its own line, then immediately below it the
    caption inside `<pre style="white-space:pre-wrap;font-family:inherit;margin-top:6px">` so Ric
    can see at a glance which block is the one to copy.
-4. One short line: the tone and voice used, and the length in seconds. Nothing more.
+5. One short line: the tone and voice used, and the length in seconds. Nothing more.
 
 Plain text `body`: the download link, the audio line, then a line reading `Description:` and the caption beneath it. No em dashes.
 

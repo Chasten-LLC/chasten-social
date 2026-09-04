@@ -317,17 +317,20 @@ def main():
             # when told not to, and a second attempt usually lands. Four cents each,
             # so it is far cheaper than dropping a good story over one bad roll.
             good = False
-            for roll in range(2):
+            for roll in range(4):
                 dest = os.path.join(work, f"still{idx}_{k}.jpg")
                 if roll:
                     os.remove(dest)
-                extra = " Absolutely no human figures, no silhouettes, no bodies." if roll else ""
+                extra = ["",
+                         " Absolutely no human figures, no silhouettes, no bodies.",
+                         " Empty scene. No living thing of any kind anywhere in frame.",
+                         " Landscape and architecture only, completely deserted, nothing alive."][roll]
                 run_model(IMG_MODEL,
                           {"prompt": f"Cinematic photograph of {sc}. "
                                      + (PERIOD + ". " if narrative else "") + FRAME + extra,
                            "aspect_ratio": "9:16", "output_format": "jpg"}, dest)
                 good, why = audit_still(dest, sc, cand["title"])
-                log(f"    beat {k}{' retry' if roll else ''}: "
+                log(f"    beat {k}{f' retry {roll}' if roll else ''}: "
                     f"{'PASS' if good else 'FAIL'} {why}")
                 if good:
                     break
@@ -418,6 +421,7 @@ def main():
         "narrative": narrative,
         "refLine": ref_line, "onScreenText": text,
         "audioSearch": cfg["audioSearch"][tone],
+        "context": vset.get("context", []),
         "scenes": scene_list, "clips": n_clips,
         "seconds": round(total, 2), "narrationSeconds": round(narr_len, 2),
         "sizeBytes": os.path.getsize(mp4),

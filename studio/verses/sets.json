@@ -175,6 +175,20 @@
      "text": "“Look!” he exclaimed. “I see four men, unbound and unharmed, walking around in the fire—and the fourth looks like a son of the gods! ”",
      "chars": 134
     }
+   ],
+   "context": [
+    {
+     "ref": "Daniel 3:19",
+     "text": "At this, Nebuchadnezzar was filled with rage, and the expression on his face changed toward Shadrach, Meshach, and Abednego. He gave orders to heat the furnace seven times hotter than usual,"
+    },
+    {
+     "ref": "Daniel 3:23",
+     "text": "And these three men, Shadrach, Meshach, and Abednego, firmly bound, fell into the blazing fiery furnace."
+    },
+    {
+     "ref": "Daniel 3:27",
+     "text": "and when the satraps, prefects, governors, and royal advisers had gathered around, they saw that the fire had no effect on the bodies of these men. Not a hair of their heads was singed, their robes were unaffected, and there was no smell of fire on them."
+    }
    ]
   },
   {
@@ -359,6 +373,20 @@
      "text": "and the Israelites went through the sea on dry ground, with walls of water on their right and on their left.",
      "chars": 108
     }
+   ],
+   "context": [
+    {
+     "ref": "Exodus 14:10",
+     "text": "As Pharaoh approached, the Israelites looked up and saw the Egyptians marching after them, and they were terrified and cried out to the LORD."
+    },
+    {
+     "ref": "Exodus 14:13",
+     "text": "But Moses told the people, “Do not be afraid. Stand firm and you will see the LORD’s salvation, which He will accomplish for you today; for the Egyptians you see today, you will never see again."
+    },
+    {
+     "ref": "Exodus 14:28",
+     "text": "The waters flowed back and covered the chariots and horsemen—the entire army of Pharaoh that had chased the Israelites into the sea. Not one of them survived."
+    }
    ]
   },
   {
@@ -534,6 +562,20 @@
      "ref": "Daniel 6:22",
      "text": "My God sent His angel and shut the mouths of the lions. They have not hurt me, for I was found innocent in His sight, and I have done no wrong against you, O king.”",
      "chars": 164
+    }
+   ],
+   "context": [
+    {
+     "ref": "Daniel 6:16",
+     "text": "So the king gave the order, and they brought Daniel and threw him into the den of lions. The king said to Daniel, “May your God, whom you serve continually, deliver you!”"
+    },
+    {
+     "ref": "Daniel 6:18",
+     "text": "Then the king went to his palace and spent the night fasting. No entertainment was brought before him, and sleep fled from him."
+    },
+    {
+     "ref": "Daniel 6:23",
+     "text": "The king was overjoyed and gave orders to lift Daniel out of the den, and when Daniel was lifted out of the den, no wounds whatsoever were found on him, because he had trusted in his God."
     }
    ]
   },
@@ -711,6 +753,20 @@
      "text": "Then Jesus got up and rebuked the wind and the sea. “Silence!” He commanded. “Be still!” And the wind died down, and it was perfectly calm.",
      "chars": 139
     }
+   ],
+   "context": [
+    {
+     "ref": "Mark 4:37",
+     "text": "Soon a violent windstorm came up, and the waves were breaking over the boat, so that it was being swamped."
+    },
+    {
+     "ref": "Mark 4:38",
+     "text": "But Jesus was in the stern, sleeping on the cushion. So they woke Him and said, “Teacher, don’t You care that we are perishing?”"
+    },
+    {
+     "ref": "Mark 4:41",
+     "text": "Overwhelmed with fear, they asked one another, “Who is this, that even the wind and the sea obey Him?”"
+    }
    ]
   },
   {
@@ -886,6 +942,20 @@
      "ref": "Matthew 28:6",
      "text": "He is not here; He has risen, just as He said! Come, see the place where He lay.",
      "chars": 80
+    }
+   ],
+   "context": [
+    {
+     "ref": "Matthew 28:2",
+     "text": "Suddenly there was a great earthquake, for an angel of the Lord descended from heaven, rolled away the stone, and sat on it."
+    },
+    {
+     "ref": "Matthew 28:5",
+     "text": "But the angel said to the women, “Do not be afraid, for I know that you are looking for Jesus, who was crucified."
+    },
+    {
+     "ref": "Matthew 28:8",
+     "text": "So they hurried away from the tomb in fear and great joy, and ran to tell His disciples."
     }
    ]
   },
@@ -1063,6 +1133,20 @@
      "text": "And behold, the dove returned to him in the evening with a freshly plucked olive leaf in her beak. So Noah knew that the waters had receded from the earth.",
      "chars": 155
     }
+   ],
+   "context": [
+    {
+     "ref": "Genesis 8:6",
+     "text": "After forty days Noah opened the window he had made in the ark"
+    },
+    {
+     "ref": "Genesis 8:9",
+     "text": "But the dove found no place to rest her foot, and she returned to him in the ark, because the waters were still covering the surface of all the earth. So he reached out his hand and brought her back inside the ark."
+    },
+    {
+     "ref": "Genesis 8:13",
+     "text": "In Noah’s six hundred and first year, on the first day of the first month, the waters had dried up from the earth. So Noah removed the covering from the ark and saw that the surface of the ground was dry."
+    }
    ]
   },
   {
@@ -1238,6 +1322,20 @@
      "ref": "Genesis 28:12",
      "text": "And Jacob had a dream about a ladder that rested on the earth with its top reaching up to heaven, and God’s angels were going up and down the ladder.",
      "chars": 149
+    }
+   ],
+   "context": [
+    {
+     "ref": "Genesis 28:11",
+     "text": "On reaching a certain place, he spent the night there because the sun had set. And taking one of the stones from that place, he put it under his head and lay down to sleep."
+    },
+    {
+     "ref": "Genesis 28:16",
+     "text": "When Jacob woke up, he said, “Surely the LORD is in this place, and I was unaware of it.”"
+    },
+    {
+     "ref": "Genesis 28:17",
+     "text": "And he was afraid and said, “How awesome is this place! This is none other than the house of God; this is the gate of heaven!”"
     }
    ]
   },
@@ -1415,6 +1513,20 @@
      "text": "There the angel of the LORD appeared to him in a blazing fire from within a bush. Moses saw the bush ablaze with fire, but it was not consumed.",
      "chars": 143
     }
+   ],
+   "context": [
+    {
+     "ref": "Exodus 3:3",
+     "text": "So Moses thought, “I must go over and see this marvelous sight. Why is the bush not burning up?”"
+    },
+    {
+     "ref": "Exodus 3:5",
+     "text": "“Do not come any closer,” God said. “Take off your sandals, for the place where you are standing is holy ground.”"
+    },
+    {
+     "ref": "Exodus 3:6",
+     "text": "Then He said, “I am the God of your father, the God of Abraham, the God of Isaac, and the God of Jacob.” At this, Moses hid his face, for he was afraid to look at God."
+    }
    ]
   },
   {
@@ -1590,6 +1702,20 @@
      "ref": "Exodus 16:14",
      "text": "When the layer of dew had evaporated, there were thin flakes on the desert floor, as fine as frost on the ground.",
      "chars": 113
+    }
+   ],
+   "context": [
+    {
+     "ref": "Exodus 16:2",
+     "text": "And there in the desert the whole congregation of Israel grumbled against Moses and Aaron."
+    },
+    {
+     "ref": "Exodus 16:4",
+     "text": "Then the LORD said to Moses, “Behold, I will rain down bread from heaven for you. Each day the people are to go out and gather enough for that day. In this way I will test whether or not they will follow My instructions."
+    },
+    {
+     "ref": "Exodus 16:35",
+     "text": "The Israelites ate manna forty years, until they came to a land where they could settle; they ate manna until they reached the border of Canaan."
     }
    ]
   },
@@ -1767,6 +1893,20 @@
      "text": "So when the rams’ horns sounded, the people shouted. When they heard the blast of the horn, the people gave a great shout, and the wall collapsed. Then all the people charged straight into the city and captured it.",
      "chars": 214
     }
+   ],
+   "context": [
+    {
+     "ref": "Joshua 6:3",
+     "text": "March around the city with all the men of war, circling the city one time. Do this for six days."
+    },
+    {
+     "ref": "Joshua 6:4",
+     "text": "Have seven priests carry seven rams’ horns in front of the ark. Then on the seventh day, march around the city seven times, while the priests blow the horns."
+    },
+    {
+     "ref": "Joshua 6:16",
+     "text": "After the seventh time around, the priests blew the horns, and Joshua commanded the people, “Shout! For the LORD has given you the city!"
+    }
    ]
   },
   {
@@ -1942,6 +2082,20 @@
      "ref": "1 Samuel 17:45",
      "text": "But David said to the Philistine, “You come against me with sword and spear and javelin, but I come against you in the name of the LORD of Hosts, the God of the armies of Israel, whom you have defied.",
      "chars": 200
+    }
+   ],
+   "context": [
+    {
+     "ref": "1 Samuel 17:4",
+     "text": "Then a champion named Goliath, who was from Gath, came out from the Philistine camp. He was six cubits and a span in height,"
+    },
+    {
+     "ref": "1 Samuel 17:40",
+     "text": "And David took his staff in his hand, selected five smooth stones from the brook, and put them in the pouch of his shepherd’s bag. And with his sling in hand, he approached the Philistine."
+    },
+    {
+     "ref": "1 Samuel 17:49",
+     "text": "Then David reached into his bag, took out a stone, and slung it, striking the Philistine on the forehead. The stone sank into his forehead, and he fell facedown on the ground."
     }
    ]
   },
@@ -2119,6 +2273,20 @@
      "text": "After the earthquake there was a fire, but the LORD was not in the fire. And after the fire came a still, small voice.",
      "chars": 118
     }
+   ],
+   "context": [
+    {
+     "ref": "1 Kings 19:9",
+     "text": "There Elijah entered a cave and spent the night. And the word of the LORD came to him, saying, “What are you doing here, Elijah?”"
+    },
+    {
+     "ref": "1 Kings 19:11",
+     "text": "Then the LORD said, “Go out and stand on the mountain before the LORD. Behold, the LORD is about to pass by.” And a great and mighty wind tore into the mountains and shattered the rocks before the LORD, but the LORD was not in the wind. After the wind there was an earthquake, but the LORD was not in the earthquake."
+    },
+    {
+     "ref": "1 Kings 19:13",
+     "text": "When Elijah heard it, he wrapped his face in his cloak and went out and stood at the mouth of the cave. Suddenly a voice came to him and said, “What are you doing here, Elijah?”"
+    }
    ]
   },
   {
@@ -2294,6 +2462,20 @@
      "ref": "1 Kings 17:6",
      "text": "The ravens would bring him bread and meat in the morning and evening, and he would drink from the brook.",
      "chars": 104
+    }
+   ],
+   "context": [
+    {
+     "ref": "1 Kings 17:3",
+     "text": "“Leave here, turn eastward, and hide yourself by the Brook of Cherith, east of the Jordan."
+    },
+    {
+     "ref": "1 Kings 17:4",
+     "text": "And you are to drink from the brook, and I have commanded the ravens to feed you there.”"
+    },
+    {
+     "ref": "1 Kings 17:7",
+     "text": "Some time later, however, the brook dried up because there had been no rain in the land."
     }
    ]
   },
@@ -2471,6 +2653,20 @@
      "text": "Then Elisha prayed, “O LORD, please open his eyes that he may see.” And the LORD opened the eyes of the young man, and he saw that the hills were full of horses and chariots of fire all around Elisha.",
      "chars": 200
     }
+   ],
+   "context": [
+    {
+     "ref": "2 Kings 6:15",
+     "text": "When the servant of the man of God got up and went out early in the morning, behold, an army with horses and chariots had surrounded the city. So he asked Elisha, “Oh, my master, what are we to do?”"
+    },
+    {
+     "ref": "2 Kings 6:16",
+     "text": "“Do not be afraid,” Elisha answered, “for those who are with us are more than those who are with them.”"
+    },
+    {
+     "ref": "2 Kings 6:18",
+     "text": "As the Arameans came down against him, Elisha prayed to the LORD, “Please strike these people with blindness.” So He struck them with blindness, according to the word of Elisha."
+    }
    ]
   },
   {
@@ -2646,6 +2842,20 @@
      "ref": "Jonah 2:10",
      "text": "And the LORD commanded the fish, and it vomited Jonah onto dry land.",
      "chars": 68
+    }
+   ],
+   "context": [
+    {
+     "ref": "Jonah 1:17",
+     "text": "Now the LORD had appointed a great fish to swallow Jonah, and Jonah spent three days and three nights in the belly of the fish."
+    },
+    {
+     "ref": "Jonah 2:2",
+     "text": "saying: “In my distress I called to the LORD, and He answered me. From the belly of Sheol I called for help, and You heard my voice."
+    },
+    {
+     "ref": "Jonah 2:7",
+     "text": "As my life was fading away, I remembered the LORD. My prayer went up to You, to Your holy temple."
     }
    ]
   },
@@ -2823,6 +3033,20 @@
      "text": "So I prophesied as I had been commanded. And as I prophesied, there was suddenly a noise, a rattling, and the bones came together, bone to bone.",
      "chars": 144
     }
+   ],
+   "context": [
+    {
+     "ref": "Ezekiel 37:1",
+     "text": "The hand of the LORD was upon me, and He brought me out by His Spirit and set me down in the middle of the valley, and it was full of bones."
+    },
+    {
+     "ref": "Ezekiel 37:3",
+     "text": "Then He asked me, “Son of man, can these bones come to life?” “O Lord GOD,” I replied, “only You know.”"
+    },
+    {
+     "ref": "Ezekiel 37:10",
+     "text": "So I prophesied as He had commanded me, and the breath entered them, and they came to life and stood on their feet—a vast army."
+    }
    ]
   },
   {
@@ -2998,6 +3222,20 @@
      "ref": "Daniel 5:5",
      "text": "At that moment the fingers of a human hand appeared and wrote on the plaster of the wall, near the lampstand in the royal palace. As the king watched the hand that was writing,",
      "chars": 176
+    }
+   ],
+   "context": [
+    {
+     "ref": "Daniel 5:1",
+     "text": "Later, King Belshazzar held a great feast for a thousand of his nobles, and he drank wine with them."
+    },
+    {
+     "ref": "Daniel 5:6",
+     "text": "his face grew pale and his thoughts so alarmed him that his hips gave way and his knees knocked together."
+    },
+    {
+     "ref": "Daniel 5:25",
+     "text": "Now this is the inscription that was written: MENE, MENE, TEKEL, PARSIN."
     }
    ]
   },
@@ -3175,6 +3413,20 @@
      "text": "Where were you when I laid the foundations of the earth? Tell Me, if you have understanding.",
      "chars": 92
     }
+   ],
+   "context": [
+    {
+     "ref": "Job 38:1",
+     "text": "Then the LORD answered Job out of the whirlwind and said:"
+    },
+    {
+     "ref": "Job 38:7",
+     "text": "while the morning stars sang together and all the sons of God shouted for joy?"
+    },
+    {
+     "ref": "Job 42:5",
+     "text": "My ears had heard of You, but now my eyes have seen You."
+    }
    ]
   },
   {
@@ -3350,6 +3602,20 @@
      "ref": "Matthew 2:9",
      "text": "After they had heard the king, they went on their way, and the star they had seen in the east went ahead of them until it stood over the place where the Child was.",
      "chars": 163
+    }
+   ],
+   "context": [
+    {
+     "ref": "Matthew 2:1",
+     "text": "After Jesus was born in Bethlehem in Judea, during the time of King Herod, Magi from the east arrived in Jerusalem,"
+    },
+    {
+     "ref": "Matthew 2:2",
+     "text": "asking, “Where is the One who has been born King of the Jews? We saw His star in the east and have come to worship Him.”"
+    },
+    {
+     "ref": "Matthew 2:10",
+     "text": "When they saw the star, they rejoiced with great delight."
     }
    ]
   },
@@ -3527,6 +3793,20 @@
      "text": "After Jesus had said this, He called out in a loud voice, “Lazarus, come out!”",
      "chars": 78
     }
+   ],
+   "context": [
+    {
+     "ref": "John 11:17",
+     "text": "When Jesus arrived, He found that Lazarus had already spent four days in the tomb."
+    },
+    {
+     "ref": "John 11:35",
+     "text": "Jesus wept."
+    },
+    {
+     "ref": "John 11:44",
+     "text": "The man who had been dead came out with his hands and feet bound in strips of linen, and his face wrapped in a cloth. “Unwrap him and let him go,” Jesus told them."
+    }
    ]
   },
   {
@@ -3702,6 +3982,20 @@
      "ref": "Acts 16:26",
      "text": "Suddenly a strong earthquake shook the foundations of the prison. At once all the doors flew open and everyone’s chains came loose.",
      "chars": 131
+    }
+   ],
+   "context": [
+    {
+     "ref": "Acts 16:23",
+     "text": "And after striking them with many blows, they threw them into prison and ordered the jailer to guard them securely."
+    },
+    {
+     "ref": "Acts 16:25",
+     "text": "About midnight Paul and Silas were praying and singing hymns to God, and the other prisoners were listening to them."
+    },
+    {
+     "ref": "Acts 16:29",
+     "text": "Calling for lights, the jailer rushed in and fell trembling before Paul and Silas."
     }
    ]
   },
@@ -3879,6 +4173,20 @@
      "text": "As Saul drew near to Damascus on his journey, suddenly a light from heaven flashed around him.",
      "chars": 94
     }
+   ],
+   "context": [
+    {
+     "ref": "Acts 9:1",
+     "text": "Meanwhile, Saul was still breathing out murderous threats against the disciples of the Lord. He approached the high priest"
+    },
+    {
+     "ref": "Acts 9:4",
+     "text": "He fell to the ground and heard a voice say to him, “Saul, Saul, why do you persecute Me?”"
+    },
+    {
+     "ref": "Acts 9:8",
+     "text": "Saul got up from the ground, but when he opened his eyes he could not see a thing. So they led him by the hand into Damascus."
+    }
    ]
   },
   {
@@ -4054,6 +4362,20 @@
      "ref": "Acts 2:3",
      "text": "They saw tongues like flames of fire that separated and came to rest on each of them.",
      "chars": 85
+    }
+   ],
+   "context": [
+    {
+     "ref": "Acts 2:1",
+     "text": "When the day of Pentecost came, they were all together in one place."
+    },
+    {
+     "ref": "Acts 2:2",
+     "text": "Suddenly a sound like a mighty rushing wind came from heaven and filled the whole house where they were sitting."
+    },
+    {
+     "ref": "Acts 2:4",
+     "text": "And they were all filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them."
     }
    ]
   },
