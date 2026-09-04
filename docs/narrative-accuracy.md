@@ -26,3 +26,15 @@ wrong detail is the kind of thing an attentive reader notices immediately.
 Narrative Reels depict people and should carry Instagram's AI label. Scenery-only
 Reels contain no people and do not. The metadata field `narrative` says which is
 which, and the email states it.
+
+## 7. Guard against anachronism
+
+The first furnace render produced four silhouettes in fur lined parkas. The
+silhouette rule worked, the period did not. Any scene containing figures must
+state the era and the dress explicitly, and "modern clothing, jacket, coat,
+hoodie, jeans, contemporary dress, modern buildings" is now in the negative
+prompt for every narrative scene.
+
+Anachronism is the characteristic failure of biblical scene generation. It does
+not look like a stylistic choice, it looks like a mistake, and on scripture
+content that costs more than a plain background would have.

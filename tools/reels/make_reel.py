@@ -23,8 +23,13 @@ TTS_MODEL = "minimax/speech-02-hd"
 
 FRAME = ("Vertical composition with calm empty space in the upper third for text, "
          "no text, no words, no lettering, no watermark, no people, no faces")
-MOTION_NEG = ("people, person, faces, animals, birds, morphing, warping, melting, distortion, "
-              "fast motion, camera shake, zoom, text, letters, watermark, logo, style change")
+MOTION_NEG = ("faces, facial features, morphing, warping, melting, distortion, extra limbs, "
+              "fast motion, camera shake, zoom, text, letters, watermark, logo, style change, "
+              "modern clothing, jacket, coat, hoodie, jeans, contemporary dress, modern buildings")
+# Anachronism is the failure mode for biblical scenes. The first furnace render put
+# four men in fur lined parkas, which reads as a mistake rather than as reverence.
+PERIOD = ("ancient historical setting, period accurate clothing of the era, long flowing robes, "
+          "no modern objects or dress")
 
 
 def log(m):
@@ -186,11 +191,13 @@ def assemble(clips, verse_png, sign_png, narr, out):
 
     scale = f"scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps=24,setsar=1"
     filt = "".join(f"[{i}:v]{scale}[v{i}];\n" for i in range(len(clips)))
-    prev, off = "v0", CLIP - XFADE
+    # Each clip holds the screen for an equal share, so every authored beat is seen.
+    seg = (total + (len(clips) - 1) * XFADE) / len(clips)
+    prev, off = "v0", seg - XFADE
     for i in range(1, len(clips)):
         lbl = "base" if i == len(clips) - 1 else f"x{i}"
-        filt += f"[{prev}][v{i}]xfade=transition=fade:duration={XFADE}:offset={off}[{lbl}];\n"
-        prev, off = lbl, off + CLIP - XFADE
+        filt += f"[{prev}][v{i}]xfade=transition=fade:duration={XFADE}:offset={off:.2f}[{lbl}];\n"
+        prev, off = lbl, off + seg - XFADE
     ov, sg = len(clips), len(clips) + 1
     filt += (
         f"[{ov}:v]fps=24,format=rgba,fade=t=in:st=0:d=0.9:alpha=1,"
@@ -243,8 +250,13 @@ def main():
     recent = set(json.load(open(carousel)).get("recentVerses", [])) if os.path.exists(carousel) else set()
     recent |= set(ptr.get("recentVerses", []))
 
-    idx = ptr.get("nextSetIndex", 0) % len(sets)
-    for skip in range(len(sets)):
+    force = os.environ.get("CHASTEN_SET_TITLE")
+    if force:
+        idx = next(i for i, x in enumerate(sets) if x["title"] == force)
+        log(f"  forced set: {force}")
+    else:
+        idx = ptr.get("nextSetIndex", 0) % len(sets)
+    for skip in range(0 if force else len(sets)):
         cand = sets[(idx + skip) % len(sets)]
         refs = {v["ref"] for v in cand["verses"][:int(cand.get("verseCount", 1))]}
         if not (refs & recent):
@@ -285,7 +297,7 @@ def main():
     # Narration length decides how much footage to buy, so a long verse gets a
     # third clip instead of overrunning the runway and breaking the edit.
     narr_len = probe_duration(narr)
-    n_clips = clips_needed(narr_len)
+    n_clips = len(scenes) if narrative else clips_needed(narr_len)
     scene_list = [scenes[(si + k) % len(scenes)] for k in range(n_clips)]
     log(f"  narration {narr_len:.1f}s -> {n_clips} clips")
 
@@ -293,7 +305,7 @@ def main():
     stills = []
     for i, sc in enumerate(scene_list, start=1):
         dest = os.path.join(work, f"still{i}.jpg")
-        run_model(IMG_MODEL, {"prompt": f"Cinematic photograph of {sc}. {FRAME}",
+        run_model(IMG_MODEL, {"prompt": f"Cinematic photograph of {sc}. " + (PERIOD + ". " if narrative else "") + FRAME,
                               "aspect_ratio": "9:16", "output_format": "jpg"}, dest)
         stills.append(dest)
         time.sleep(6)
@@ -305,7 +317,8 @@ def main():
         with open(still, "rb") as f:
             uri = "data:image/jpeg;base64," + base64.b64encode(f.read()).decode()
         run_model(VID_MODEL, {
-            "prompt": (f"Gentle natural movement in the scene: {sc}. Light shifts slowly and "
+            "prompt": ((f"{PERIOD}. " if narrative else "") +
+                       f"Gentle natural movement in the scene: {sc}. Light shifts slowly and "
                        "the air moves. Cinematic photographic realism, unhurried. The camera is "
                        "nearly still with only the faintest slow drift."),
             "negative_prompt": MOTION_NEG, "duration": 10, "mode": "pro",
