@@ -213,7 +213,9 @@ def assemble(clips, verse_png, sign_png, narr, out):
         "-i", narr,
         "-/filter_complex", fp,
         "-map", "[vout]", "-map", "[aout]",
-        "-c:v", "libx264", "-preset", "slow", "-crf", "18", "-pix_fmt", "yuv420p", "-r", "24",
+        # CRF 22 rather than 18: Instagram re-encodes on upload, so the extra bits are
+        # discarded anyway, and this roughly halves the download on a phone.
+        "-c:v", "libx264", "-preset", "slow", "-crf", "22", "-pix_fmt", "yuv420p", "-r", "24",
         "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
         "-movflags", "+faststart", "-y", out], check=True)
     os.remove(fp)
