@@ -59,3 +59,17 @@ A still costs about four cents and a clip about a dollar sixty five. The furnace
 failure animated three bad stills before anyone looked at them, wasting roughly
 five dollars to produce something unusable. Generate the stills, look at them,
 and only animate what passes.
+
+## 10. The build audits itself
+
+Every still is checked by a vision model before anything is animated. It fails an
+image that does not show the requested subject, that contains any person, face or
+animal, that shows anything modern, or that simply looks like a mistake.
+
+A failed beat is regenerated once with a stronger instruction. If it fails again
+the whole set is dropped and the build moves to the next story in the rotation.
+Nothing reaches a clip without passing.
+
+This exists because the furnace kept hallucinating people into a scene whose
+prompt said "no people" three times. Prompting alone does not hold. The audit
+costs a fraction of a cent and a clip costs about a dollar sixty five.

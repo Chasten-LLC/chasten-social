@@ -79,6 +79,41 @@ def run_model(model, payload, dest, poll=False, tries=4):
     return dest
 
 
+VLM = "openai/gpt-4o-mini"
+
+
+def audit_still(path, scene, verse_title):
+    """Ask a vision model whether the image is actually usable.
+
+    Stills cost four cents, clips cost about a dollar sixty five, so it is worth a
+    fraction of a cent to find out before animating. Checks the three things that
+    have actually gone wrong: wrong subject, people on screen, anachronism."""
+    with open(path, "rb") as f:
+        uri = "data:image/jpeg;base64," + base64.b64encode(f.read()).decode()
+    q = (f"This image is meant to illustrate a Bible story titled '{verse_title}'. "
+         f"The scene requested was: {scene}\n\n"
+         "Answer strictly as JSON with keys ok (true/false) and reason (one short sentence). "
+         "Set ok to false if ANY of these are true: "
+         "(a) the image does not clearly show the requested subject, "
+         "(b) any person, face, figure or animal is visible, "
+         "(c) anything modern or anachronistic appears such as contemporary clothing, "
+         "vehicles, or modern buildings, "
+         "(d) the image is visually confusing, distorted, or would look like a mistake. "
+         "Otherwise set ok to true.")
+    try:
+        p = api(f"https://api.replicate.com/v1/models/{VLM}/predictions",
+                {"input": {"prompt": q, "image_input": [uri], "temperature": 0,
+                           "max_completion_tokens": 200}}, wait=True)
+        out = p.get("output")
+        txt = "".join(out) if isinstance(out, list) else str(out)
+        m = re.search(r"\{.*?\}", txt, re.S)
+        v = json.loads(m.group()) if m else {"ok": True, "reason": "unparsed"}
+        return bool(v.get("ok", True)), str(v.get("reason", ""))[:120]
+    except Exception as e:
+        log(f"    audit unavailable ({type(e).__name__}), allowing through")
+        return True, "audit skipped"
+
+
 # ---------------------------------------------------------------- typography
 def wrap(draw, text, font, maxw):
     words, lines, cur = text.split(), [], ""
@@ -251,28 +286,69 @@ def main():
     recent |= set(ptr.get("recentVerses", []))
 
     force = os.environ.get("CHASTEN_SET_TITLE")
-    if force:
-        idx = next(i for i, x in enumerate(sets) if x["title"] == force)
-        log(f"  forced set: {force}")
-    else:
-        idx = ptr.get("nextSetIndex", 0) % len(sets)
-    for skip in range(0 if force else len(sets)):
-        cand = sets[(idx + skip) % len(sets)]
-        refs = {v["ref"] for v in cand["verses"][:int(cand.get("verseCount", 1))]}
-        if not (refs & recent):
-            idx = (idx + skip) % len(sets)
-            if skip:
-                log(f"  skipped {skip} set(s) whose verses appeared recently")
-            break
-    vset = sets[idx]
-    tone = vset.get("tone", cfg.get("defaultTone", "gentle"))
-    voice = cfg["voiceByTone"][tone]
-    scenes = vset.get("scenes") or cfg["scenes"][tone]
-    narrative = bool(vset.get("scenes"))
-    si = 0 if narrative else ptr.get("sceneIndex", 0)   # narrative scenes are ordered
+    start = (next(i for i, x in enumerate(sets) if x["title"] == force) if force
+             else ptr.get("nextSetIndex", 0) % len(sets))
+    work = os.path.join(REPO, ".reelwork")
+    os.makedirs(work, exist_ok=True)
 
-    # One verse by default: a Reel is watched, and shorter finishes better. A set can
-    # ask for more when it is telling a story that needs the beats.
+    # Try candidate sets until one produces stills that pass the audit. A story whose
+    # imagery cannot be rendered well is skipped rather than shipped, which is the
+    # whole point: it is cheaper to abandon a set than to animate a bad one.
+    chosen_set = None
+    for attempt in range(6):
+        idx = (start + attempt) % len(sets)
+        cand = sets[idx]
+        cand_refs = {v["ref"] for v in cand["verses"][:int(cand.get("verseCount", 1))]}
+        if not force and (cand_refs & recent):
+            log(f"  skip {cand['title']!r}: verses used recently")
+            continue
+
+        tone = cand.get("tone", cfg.get("defaultTone", "gentle"))
+        scenes = cand.get("scenes") or cfg["scenes"][tone]
+        narrative = bool(cand.get("scenes"))
+        si = 0 if narrative else ptr.get("sceneIndex", 0)
+        n_scenes = len(scenes) if narrative else 2
+        scene_list = [scenes[(si + k) % len(scenes)] for k in range(n_scenes)]
+
+        log(f"  trying {cand['title']!r} [{tone}]")
+        stills, ok = [], True
+        for k, sc in enumerate(scene_list, start=1):
+            # Two rolls per beat. The model keeps adding people to some scenes even
+            # when told not to, and a second attempt usually lands. Four cents each,
+            # so it is far cheaper than dropping a good story over one bad roll.
+            good = False
+            for roll in range(2):
+                dest = os.path.join(work, f"still{idx}_{k}.jpg")
+                if roll:
+                    os.remove(dest)
+                extra = " Absolutely no human figures, no silhouettes, no bodies." if roll else ""
+                run_model(IMG_MODEL,
+                          {"prompt": f"Cinematic photograph of {sc}. "
+                                     + (PERIOD + ". " if narrative else "") + FRAME + extra,
+                           "aspect_ratio": "9:16", "output_format": "jpg"}, dest)
+                good, why = audit_still(dest, sc, cand["title"])
+                log(f"    beat {k}{' retry' if roll else ''}: "
+                    f"{'PASS' if good else 'FAIL'} {why}")
+                if good:
+                    break
+                time.sleep(5)
+            if not good:
+                ok = False
+                break
+            stills.append(dest)
+            time.sleep(5)
+
+        if ok:
+            chosen_set = (idx, cand, tone, scenes, narrative, si, scene_list, stills)
+            break
+        log(f"  dropping {cand['title']!r} and moving on")
+
+    if chosen_set is None:
+        raise SystemExit("no candidate set produced usable stills")
+
+    idx, vset, tone, scenes, narrative, si, scene_list, stills = chosen_set
+    voice = cfg["voiceByTone"][tone]
+
     n_verses = int(vset.get("verseCount", 1))
     chosen = vset["verses"][:n_verses]
     text = " ".join(" ".join(v["text"].split()) for v in chosen)
@@ -280,11 +356,8 @@ def main():
     ref_line = (refs[0] if len(refs) == 1 else f"{refs[0]} to {refs[-1]}") + \
         f"  ·  {settings.get('translation', 'BSB')}"
 
-    work = os.path.join(REPO, ".reelwork")
     outdir = os.path.join(REPO, "reels", today)
-    os.makedirs(work, exist_ok=True)
     os.makedirs(outdir, exist_ok=True)
-
     log(f"{today}  set {idx}: {vset['title']}  tone={tone}  voice={voice['voice_id']}")
 
     log("  narration")
@@ -293,22 +366,24 @@ def main():
     run_model(TTS_MODEL, {"text": speech, "voice_id": voice["voice_id"],
                           "speed": voice.get("speed", 0.9), "pitch": voice.get("pitch", 0),
                           "emotion": "auto", "audio_format": "mp3"}, narr)
-
-    # Narration length decides how much footage to buy, so a long verse gets a
-    # third clip instead of overrunning the runway and breaking the edit.
     narr_len = probe_duration(narr)
-    n_clips = len(scenes) if narrative else clips_needed(narr_len)
-    scene_list = [scenes[(si + k) % len(scenes)] for k in range(n_clips)]
-    log(f"  narration {narr_len:.1f}s -> {n_clips} clips")
 
-    log("  stills")
-    stills = []
-    for i, sc in enumerate(scene_list, start=1):
-        dest = os.path.join(work, f"still{i}.jpg")
-        run_model(IMG_MODEL, {"prompt": f"Cinematic photograph of {sc}. " + (PERIOD + ". " if narrative else "") + FRAME,
-                              "aspect_ratio": "9:16", "output_format": "jpg"}, dest)
-        stills.append(dest)
-        time.sleep(6)
+    # A thematic set may need a third scene once the narration length is known.
+    if not narrative:
+        want = clips_needed(narr_len)
+        while len(stills) < want:
+            k = len(stills) + 1
+            sc = scenes[(si + k - 1) % len(scenes)]
+            dest = os.path.join(work, f"still{idx}_{k}.jpg")
+            run_model(IMG_MODEL, {"prompt": f"Cinematic photograph of {sc}. {FRAME}",
+                                  "aspect_ratio": "9:16", "output_format": "jpg"}, dest)
+            good, why = audit_still(dest, sc, vset["title"])
+            log(f"    extra beat {k}: {'PASS' if good else 'FAIL'} {why}")
+            if not good:
+                break
+            stills.append(dest); scene_list.append(sc)
+    n_clips = len(stills)
+    log(f"  narration {narr_len:.1f}s -> {n_clips} clips")
 
     log("  animating")
     clips = []
