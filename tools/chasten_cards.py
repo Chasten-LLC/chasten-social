@@ -281,7 +281,72 @@ def shadowed_text_layer(size, draw_fn, shadow_color, radius, passes=2):
 
 
 # ----------------------------------------------------------------- render
+def render_cta(spec, fonts, img_dir):
+    """Closing call to action. Same ground, ink, fonts and footer as the verse cards,
+    minus the header and number block, so it reads as slide four rather than an advert."""
+    style = spec.get("style", "paper")
+    ink = spec.get("ink", "amber")
+    text = " ".join(spec["text"].split())
+    pal = PALETTE[style]
+    fills = ink_fills(ink, style)
+    body_ink = fills["ink"] or pal["ink"]
+
+    base = Image.new("RGBA", (CARD_W, CARD_H), rgba(pal["bg"]))
+    overlay = Image.new("RGBA", (CARD_W, CARD_H), (0, 0, 0, 0))
+    od = ImageDraw.Draw(overlay)
+
+    font_size = verse_font_size(len(text) + 60)   # a notch calmer than a full verse
+    pitch = VERSE_LINE_HEIGHT_EM * font_size
+    serif = fonts.serif(font_size)
+    dom_font = fonts.sans(DOMAIN_SIZE)
+    content_w_px = CARD_W - 2 * PAD_SIDE
+    lines = wrap_lines(serif, text, content_w_px, 0)
+
+    footer_h = int(round(WORDMARK_WIDTH / WORDMARK_ASPECT))
+    band_top, band_bottom = PAD_TOP, CARD_H - PAD_BOTTOM - footer_h
+    text_top = band_top + (band_bottom - band_top - len(lines) * pitch) / 2
+    # The wash blocks are what make the verse ink legible on a night ground, so the
+    # call to action carries them too and reads as the same kind of card.
+    ascent, descent = serif.getmetrics()
+    wash_fill = fills["wash"]
+    pad_x = WASH_PAD_X_EM * font_size
+    box_h = pitch - WASH_GAP_EM * font_size
+    for i, (ltxt, lx, lw) in enumerate(lines):
+        line_top = text_top + i * pitch
+        if wash_fill is not None:
+            wx0 = PAD_SIDE + lx - pad_x
+            wy0 = line_top + pitch / 2 - box_h / 2
+            od.rounded_rectangle((wx0, wy0, wx0 + lw + pad_x * 2, wy0 + box_h),
+                                 radius=WASH_RADIUS, fill=wash_fill)
+    for i, (ltxt, lx, lw) in enumerate(lines):
+        baseline = text_top + i * pitch + pitch / 2 + (ascent - descent) / 2
+        od.text((PAD_SIDE + lx, baseline), ltxt, font=serif, fill=rgba(body_ink), anchor="ls")
+
+    wm = Image.open(os.path.join(img_dir, f"wordmark-{pal['wordmark']}.png")).convert("RGBA")
+    wm_h = int(round(WORDMARK_WIDTH / WORDMARK_ASPECT))
+    wm = wm.resize((WORDMARK_WIDTH, wm_h), Image.LANCZOS)
+    wm.putalpha(Image.eval(wm.split()[3], lambda v: int(v * pal["wordmarkOpacity"])))
+    wm_y = CARD_H - PAD_BOTTOM - wm_h
+    overlay.alpha_composite(wm, (PAD_SIDE, wm_y))
+
+    ink_bbox = wm.split()[3].point(lambda v: 255 if v > 110 else 0).getbbox()
+    last_ink_y = wm_y + (ink_bbox[3] if ink_bbox else wm_h)
+    dom_tracking = DOMAIN_TRACKING_EM * DOMAIN_SIZE
+    dom_w = text_width(dom_font, DOMAIN_TEXT, dom_tracking)
+    dom_layer = Image.new("RGBA", (CARD_W, CARD_H), (0, 0, 0, 0))
+    draw_tracked(ImageDraw.Draw(dom_layer), (CARD_W - PAD_SIDE - dom_w, last_ink_y),
+                 DOMAIN_TEXT, dom_font, rgba(pal["ink"]), dom_tracking)
+    dom_layer.putalpha(Image.eval(dom_layer.split()[3], lambda v: int(v * pal["domainOpacity"])))
+    overlay.alpha_composite(dom_layer)
+
+    out = base.copy()
+    out.alpha_composite(overlay)
+    return out.convert("RGB")
+
+
 def render_card(spec, fonts, img_dir):
+    if spec.get("style") == "cta":
+        return render_cta(dict(spec, style=spec.get("ground", "paper")), fonts, img_dir)
     style = spec.get("style", "paper")
     reference = spec["ref"]
     translation = spec.get("translation", "BSB")
@@ -445,7 +510,7 @@ def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("render")
-    r.add_argument("--style", default="paper", choices=["paper", "night", "photo"])
+    r.add_argument("--style", default="paper", choices=["paper", "night", "photo", "cta"])
     r.add_argument("--ink", default="amber")
     r.add_argument("--ref", required=True)
     r.add_argument("--verse", required=True, type=int)

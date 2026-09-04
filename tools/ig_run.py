@@ -160,6 +160,16 @@ def plan(work):
             card["ink"] = ink
         cards.append(card)
 
+    # Slide four: the closing call to action, inheriting today's ink and ground
+    # so it reads as part of the set rather than an advert bolted on the end.
+    cards.append({
+        "style": "cta",
+        "ground": "night" if recipe == "night" else "paper",
+        "ink": ink,
+        "text": settings.get("ctaText", "Follow @chasten.app for Scripture like this every day."),
+        "out": os.path.join(work, "work", f"card{len(cards) + 1}.jpg"),
+    })
+
     plan_doc = {
         "date": today, "postId": today, "setIndex": picked, "newCycle": new_cycle, "recipe": recipe, "ink": ink,
         "title": verse_set["title"], "kind": verse_set["kind"],
@@ -225,7 +235,7 @@ def package(work):
     post_id = plan_doc["postId"]
     card_docs = []
     for i, c in enumerate(plan_doc["cards"], start=1):
-        docs = file_to_docs(c["out"], {"postId": post_id, "index": i, "mime": "image/jpeg", "style": c["style"], "ref": c["fullRef"]})
+        docs = file_to_docs(c["out"], {"postId": post_id, "index": i, "mime": "image/jpeg", "style": c["style"], "ref": c.get("fullRef", "")})
         for d in docs:
             name = f"{post_id}-{i}" if d["parts"] == 1 else f"{post_id}-{i}-{d['part']}"
             dump(os.path.join(out, "cards", f"{name}.json"), d)
