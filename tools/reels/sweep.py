@@ -6,7 +6,7 @@ rendered is found once here rather than one failure at a time in production.
 Resumable and idempotent: existing files are reused, so a rerun costs nothing for
 work already done.
 """
-import importlib.util, json, os, time
+import hashlib, importlib.util, json, os, time
 
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 spec = importlib.util.spec_from_file_location(
@@ -21,8 +21,8 @@ os.makedirs(WORK, exist_ok=True)
 
 # Matches the live build: escalate toward distance, never toward emptiness.
 ESCALATE = ["",
-            " Push any figures further away and smaller in the frame.",
-            " Wide establishing shot from a great distance, figures tiny."]
+            ". Push any figures further away and smaller in the frame.",
+            ". Wide establishing shot from a great distance, figures tiny."]
 
 sets = json.load(open(os.path.join(REPO, "studio/verses/sets.json")))["sets"]
 narratives = [s for s in sets if s.get("kind") == "narrative"]
@@ -34,9 +34,12 @@ for s in narratives:
     slug = "".join(c if c.isalnum() else "-" for c in title)[:28]
     beats, viable = [], True
     for k, sc in enumerate(s["scenes"], start=1):
+        # The scene text is part of the filename, so rewording a scene invalidates
+        # its old images instead of silently reusing a picture of the old wording.
+        h = hashlib.md5(sc.encode()).hexdigest()[:6]
         passed, why, used = False, "", 0
         # Judge whatever is already on disk before paying for anything new.
-        for c in sorted(f for f in os.listdir(WORK) if f.startswith(f"{slug}-{k}-")):
+        for c in sorted(f for f in os.listdir(WORK) if f.startswith(f"{slug}-{k}-{h}-")):
             used += 1
             try:
                 passed, why = mr.audit_still(os.path.join(WORK, c), sc, title)
@@ -47,7 +50,7 @@ for s in narratives:
         for roll in range(used, ROLLS):
             if passed:
                 break
-            dest = os.path.join(WORK, f"{slug}-{k}-{roll}.jpg")
+            dest = os.path.join(WORK, f"{slug}-{k}-{h}-{roll}.jpg")
             try:
                 mr.run_model(mr.IMG_MODEL,
                              {"prompt": f"Cinematic photograph of {sc}. {mr.PERIOD}. "

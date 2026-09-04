@@ -1,52 +1,58 @@
 #!/usr/bin/env python3
 """Lay every narrative set out as one page of thumbnails.
 
-The audit catches faces, anachronism and distortion. It does not reliably catch an
-image that is beautiful but tells the wrong story, so the last check is a person
-looking at all of them at once.
+The audit catches faces, anachronism, distortion and scale. It does not reliably
+catch an image that is beautiful but tells the wrong story, so the last gate is a
+person looking at all of them at once. Two sets per row keeps the page a shape a
+human will actually scroll through.
 """
-import json, os, sys
+import hashlib, json, os, sys
 from PIL import Image, ImageDraw, ImageFont
 
 REPO = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 WORK = os.path.join(REPO, ".sweep")
-FONT = os.path.join(REPO, "tools/assets/fonts/Inter_600SemiBold.ttf")
-TW, TH, PAD, LAB = 210, 373, 12, 26          # 9:16 thumbnails
+SERIF = os.path.join(REPO, "tools/assets/fonts/Inter_600SemiBold.ttf")
+TW, TH, GAP, LAB, PAD, COLS = 180, 320, 6, 26, 16, 2
+BLOCK = 3 * TW + 2 * GAP
+ROWH = LAB + TH + PAD
 
 report = json.load(open(os.path.join(WORK, "report.json")))
 sets = {s["title"]: s for s in
         json.load(open(os.path.join(REPO, "studio/verses/sets.json")))["sets"]}
-titles = [t for t in report if report[t]["verdict"] == "viable"] or list(report)
+titles = sorted(t for t in report if report[t]["verdict"] == "viable") or sorted(report)
 
-cols = 3
-rows = len(titles)
-W = PAD + cols * (TW + PAD)
-RH = LAB + TH + PAD
-sheet = Image.new("RGB", (W, PAD + rows * RH), (18, 18, 20))
+rows = (len(titles) + COLS - 1) // COLS
+W = PAD + COLS * (BLOCK + PAD)
+sheet = Image.new("RGB", (W, PAD + rows * ROWH), (16, 16, 18))
 d = ImageDraw.Draw(sheet)
-f = ImageFont.truetype(FONT, 15)
-fs = ImageFont.truetype(FONT, 12)
+ft = ImageFont.truetype(SERIF, 15)
+fs = ImageFont.truetype(SERIF, 12)
 
-for r, title in enumerate(titles):
-    y = PAD + r * RH
-    d.text((PAD, y + 4), title, font=f, fill=(238, 236, 230))
-    refs = ", ".join(v["ref"] for v in sets[title]["verses"][:sets[title].get("verseCount", 1)])
-    d.text((PAD + d.textlength(title, font=f) + 14, y + 6), refs, font=fs, fill=(140, 138, 132))
+for i, title in enumerate(titles):
+    cx = PAD + (i % COLS) * (BLOCK + PAD)
+    cy = PAD + (i // COLS) * ROWH
+    d.text((cx, cy + 3), title, font=ft, fill=(240, 238, 232))
+    s = sets[title]
+    refs = ", ".join(v["ref"] for v in s["verses"][:s.get("verseCount", 1)])
+    d.text((cx + d.textlength(title, font=ft) + 12, cy + 5), refs, font=fs,
+           fill=(138, 136, 130))
     slug = "".join(c if c.isalnum() else "-" for c in title)[:28]
     for k in range(1, 4):
-        x = PAD + (k - 1) * (TW + PAD)
-        box = (x, y + LAB, x + TW, y + LAB + TH)
-        # Show the roll the audit actually accepted, which is the last one on disk.
-        cands = sorted(f2 for f2 in os.listdir(WORK) if f2.startswith(f"{slug}-{k}-"))
+        h = hashlib.md5(s["scenes"][k - 1].encode()).hexdigest()[:6]
+        x = cx + (k - 1) * (TW + GAP)
+        y = cy + LAB
+        cands = sorted(f for f in os.listdir(WORK) if f.startswith(f"{slug}-{k}-{h}-"))
         if not cands:
-            d.rectangle(box, outline=(60, 58, 56))
-            d.text((x + 8, y + LAB + 8), "none", font=fs, fill=(120, 60, 60))
+            d.rectangle((x, y, x + TW, y + TH), outline=(70, 50, 50))
+            d.text((x + 8, y + 8), "not generated", font=fs, fill=(170, 90, 90))
             continue
-        im = Image.open(os.path.join(WORK, cands[-1])).convert("RGB")
-        im = im.resize((TW, TH), Image.LANCZOS)
-        sheet.paste(im, (x, y + LAB))
-        d.text((x + 6, y + LAB + TH - 18), f"beat {k}", font=fs, fill=(255, 255, 255))
+        # The audit stops at the first roll that passes, so the last file on disk
+        # for a beat is the one it accepted.
+        im = Image.open(os.path.join(WORK, cands[-1])).convert("RGB").resize(
+            (TW, TH), Image.LANCZOS)
+        sheet.paste(im, (x, y))
+        d.text((x + 6, y + TH - 17), f"{k}", font=fs, fill=(255, 255, 255))
 
 out = sys.argv[1] if len(sys.argv) > 1 else os.path.join(WORK, "contact-sheet.jpg")
-sheet.save(out, quality=86)
+sheet.save(out, quality=84)
 print(f"{out}  {sheet.size[0]}x{sheet.size[1]}  {os.path.getsize(out)//1024}KB  {len(titles)} sets")

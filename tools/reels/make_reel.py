@@ -107,15 +107,25 @@ Set ok to FALSE only for one of these clear defects:
      faces and distant figures are all FINE.
   2. Visible anatomical distortion: malformed hands, extra or missing limbs, melted
      or smeared features.
-  3. Something modern: contemporary clothing such as jackets, coats, hoodies or
-     jeans, vehicles, machinery, power lines, modern buildings. Robes, tunics,
-     cloaks, sandals and ancient stonework are period correct and are NOT modern.
-  4. The scene names specific things, such as a dove, a stairway, a city wall or a
-     burning bush. If any of them is missing from the image, or is present but not
-     recognisable as that thing, fail it. A beautiful picture of the right place
-     without the thing that makes it this story is a failure.
+  3. Something from the wrong era: contemporary clothing such as jackets, coats,
+     hoodies or jeans, vehicles, machinery, power lines, modern buildings. Also
+     later Christian architecture in an ancient scene, meaning crosses, church
+     steeples, spires, bell towers or stained glass windows. Robes, tunics, cloaks,
+     sandals and ancient stonework are period correct and are NOT wrong.
+  4. The main subject of the scene is missing or unrecognisable. Decide what the
+     scene is a picture OF, which is usually its most striking element: a dove
+     carrying an olive leaf, a stairway of light, a wall collapsing outward. That
+     thing must be visible and recognisable as itself. Supporting details can be
+     absent without failing the image, so do not check the description noun by
+     noun. The story title is not part of this test, because each image is one
+     moment out of three and the object the story is named for usually belongs to
+     a different moment.
   5. A key object is at an absurd scale, or the image is impossible in a way a
      viewer would read as an error rather than as style.
+  6. Any lettering, writing, numerals, signature or watermark appears anywhere in
+     the frame, including text that is unreadable or invented. Generated writing
+     is always gibberish and is the most recognisably artificial thing an image
+     can contain.
 
 Set ok to TRUE in every other case. Empty landscapes, moody or dark lighting,
 unusual compositions and artistic interpretation are all acceptable."""
@@ -360,9 +370,9 @@ def main():
                 # model to remove people it insists on drawing produced worse
                 # images; pushing them further away produces better ones.
                 extra = ["",
-                         " Push any figures further away and smaller in the frame.",
-                         " Wide establishing shot from a great distance, figures tiny.",
-                         " Landscape and architecture only, no figures at all."][roll]
+                         ". Push any figures further away and smaller in the frame.",
+                         ". Wide establishing shot from a great distance, figures tiny.",
+                         ". Landscape and architecture only, no figures at all."][roll]
                 run_model(IMG_MODEL,
                           {"prompt": f"Cinematic photograph of {sc}. "
                                      + (PERIOD + ". " if narrative else "")

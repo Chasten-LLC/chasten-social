@@ -162,9 +162,9 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "the arched mouth of an enormous ancient brick furnace at night, the entire opening completely engulfed in roaring white and orange fire that pours out past the arch, blinding heat, sparks streaming into a black sky, no people",
-    "the interior of the vaulted brick furnace utterly filled floor to ceiling with roaring white hot fire, flame consuming the whole frame, brickwork glowing orange behind the blaze, overwhelming and immense, no people",
-    "the furnace chamber burned down to deep glowing embers and drifting grey ash, the fire spent, quiet and still, no people"
+    "the arched mouth of an enormous ancient brick furnace at night, the entire opening completely engulfed in roaring white and orange fire that pours out past the arch, blinding heat, sparks streaming into a black sky",
+    "the interior of the vaulted brick furnace utterly filled floor to ceiling with roaring white hot fire, flame consuming the whole frame, brickwork glowing orange behind the blaze, overwhelming and immense",
+    "the vaulted brick furnace afterward, its mouth still glowing with settling embers, heat haze rising from the floor, the chamber quiet"
    ],
    "verses": [
     {
@@ -352,9 +352,9 @@
    "tone": "grand",
    "verseCount": 2,
    "scenes": [
-    "a fierce night wind driving hard across a dark sea, water beginning to draw back, storm sky, moonlight, no people",
-    "towering walls of dark water standing on either side of a wide dry seabed at night, wet sand glistening under moonlight, immense scale, no people",
-    "the long dry path between the standing walls of water under a night sky, still and vast, no people"
+    "a fierce night wind driving hard across a dark sea, water beginning to draw back, storm sky, moonlight",
+    "towering walls of dark water standing on either side of a wide dry seabed at night, wet sand glistening under moonlight, immense scale",
+    "a long dry seabed path running between two towering vertical walls of dark standing water, wet sand underfoot, dawn light ahead"
    ],
    "verses": [
     {
@@ -550,7 +550,7 @@
    "tone": "intimate",
    "verseCount": 1,
    "scenes": [
-    "a deep dark stone pit at night, a single shaft of moonlight falling to the floor far below, no people",
+    "a deep dark stone pit at night, a single shaft of moonlight falling to the floor far below",
     "great lions lying quietly in deep shadow at the edge of a stone chamber, calm and still, seen from a distance",
     "morning light flooding down into the quiet empty stone pit from an opening above"
    ],
@@ -740,9 +740,9 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "a violent black sea at night under lightning, enormous waves, a small wooden boat far off in the distance, no people",
+    "a violent black sea at night under lightning, enormous waves, a small wooden boat far off in the distance",
     "the same sea going suddenly glassy and flat, storm clouds parting, moonlight laid across still water",
-    "dawn over a completely calm sea, soft gold light, utterly quiet, no people"
+    "dawn over a completely calm sea, soft gold light, utterly quiet"
    ],
    "verses": [
     {
@@ -930,7 +930,7 @@
    "tone": "gentle",
    "verseCount": 1,
    "scenes": [
-    "a great round stone rolled away from the mouth of a rock cut tomb at dawn, no people",
+    "a rock cut tomb entrance on a quiet hillside, its round sealing stone about the height of a man rolled aside from the opening, early morning light",
     "soft morning light falling across the bare stone ledge inside an empty tomb, nothing on it",
     "sunrise over a quiet garden outside an open and empty tomb, warm gold light"
    ],
@@ -1120,8 +1120,8 @@
    "tone": "gentle",
    "verseCount": 1,
    "scenes": [
-    "an endless calm sea under a wide grey sky at first light, no land in sight, no people",
-    "a single fresh green olive leaf resting on dark wet driftwood floating on still water, shallow focus",
+    "an endless calm sea under a wide grey sky at first light, no land in sight",
+    "a single white dove in flight low over still grey water, wings spread wide, a small green olive sprig held in its beak, seen from the side against a pale dawn sky",
     "the first dark line of land appearing on the horizon under breaking sun, quiet and hopeful"
    ],
    "verses": [
@@ -1310,7 +1310,7 @@
    "tone": "gentle",
    "verseCount": 1,
    "scenes": [
-    "a bare stony desert hillside at night, one stone set as a pillow, vast star filled sky, no people",
+    "a bare stony desert hillside at night, one stone set as a pillow, vast star filled sky",
     "a great luminous stairway of light rising from the desert floor into a star filled sky, immense and silent",
     "dawn breaking over the empty stone hillside, warm gold light, still and holy"
    ],
@@ -1500,9 +1500,9 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "a dry rocky wilderness at midday, harsh light, scattered thorn bushes, utterly still, no people",
-    "a single thorn bush wrapped entirely in bright flame, burning fiercely yet its branches green and whole",
-    "the same bush still burning as the light shifts toward evening, unconsumed, no people"
+    "a dry rocky wilderness at midday, harsh light, scattered thorn bushes, utterly still",
+    "a single low desert thorn bush completely wrapped in bright flame, its green leaves and branches whole and unburned inside the fire, close view against bare rock",
+    "the same low thorn bush still burning steadily at dusk, green and undamaged within the flames, warm light on the surrounding rock"
    ],
    "verses": [
     {
@@ -1690,7 +1690,7 @@
    "tone": "gentle",
    "verseCount": 1,
    "scenes": [
-    "a vast empty desert camp at dawn, low mist lying on the sand, no people",
+    "a vast empty desert camp at dawn, low mist lying on the sand",
     "fine white flakes like frost covering the desert floor at first light, delicate and strange",
     "warm morning sun rising over the covered wilderness floor, quiet and provided for"
    ],
@@ -1880,8 +1880,8 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "an immense ancient stone city wall standing against a bright hard sky, seen from below, no people",
-    "the great wall collapsing outward in an avalanche of stone and dust, immense scale, no people",
+    "an immense ancient stone city wall standing against a bright hard sky, seen from below",
+    "the immense mud brick wall of an ancient walled city collapsing outward in a cascade of blocks and dust, the town's towers visible behind it",
     "the settled ruin of the fallen wall under clearing dust, the way through it open and empty"
    ],
    "verses": [
@@ -2070,7 +2070,7 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "a wide dry valley between two ridges under a hard bright sky, dust in the air, no people",
+    "a wide dry valley between two ridges under a hard bright sky, dust in the air",
     "one small smooth stone lying in the dust of the valley floor, shallow focus, enormous shadow falling across it",
     "the valley empty and silent afterward, long shadows, wind moving the dust"
    ],
@@ -2260,9 +2260,9 @@
    "tone": "intimate",
    "verseCount": 1,
    "scenes": [
-    "a violent wind tearing across a bare mountainside at night, rock and dust flying, no people",
+    "a violent wind tearing across a bare mountainside at night, rock and dust flying",
     "fire sweeping over the mountain and then dying away to nothing, embers cooling",
-    "the mouth of a cave on a silent mountainside at dawn, utterly still air, soft light, no people"
+    "the mouth of a cave on a silent mountainside at dawn, utterly still air, soft light"
    ],
    "verses": [
     {
@@ -2450,9 +2450,9 @@
    "tone": "intimate",
    "verseCount": 1,
    "scenes": [
-    "a narrow dry ravine with a thin brook running through it, harsh midday sun, no people",
-    "bread and meat left on a flat sunlit stone at the edge of the brook, simple and stark, no people",
-    "the quiet brook at evening, long shadows in the ravine, still water, no people"
+    "a narrow dry ravine with a thin brook running through it, harsh midday sun",
+    "several large black ravens in flight close overhead against a bright pale sky, wings fully spread, one carrying a small piece of bread in its beak",
+    "a flat stone at the edge of a narrow brook in evening light, a piece of bread and a piece of meat left on the stone, still water, deep ravine walls"
    ],
    "verses": [
     {
@@ -2641,7 +2641,7 @@
    "verseCount": 1,
    "scenes": [
     "a small hill town at dawn surrounded by the tents of an encamped army, seen from high above, tense and quiet",
-    "every ridgeline around the town wreathed in burning fire and blinding light at dawn, immense scale, no people",
+    "chariots and horses made entirely of white hot flame standing in ranks along a dark ridgeline at dawn, each horse and chariot clearly formed and burning, against a deep blue sky",
     "the ridgelines returning to ordinary morning light over quiet empty hills"
    ],
    "verses": [
@@ -2830,9 +2830,9 @@
    "tone": "intimate",
    "verseCount": 1,
    "scenes": [
-    "a black storm sea at night from below the surface, dark water above, no people",
+    "a black storm sea at night from below the surface, dark water above",
     "deep underwater darkness with weeds drifting and a faint distant light far above",
-    "an empty stretch of wet sand on a wide shore at sunrise, waves withdrawing, no people"
+    "an empty stretch of wet sand on a wide shore at sunrise, waves withdrawing"
    ],
    "verses": [
     {
@@ -3020,7 +3020,7 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "an immense desert valley floor covered in scattered bleached bones under a pale sky, no people",
+    "an immense desert valley floor covered in scattered bleached bones under a pale sky",
     "a great wind moving across the valley, dust rising, the bones drawing together, seen from a distance",
     "the valley standing silent afterward under a vast sky, the ground swept clean"
    ],
@@ -3205,41 +3205,6 @@
    "tone": "grand"
   },
   {
-   "kind": "narrative",
-   "title": "the writing on the wall",
-   "tone": "grand",
-   "verseCount": 1,
-   "scenes": [
-    "a great torchlit banquet hall at night, gold vessels on long tables, warm flickering light, no people",
-    "glowing letters appearing on the plaster of the palace wall beside the lampstand, light falling on the writing, no faces",
-    "the hall silent and empty afterward, lamps guttering, the writing still faintly glowing"
-   ],
-   "verses": [
-    {
-     "book": "Daniel",
-     "chapter": 5,
-     "verse": 5,
-     "ref": "Daniel 5:5",
-     "text": "At that moment the fingers of a human hand appeared and wrote on the plaster of the wall, near the lampstand in the royal palace. As the king watched the hand that was writing,",
-     "chars": 176
-    }
-   ],
-   "context": [
-    {
-     "ref": "Daniel 5:1",
-     "text": "Later, King Belshazzar held a great feast for a thousand of his nobles, and he drank wine with them."
-    },
-    {
-     "ref": "Daniel 5:6",
-     "text": "his face grew pale and his thoughts so alarmed him that his hips gave way and his knees knocked together."
-    },
-    {
-     "ref": "Daniel 5:25",
-     "text": "Now this is the inscription that was written: MENE, MENE, TEKEL, PARSIN."
-    }
-   ]
-  },
-  {
    "kind": "passage",
    "title": "a living sacrifice",
    "verses": [
@@ -3400,8 +3365,8 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "an enormous dark whirlwind crossing an empty plain under a torn sky, immense scale, no people",
-    "the foundations of the earth seen from impossibly high, mountains and deep ocean trenches, vast",
+    "an enormous dark whirlwind crossing an empty plain under a torn sky, immense scale",
+    "the curve of the earth seen from far above at night, vast mountain ranges and dark ocean trenches below, a thin band of atmosphere glowing at the horizon",
     "the storm passing and clear cold starlight opening over the quiet plain"
    ],
    "verses": [
@@ -3590,9 +3555,9 @@
    "tone": "intimate",
    "verseCount": 1,
    "scenes": [
-    "a vast desert night sky crowded with stars, low dunes, one star noticeably brighter, no people",
-    "the bright star hanging low and still directly above the rooftops of a small sleeping town",
-    "first light over the quiet town, the star fading, warm and ordinary"
+    "a vast desert night sky crowded with stars, low dunes, one star noticeably brighter",
+    "the bright star hanging low and still above the flat mud brick rooftops of a small sleeping ancient town, no towers and no spires",
+    "first light over the quiet flat roofed town of mud brick and stone, the star fading, warm and ordinary"
    ],
    "verses": [
     {
@@ -3780,8 +3745,8 @@
    "tone": "intimate",
    "verseCount": 1,
    "scenes": [
-    "a rock cut tomb sealed with a heavy stone on a quiet hillside, olive trees, late afternoon light, no people",
-    "the stone rolled back and the dark opening of the tomb, light falling into it, no people",
+    "a rock cut tomb sealed with a heavy stone on a quiet hillside, olive trees, late afternoon light",
+    "the stone rolled back and the dark opening of the tomb, light falling into it",
     "the empty grave clothes lying loose on the ground outside the open tomb, warm evening light"
    ],
    "verses": [
@@ -3970,7 +3935,7 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "a deep stone prison corridor at midnight, iron doors, one small torch, no people",
+    "a deep stone prison corridor at midnight, iron doors, one small torch",
     "the stone floor and walls cracking as every iron door swings wide and chains fall loose from the walls",
     "the corridor standing open and empty with night air moving through it, chains on the floor"
    ],
@@ -4160,8 +4125,8 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "a long dusty road running toward a walled city under a hard midday sky, heat haze, no people",
-    "an overwhelming column of white light breaking over the road, bleaching the landscape, no figures",
+    "a long dusty road running toward a walled city under a hard midday sky, heat haze",
+    "an overwhelming column of white light breaking over the road, bleaching the landscape",
     "the empty road afterward under ordinary light, dust settling, quiet"
    ],
    "verses": [
@@ -4350,9 +4315,9 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "an upper room at dawn, plain walls, shuttered window, dust in the light, no people",
+    "an upper room at dawn, plain walls, shuttered window, dust in the light",
     "small flames of fire separating in the air and resting above empty seats around the room, warm and strange",
-    "the room quiet and full of morning light afterward, the flames gone"
+    "the same upper room filled with plain morning light, empty wooden seats along the walls, dust drifting through a broad sunbeam"
    ],
    "verses": [
     {

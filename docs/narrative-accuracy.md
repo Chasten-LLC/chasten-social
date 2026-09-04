@@ -83,12 +83,19 @@ criterion names a defect. And the judge matters as much as the rubric: on six
 stills with a verdict set by looking at them, gpt-4o-mini scored two out of five
 and called a face legible on backs of heads, while gpt-4.1-mini scored four.
 
-Subject fidelity is the weak criterion. The first version asked whether the image
-showed the requested scene "at all", which passed an olive leaf on driftwood for a
-scene whose subject was a dove carrying it, and a landslide in a ravine for the
-walls of Jericho. It now names the test: the specific things the scene calls for
-must be present and recognisable.
+Subject fidelity is the weak criterion, and it does not work. Three rewrites of
+that one rule produced three different failure modes on the same six images: "does
+it show the scene at all" passed an olive leaf for a scene whose subject is a dove
+carrying one; checking the description noun by noun failed a hillside at night for
+a missing pillow stone; asking for the main subject went back to passing the dove
+beat. The model also asserted that a mountain landslide "clearly shows a large wall
+collapsing". This is not a wording problem.
 
-Even so, this is the criterion a model is worst at, so every narrative set gets a
-human read before it goes live. `tools/reels/contact_sheet.py` lays all three
-beats of every set on one page for exactly that.
+So the rule is set to the version that produces no false positives. Everything it
+now misses, it misses by letting an image through, never by killing a good one.
+That is the cheap direction to be wrong in: a false positive deletes a viable story
+and pays to regenerate it, while a false negative costs one person one minute.
+
+That minute is `tools/reels/contact_sheet.py`, which lays all three beats of every
+set on a single page. Subject fidelity is a human gate, and calling it anything
+else would be pretending.
