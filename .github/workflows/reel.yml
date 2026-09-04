@@ -34,10 +34,29 @@ jobs:
           python -m pip install --quiet pillow
           ffmpeg -version | head -1
 
+      - name: Target date
+        id: d
+        run: echo "day=$(TZ=America/Chicago date +%F)" >> "$GITHUB_OUTPUT"
+
+      # Clips cost real money. If a later step fails, a retry should reuse what was
+      # already generated rather than re-buying it, and CI workspaces are ephemeral.
+      - name: Restore work in progress
+        uses: actions/cache/restore@v4
+        with:
+          path: .reelwork
+          key: reelwork-${{ steps.d.outputs.day }}
+
       - name: Build the reel
         env:
           REPLICATE_API_TOKEN: ${{ secrets.REPLICATE_API_TOKEN }}
         run: python tools/reels/make_reel.py
+
+      - name: Save work in progress
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: .reelwork
+          key: reelwork-${{ steps.d.outputs.day }}
 
       - name: Prune reels older than 30 days
         run: |
