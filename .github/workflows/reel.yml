@@ -1,0 +1,83 @@
+name: Build Chasten Reel
+
+# 16:00 UTC is 11:00 America/Chicago during daylight time. Cron does not follow
+# daylight saving, so this needs to move to "0 17" when Central returns to
+# standard time on 2026-11-01, the same shift the carousel routine needs.
+on:
+  schedule:
+    - cron: "0 16 * * 1,3,5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: chasten-reel
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python -m pip install --quiet --upgrade pip
+          python -m pip install --quiet pillow
+          ffmpeg -version | head -1
+
+      - name: Build the reel
+        env:
+          REPLICATE_API_TOKEN: ${{ secrets.REPLICATE_API_TOKEN }}
+        run: python tools/reels/make_reel.py
+
+      - name: Prune reels older than 30 days
+        run: |
+          cutoff=$(date -u -d '30 days ago' +%Y-%m-%d)
+          removed=0
+          for d in reels/*/; do
+            name=$(basename "$d")
+            case "$name" in
+              [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])
+                if [[ "$name" < "$cutoff" ]]; then
+                  # meta.json is tiny and worth keeping as a record; only the video goes.
+                  rm -f "$d/reel.mp4" && removed=$((removed+1))
+                fi ;;
+            esac
+          done
+          echo "pruned $removed video(s) older than $cutoff"
+
+      - name: Commit
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "nothing to commit"
+            exit 0
+          fi
+          git config user.name "Chasten Bot"
+          git config user.email "ricardo@chasten.ai"
+          git add reels studio/state/reels-pointer.json
+          git commit -m "Reel for $(date -u +%Y-%m-%d)"
+          git push
+
+      - name: Summary
+        run: |
+          latest=$(ls -d reels/*/ 2>/dev/null | sort | tail -1)
+          if [ -n "$latest" ] && [ -f "$latest/meta.json" ]; then
+            python - <<'PY'
+          import json, glob, os
+          d = sorted(glob.glob("reels/*/meta.json"))[-1]
+          m = json.load(open(d))
+          print(f"### Reel: {m['title']}")
+          print(f"- tone **{m['tone']}**, voice `{m['voice']}`")
+          print(f"- {m['seconds']}s, {m['sizeBytes']//1024}KB")
+          print(f"- {m['refLine']}")
+          PY
+          fi >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,30 @@
+{
+ "date": "2026-09-04",
+ "setIndex": 0,
+ "title": "when anxiety is loud",
+ "kind": "passage",
+ "tone": "intimate",
+ "voice": "English_Whispering_girl",
+ "verses": [
+  {
+   "ref": "Philippians 4:6",
+   "text": "Be anxious for nothing, but in everything, by prayer and petition, with thanksgiving, present your requests to God."
+  }
+ ],
+ "refLine": "Philippians 4:6  ·  BSB",
+ "onScreenText": "Be anxious for nothing, but in everything, by prayer and petition, with thanksgiving, present your requests to God.",
+ "audioSearch": [
+  "soft piano instrumental",
+  "ambient calm instrumental"
+ ],
+ "scenes": [
+  "low mist lying over a quiet meadow at first light, dew beading on the grass, soft gold",
+  "clear shallow water running over smooth stones, warm afternoon light glinting on the surface"
+ ],
+ "clips": 2,
+ "seconds": 18.31,
+ "narrationSeconds": 13.61,
+ "sizeBytes": 23709797,
+ "url": "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/reels/2026-09-04/reel.mp4",
+ "builtAt": "2026-09-04T06:16:04+00:00"
+}
