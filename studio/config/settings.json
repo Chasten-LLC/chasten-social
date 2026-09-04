@@ -258,7 +258,45 @@
    "totalSeconds": 19.5,
    "audio": "narration only, no music bed. Ric layers an Instagram instrumental after download, which keeps the trending audio surface available.",
    "loudness": "-16 LUFS, -1.5 dBTP"
-  }
+  },
+  "scenes": {
+   "intimate": [
+    "low mist lying over a quiet meadow at first light, dew beading on the grass, soft gold",
+    "clear shallow water running over smooth stones, warm afternoon light glinting on the surface",
+    "a single candle burning in a dark still room, soft warm glow falling on worn wood",
+    "soft window light falling across folded linen, dust motes drifting in the beam",
+    "rain running slowly down a window with warm blurred light beyond"
+   ],
+   "gentle": [
+    "a lush green pasture in soft morning light, gently rolling grass and distant trees",
+    "sunlight falling through a forest canopy, dappled warm light across the floor",
+    "a field of wildflowers in warm late afternoon light, a gentle breeze moving through",
+    "a quiet river bank at golden hour, still water and tall reeds",
+    "soft clouds drifting over open farmland at sunrise, warm and unhurried"
+   ],
+   "grand": [
+    "vast mountain peaks rising above a sea of cloud at sunrise, immense scale",
+    "towering storm clouds over a wide ocean with a single shaft of sunlight breaking through",
+    "an immense night sky crowded with stars above a dark mountain ridge",
+    "huge slow waves on an open sea under dramatic light, weight and scale",
+    "sunrise over an endless desert canyon, vast and utterly still"
+   ]
+  },
+  "audioSearch": {
+   "intimate": [
+    "soft piano instrumental",
+    "ambient calm instrumental"
+   ],
+   "gentle": [
+    "acoustic worship instrumental",
+    "gentle piano instrumental"
+   ],
+   "grand": [
+    "cinematic instrumental",
+    "epic ambient instrumental"
+   ]
+  },
+  "schedule": "Mon, Wed, Fri at 11:00 America/Chicago (0 16 * * 1,3,5 UTC during daylight time)"
  },
  "ctaText": "Follow @chasten.app for Scripture like this every day."
 }
