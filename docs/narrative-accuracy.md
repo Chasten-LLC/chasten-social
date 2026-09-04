@@ -38,3 +38,24 @@ prompt for every narrative scene.
 Anachronism is the characteristic failure of biblical scene generation. It does
 not look like a stylistic choice, it looks like a mistake, and on scripture
 content that costs more than a plain background would have.
+
+## 8. Nothing living on screen
+
+Every image that has worked has been a landscape or a natural phenomenon with
+nothing alive in it. Every failure has had figures: four men in a furnace read as
+four men in a burning corridor, and the crayon attempts were worse.
+
+This is not a prompting problem. It is what the model is good at. So narrative
+scenes show the place and never the people. The verse already says what happened,
+and a viewer supplies the rest more vividly than a render can.
+
+If a story cannot be told by its setting alone, it is not a candidate. Walking on
+water and the feeding of the five thousand both need a figure to mean anything,
+so neither belongs in this library.
+
+## 9. Look at the still before paying to animate
+
+A still costs about four cents and a clip about a dollar sixty five. The furnace
+failure animated three bad stills before anyone looked at them, wasting roughly
+five dollars to produce something unusable. Generate the stills, look at them,
+and only animate what passes.

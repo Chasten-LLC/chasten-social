@@ -240,7 +240,7 @@ def main():
 
     today = os.environ.get("CHASTEN_DATE") or \
         datetime.now(ZoneInfo(settings.get("timezone", "America/Chicago"))).date().isoformat()
-    if ptr.get("lastReelId") == today:
+    if ptr.get("lastReelId") == today and not os.environ.get("CHASTEN_SET_TITLE"):
         log(f"a reel already exists for {today}, nothing to do")
         return
 
@@ -354,6 +354,11 @@ def main():
     # Keep a rolling memory so neither format repeats itself or the other.
     hist = (ptr.get("recentVerses", []) + [v["ref"] for v in chosen])[-90:]
     titles = (ptr.get("recentTitles", []) + [vset["title"]])[-60:]
+    if force:
+        log("  preview build: pointer left untouched")
+        log(f"  done: {mp4} ({meta['sizeBytes']//1024}KB, {meta['seconds']}s)")
+        return
+
     ptr.update({"recentVerses": hist, "recentTitles": titles,
                 "nextSetIndex": (idx + 1) % len(sets), "sceneIndex": ptr.get("sceneIndex", 0) if narrative else (si + n_clips) % len(scenes),
                 "postCount": ptr.get("postCount", 0) + 1, "lastReelId": today})
