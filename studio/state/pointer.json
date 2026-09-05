@@ -1,12 +1,16 @@
 {
- "nextSetIndex": 2,
- "postCount": 2,
+ "nextSetIndex": 3,
+ "postCount": 3,
  "usedSets": [
   0,
-  1
+  1,
+  2
  ],
  "usedBackgrounds": [
-  "5850090"
+  "5850090",
+  "13925600",
+  "28641619",
+  "27977090"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -14,8 +18,11 @@
   "Philippians 4:8",
   "Isaiah 41:10",
   "Psalm 56:3",
-  "Deuteronomy 31:6"
+  "Deuteronomy 31:6",
+  "John 14:27",
+  "Isaiah 26:3",
+  "Psalm 29:11"
  ],
- "lastPostId": "2026-09-04",
- "lastRunAt": "2026-09-04T12:12:04+00:00"
+ "lastPostId": "2026-09-05",
+ "lastRunAt": "2026-09-05T12:05:19+00:00"
 }
