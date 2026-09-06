@@ -214,11 +214,14 @@ def narrate(text, tone, voice, cfg, dest):
         log(f"    reusing {os.path.basename(dest)}")
         return dest
     if cfg.get("ttsEngine") == "elevenlabs" and ELEVEN_KEY and "similarity_boost" in voice:
-        body = {"text": text, "model_id": "eleven_multilingual_v2",
-                "voice_settings": {"stability": voice.get("stability", 0.5),
-                                   "similarity_boost": voice.get("similarity_boost", 0.75),
-                                   "style": 0.0, "use_speaker_boost": True,
-                                   "speed": voice.get("speed", 0.92)}}
+        # v3 reads with more warmth and takes no speed setting; v2 takes one.
+        model = voice.get("model", "eleven_multilingual_v2")
+        vs = {"stability": voice.get("stability", 0.5),
+              "similarity_boost": voice.get("similarity_boost", 0.75),
+              "style": voice.get("style", 0.0), "use_speaker_boost": True}
+        if model != "eleven_v3":
+            vs["speed"] = voice.get("speed", 0.92)
+        body = {"text": text, "model_id": model, "voice_settings": vs}
         req = urllib.request.Request(
             ELEVEN_TTS.format(voice_id=voice["voice_id"]), data=json.dumps(body).encode(),
             headers={"xi-api-key": ELEVEN_KEY, "Content-Type": "application/json",

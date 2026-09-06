@@ -214,25 +214,28 @@
   "note": "Tone is the single source of truth for a Reel. themeTone picks it from the verse set's theme; voiceByTone and sceneByTone both read from it, so imagery and narration always agree.",
   "voiceByTone": {
    "intimate": {
-    "name": "Adelaide",
-    "voice_id": "lXZuyzrZ6b8CjB3O67Yv",
+    "name": "George",
+    "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+    "model": "eleven_v3",
     "stability": 0.5,
-    "similarity_boost": 0.75,
-    "speed": 0.92
+    "similarity_boost": 0.8,
+    "style": 0.2
    },
    "gentle": {
     "name": "George",
     "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+    "model": "eleven_v3",
     "stability": 0.5,
-    "similarity_boost": 0.75,
-    "speed": 0.92
+    "similarity_boost": 0.8,
+    "style": 0.2
    },
    "grand": {
-    "name": "Brian",
-    "voice_id": "nPczCjzI2devNBz1zQrb",
+    "name": "George",
+    "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+    "model": "eleven_v3",
     "stability": 0.5,
-    "similarity_boost": 0.75,
-    "speed": 0.9
+    "similarity_boost": 0.8,
+    "style": 0.2
    }
   },
   "defaultTone": "gentle",
@@ -331,41 +334,33 @@
   },
   "ttsEngine": "elevenlabs",
   "voiceAlternates": {
-   "intimate": [
+   "note": "Ric's 2026-09-06 audition on Isaiah 41:10. Keep: Rafaga, Bill, George (v2 and v3), Daniel. Bill for the oldest, heaviest passages when a change is wanted. The rest were no good.",
+   "grand": [
     {
-     "name": "Sandy",
-     "voice_id": "xtD8kz4biDGy4pHifOPU"
+     "name": "Bill",
+     "voice_id": "pqHfZKP75CvOlQylNhV4",
+     "model": "eleven_multilingual_v2"
     },
     {
-     "name": "Matilda",
-     "voice_id": "XrExE9yKIg1WjnnlVkGX"
-    },
-    {
-     "name": "Char",
-     "voice_id": "5mUVeVsAEbzsNIqtTjUB"
-    },
-    {
-     "name": "Leslie",
-     "voice_id": "dCJiLw0u7uTChnwesjaL"
+     "name": "Daniel",
+     "voice_id": "onwK4e9ZLuTAKqWW03F9",
+     "model": "eleven_multilingual_v2"
     }
    ],
    "gentle": [
     {
-     "name": "Sarah",
-     "voice_id": "EXAVITQu4vr4xnSDxMaL"
+     "name": "Rafaga",
+     "voice_id": "68sMPAsdt7bCNPLgaEmA",
+     "model": "eleven_multilingual_v2"
     }
    ],
-   "grand": [
+   "intimate": [
     {
-     "name": "Bill",
-     "voice_id": "pqHfZKP75CvOlQylNhV4"
-    },
-    {
-     "name": "George",
-     "voice_id": "JBFqnCBsd6RMkjVDRZzb"
+     "name": "Rafaga",
+     "voice_id": "68sMPAsdt7bCNPLgaEmA",
+     "model": "eleven_multilingual_v2"
     }
-   ],
-   "note": "Auditioned on Psalm 23. Ric ruled out British accents: Alice and Lily. Adelaide was the clear pick for intimate, Sandy and Matilda close behind."
+   ]
   },
   "ttsLegacy": {
    "note": "The Replicate minimax voices, kept in case a comparison is ever wanted.",
