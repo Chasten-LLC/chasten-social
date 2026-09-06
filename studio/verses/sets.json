@@ -1890,7 +1890,7 @@
    "verseCount": 1,
    "scenes": [
     "an immense mud brick city wall standing against a bright hard sky, seen from below",
-    "the great wall collapsing outward in a cascade of blocks and dust, the towers behind it coming down",
+    "an immense mud brick city wall collapsing outward in a cascade of blocks and dust, seen from far across empty open ground, the towers behind it coming down",
     "the settled ruin of the fallen wall under clearing dust, the way through it open and empty"
    ],
    "verses": [
@@ -2082,7 +2082,7 @@
    "scenes": [
     "a wide dry valley between two ridges under a hard bright sky, dust hanging in the air",
     "five smooth stones lying in the shallow clear water of a brook, close, sunlight on the water",
-    "the empty valley at evening, long shadows, wind moving the dust"
+    "the valley floor at evening seen from high on the ridge, long shadows, wind moving the dust, uninhabited"
    ],
    "verses": [
     {
@@ -2271,7 +2271,7 @@
    "tone": "intimate",
    "verseCount": 1,
    "scenes": [
-    "a violent wind tearing across a bare mountainside at night, rock and dust flying",
+    "a bare mountainside at night in a violent wind, rock and dust flying, seen from far off, uninhabited",
     "fire sweeping over the mountain and dying away to embers, smoke thinning",
     "the mouth of a cave on the silent mountainside at dawn, utterly still air, soft light"
    ],
@@ -2463,7 +2463,7 @@
    "verseCount": 1,
    "scenes": [
     "a narrow dry ravine with a thin brook running through it, harsh sun on the rock",
-    "several large black ravens in flight close overhead, wings spread, one carrying a piece of bread in its beak",
+    "several large black ravens in flight close overhead against a bright pale sky, wings spread, one carrying a piece of bread in its beak, bare rock below",
     "a piece of bread and a piece of meat on a flat stone at the water's edge, evening light"
    ],
    "verses": [
@@ -2653,8 +2653,8 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "a small hill town at dawn seen from above, tents crowding the slopes below it, mist in the valley",
-    "the ridgelines blazing with fire, shapes of horses and chariots made entirely of flame standing along every hilltop",
+    "a hill town of flat mud brick roofs at dawn seen from high above, mist lying in the valley, the streets empty",
+    "the hills at dawn suddenly blazing with fire along every ridgeline, the whole horizon burning under a dark sky",
     "the fire fading into ordinary morning light over quiet green hills"
    ],
    "verses": [
@@ -3382,7 +3382,7 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "an enormous dark whirlwind crossing an empty plain under a torn sky, immense scale",
+    "an enormous dark whirlwind crossing a completely empty plain under a torn sky, seen from far away, immense scale",
     "inside the storm, dust and debris whirling, lightning flickering within the cloud",
     "the sky clearing to cold bright stars over the silent plain, dust settling"
    ],
@@ -3765,7 +3765,7 @@
    "verseCount": 1,
    "scenes": [
     "a rock cut tomb sealed with a heavy stone on a quiet hillside, olive trees, late afternoon light",
-    "the stone rolled back and the dark opening of the tomb, light falling into it",
+    "the stone rolled back from the dark opening of a rock cut tomb, seen straight on, light falling into it, nobody present",
     "the open tomb in evening light, the stone standing aside, the entrance empty and still"
    ],
    "verses": [
@@ -3955,7 +3955,7 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "a deep stone prison corridor at midnight, iron doors, one small torch guttering",
+    "a deep stone prison corridor at midnight, iron doors, a single burning torch of wood and pitch in an iron bracket",
     "the ground shaking, dust falling from the ceiling, every iron door swinging wide, chains dropping from the walls",
     "the corridor open and empty with night air moving through it, chains lying on the floor"
    ],
@@ -4146,7 +4146,7 @@
    "tone": "grand",
    "verseCount": 1,
    "scenes": [
-    "a long dusty road running toward a walled city under a hard midday sky, heat haze",
+    "a long dusty road running toward a walled city under a hard midday sky, heat haze, the road completely empty",
     "an overwhelming column of white light breaking over the road from above, bleaching the whole landscape",
     "the empty road afterward under ordinary light, dust settling, quiet"
    ],

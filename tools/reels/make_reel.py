@@ -36,8 +36,8 @@ FRAME = ("Vertical composition with calm empty space in the upper third for text
 # viewer at the setting, it does not act the story out. That is also what the models
 # are good at; every failure this week had a person in it.
 SCENERY = ", no people, no faces"
-SETTING = (", no people anywhere, no figures, no silhouettes, no hands, "
-           "only the place, the element and the creature named")
+SETTING = (", uninhabited and deserted, no people anywhere, no figures, no silhouettes, "
+           "no hands, only the place, the element and the creature named")
 MOTION_NEG = ("people, person, human figure, silhouette, hands, faces, facial features, morphing, warping, melting, distortion, extra limbs, "
               "fast motion, camera shake, zoom, text, letters, watermark, logo, style change, "
               "modern clothing, jacket, coat, hoodie, jeans, contemporary dress, modern buildings")
@@ -111,7 +111,8 @@ Reply strictly as JSON with keys ok (true/false) and reason (one short sentence)
 
 Set ok to FALSE only for one of these clear defects:
   1. Any person or human figure at all, however small or distant, including
-     silhouettes, hands, and shadows shaped like people.
+     silhouettes, hands, and shadows shaped like people. Bones, skulls and
+     skeletons are remains, not people, and are expected where the scene names them.
   2. Visible anatomical distortion: malformed hands, extra or missing limbs, melted
      or smeared features.
   3. Something from the wrong era: contemporary clothing such as jackets, coats,

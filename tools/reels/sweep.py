@@ -16,7 +16,7 @@ spec.loader.exec_module(mr)
 
 WORK = os.path.join(REPO, ".sweep")
 REPORT = os.path.join(WORK, "report.json")
-ROLLS = 2          # the live build allows four; two is enough to judge viability
+ROLLS = 3          # the live build allows four; the model puts people on roads and hilltops
 os.makedirs(WORK, exist_ok=True)
 
 # Matches the live build: escalate toward emptiness.
