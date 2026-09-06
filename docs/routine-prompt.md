@@ -46,7 +46,7 @@ It prints the recipe, ink, set title and verse refs. Backgrounds come from `stud
     python3 tools/ig_run.py render $W
     python3 tools/ig_run.py preview $W
 
-Read `$W/work/card1.jpg` once with the Read tool to confirm the verse is legible. This is the only image you may open. If a card is clearly broken, note it in the email and continue.
+Read `$W/work/card1.jpg` once with the Read tool to confirm the verse is legible. This is the only image you may open. If a card is clearly broken, note it in your final reply and continue.
 
 ## STEP 3. Caption
 
