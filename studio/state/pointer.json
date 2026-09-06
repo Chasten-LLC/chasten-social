@@ -1,10 +1,11 @@
 {
- "nextSetIndex": 3,
- "postCount": 3,
+ "nextSetIndex": 4,
+ "postCount": 4,
  "usedSets": [
   0,
   1,
-  2
+  2,
+  3
  ],
  "usedBackgrounds": [
   "5850090",
@@ -21,8 +22,11 @@
   "Deuteronomy 31:6",
   "John 14:27",
   "Isaiah 26:3",
-  "Psalm 29:11"
+  "Psalm 29:11",
+  "1 Peter 5:6",
+  "1 Peter 5:7",
+  "1 Peter 5:10"
  ],
- "lastPostId": "2026-09-05",
- "lastRunAt": "2026-09-05T12:05:19+00:00"
+ "lastPostId": "2026-09-06",
+ "lastRunAt": "2026-09-06T12:06:16+00:00"
 }
