@@ -521,7 +521,10 @@ def main():
     log(f"{today}  set {idx}: {vset['title']}  tone={tone}  voice={voice['voice_id']}")
 
     log("  narration")
-    narr = os.path.join(work, "narr.mp3")
+    # Keyed by set, like the stills and the bed. A retry that lands on a different
+    # set must not inherit another story's narration or clips; the flat names did
+    # exactly that on a local preview, reusing the furnace under the lions.
+    narr = os.path.join(work, f"narr{idx}.mp3")
     narrate(text, tone, voice, cfg, narr)
     narr_len = probe_duration(narr)
 
@@ -546,7 +549,7 @@ def main():
     log("  animating")
     clips = []
     for i, (still, sc) in enumerate(zip(stills, scene_list), start=1):
-        dest = os.path.join(work, f"clip{i}.mp4")
+        dest = os.path.join(work, f"clip{idx}_{i}.mp4")
         with open(still, "rb") as f:
             uri = "data:image/jpeg;base64," + base64.b64encode(f.read()).decode()
         run_model(VID_MODEL, {
