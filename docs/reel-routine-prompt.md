@@ -19,7 +19,7 @@ A GitHub Action built today's Reel before you were called. It wrote:
     reels/<today>/reel.mp4     the finished 1080x1920 video
     reels/<today>/meta.json    everything you need
 
-Your only job is to write the caption and email it to Ric. You are not generating anything.
+Your only job is to write the caption and commit it. You are not generating anything; a GitHub workflow sends it to Slack.
 
 ## STEP 1. Find today's reel
 
@@ -30,7 +30,7 @@ Your only job is to write the caption and email it to Ric. You are not generatin
 
 If reels/<today>/meta.json does not exist, the Action has not finished or it failed. Wait 120 seconds and check once more. If it is still missing, email Ric with subject 'Chasten Reel · <Mon DD> · no video today' saying the build did not produce one and that the Action log is at https://github.com/Chasten-LLC/chasten-social/actions , then stop.
 
-The metadata gives you: title, tone, voice, verses (reference and text), refLine, audioSearch (instrumental search phrases), seconds, narrative (true when the set tells a story), context (background verses for a narrative set, may be absent), and url (the direct download link).
+The metadata gives you: title, tone, voice, verses (reference and text), refLine, audioSearch (instrumental search phrases), seconds, narrative (true when the set tells a story), voiceName (the reader's name), context (background verses for a narrative set, may be absent), and url (the direct download link).
 
 ## STEP 2. Write the caption
 
@@ -49,25 +49,15 @@ When metadata says narrative is true, the Reel is telling a story. Write the hoo
 
 Check mechanically before sending: hook under 110 characters, total under 2200, no em dash, no exclamation mark, 12 to 15 hashtags, all lowercase.
 
-## STEP 3. Email Ric
+## STEP 3. Commit the caption
 
-Gmail send_message to ricardo@chasten.ai.
+    cd $(git rev-parse --show-toplevel) && git fetch -q origin main && git checkout -B main origin/main -q
 
-Subject: 'Chasten Reel · <Mon DD> · <title>'
+Write the caption, exactly the caption text and nothing else, to `reels/$TODAY/caption.md`. Then:
 
-htmlBody, in this order and nothing else:
+    git add reels/$TODAY/caption.md && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "Caption for $TODAY" && git push -q origin main
 
-1. One line: today's Reel is ready, with the url from the metadata as a link labelled 'Download the video'.
-2. One line: Audio: search '<first phrase from audioSearch>' in Instagram's music library and pick an instrumental you like. Add that it must be instrumental, because the verse is already narrated.
-3. When the metadata has a non-empty context array, a bold heading <strong>Story notes</strong> followed by two or three short bullet points drawn ONLY from those context verses, each ending with its reference in brackets. Never state a fact that is not in context or verses, and never add tradition or commentary that scripture does not say. These give Ric something substantial to put in the post beyond the verse itself.
-4. A bold heading <strong>Description</strong> on its own line, then immediately below it the caption inside <pre style="white-space:pre-wrap;font-family:inherit;margin-top:6px"> so Ric can see at a glance which block is the one to copy.
-5. One short line: the tone and voice used, and the length in seconds. Nothing more.
-
-Plain text body: the download link, the audio line, then a line reading 'Description:' and the caption beneath it.
-
-Do not attach the video. Do not embed it. The link is the delivery mechanism.
-
-If Gmail is unavailable or sending fails, retry once, then put the link, audio suggestion and full caption in your final reply so it still reaches Ric.
+Pushing that file triggers the Notify Slack workflow, which posts the download link, the audio suggestion, the story verses from `context` and the caption to Ric's channel. Do not email. If the push fails, retry once; if it still fails, put the download link, the audio suggestion and the full caption in your final reply so it still reaches Ric.
 
 ## STEP 4. Reply
 

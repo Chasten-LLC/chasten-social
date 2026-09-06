@@ -2,11 +2,11 @@ You are running Chasten's daily Instagram verse post. Chasten (chasten.ai) is a 
 
 ## Hard rules
 
-UNATTENDED. Nobody is watching. Never ask a question, never wait for approval. If something fails, record it, make the reasonable call, and keep going. Always reach the email step, even when earlier steps fail.
+UNATTENDED. Nobody is watching. Never ask a question, never wait for approval. If something fails, record it, make the reasonable call, and keep going. Always reach STEP 6, even when earlier steps fail, because the Slack message is sent from the state it commits.
 
 Everything you need is in this git checkout. Do NOT use the Artifact tool at all, for reads or writes. It raises permission prompts that an unattended run cannot answer, which is why this repo exists.
 
-NEVER pull image bytes into your context. Do not cat, Read, echo or print any .b64 file, any base64 string, or any .jpg, with one exception: the single Read of card1.jpg in STEP 2. Never attach files to the email. Images move as file paths and public URLs, never as bytes.
+NEVER pull image bytes into your context. Do not cat, Read, echo or print any .b64 file, any base64 string, or any .jpg, with one exception: the single Read of card1.jpg in STEP 2. Images move as file paths and public URLs, never as bytes.
 
 Never write em dashes in anything you produce. Keep your final reply to one short paragraph.
 
@@ -54,7 +54,7 @@ Read `$W/work/plan.json` and the `captionRules` and `hashtags` in `$R/studio/con
 
 Check mechanically: hook under 110 chars, total under 2200, no em dash, no exclamation mark, 12 to 15 hashtags, all lowercase.
 
-Then choose today's audio. `$W/work/plan.json` has `audioRecent`, the songs suggested on recent days. From `settings.audio.byTheme` take the theme that fits today's set, then pick the first song in that list that is not in `audioRecent`. If every song in that theme is in `audioRecent`, pick the one that appears earliest in `audioRecent`, which is the least recently used. Never suggest the same song two days running. Keep the choice for STEP 6 and STEP 7.
+Then choose today's audio. `$W/work/plan.json` has `audioRecent`, the songs suggested on recent days. From `settings.audio.byTheme` take the theme that fits today's set, then pick the first song in that list that is not in `audioRecent`. If every song in that theme is in `audioRecent`, pick the one that appears earliest in `audioRecent`, which is the least recently used. Never suggest the same song two days running. Keep the choice for STEP 6.
 
 ## STEP 4. Publish the cards to GitHub
 
@@ -103,20 +103,9 @@ Then:
 
 Do this step even when publishing failed, so the pointer advances and tomorrow moves to the next set.
 
-## STEP 7. Email Ric
+## STEP 7. Slack
 
-Gmail `send_message` to ricardo@chasten.ai, following `emailRules` in settings. Short. Ric wants to know it went out and what audio to put on it, nothing else.
-
-Subject: `Chasten IG · <Mon DD> · posted: <set title>` when posted, or `Chasten IG · <Mon DD> · needs a hand: <set title>` when it failed.
-
-htmlBody, in this order and nothing more:
-1. One line: it posted, with the permalink as a link. If it failed, one line naming what failed and saying the cards are in the repo under `posts/<today>` to post by hand.
-2. One line: `Audio idea: search '<song>' in Instagram's music library`, using the song chosen in STEP 3.
-3. The four cards inline, side by side, as `<img src="<public raw URL>" width="130">`. Use the URLs, never base64, never attachments. Skip this line if the push failed, because the URLs will not resolve.
-
-Plain text `body`: the same first two lines. No recipe line, no verse list, no caption block, no account of what the run did. No em dashes.
-
-If Gmail is unavailable or sending fails, retry once, then put the status line and the audio idea in your final reply instead.
+There is nothing to send. Pushing `posts/<today>/post.json` in STEP 6 triggers the Notify Slack workflow, which posts the permalink and the audio idea to Ric's channel from that file. Do not email. If the state push in STEP 6 failed, nothing reaches Slack, so put the status line and the audio idea in your final reply instead.
 
 ## STEP 8. Reply
 
