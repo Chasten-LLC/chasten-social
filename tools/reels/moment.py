@@ -9,9 +9,11 @@ moment, the words revealed as they are spoken, a fact, a close.
 The take is analysed, not trusted: the loudest transient in its audio and the
 biggest motion in its frames must land within SYNC_TOL of each other or the take
 is rejected. The end of that transient is where the moment closes, and the
-reading starts a breath after it. Whatever the take does not cover is a slow
-push into its last frame, because a held frame with intent looks more expensive
-than a second clip that does not match the first.
+reading starts a breath after it. A second take chained from the first's
+last frame carries the reading; whatever footage still does not cover, the
+picture fades to the dark of the setting and the fact and the close sit on that.
+The animal is never looped or frozen: Ric called the loop "extremely creepy",
+and he was right.
 """
 import argparse, json, os, subprocess, sys, tempfile
 import numpy as np
@@ -188,13 +190,18 @@ def build(a):
 
     verse_al = json.load(open(a.verse_align)); fact_al = json.load(open(a.fact_align))
     v_len, f_len = duration(a.verse), duration(a.fact)
-    t_verse = t_close + 0.7                                 # a breath after the jaws shut
-    t_fact = t_verse + v_len + 0.9
+    ext_len = duration(a.extend) if a.extend else 0.0
+    footage = take_len + ext_len
+    t_verse = t_close + 0.5                                 # a breath after the jaws shut
+    # The fact and the close sit on the dark after the footage ends, so the verse
+    # is read over the animal and nothing after it is ever a still.
+    t_fact = max(t_verse + v_len + 0.9, footage + 0.4)
     t_cta = t_fact + f_len + 0.8
-    total = t_cta + 4.0
-    ext = max(0.0, total - take_len)                        # how much the push-in must cover
-    report.update({"verseStart": round(t_verse, 2), "factStart": round(t_fact, 2),
-                   "ctaStart": round(t_cta, 2), "total": round(total, 2), "extension": round(ext, 2)})
+    total = t_cta + 3.6
+    dark = max(0.0, total - footage)
+    report.update({"verseStart": round(t_verse, 2), "footage": round(footage, 2), "factStart": round(t_fact, 2),
+                   "ctaStart": round(t_cta, 2), "total": round(total, 2), "darkTail": round(dark, 2),
+                   "verseOverrunsFootage": round(max(0.0, t_verse + v_len - footage), 2)})
 
     # Overlays: hook until just before the moment, verse lines on their word times,
     # the fact with its reference, then the close.
@@ -212,21 +219,24 @@ def build(a):
     cta = close_card(a.cta, os.path.join(tmp, "cta.png"))
     overlays.append((cta, t_cta, total))
 
-    # Video: the take, then whatever the reading still needs is the lion's own
-    # stare, the last moment of the take played forward and back, so it breathes
-    # instead of freezing.
-    seg = min(1.6, take_len / 3)
+    # Video: the take, the chained take if there is one, and then a fade into the
+    # dark for whatever the footage does not cover. Nothing is looped or held.
     ins = ["-i", a.take]
-    filt = f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},setsar=1,split=2[tk][src];"
-    if ext > 0.05:
-        reps = int(ext / (2 * seg)) + 2
-        filt += (f"[src]trim=start={take_len - seg:.2f},setpts=PTS-STARTPTS,split=2[s1][s2];[s2]reverse[s2r];"
-                 f"[s1][s2r]concat=n=2:v=1:a=0,loop=loop={reps}:size={int(2 * seg * FPS)}:start=0,"
-                 f"trim=duration={ext + 0.3:.2f},setpts=PTS-STARTPTS[ext];[tk][ext]concat=n=2:v=1:a=0[v0];")
+    filt = f"[0:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},setsar=1[t0];"
+    if a.extend:
+        ins += ["-i", a.extend]
+        filt += (f"[1:v]scale={W}:{H}:force_original_aspect_ratio=increase,crop={W}:{H},fps={FPS},setsar=1[t1];"
+                 f"[t0][t1]concat=n=2:v=1:a=0[foot];")
+    else:
+        filt += "[t0]null[foot];"
+    if dark > 0.05:
+        fade = min(1.2, dark)
+        ins += ["-f", "lavfi", "-t", f"{dark + 0.3:.2f}", "-i", f"color=c=black:s={W}x{H}:r={FPS}"]
+        filt += (f"[foot]fade=t=out:st={footage - fade:.2f}:d={fade:.2f}[footf];"
+                 f"[{2 if a.extend else 1}:v]setsar=1[blk];[footf][blk]concat=n=2:v=1:a=0[v0];")
         vin = "[v0]"
     else:
-        filt += "[src]nullsink;"
-        vin = "[tk]"
+        vin = "[foot]"
     idx = ins.count("-i")
     prev = vin
     for i, (png, s, e) in enumerate(overlays):
@@ -241,10 +251,15 @@ def build(a):
     # would crush the moment. Loudness for phones.
     ai = ins.count("-i")
     ins += ["-i", a.verse, "-i", a.fact]
-    tail_start = max(0.0, take_len - 2.5)
-    filt += (f"[0:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[nat][tailsrc];"
-             f"[tailsrc]atrim=start={tail_start:.2f},asetpts=PTS-STARTPTS,aloop=loop=-1:size=120000,"
-             f"adelay={int(take_len * 1000)}|{int(take_len * 1000)},volume=0.45,atrim=duration={total:.2f}[tail];"
+    if a.extend:
+        filt += (f"[0:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo[a0];"
+                 f"[1:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo[a1];"
+                 f"[a0][a1]concat=n=2:v=0:a=1,asplit=2[nat][tailsrc];")
+    else:
+        filt += f"[0:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,asplit=2[nat][tailsrc];"
+    tail_start = max(0.0, footage - 2.5)
+    filt += (f"[tailsrc]atrim=start={tail_start:.2f},asetpts=PTS-STARTPTS,aloop=loop=-1:size=120000,"
+             f"adelay={int(footage * 1000)}|{int(footage * 1000)},volume=0.4,atrim=duration={total:.2f}[tail];"
              f"[nat]apad=whole_dur={total:.2f},atrim=duration={total:.2f}[natp];"
              f"[natp][tail]amix=inputs=2:duration=first:normalize=0[amb];"
              f"[{ai}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
@@ -266,6 +281,8 @@ if __name__ == "__main__":
     for k in ("take", "verse", "verse_align", "fact", "fact_align", "hook", "ref", "fact_ref", "fact_text", "cta", "out"):
         p.add_argument("--" + k.replace("_", "-"), required=True)
     p.add_argument("--force", action="store_true", help="assemble even if a gate fails")
+    p.add_argument("--extend", default="", help="a second take chained from the first's last frame")
     p.add_argument("--trim-start", type=float, default=0.0, help="drop this many seconds from the take's opening")
     p.add_argument("--scene", default="", help="scene text for the frame audit; empty skips it")
-    build(p.parse_args())
+    args = p.parse_args(); args.extend = args.extend or None
+    build(args)
