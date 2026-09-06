@@ -18,7 +18,12 @@ TOKEN = os.environ.get("REPLICATE_API_TOKEN", "").strip()
 W, H = 1080, 1920
 MARGIN = 96
 IMG_MODEL = "black-forest-labs/flux-1.1-pro"
-VID_MODEL = "kwaivgi/kling-v2.1"
+# Kling 2.5 Turbo Pro won a two-round bake-off on 2026-09-06: livelier fire than
+# 2.1 pro on the furnace, held two distant figures still for the full ten seconds
+# on the road, 1080p, and $0.07 a second against $0.09. Seedance 1 Pro Fast was
+# cheaper and looked as good at five seconds, then turned two distant walkers into
+# three horsemen charging the camera by second nine.
+VID_MODEL = "kwaivgi/kling-v2.5-turbo-pro"
 TTS_MODEL = "minimax/speech-02-hd"
 ELEVEN_KEY = os.environ.get("ELEVENLABS_API_KEY", "").strip()
 SFX_URL = "https://api.elevenlabs.io/v1/sound-generation"
@@ -138,7 +143,7 @@ unusual compositions and artistic interpretation are all acceptable."""
 def audit_still(path, scene, verse_title):
     """Ask a vision model whether the image is actually usable.
 
-    Stills cost four cents, clips cost about a dollar sixty five, so it is worth a
+    Stills cost four cents, clips cost seventy cents, so it is worth a
     fraction of a cent to find out before animating.
 
     The first version of this rubric banned people outright and rejected all 23
@@ -559,7 +564,7 @@ def main():
                        f"Gentle natural movement in the scene: {sc}. Light shifts slowly and "
                        "the air moves. Cinematic photographic realism, unhurried. The camera is "
                        "nearly still with only the faintest slow drift."),
-            "negative_prompt": MOTION_NEG, "duration": 10, "mode": "pro",
+            "negative_prompt": MOTION_NEG, "duration": 10, "aspect_ratio": "9:16",
             "start_image": uri}, dest, poll=True)
         clips.append(dest)
         log(f"    clip {i} done")
