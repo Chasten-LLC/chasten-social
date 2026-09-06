@@ -32,19 +32,17 @@ SFX_MAX = 30.0          # the endpoint's ceiling, and longer than any reel so fa
 
 FRAME = ("Vertical composition with calm empty space in the upper third for text, "
          "no text, no words, no lettering, no watermark")
-# Scenery sets are landscapes and stay empty. Narrative sets get people whether we
-# ask for them or not, so direct the model instead of forbidding it: distance and
-# turned backs give reverence, dodge faces, and stop the model fighting the prompt.
+# Nothing living but the creature the scene names. Ric's direction: the reel puts the
+# viewer at the setting, it does not act the story out. That is also what the models
+# are good at; every failure this week had a person in it.
 SCENERY = ", no people, no faces"
-FIGURES = (", any people are small and far away, seen from behind or in silhouette, "
-           "faces never visible")
-MOTION_NEG = ("faces, facial features, morphing, warping, melting, distortion, extra limbs, "
+SETTING = (", no people anywhere, no figures, no silhouettes, no hands, "
+           "only the place, the element and the creature named")
+MOTION_NEG = ("people, person, human figure, silhouette, hands, faces, facial features, morphing, warping, melting, distortion, extra limbs, "
               "fast motion, camera shake, zoom, text, letters, watermark, logo, style change, "
               "modern clothing, jacket, coat, hoodie, jeans, contemporary dress, modern buildings")
-# Anachronism is the failure mode for biblical scenes. The first furnace render put
-# four men in fur lined parkas, which reads as a mistake rather than as reverence.
-PERIOD = ("ancient historical setting, period accurate clothing of the era, long flowing robes, "
-          "no modern objects or dress")
+# With nobody in frame, anachronism means objects and buildings, not clothing.
+PERIOD = "ancient setting, no modern objects, no modern buildings, no lettering"
 
 
 def log(m):
@@ -105,15 +103,15 @@ scripture video. Be fair. Most competent images should pass.
 Story: {title}
 Scene requested: {scene}
 
-Robed or cloaked human figures ARE welcome in these images. Never fail an image
-merely because people appear in it.
+No people appear in these images by design: the reel places the viewer at the
+setting rather than acting the story out. Animals and natural elements named in
+the scene are expected and welcome.
 
 Reply strictly as JSON with keys ok (true/false) and reason (one short sentence).
 
 Set ok to FALSE only for one of these clear defects:
-  1. A human face is legible, meaning you could make out eyes, nose and mouth well
-     enough to describe the person. Silhouettes, backs of heads, hooded or shadowed
-     faces and distant figures are all FINE.
+  1. Any person or human figure at all, however small or distant, including
+     silhouettes, hands, and shadows shaped like people.
   2. Visible anatomical distortion: malformed hands, extra or missing limbs, melted
      or smeared features.
   3. Something from the wrong era: contemporary clothing such as jackets, coats,
@@ -121,14 +119,10 @@ Set ok to FALSE only for one of these clear defects:
      later Christian architecture in an ancient scene, meaning crosses, church
      steeples, spires, bell towers or stained glass windows. Robes, tunics, cloaks,
      sandals and ancient stonework are period correct and are NOT wrong.
-  4. The main subject of the scene is missing or unrecognisable. Decide what the
-     scene is a picture OF, which is usually its most striking element: a dove
-     carrying an olive leaf, a stairway of light, a wall collapsing outward. That
-     thing must be visible and recognisable as itself. Supporting details can be
-     absent without failing the image, so do not check the description noun by
-     noun. The story title is not part of this test, because each image is one
-     moment out of three and the object the story is named for usually belongs to
-     a different moment.
+  4. The creature or element the scene names is missing or unrecognisable. If the
+     description says a lion, a whale, a dove, fire, standing walls of water, a
+     stairway of light or a collapsing wall, that thing must be plainly there and
+     look like itself. Judge against the description, not the story title.
   5. A key object is at an absurd scale, or the image is impossible in a way a
      viewer would read as an error rather than as style.
   6. Any lettering, writing, numerals, signature or watermark appears anywhere in
@@ -143,13 +137,10 @@ unusual compositions and artistic interpretation are all acceptable."""
 def audit_still(path, scene, verse_title):
     """Ask a vision model whether the image is actually usable.
 
-    Stills cost four cents, clips cost seventy cents, so it is worth a
-    fraction of a cent to find out before animating.
-
-    The first version of this rubric banned people outright and rejected all 23
-    narrative sets, including a road to a walled city with two distant silhouettes
-    that was the best image of the sweep. The failures worth catching are legible
-    faces, distortion, anachronism and absurd scale, so it now names only those.
+    Stills cost four cents, clips cost seventy cents, so it is worth a fraction of
+    a cent to find out before animating. People are a defect again, this time as
+    creative direction rather than as a guess; docs/narrative-accuracy.md has the
+    history of the distant-silhouette experiment and why it ended.
     """
     with open(path, "rb") as f:
         uri = "data:image/jpeg;base64," + base64.b64encode(f.read()).decode()
@@ -480,17 +471,16 @@ def main():
                 dest = os.path.join(work, f"still{idx}_{k}.jpg")
                 if roll:
                     os.remove(dest)
-                # Escalate toward distance, not toward emptiness. Ordering the
-                # model to remove people it insists on drawing produced worse
-                # images; pushing them further away produces better ones.
+                # Escalate toward emptiness. Nothing in the scene text asks for
+                # people now, so a stray figure is a slip, and a firmer word removes it.
                 extra = ["",
-                         ". Push any figures further away and smaller in the frame.",
-                         ". Wide establishing shot from a great distance, figures tiny.",
-                         ". Landscape and architecture only, no figures at all."][roll]
+                         ". Nobody is present. The place alone.",
+                         ". Completely deserted, not one person or silhouette anywhere.",
+                         ". Only the landscape, the element and the creature named."][roll]
                 run_model(IMG_MODEL,
                           {"prompt": f"Cinematic photograph of {sc}. "
                                      + (PERIOD + ". " if narrative else "")
-                                     + FRAME + (FIGURES if narrative else SCENERY) + extra,
+                                     + FRAME + (SETTING if narrative else SCENERY) + extra,
                            "aspect_ratio": "9:16", "output_format": "jpg"}, dest)
                 good, why = audit_still(dest, sc, cand["title"])
                 log(f"    beat {k}{f' retry {roll}' if roll else ''}: "

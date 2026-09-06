@@ -11,12 +11,13 @@ wrong detail is the kind of thing an attentive reader notices immediately.
    BSB, take it from the app's own files.
 2. **Do not mix accounts.** The scene illustrates the verse on screen and nothing
    else. Folded linen belongs to John 20, so it cannot appear beside Matthew 28.
-3. **Respect what the text actually says.** Daniel 3:25 says the four were
-   *walking* in the fire, so they are not standing. Exodus 14:21 says the wind blew
-   *all that night*, so the crossing is at night and not at dawn.
-4. **No faces, ever.** Silhouettes, distance, or backs. This is partly reverence and
-   partly that faces are the one thing image models reliably fail at. Figures
-   themselves are welcome; a legible face is not.
+3. **Respect what the text actually says.** Exodus 14:21 says the wind blew *all
+   that night*, so the crossing is at night and not at dawn. Jonah 1:17 says a
+   *great fish*, so captions and notes say great fish even when the footage shows
+   a whale.
+4. **No people, ever.** The reel places the viewer at the setting; it does not
+   act the story out. The creature, the element, the place. This is Ric's
+   direction, and it is also what the models are good at.
 5. **Do not depict Jesus identifiably.** The fourth figure in the furnace stays an
    anonymous silhouette rather than a rendered Christ.
 6. **Review every new narrative set before it runs.** Thematic sets are safe to add
@@ -24,9 +25,9 @@ wrong detail is the kind of thing an attentive reader notices immediately.
 
 ## Labelling
 
-Narrative Reels depict people and should carry Instagram's AI label. Scenery-only
-Reels contain no people and do not. The metadata field `narrative` says which is
-which, and the email states it.
+No Reel depicts a person, so the earlier advice to label narrative Reels no longer
+applies. Meta's reach penalty targets accounts built on a synthetic person, which
+this is not. Whether to label at all stays Ric's call.
 
 ## 7. Guard against anachronism
 
@@ -40,24 +41,24 @@ Anachronism is the characteristic failure of biblical scene generation. It does
 not look like a stylistic choice, it looks like a mistake, and on scripture
 content that costs more than a plain background would have.
 
-## 8. People belong in these scenes, faces do not
+## 8. The setting, not the scene
 
-This rule used to read "nothing living on screen", and it was wrong. It came from
-one bad render, the men in parkas in the furnace, and generalised a costume
-failure into a ban on human presence.
+Ric, 2026-09-06: "I don't ever want you depicting actual scenes. Approach it as
+something relative. Daniel and the lion: footage of a lion, growling, where you
+can see the beast that it is, and then the scripture is read with the growling in
+the background, so it supplements the scripture versus acting it out. The fiery
+furnace: a furnace full of flames, no people, but you hear the crackling. Jonah:
+a whale swimming past with an underwater recording. Peter on the water: rough
+water and a storm, nobody in it. Cinematic, so the audio and video supplement the
+story and make the scripture captivating, like being at the setting, not
+watching it play out."
 
-The ban then rejected all twenty three narrative sets, including a dust road
-running to a walled city with two robed silhouettes on it, which was the best
-image of the sweep. Ordering the model to remove people it insists on drawing
-also made the images worse, not emptier.
-
-So the prompt now directs instead of forbidding: any people are small, far away,
-seen from behind or in silhouette, faces never visible. Distance carries the
-reverence the ban was reaching for, and it is something the model will actually
-do.
-
-Scenery Reels stay empty. That is a different format with a different look, not a
-safety rule.
+So a narrative beat names a creature, an element or a place, never an event with
+people in it. This replaced two earlier rules in one day. The first banned people
+while still trying to depict the story's scene, and got men in parkas in a
+burning corridor. The second let distant silhouettes in, and got a landslide for
+Jericho and three horsemen charging a camera. Both were trying to make the
+models act. They cannot, and they were never asked to again.
 
 ## 9. Look at the still before paying to animate
 

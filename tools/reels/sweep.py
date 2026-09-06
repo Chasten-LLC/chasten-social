@@ -19,10 +19,10 @@ REPORT = os.path.join(WORK, "report.json")
 ROLLS = 2          # the live build allows four; two is enough to judge viability
 os.makedirs(WORK, exist_ok=True)
 
-# Matches the live build: escalate toward distance, never toward emptiness.
+# Matches the live build: escalate toward emptiness.
 ESCALATE = ["",
-            ". Push any figures further away and smaller in the frame.",
-            ". Wide establishing shot from a great distance, figures tiny."]
+            ". Nobody is present. The place alone.",
+            ". Completely deserted, not one person or silhouette anywhere."]
 
 sets = json.load(open(os.path.join(REPO, "studio/verses/sets.json")))["sets"]
 narratives = [s for s in sets if s.get("kind") == "narrative"]
@@ -54,7 +54,7 @@ for s in narratives:
             try:
                 mr.run_model(mr.IMG_MODEL,
                              {"prompt": f"Cinematic photograph of {sc}. {mr.PERIOD}. "
-                                        f"{mr.FRAME}{mr.FIGURES}{ESCALATE[roll]}",
+                                        f"{mr.FRAME}{mr.SETTING}{ESCALATE[roll]}",
                               "aspect_ratio": "9:16", "output_format": "jpg"}, dest)
                 passed, why = mr.audit_still(dest, sc, title)
             except Exception as e:
