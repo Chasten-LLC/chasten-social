@@ -7,7 +7,7 @@ a work directory, then calls this script, which does everything deterministic:
 
   python3 ig_run.py bootstrap WORKDIR     # unpack fonts, wordmarks from db docs
   python3 ig_run.py plan WORKDIR          # choose set/recipe/inks/backgrounds
-  python3 ig_run.py render WORKDIR        # render the 3 cards (JPEG, 1080x1350)
+  python3 ig_run.py render WORKDIR        # render the 4 cards (JPEG, 1080x1350)
   python3 ig_run.py package WORKDIR       # write db docs: state, post, card chunks
   python3 ig_run.py preview WORKDIR       # small inline previews for the email
 
@@ -175,9 +175,11 @@ def plan(work):
         "title": verse_set["title"], "kind": verse_set["kind"],
         "verses": verse_set["verses"][:3], "backgrounds": [b["id"] for b in backgrounds],
         "cards": cards, "postCount": post_count,
+        # What the last few emails suggested, so today's pick is not one of them.
+        "audioRecent": list(pointer.get("usedAudio", []))[-6:],
     }
     dump(os.path.join(work, "work", "plan.json"), plan_doc)
-    print(json.dumps({k: plan_doc[k] for k in ["date", "recipe", "ink", "title", "kind", "backgrounds"]}))
+    print(json.dumps({k: plan_doc[k] for k in ["date", "recipe", "ink", "title", "kind", "backgrounds", "audioRecent"]}))
     print("verses:", [v["ref"] for v in plan_doc["verses"]])
     print("need bg docs:", plan_doc["backgrounds"])
 
@@ -264,9 +266,15 @@ def package(work):
     used_bg += plan_doc["backgrounds"]
     recent = list(pointer.get("recentVerses", [])) + [v["ref"] for v in plan_doc["verses"]]
     recent = recent[-int(os.environ.get("CHASTEN_RECENT_WINDOW", 126)):]  # ~42 posts x 3 verses
+    # The run records the song it suggested so the next runs can avoid it. Two
+    # days in a row suggested the same track because nothing remembered the first.
+    used_audio = list(pointer.get("usedAudio", []))
+    if status.get("audio"):
+        used_audio = (used_audio + [status["audio"]])[-12:]
     new_pointer = {
         "nextSetIndex": (plan_doc["setIndex"] + 1), "postCount": plan_doc["postCount"] + 1,
         "usedSets": used_sets, "usedBackgrounds": used_bg, "recentVerses": recent,
+        "usedAudio": used_audio,
         "lastPostId": post_id, "lastRunAt": post_doc["createdAt"],
     }
     dump(os.path.join(out, "state", "pointer.json"), new_pointer)

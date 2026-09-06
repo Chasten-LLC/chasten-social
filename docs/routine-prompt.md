@@ -54,6 +54,8 @@ Read `$W/work/plan.json` and the `captionRules` and `hashtags` in `$R/studio/con
 
 Check mechanically: hook under 110 chars, total under 2200, no em dash, no exclamation mark, 12 to 15 hashtags, all lowercase.
 
+Then choose today's audio. `$W/work/plan.json` has `audioRecent`, the songs suggested on recent days. From `settings.audio.byTheme` take the theme that fits today's set, then pick the first song in that list that is not in `audioRecent`. If every song in that theme is in `audioRecent`, pick the one that appears earliest in `audioRecent`, which is the least recently used. Never suggest the same song two days running. Keep the choice for STEP 6 and STEP 7.
+
 ## STEP 4. Publish the cards to GitHub
 
 Instagram can only fetch images from a public URL, so the cards must be pushed before STEP 5. The checkout arrives on a detached HEAD, so the branch line below is required.
@@ -63,9 +65,10 @@ Instagram can only fetch images from a public URL, so the cards must be pushed b
     cp $W/work/card1.jpg $R/posts/<today>/1.jpg
     cp $W/work/card2.jpg $R/posts/<today>/2.jpg
     cp $W/work/card3.jpg $R/posts/<today>/3.jpg
+    cp $W/work/card4.jpg $R/posts/<today>/4.jpg
     git add posts && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "Cards for <today>" && git push -q origin main
 
-Confirm each of the three public URLs returns 200:
+Confirm each of the four public URLs returns 200:
 
     curl -sI <url> | head -1
 
@@ -75,9 +78,9 @@ If one 404s, wait 20 seconds and retry, up to three attempts. If the push fails,
 
 Load the Composio Instagram tools with ToolSearch. If none are available, set status "failed" with reason "Composio not connected" and continue.
 
-The carousel takes image URLs directly, so this is two calls, not five. Do not create per image child containers and do not sleep manually.
+The carousel takes image URLs directly, so this is two calls, not one per image. Do not create per image child containers and do not sleep manually.
 
-1. `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id` 28607820282164259, `child_image_urls` set to the three public URLs in slide order, and `caption` set to the contents of `$W/work/caption.txt`. Keep the returned creation_id.
+1. `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id` 28607820282164259, `child_image_urls` set to the four public URLs in slide order with the follow card last, and `caption` set to the contents of `$W/work/caption.txt`. Keep the returned creation_id.
 2. `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with the same `ig_user_id`, that `creation_id`, and `max_wait_seconds` 120. It polls for FINISHED on its own. Keep the returned media id.
 3. `INSTAGRAM_GET_IG_MEDIA` with that media id and `fields` "id,permalink" for the permalink.
 
@@ -87,7 +90,7 @@ If a call fails, retry that one call once. If it still fails, set status "failed
 
 Write `$W/work/status.json`:
 
-    {"status": "posted" or "failed", "permalink": <url or null>, "mediaId": <id or null>, "note": "<one line>"}
+    {"status": "posted" or "failed", "permalink": <url or null>, "mediaId": <id or null>, "audio": "<the song chosen in STEP 3>", "note": "<one line>"}
 
 Then:
 
@@ -108,8 +111,8 @@ Subject: `Chasten IG · <Mon DD> · posted: <set title>` when posted, or `Chaste
 
 htmlBody, in this order and nothing more:
 1. One line: it posted, with the permalink as a link. If it failed, one line naming what failed and saying the cards are in the repo under `posts/<today>` to post by hand.
-2. One line: `Audio idea: search '<song>' in Instagram's music library`, choosing a song from `settings.audio` whose theme fits today's set.
-3. The three cards inline, side by side, as `<img src="<public raw URL>" width="170">`. Use the URLs, never base64, never attachments. Skip this line if the push failed, because the URLs will not resolve.
+2. One line: `Audio idea: search '<song>' in Instagram's music library`, using the song chosen in STEP 3.
+3. The four cards inline, side by side, as `<img src="<public raw URL>" width="130">`. Use the URLs, never base64, never attachments. Skip this line if the push failed, because the URLs will not resolve.
 
 Plain text `body`: the same first two lines. No recipe line, no verse list, no caption block, no account of what the run did. No em dashes.
 
