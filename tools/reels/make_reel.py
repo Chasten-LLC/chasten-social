@@ -116,7 +116,8 @@ Set ok to FALSE only for one of these clear defects:
   2. Visible anatomical distortion: malformed hands, extra or missing limbs, melted
      or smeared features.
   3. Something from the wrong era: contemporary clothing such as jackets, coats,
-     hoodies or jeans, vehicles, machinery, power lines, modern buildings. Also
+     hoodies or jeans, vehicles, machinery, power lines, modern buildings, electric
+     lights, modern furniture such as plastic, folding or theatre seats. Also
      later Christian architecture in an ancient scene, meaning crosses, church
      steeples, spires, bell towers or stained glass windows. Robes, tunics, cloaks,
      sandals and ancient stonework are period correct and are NOT wrong.
