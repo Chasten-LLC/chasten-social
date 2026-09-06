@@ -20,6 +20,10 @@ MARGIN = 96
 IMG_MODEL = "black-forest-labs/flux-1.1-pro"
 VID_MODEL = "kwaivgi/kling-v2.1"
 TTS_MODEL = "minimax/speech-02-hd"
+ELEVEN_KEY = os.environ.get("ELEVENLABS_API_KEY", "").strip()
+SFX_URL = "https://api.elevenlabs.io/v1/sound-generation"
+SFX_MAX = 30.0          # the endpoint's ceiling, and longer than any reel so far,
+                        # so the bed is one continuous take with no loop seam
 
 FRAME = ("Vertical composition with calm empty space in the upper third for text, "
          "no text, no words, no lettering, no watermark")
@@ -159,6 +163,86 @@ def audit_still(path, scene, verse_title):
         return True, "audit skipped"
 
 
+def make_sfx(prompt, seconds, dest):
+    """Generate the sound bed for a narrative reel.
+
+    Returns None on any failure, and every caller treats that as "no bed", so a
+    missing key or a bad response costs a quieter reel and never a failed build.
+    """
+    if not ELEVEN_KEY or not prompt:
+        return None
+    if os.path.exists(dest) and os.path.getsize(dest) > 0:
+        log(f"    reusing {os.path.basename(dest)}")
+        return dest
+    body = json.dumps({"text": prompt,
+                       "duration_seconds": round(min(seconds, SFX_MAX), 1),
+                       # Lower influence keeps the bed atmospheric rather than
+                       # literal, which matters when it plays under scripture.
+                       "prompt_influence": 0.4,
+                       # Not looped: a one-shot lets a stone grind or chains fall
+                       # once, which a seamless loop would have to leave out.
+                       "loop": False}).encode()
+    req = urllib.request.Request(
+        SFX_URL, data=body,
+        headers={"xi-api-key": ELEVEN_KEY, "Content-Type": "application/json",
+                 "Accept": "audio/mpeg"}, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=180) as r:
+            audio = r.read()
+        if len(audio) < 2000:
+            raise ValueError(f"suspiciously small response, {len(audio)} bytes")
+        with open(dest, "wb") as f:
+            f.write(audio)
+        log(f"    bed {probe_duration(dest):.1f}s  {len(audio)//1024}KB")
+        return dest
+    except Exception as e:
+        detail = ""
+        if isinstance(e, urllib.error.HTTPError):
+            detail = f" {e.read()[:200].decode('utf8', 'replace')}"
+        log(f"    sound bed unavailable ({type(e).__name__}{detail}), going without")
+        return None
+
+
+ELEVEN_TTS = "https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
+
+
+def narrate(text, tone, voice, cfg, dest):
+    """Read the verse aloud with ElevenLabs, or with the Replicate minimax
+    voices when the key is missing, so a lost secret costs a lesser reader and
+    never a lost reel. Reuses an existing file like every other paid step."""
+    if os.path.exists(dest) and os.path.getsize(dest) > 0:
+        log(f"    reusing {os.path.basename(dest)}")
+        return dest
+    if cfg.get("ttsEngine") == "elevenlabs" and ELEVEN_KEY and "similarity_boost" in voice:
+        body = {"text": text, "model_id": "eleven_multilingual_v2",
+                "voice_settings": {"stability": voice.get("stability", 0.5),
+                                   "similarity_boost": voice.get("similarity_boost", 0.75),
+                                   "style": 0.0, "use_speaker_boost": True,
+                                   "speed": voice.get("speed", 0.92)}}
+        req = urllib.request.Request(
+            ELEVEN_TTS.format(voice_id=voice["voice_id"]), data=json.dumps(body).encode(),
+            headers={"xi-api-key": ELEVEN_KEY, "Content-Type": "application/json",
+                     "Accept": "audio/mpeg"}, method="POST")
+        try:
+            with urllib.request.urlopen(req, timeout=180) as r:
+                audio = r.read()
+            if len(audio) < 2000:
+                raise ValueError(f"tiny response, {len(audio)} bytes")
+            with open(dest, "wb") as f:
+                f.write(audio)
+            log(f"    {voice.get('name', voice['voice_id'])} read it, {len(audio)//1024}KB")
+            return dest
+        except Exception as e:
+            detail = e.read()[:160].decode("utf8", "replace") if isinstance(e, urllib.error.HTTPError) else ""
+            log(f"    ElevenLabs unavailable ({type(e).__name__} {detail}), falling back to minimax")
+    legacy = cfg.get("ttsLegacy", {})
+    vid = legacy.get("voiceByTone", {}).get(tone) or voice.get("voice_id")
+    speech = re.sub(r"(?<=[,;.])\s+", " <#0.35#> ", text)   # a beat at each clause
+    return run_model(legacy.get("model", TTS_MODEL),
+                     {"text": speech, "voice_id": vid, "speed": 0.9, "pitch": 0,
+                      "emotion": "auto", "audio_format": "mp3"}, dest)
+
+
 # ---------------------------------------------------------------- typography
 def wrap(draw, text, font, maxw):
     words, lines, cur = text.split(), [], ""
@@ -200,7 +284,7 @@ def shadow_image(base, img, xy):
     base.alpha_composite(img, xy)
 
 
-def make_verse_overlay(text, ref, out):
+def make_verse_overlay(text, ref, out, kicker=None):
     serif_p = os.path.join(REPO, "tools/assets/fonts/Literata_400Regular.ttf")
     sans_p = os.path.join(REPO, "tools/assets/fonts/Inter_600SemiBold.ttf")
     img = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -209,8 +293,15 @@ def make_verse_overlay(text, ref, out):
     lines = wrap(ImageDraw.Draw(img), text, fv, W - 2 * MARGIN)
     lh = int(size * 1.36)
 
+    fk = ImageFont.truetype(sans_p, 30)
+
     def draw(d, fill):
         y = 250
+        if kicker:
+            # The story's name, small and spaced, so the first frame already says
+            # what this is without a hook line trying to sell it.
+            d.text((MARGIN, y - 64), "  ".join(kicker.upper()).replace("   ", "   "),
+                   font=fk, fill=(fill[0], fill[1], fill[2], int(fill[3] * 0.8)))
         for ln in lines:
             d.text((MARGIN, y), ln, font=fv, fill=fill)
             y += lh
@@ -248,17 +339,20 @@ def probe_duration(path):
 def clips_needed(narr_seconds, clip=10.0, xfade=0.5):
     """How many clips buy enough runway for this narration plus the sign-off.
     Two minimum, three max: past that the verse is too long and gets trimmed."""
-    need = 1.2 + narr_seconds + 0.9 + 2.6
+    need = 0.8 + narr_seconds + 0.9 + 2.6
     for n in (2, 3):
         if n * clip - (n - 1) * xfade >= need:
             return n
     return 3
 
 
-def assemble(clips, verse_png, sign_png, narr, out):
+def assemble(clips, verse_png, sign_png, narr, out, sfx=None, sfx_gain=0.28):
     """Timings derive from the narration so verses of any length cut correctly.
-    Narration only, no bed: an Instagram instrumental is layered after download."""
-    XFADE, CLIP, NARR_IN, VERSE_IN = 0.5, 10.0, 1.2, 0.5
+
+    A narrative reel may carry a sound bed under the reading. It is ducked by the
+    narration and mixed low, because Ric layers an Instagram instrumental on top
+    after download and the verse has to stay the loudest thing in the file."""
+    XFADE, CLIP, NARR_IN, VERSE_IN = 0.5, 10.0, 0.8, 0.0
     n = probe_duration(narr)
     runway = len(clips) * CLIP - (len(clips) - 1) * XFADE
     verse_hold = NARR_IN + n + 0.3 - VERSE_IN
@@ -280,7 +374,7 @@ def assemble(clips, verse_png, sign_png, narr, out):
         prev, off = lbl, off + seg - XFADE
     ov, sg = len(clips), len(clips) + 1
     filt += (
-        f"[{ov}:v]fps=24,format=rgba,fade=t=in:st=0:d=0.9:alpha=1,"
+        f"[{ov}:v]fps=24,format=rgba,fade=t=in:st=0:d=0.45:alpha=1,"
         f"fade=t=out:st={verse_hold - 0.6:.2f}:d=0.6:alpha=1,setpts=PTS-STARTPTS+{VERSE_IN}/TB[vs];\n"
         f"[{sg}:v]fps=24,format=rgba,fade=t=in:st=0:d=0.5:alpha=1,"
         f"setpts=PTS-STARTPTS+{sign_in:.2f}/TB[sg];\n"
@@ -288,7 +382,20 @@ def assemble(clips, verse_png, sign_png, narr, out):
         f"[b1][sg]overlay=0:0:eof_action=pass,trim=duration={total:.2f},format=yuv420p[vout];\n"
         f"[{sg + 1}:a]adelay={int(NARR_IN*1000)}|{int(NARR_IN*1000)},apad=whole_dur={total:.2f},"
         f"aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
-        f"atrim=duration={total:.2f},loudnorm=I=-16:TP=-1.5:LRA=11[aout]\n")
+        f"atrim=duration={total:.2f}[nar];\n")
+    if sfx:
+        # The bed is keyed by a copy of the narration, so it drops whenever the
+        # verse is being read and comes back up in the gaps between phrases.
+        filt += (
+            f"[nar]asplit=2[narmix][narkey];\n"
+            f"[{sg + 2}:a]aformat=sample_fmts=fltp:sample_rates=48000:channel_layouts=stereo,"
+            f"atrim=duration={total:.2f},apad=whole_dur={total:.2f},volume={sfx_gain},"
+            f"afade=t=in:st=0:d=1.2,afade=t=out:st={max(total - 1.6, 0.1):.2f}:d=1.6[bed0];\n"
+            f"[bed0][narkey]sidechaincompress=threshold=0.02:ratio=12:attack=15:release=350[bed];\n"
+            f"[narmix][bed]amix=inputs=2:duration=first:normalize=0,"
+            f"loudnorm=I=-16:TP=-1.5:LRA=11[aout]\n")
+    else:
+        filt += "[nar]loudnorm=I=-16:TP=-1.5:LRA=11[aout]\n"
     graph = filt.replace("\n", "")
 
     subprocess.run([
@@ -297,6 +404,8 @@ def assemble(clips, verse_png, sign_png, narr, out):
         "-loop", "1", "-t", f"{verse_hold:.2f}", "-i", verse_png,
         "-loop", "1", "-t", f"{sign_dur:.2f}", "-i", sign_png,
         "-i", narr,
+        # A bed shorter than the reel is looped; the fades hide the seam.
+        *(("-stream_loop", "-1", "-i", sfx) if sfx else ()),
         "-filter_complex", graph,
         "-map", "[vout]", "-map", "[aout]",
         # CRF 22 rather than 18: Instagram re-encodes on upload, so the extra bits are
@@ -418,10 +527,7 @@ def main():
 
     log("  narration")
     narr = os.path.join(work, "narr.mp3")
-    speech = re.sub(r"(?<=[,;.])\s+", " <#0.35#> ", text)   # a beat at each clause
-    run_model(TTS_MODEL, {"text": speech, "voice_id": voice["voice_id"],
-                          "speed": voice.get("speed", 0.9), "pitch": voice.get("pitch", 0),
-                          "emotion": "auto", "audio_format": "mp3"}, narr)
+    narrate(text, tone, voice, cfg, narr)
     narr_len = probe_duration(narr)
 
     # A thematic set may need a third scene once the narration length is known.
@@ -461,16 +567,26 @@ def main():
     log("  typography")
     verse_png = os.path.join(work, "verse.png")
     sign_png = os.path.join(work, "signoff.png")
-    make_verse_overlay(text, ref_line, verse_png)
+    make_verse_overlay(text, ref_line, verse_png,
+                       kicker=vset["title"] if narrative else None)
     make_signoff_overlay(sign_png)
+
+    sfx_path, sfx_cfg = None, cfg.get("sfx", {})
+    if narrative and sfx_cfg.get("enabled") and vset.get("sfx"):
+        log("  sound bed")
+        # Ask for a bed long enough to cover the whole reel in one piece where the
+        # endpoint allows it, so there is nothing to loop.
+        sfx_path = make_sfx(vset["sfx"], narr_len + 5.0,
+                            os.path.join(work, f"sfx{idx}.mp3"))
 
     log("  assembling")
     mp4 = os.path.join(outdir, "reel.mp4")
-    total, narr_len = assemble(clips, verse_png, sign_png, narr, mp4)
+    total, narr_len = assemble(clips, verse_png, sign_png, narr, mp4,
+                               sfx=sfx_path, sfx_gain=sfx_cfg.get("gain", 0.28))
 
     meta = {
         "date": today, "setIndex": idx, "title": vset["title"], "kind": vset["kind"],
-        "tone": tone, "voice": voice["voice_id"],
+        "tone": tone, "voice": voice["voice_id"], "voiceName": voice.get("name"),
         "verses": [{"ref": v["ref"], "text": " ".join(v["text"].split())} for v in chosen],
         "narrative": narrative,
         "refLine": ref_line, "onScreenText": text,

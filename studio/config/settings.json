@@ -214,26 +214,25 @@
   "note": "Tone is the single source of truth for a Reel. themeTone picks it from the verse set's theme; voiceByTone and sceneByTone both read from it, so imagery and narration always agree.",
   "voiceByTone": {
    "intimate": {
-    "voice_id": "English_WhimsicalGirl",
-    "speed": 0.9,
-    "pitch": 0
+    "name": "Adelaide",
+    "voice_id": "lXZuyzrZ6b8CjB3O67Yv",
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "speed": 0.92
    },
-   "gentle": [
-    {
-     "voice_id": "English_CalmWoman",
-     "speed": 0.88,
-     "pitch": 0
-    },
-    {
-     "voice_id": "English_UpsetGirl",
-     "speed": 0.88,
-     "pitch": 0
-    }
-   ],
+   "gentle": {
+    "name": "George",
+    "voice_id": "JBFqnCBsd6RMkjVDRZzb",
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "speed": 0.92
+   },
    "grand": {
-    "voice_id": "English_ManWithDeepVoice",
-    "speed": 0.9,
-    "pitch": 0
+    "name": "Brian",
+    "voice_id": "nPczCjzI2devNBz1zQrb",
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "speed": 0.9
    }
   },
   "defaultTone": "gentle",
@@ -324,7 +323,59 @@
     "epic ambient instrumental"
    ]
   },
-  "schedule": "Mon, Wed, Fri at 11:00 America/Chicago (0 16 * * 1,3,5 UTC during daylight time)"
+  "schedule": "Mon, Wed, Fri at 11:00 America/Chicago (0 16 * * 1,3,5 UTC during daylight time)",
+  "sfx": {
+   "note": "Narrative reels only. The bed sits under the reading and is ducked by it, because an Instagram instrumental goes on top after download.",
+   "enabled": true,
+   "gain": 0.28
+  },
+  "ttsEngine": "elevenlabs",
+  "voiceAlternates": {
+   "intimate": [
+    {
+     "name": "Sandy",
+     "voice_id": "xtD8kz4biDGy4pHifOPU"
+    },
+    {
+     "name": "Matilda",
+     "voice_id": "XrExE9yKIg1WjnnlVkGX"
+    },
+    {
+     "name": "Char",
+     "voice_id": "5mUVeVsAEbzsNIqtTjUB"
+    },
+    {
+     "name": "Leslie",
+     "voice_id": "dCJiLw0u7uTChnwesjaL"
+    }
+   ],
+   "gentle": [
+    {
+     "name": "Sarah",
+     "voice_id": "EXAVITQu4vr4xnSDxMaL"
+    }
+   ],
+   "grand": [
+    {
+     "name": "Bill",
+     "voice_id": "pqHfZKP75CvOlQylNhV4"
+    },
+    {
+     "name": "George",
+     "voice_id": "JBFqnCBsd6RMkjVDRZzb"
+    }
+   ],
+   "note": "Auditioned on Psalm 23. Ric ruled out British accents: Alice and Lily. Adelaide was the clear pick for intimate, Sandy and Matilda close behind."
+  },
+  "ttsLegacy": {
+   "note": "The Replicate minimax voices, kept in case a comparison is ever wanted.",
+   "model": "minimax/speech-02-hd",
+   "voiceByTone": {
+    "intimate": "English_WhimsicalGirl",
+    "gentle": "English_CalmWoman",
+    "grand": "English_ManWithDeepVoice"
+   }
+  }
  },
  "ctaText": "Follow @chasten.app for Scripture like this every day."
 }

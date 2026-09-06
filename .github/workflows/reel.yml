@@ -49,6 +49,8 @@ jobs:
       - name: Build the reel
         env:
           REPLICATE_API_TOKEN: ${{ secrets.REPLICATE_API_TOKEN }}
+          # Absent or invalid, the build simply makes a reel with no sound bed.
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
         run: python tools/reels/make_reel.py
 
       - name: Save work in progress
