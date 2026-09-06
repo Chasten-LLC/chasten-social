@@ -119,10 +119,12 @@ Set ok to FALSE only for one of these clear defects:
      later Christian architecture in an ancient scene, meaning crosses, church
      steeples, spires, bell towers or stained glass windows. Robes, tunics, cloaks,
      sandals and ancient stonework are period correct and are NOT wrong.
-  4. The creature or element the scene names is missing or unrecognisable. If the
-     description says a lion, a whale, a dove, fire, standing walls of water, a
-     stairway of light or a collapsing wall, that thing must be plainly there and
-     look like itself. Judge against the description, not the story title.
+  4. Something the scene description itself names as its subject is missing or
+     unrecognisable. Judge ONLY against the scene description. The story title is
+     context and is never a requirement: a beat that describes only water, only a
+     room or only a hillside is complete without any creature or object, even when
+     the title mentions one. When the description does name a creature or an
+     element, it must be plainly there and look like itself.
   5. A key object is at an absurd scale, or the image is impossible in a way a
      viewer would read as an error rather than as style.
   6. Any lettering, writing, numerals, signature or watermark appears anywhere in
