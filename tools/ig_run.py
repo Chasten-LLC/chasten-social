@@ -88,12 +88,20 @@ def bootstrap(work):
 
 # ------------------------------------------------------------------ plan
 def choose_set(sets, pointer):
-    """The next set whose verses have not appeared recently; wraps around."""
+    """The next set whose verses have not appeared recently; wraps around.
+
+    Sets whose tone differs from yesterday's come first. The file groups
+    similar sets together, so walking it in order put four posts on anxiety
+    back to back, and the audio idea repeated right along with them."""
     recent = set(pointer.get("recentVerses", []))
     used = set(pointer.get("usedSets", []))
     n = len(sets)
     start = pointer.get("nextSetIndex", 0) % n
     order = [(start + i) % n for i in range(n)]
+    last = pointer.get("usedSets") or []
+    last_tone = sets[last[-1] % n].get("tone") if last else None
+    order = ([i for i in order if sets[i].get("tone") != last_tone]
+             + [i for i in order if sets[i].get("tone") == last_tone])
     for idx in order:
         if idx in used:
             continue
@@ -250,6 +258,9 @@ def package(work):
         "styles": [c["style"] for c in plan_doc["cards"]],
         "backgrounds": [{"id": c.get("bgId"), "credit": c.get("bgCredit")} for c in plan_doc["cards"] if c.get("bgId")],
         "caption": caption, "cards": card_docs,
+        "audio": status.get("audio"),
+        "cardUrls": [f"https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/posts/{post_id}/{i}.jpg"
+                     for i in range(1, len(plan_doc["cards"]) + 1)],
         "status": status.get("status", "ready"), "permalink": status.get("permalink"), "mediaId": status.get("mediaId"),
         "createdAt": dt.datetime.now(dt.timezone.utc).isoformat(timespec="seconds"),
     }

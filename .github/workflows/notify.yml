@@ -1,0 +1,25 @@
+name: Notify Slack
+
+# Fires when a routine commits a finished post. Pushes made with the workflow
+# token do not trigger this, which is fine: the reel build commits the video,
+# and the message should wait for the caption the routine writes afterwards.
+on:
+  push:
+    branches: [main]
+    paths:
+      - "posts/*/post.json"
+      - "reels/*/caption.md"
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Send
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+        run: python3 tools/notify_slack.py
