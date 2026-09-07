@@ -1,0 +1,49 @@
+{
+ "note": "Shot cards for The Moment. Each names a creature, an element or a place, never a person, and describes the sound to the second. Order is the queue.",
+ "moments": [
+  {
+   "title": "out of the deep",
+   "hook": "Three days in the belly of the fish.",
+   "scene": "a great whale in deep dark blue water, shafts of light from above, no people, no boats",
+   "still": "a great whale gliding through deep dark blue water seen from below and to the side, shafts of light reaching down from far above, immense, close enough to see its eye, drifting particles in the light",
+   "take": "Cinematic, photoreal, underwater. The great whale surges upward through the dark blue water and bursts through the surface in an enormous eruption of white water and spray, then crashes back, the sea heaving. Shafts of light, bubbles, drifting particles. The camera holds nearly still. No people, no boats. Sound: deep underwater pressure, then the violent break of the surface, the roar of falling water, then the sea settling.",
+   "stare": "Cinematic, photoreal, continuous with the previous shot. The sea settling after the whale, the surface heaving gently, foam dissolving, a low shoreline visible in the distance under grey morning light, bubbles rising. Nothing else enters the frame. Camera locked off. No people, no boats. Sound: water settling, a soft wind, gulls far away.",
+   "fact": "Jonah spent three days and three nights in the belly of the fish.",
+   "factRef": "Jonah 1:17",
+   "cta": "Read Jonah 2 in Chasten"
+  },
+  {
+   "title": "walking on the water",
+   "hook": "The fourth watch of the night. The wind against them.",
+   "scene": "open sea in a storm at night, heavy waves, no people, no boats",
+   "still": "open sea at night far from any shore, heavy waves and flying spray under a black sky, wind driving rain across the water",
+   "take": "Cinematic, photoreal. Heavy waves and flying spray on open sea in the dark, wind driving rain across the water; a single bolt of lightning splits the sky and lights the whole heaving sea for an instant, followed by darkness and spray. The camera holds nearly still, low to the water. No people, no boats. Sound: wind, heavy water, then a sharp crack of thunder, then rain.",
+   "stare": "Cinematic, photoreal, continuous with the previous shot. The same sea easing, the waves settling, the rain thinning, the first grey light coming up over the water. Camera locked off. No people, no boats. Sound: wind dropping, water settling.",
+   "fact": "The boat was already far from land, buffeted by the waves because the wind was against it.",
+   "factRef": "Matthew 14:24",
+   "cta": "Read Matthew 14 in Chasten"
+  },
+  {
+   "title": "peace, be still",
+   "hook": "The boat was filling with water.",
+   "scene": "a violent storm at sea, black clouds, lightning, no people, no boats",
+   "still": "black storm clouds piled over open sea, wind tearing the tops off huge waves, rain, no land in sight",
+   "take": "Cinematic, photoreal. Huge waves and driving rain under black clouds; lightning strikes the sea with a blinding flash and the water erupts where it hits, spray flying. The camera holds nearly still. No people, no boats. Sound: the storm, then a deafening crack of thunder, then wind and rain.",
+   "stare": "Cinematic, photoreal, continuous with the previous shot. The same water going flat and glassy, the clouds pulling apart, a shaft of light falling on the calm sea. Camera locked off. No people, no boats. Sound: the wind dying away to silence, gentle water.",
+   "fact": "The waves were breaking over the boat, so that it was being swamped.",
+   "factRef": "Mark 4:37",
+   "cta": "Read Mark 4 in Chasten"
+  },
+  {
+   "title": "the dove and the olive leaf",
+   "hook": "Forty days of rain. Then a leaf.",
+   "scene": "a white dove in flight over endless calm water at dawn, no people",
+   "still": "a single white dove in flight low over endless calm grey water at first light, wings spread, a small green olive sprig in its beak",
+   "take": "Cinematic, photoreal. A single white dove flies low over endless calm water at first light, wings beating, a small green olive sprig in its beak, and lands on a weathered wooden rail in the foreground, folding its wings. The camera holds nearly still. No people. Sound: wingbeats close, the soft flutter of landing, calm water, distant wind.",
+   "stare": "Cinematic, photoreal, continuous with the previous shot. The dove resting on the weathered wooden rail, the olive sprig held in its beak, turning its head slightly, calm grey water and a brightening dawn beyond. Camera locked off. No people. Sound: calm water, a soft breeze, the dove's small movements.",
+   "fact": "Noah waited seven more days and again sent out the dove from the ark.",
+   "factRef": "Genesis 8:10",
+   "cta": "Read Genesis 8 in Chasten"
+  }
+ ]
+}

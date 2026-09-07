@@ -1,24 +1,27 @@
 name: Build Chasten Reel
 
-# 16:00 UTC is 11:00 America/Chicago during daylight time. Cron does not follow
-# daylight saving, so this needs to move to "0 17" when Central returns to
-# standard time on 2026-11-01, the same shift the carousel routine needs.
+# The Moment: one story, one creature or element, one continuous shot with its
+# own sound, the verse read over it. Spends only on steps that passed a gate,
+# under a hard cap per story. See tools/reels/moment_build.py.
 on:
   schedule:
-    - cron: "0 16 * * 1,3,5"
+    - cron: "0 16 * * 1,3,5"   # 11:00 America/Chicago in daylight time; 17 after Nov 1
   workflow_dispatch:
+    inputs:
+      story:
+        description: "Shot card title to build (blank = next in the queue)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
 
-concurrency:
-  group: chasten-reel
-  cancel-in-progress: false
+concurrency: reel-build
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
 
@@ -31,27 +34,26 @@ jobs:
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
           python -m pip install --quiet --upgrade pip
-          python -m pip install --quiet pillow
+          python -m pip install --quiet pillow numpy
           ffmpeg -version | head -1
 
       - name: Target date
         id: d
         run: echo "day=$(TZ=America/Chicago date +%F)" >> "$GITHUB_OUTPUT"
 
-      # Clips cost real money. If a later step fails, a retry should reuse what was
-      # already generated rather than re-buying it, and CI workspaces are ephemeral.
+      # Takes cost real money. A retry reuses what was already bought.
       - name: Restore work in progress
         uses: actions/cache/restore@v4
         with:
           path: .reelwork
           key: reelwork-${{ steps.d.outputs.day }}
 
-      - name: Build the reel
+      - name: Build the Moment
         env:
           REPLICATE_API_TOKEN: ${{ secrets.REPLICATE_API_TOKEN }}
-          # Absent or invalid, the build simply makes a reel with no sound bed.
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
-        run: python tools/reels/make_reel.py
+          CHASTEN_STORY: ${{ inputs.story }}
+        run: python tools/reels/moment_build.py
 
       - name: Save work in progress
         if: always()
@@ -61,44 +63,24 @@ jobs:
           key: reelwork-${{ steps.d.outputs.day }}
 
       - name: Prune reels older than 30 days
+        if: always()
         run: |
           cutoff=$(date -u -d '30 days ago' +%Y-%m-%d)
-          removed=0
           for d in reels/*/; do
             name=$(basename "$d")
             case "$name" in
               [0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9])
-                if [[ "$name" < "$cutoff" ]]; then
-                  # meta.json is tiny and worth keeping as a record; only the video goes.
-                  rm -f "$d/reel.mp4" && removed=$((removed+1))
-                fi ;;
+                if [[ "$name" < "$cutoff" ]] && [ -f "$d/reel.mp4" ]; then git rm -q "$d/reel.mp4"; fi ;;
             esac
           done
-          echo "pruned $removed video(s) older than $cutoff"
 
+      # Runs even when the build shelved the story, so the pointer and the
+      # shelved notice reach the repo and Slack hears about it.
       - name: Commit
+        if: always()
         run: |
-          if [ -z "$(git status --porcelain)" ]; then
-            echo "nothing to commit"
-            exit 0
-          fi
           git config user.name "Chasten Bot"
           git config user.email "ricardo@chasten.ai"
-          git add reels studio/state/reels-pointer.json
-          git commit -m "Reel for $(date -u +%Y-%m-%d)"
-          git push
-
-      - name: Summary
-        run: |
-          latest=$(ls -d reels/*/ 2>/dev/null | sort | tail -1)
-          if [ -n "$latest" ] && [ -f "$latest/meta.json" ]; then
-            python - <<'PY'
-          import json, glob, os
-          d = sorted(glob.glob("reels/*/meta.json"))[-1]
-          m = json.load(open(d))
-          print(f"### Reel: {m['title']}")
-          print(f"- tone **{m['tone']}**, voice `{m['voice']}`")
-          print(f"- {m['seconds']}s, {m['sizeBytes']//1024}KB")
-          print(f"- {m['refLine']}")
-          PY
-          fi >> "$GITHUB_STEP_SUMMARY"
+          git add reels studio/state
+          git commit -q -m "Reel for ${{ steps.d.outputs.day }}" || echo "nothing to commit"
+          git pull -q --rebase origin main && git push -q origin main

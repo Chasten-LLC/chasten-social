@@ -9,6 +9,7 @@ on:
     paths:
       - "posts/*/post.json"
       - "reels/*/caption.md"
+      - "reels/*/shelved.json"
   workflow_dispatch:
 
 jobs:

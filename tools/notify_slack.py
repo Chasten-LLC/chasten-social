@@ -45,15 +45,24 @@ def reel(path):
     day = path.split("/")[1]
     meta = json.load(open(os.path.join(REPO, "reels", day, "meta.json")))
     caption = open(os.path.join(REPO, path)).read().strip()
-    lines = [f":clapper: *Chasten Reel {day}* is ready: <{meta['url']}|Download the video>",
-             f"Audio: search `{meta['audioSearch'][0]}` in Instagram's music library, instrumental only, the verse is already narrated."]
+    g = meta.get("gates", {})
+    lines = [f":clapper: *Chasten Reel {day}* \u00b7 {meta['title']}",
+             f"<{meta['url']}|Download the video> \u00b7 {meta['seconds']:.0f}s \u00b7 ${meta.get('cost', 0):.2f}",
+             f"Hook: {meta.get('hook', '')}", f"Verse: {meta['verses'][0]['ref']}",
+             f"Fact: {meta.get('fact', '')} [{meta.get('factRef', '')}]"]
+    if g:
+        lines.append(f"Gates: sound meets motion {g.get('headMotionAtPeak', '?')}, footage {g.get('footage', '?')}s, dark tail {g.get('darkTail', '?')}s")
     if meta.get("context"):
-        lines.append("*Story notes*")
-        lines += [f"• {v['text']} [{v['ref']}]" for v in meta["context"][:3]]
-    lines.append("*Description*")
-    lines.append("```\n" + caption + "\n```")
-    lines.append(f"_{meta['tone']}, {meta.get('voiceName') or meta['voice']}, {meta['seconds']:.0f}s_")
+        lines.append("*Story notes*"); lines += [f"\u2022 {v['text']} [{v['ref']}]" for v in meta["context"][:3]]
+    lines += ["*Description*", "```\n" + caption + "\n```",
+              ":thumbsup: to post to Instagram, Facebook and YouTube \u00b7 reply here with changes \u00b7 :thumbsdown: to shelve"]
     return "\n".join(lines)
+
+
+def shelved(path):
+    s = json.load(open(os.path.join(REPO, path)))
+    return (f":warning: *Chasten Reel {s['date']}* \u00b7 {s['title']} was shelved: {s['shelved']}. "
+            f"Spent ${s.get('cost', 0):.2f}. The next story in the queue runs next time.")
 
 
 if __name__ == "__main__":
@@ -66,4 +75,6 @@ if __name__ == "__main__":
             send(carousel(f)); sent += 1
         elif f.startswith("reels/") and f.endswith("/caption.md"):
             send(reel(f)); sent += 1
+        elif f.startswith("reels/") and f.endswith("/shelved.json"):
+            send(shelved(f)); sent += 1
     print(f"{sent} message(s)")
