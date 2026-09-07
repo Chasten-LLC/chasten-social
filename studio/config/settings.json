@@ -372,5 +372,11 @@
    }
   }
  },
- "ctaText": "Follow @chasten.app for Scripture like this every day."
+ "ctaText": "Follow @chasten.app for Scripture like this every day.",
+ "facebook": {
+  "note": "Ric manages three Pages. Only this one may ever be posted to. Composio's Facebook toolkit cannot post to a personal profile at all.",
+  "pageId": "1260378077162903",
+  "pageName": "Chasten Bible App",
+  "link": "https://www.facebook.com/1260378077162903"
+ }
 }
