@@ -1,0 +1,18 @@
+{
+ "take": "take1.mp4",
+ "takeSeconds": 8.0,
+ "soundPeak": 3.1,
+ "headMotionAtPeak": 1.0,
+ "biggestMotion": 3.3,
+ "moment_close": 7.55,
+ "synced": true,
+ "verseStart": 8.05,
+ "footage": 16.0,
+ "factStart": 16.4,
+ "ctaStart": 20.83,
+ "total": 24.43,
+ "darkTail": 8.43,
+ "verseOverrunsFootage": 0.0,
+ "out": "/home/runner/work/chasten-social/chasten-social/reels/2026-09-07/reel.mp4",
+ "outSeconds": 24.5
+}
