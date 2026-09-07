@@ -18,7 +18,10 @@
     "scopes": {
       "bot": [
         "incoming-webhook",
-        "chat:write"
+        "chat:write",
+        "reactions:read",
+        "channels:history",
+        "groups:history"
       ]
     }
   },

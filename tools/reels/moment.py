@@ -206,15 +206,15 @@ def build(a):
     # Overlays: hook until just before the moment, verse lines on their word times,
     # the fact with its reference, then the close.
     overlays = []   # (png, start, end)
-    hook = card(a.hook, os.path.join(tmp, "hook.png"), SANS, 58)
+    hook = card(a.hook, os.path.join(tmp, "hook.png"), SERIF, 64)
     overlays.append((hook, 0.0, max(0.4, t_peak - 0.25)))
     for i, (text, s, e) in enumerate(phrases(verse_al)):
-        png = card(text, os.path.join(tmp, f"v{i}.png"), SERIF, 66)
+        png = card(text, os.path.join(tmp, f"v{i}.png"), SERIF, 64)
         nxt = phrases(verse_al)[i + 1][1] if i + 1 < len(phrases(verse_al)) else v_len + 0.4
         overlays.append((png, t_verse + s, t_verse + nxt))
     ref = card(a.ref + "  ·  BSB", os.path.join(tmp, "ref.png"), SANS, 34, y=SAFE_BOTTOM - 60)
     overlays.append((ref, t_verse + 0.3, t_fact - 0.1))
-    fact = card(a.fact_text, os.path.join(tmp, "fact.png"), SANS, 50, sub=a.fact_ref)
+    fact = card(a.fact_text, os.path.join(tmp, "fact.png"), SERIF, 64, sub=a.fact_ref)
     overlays.append((fact, t_fact, t_cta - 0.2))
     cta = close_card(a.cta, os.path.join(tmp, "cta.png"))
     overlays.append((cta, t_cta, total))
