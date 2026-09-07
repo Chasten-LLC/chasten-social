@@ -1,17 +1,19 @@
 {
- "nextSetIndex": 4,
- "postCount": 4,
+ "nextSetIndex": 5,
+ "postCount": 5,
  "usedSets": [
   0,
   1,
   2,
-  3
+  3,
+  4
  ],
  "usedBackgrounds": [
   "5850090",
   "13925600",
   "28641619",
-  "27977090"
+  "27977090",
+  "13664294"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -25,8 +27,14 @@
   "Psalm 29:11",
   "1 Peter 5:6",
   "1 Peter 5:7",
-  "1 Peter 5:10"
+  "1 Peter 5:10",
+  "Psalm 34:18",
+  "Psalm 145:18",
+  "James 4:8"
  ],
- "lastPostId": "2026-09-06",
- "lastRunAt": "2026-09-06T12:06:16+00:00"
+ "usedAudio": [
+  "Oceans (Where Feet May Fail) by Hillsong UNITED"
+ ],
+ "lastPostId": "2026-09-07",
+ "lastRunAt": "2026-09-07T12:06:55+00:00"
 }
