@@ -66,18 +66,50 @@ def analyse(take, tmp):
 
 
 # ---------------------------------------------------------------- text
+FUNC = {"and", "but", "or", "nor", "so", "yet", "in", "of", "to", "for", "with", "from", "that", "who", "which",
+        "when", "a", "an", "the", "his", "her", "their", "my", "your", "our", "its", "on", "at", "by", "as", "into",
+        "unto", "upon", "is", "was", "are", "were", "be", "had", "has", "have", "will", "shall", "not"}
+
+
+def _split(words, max_words, slack=2):
+    """Break one punctuation-bounded run into cards of readable size. A run that
+    fits in max_words plus a little slack stays whole; a longer one is split
+    into balanced pieces, never ending a card on a small connecting word and
+    preferring to start the next card on one ("... three days" / "and three
+    nights ...")."""
+    n = len(words)
+    if n <= max_words + slack:
+        return [words]
+    k = -(-n // max_words)
+    out, i = [], 0
+    while k > 1 and n - i > max_words + slack:
+        target = i + (n - i) / k
+        best = None
+        for b in range(max(i + 2, int(target) - 2), min(n - 1, int(target) + 3) + 1):
+            if words[b - 1]["text"].strip().strip(".,;:!?\u201d\u2019\"'").lower() in FUNC:
+                continue
+            score = abs(b - target) - (1.5 if words[b]["text"].strip().lower() in FUNC else 0)
+            if best is None or score < best[0]:
+                best = (score, b)
+        b = best[1] if best else min(i + max_words, n)
+        out.append(words[i:b]); i = b; k -= 1
+    out.append(words[i:])
+    return out
+
+
 def phrases(align, max_words=6):
-    """Word timings into lines of at most max_words, broken at punctuation."""
+    """Word timings into cards, broken at punctuation and then to size."""
     words = [w for w in align["words"] if w.get("text", "").strip()]
-    lines, cur = [], []
+    runs, cur = [], []
     for w in words:
         cur.append(w)
-        if len(cur) >= max_words or w["text"].rstrip()[-1:] in ".;,!?":
-            lines.append(cur); cur = []
+        if w["text"].rstrip()[-1:] in ".;,!?":
+            runs.append(cur); cur = []
     if cur:
-        lines.append(cur)
-    # A card of one or two words after a full one reads as a stutter ("... onto
-    # dry" / "land."); let the earlier card run a little long instead.
+        runs.append(cur)
+    lines = [piece for run in runs for piece in _split(run, max_words)]
+    # A card of one or two words after a full one reads as a stutter; let the
+    # earlier card run a little long instead.
     merged = []
     for ln in lines:
         if merged and len(ln) <= 2 and len(merged[-1]) + len(ln) <= max_words + 2 \

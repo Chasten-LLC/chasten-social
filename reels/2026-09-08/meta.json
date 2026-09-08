@@ -1,0 +1,42 @@
+{
+ "date": "2026-09-08",
+ "title": "the great fish",
+ "kind": "two-shot",
+ "narrative": true,
+ "hook": "Three days in the belly of the fish.",
+ "verses": [
+  {
+   "ref": "Jonah 1:17",
+   "text": "Now the LORD had appointed a great fish to swallow Jonah, and Jonah spent three days and three nights in the belly of the fish."
+  }
+ ],
+ "refLine": "Jonah 1:17 · BSB",
+ "fact": "From inside the fish, Jonah prayed to the LORD his God.",
+ "factRef": "Jonah 2:1",
+ "cta": "Read Jonah 2 in Chasten",
+ "context": [
+  {
+   "ref": "Jonah 1:17",
+   "text": "Now the LORD had appointed a great fish to swallow Jonah, and Jonah spent three days and three nights in the belly of the fish."
+  },
+  {
+   "ref": "Jonah 2:2",
+   "text": "saying: “In my distress I called to the LORD, and He answered me. From the belly of Sheol I called for help, and You heard my voice."
+  },
+  {
+   "ref": "Jonah 2:7",
+   "text": "As my life was fading away, I remembered the LORD. My prayer went up to You, to Your holy temple."
+  }
+ ],
+ "seconds": 19.7,
+ "voiceName": "George",
+ "shots": [
+  "humpback close, the eye (Veo 3.1 from still A2)",
+  "humpback wide, rising toward the light (Veo 3.1 from still B2)"
+ ],
+ "sound": "clip A's own water, then a plain water bed; clip B's Veo soundtrack dropped because it carried music",
+ "cost": 6.66,
+ "captionBy": "Claude, in conversation with Ric",
+ "url": "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/reels/2026-09-08/reel.mp4",
+ "builtAt": "2026-09-08T06:20:00+00:00"
+}
