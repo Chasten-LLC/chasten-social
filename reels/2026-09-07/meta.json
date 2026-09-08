@@ -62,5 +62,6 @@
  ],
  "sizeBytes": 54625734,
  "url": "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/reels/2026-09-07/reel.mp4",
- "builtAt": "2026-09-07T19:41:34+00:00"
+ "builtAt": "2026-09-07T19:41:34+00:00",
+ "captionBy": "anthropic/claude-4.5-sonnet"
 }

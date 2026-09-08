@@ -16,18 +16,17 @@ RAW = "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main"
 
 
 def send(text):
+    if os.environ.get("CHASTEN_TEST"):
+        text = ":test_tube: test of the rebuilt chain, ignore the thumbs line\n" + text
+    if os.environ.get("CHASTEN_PUSHED") == "false":
+        text = (":warning: the build's commit did not reach GitHub, so the download link will not work yet. "
+                f"Action log: {os.environ.get('CHASTEN_RUN_URL', '')}\n" + text)
     if not HOOK:
-        print("SLACK_WEBHOOK_URL is not set; nothing sent"); return
+        print("SLACK_WEBHOOK_URL is not set; nothing sent. The message would have been:\n" + text); return
     req = urllib.request.Request(HOOK, data=json.dumps({"text": text}).encode(),
                                  headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=30) as r:
-        print("slack:", r.status, r.read()[:80].decode())
-
-
-def changed_files():
-    out = subprocess.run(["git", "diff", "--name-only", "HEAD~1", "HEAD"],
-                         cwd=REPO, capture_output=True, text=True)
-    return [f for f in out.stdout.split() if f]
+        r.read()
 
 
 def carousel(path):
@@ -44,7 +43,8 @@ def carousel(path):
 def reel(path):
     day = path.split("/")[1]
     meta = json.load(open(os.path.join(REPO, "reels", day, "meta.json")))
-    caption = open(os.path.join(REPO, path)).read().strip()
+    cap_path = os.path.join(REPO, path)
+    caption = open(cap_path).read().strip() if os.path.exists(cap_path) else "(the caption step failed; see the Action log and write one)"
     g = meta.get("gates", {})
     lines = [f":clapper: *Chasten Reel {day}* \u00b7 {meta['title']}",
              f"<{meta['url']}|Download the video> \u00b7 {meta['seconds']:.0f}s \u00b7 ${meta.get('cost', 0):.2f}",
@@ -65,12 +65,20 @@ def shelved(path):
             f"Spent ${s.get('cost', 0):.2f}. The next story in the queue runs next time.")
 
 
+def failed(run_url, day):
+    return (f":x: *Chasten Reel {day}* did not build. Nothing was posted. "
+            f"Whatever it spent before failing is in the log: {run_url}")
+
+
 if __name__ == "__main__":
-    if os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
+    args = sys.argv[1:]
+    if args and args[0] == "--failed":
+        send(failed(args[1], args[2] if len(args) > 2 else "")); sys.exit(0)
+    if not args and os.environ.get("GITHUB_EVENT_NAME") == "workflow_dispatch":
         send(":wave: Chasten notifier is connected. Carousel and reel messages will land here.")
         sys.exit(0)
     sent = 0
-    for f in changed_files():
+    for f in args or changed_files():
         if f.startswith("posts/") and f.endswith("/post.json"):
             send(carousel(f)); sent += 1
         elif f.startswith("reels/") and f.endswith("/caption.md"):

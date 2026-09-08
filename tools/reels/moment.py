@@ -76,7 +76,16 @@ def phrases(align, max_words=6):
             lines.append(cur); cur = []
     if cur:
         lines.append(cur)
-    return [(" ".join(w["text"].strip() for w in ln), ln[0]["start"], ln[-1]["end"]) for ln in lines]
+    # A card of one or two words after a full one reads as a stutter ("... onto
+    # dry" / "land."); let the earlier card run a little long instead.
+    merged = []
+    for ln in lines:
+        if merged and len(ln) <= 2 and len(merged[-1]) + len(ln) <= max_words + 2 \
+                and merged[-1][-1]["text"].rstrip()[-1:] not in ".;!?":
+            merged[-1] = merged[-1] + ln
+        else:
+            merged.append(ln)
+    return [(" ".join(w["text"].strip() for w in ln), ln[0]["start"], ln[-1]["end"]) for ln in merged]
 
 
 def card(text, out, font_path, size, fill=(255, 255, 255, 255), sub=None, y=None, wrap_px=None):

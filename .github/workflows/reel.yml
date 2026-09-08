@@ -1,17 +1,34 @@
 name: Build Chasten Reel
 
-# The Moment: one story, one creature or element, one continuous shot with its
-# own sound, the verse read over it. Spends only on steps that passed a gate,
-# under a hard cap per story. See tools/reels/moment_build.py.
+# The whole chain lives here, because this is the only place that holds the
+# secrets and because a push made with the workflow token triggers nothing:
+# build the Moment, write the caption, commit, tell Slack. Slack hears about
+# every outcome: reel ready, story shelved, or build failed.
+#
+# GitHub runs schedules late, hours late on this repo (a 16:00 cron fired at
+# 19:33 on 2026-09-07). The cron is early in the morning so the message is in
+# Slack by breakfast regardless, and off the hour to dodge the crowd.
 on:
   schedule:
-    - cron: "0 16 * * 1,3,5"   # 11:00 America/Chicago in daylight time; 17 after Nov 1
+    - cron: "23 9 * * 1,3,5"   # about 4:23 America/Chicago in daylight time; GitHub adds its delay
   workflow_dispatch:
     inputs:
       story:
         description: "Shot card title to build (blank = next in the queue)"
         required: false
         default: ""
+      day:
+        description: "Date folder to use instead of today (YYYY-MM-DD)"
+        required: false
+        default: ""
+      caption_only:
+        description: "Skip the build; caption and notify the existing reels/<day>"
+        type: boolean
+        default: false
+      test:
+        description: "Label the Slack message as a test"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -22,6 +39,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    env:
+      REPLICATE_API_TOKEN: ${{ secrets.REPLICATE_API_TOKEN }}
+      ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
     steps:
       - uses: actions/checkout@v4
 
@@ -30,6 +50,7 @@ jobs:
           python-version: "3.12"
 
       - name: Install dependencies
+        if: ${{ !inputs.caption_only }}
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq ffmpeg
@@ -39,28 +60,41 @@ jobs:
 
       - name: Target date
         id: d
-        run: echo "day=$(TZ=America/Chicago date +%F)" >> "$GITHUB_OUTPUT"
+        run: |
+          day="${{ inputs.day }}"
+          [ -n "$day" ] || day=$(TZ=America/Chicago date +%F)
+          echo "day=$day" >> "$GITHUB_OUTPUT"
 
       # Takes cost real money. A retry reuses what was already bought.
       - name: Restore work in progress
+        if: ${{ !inputs.caption_only }}
         uses: actions/cache/restore@v4
         with:
           path: .reelwork
           key: reelwork-${{ steps.d.outputs.day }}
 
+      # Exit 2 means the story was shelved within budget; that is an outcome,
+      # not a failure, and Slack is told below.
       - name: Build the Moment
+        if: ${{ !inputs.caption_only }}
         env:
-          REPLICATE_API_TOKEN: ${{ secrets.REPLICATE_API_TOKEN }}
-          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           CHASTEN_STORY: ${{ inputs.story }}
-        run: python tools/reels/moment_build.py
+          CHASTEN_DATE: ${{ inputs.day }}
+        run: |
+          python tools/reels/moment_build.py || { rc=$?; [ "$rc" = "2" ] && echo "shelved" || exit $rc; }
 
       - name: Save work in progress
-        if: always()
+        if: ${{ always() && !inputs.caption_only }}
         uses: actions/cache/save@v4
         with:
           path: .reelwork
           key: reelwork-${{ steps.d.outputs.day }}
+
+      - name: Write the caption
+        if: always()
+        run: |
+          d="reels/${{ steps.d.outputs.day }}"
+          if [ -f "$d/meta.json" ]; then python tools/reels/caption.py "$d"; else echo "no reel to caption"; fi
 
       - name: Prune reels older than 30 days
         if: always()
@@ -74,13 +108,29 @@ jobs:
             esac
           done
 
-      # Runs even when the build shelved the story, so the pointer and the
-      # shelved notice reach the repo and Slack hears about it.
       - name: Commit
+        id: commit
         if: always()
         run: |
           git config user.name "Chasten Bot"
           git config user.email "ricardo@chasten.ai"
           git add reels studio/state
           git commit -q -m "Reel for ${{ steps.d.outputs.day }}" || echo "nothing to commit"
-          git pull -q --rebase origin main && git push -q origin main
+          if git pull -q --rebase origin main && git push -q origin main; then
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "pushed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Tell Slack
+        if: always()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          CHASTEN_PUSHED: ${{ steps.commit.outputs.pushed }}
+          CHASTEN_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          CHASTEN_TEST: ${{ inputs.test && '1' || '' }}
+        run: |
+          d="reels/${{ steps.d.outputs.day }}"
+          if [ -f "$d/meta.json" ]; then python tools/notify_slack.py "$d/caption.md"
+          elif [ -f "$d/shelved.json" ]; then python tools/notify_slack.py "$d/shelved.json"
+          else python tools/notify_slack.py --failed "$CHASTEN_RUN_URL" "${{ steps.d.outputs.day }}"; fi
