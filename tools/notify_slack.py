@@ -29,6 +29,12 @@ def send(text):
         r.read()
 
 
+def changed_files():
+    out = subprocess.run(["git", "diff", "--name-only", "HEAD~1", "HEAD"],
+                         cwd=REPO, capture_output=True, text=True)
+    return [f for f in out.stdout.split() if f]
+
+
 def carousel(path):
     p = json.load(open(os.path.join(REPO, path)))
     if p.get("status") != "posted":
