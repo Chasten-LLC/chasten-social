@@ -1,12 +1,13 @@
 {
- "nextSetIndex": 5,
- "postCount": 5,
+ "nextSetIndex": 6,
+ "postCount": 6,
  "usedSets": [
   0,
   1,
   2,
   3,
-  4
+  4,
+  5
  ],
  "usedBackgrounds": [
   "5850090",
@@ -30,11 +31,13 @@
   "1 Peter 5:10",
   "Psalm 34:18",
   "Psalm 145:18",
-  "James 4:8"
+  "James 4:8",
+  "Daniel 3:25"
  ],
  "usedAudio": [
-  "Oceans (Where Feet May Fail) by Hillsong UNITED"
+  "Oceans (Where Feet May Fail) by Hillsong UNITED",
+  "Battle Belongs by Phil Wickham"
  ],
- "lastPostId": "2026-09-07",
- "lastRunAt": "2026-09-07T12:06:55+00:00"
+ "lastPostId": "2026-09-08",
+ "lastRunAt": "2026-09-08T12:07:30+00:00"
 }
