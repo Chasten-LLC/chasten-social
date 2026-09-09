@@ -1,20 +1,24 @@
 {
- "nextSetIndex": 6,
- "postCount": 6,
+ "nextSetIndex": 8,
+ "postCount": 7,
  "usedSets": [
   0,
   1,
   2,
   3,
   4,
-  5
+  5,
+  7
  ],
  "usedBackgrounds": [
   "5850090",
   "13925600",
   "28641619",
   "27977090",
-  "13664294"
+  "13664294",
+  "11468694",
+  "29058322",
+  "18333871"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -32,12 +36,16 @@
   "Psalm 34:18",
   "Psalm 145:18",
   "James 4:8",
-  "Daniel 3:25"
+  "Daniel 3:25",
+  "Psalm 4:8",
+  "Psalm 3:5",
+  "Proverbs 3:24"
  ],
  "usedAudio": [
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
-  "Battle Belongs by Phil Wickham"
+  "Battle Belongs by Phil Wickham",
+  "Peace Be Still by Hope Darst"
  ],
- "lastPostId": "2026-09-08",
- "lastRunAt": "2026-09-08T12:07:30+00:00"
+ "lastPostId": "2026-09-09",
+ "lastRunAt": "2026-09-09T12:07:27+00:00"
 }
