@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 8,
- "postCount": 7,
+ "nextSetIndex": 9,
+ "postCount": 8,
  "usedSets": [
   0,
   1,
@@ -8,7 +8,8 @@
   3,
   4,
   5,
-  7
+  7,
+  8
  ],
  "usedBackgrounds": [
   "5850090",
@@ -39,13 +40,17 @@
   "Daniel 3:25",
   "Psalm 4:8",
   "Psalm 3:5",
-  "Proverbs 3:24"
+  "Proverbs 3:24",
+  "Psalm 121:1",
+  "Psalm 121:2",
+  "Psalm 121:8"
  ],
  "usedAudio": [
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
   "Battle Belongs by Phil Wickham",
-  "Peace Be Still by Hope Darst"
+  "Peace Be Still by Hope Darst",
+  "Trust in God by Elevation Worship"
  ],
- "lastPostId": "2026-09-09",
- "lastRunAt": "2026-09-09T12:07:27+00:00"
+ "lastPostId": "2026-09-10",
+ "lastRunAt": "2026-09-10T12:07:07+00:00"
 }
