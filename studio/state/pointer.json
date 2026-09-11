@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 9,
- "postCount": 8,
+ "nextSetIndex": 10,
+ "postCount": 9,
  "usedSets": [
   0,
   1,
@@ -9,7 +9,8 @@
   4,
   5,
   7,
-  8
+  8,
+  9
  ],
  "usedBackgrounds": [
   "5850090",
@@ -19,7 +20,8 @@
   "13664294",
   "11468694",
   "29058322",
-  "18333871"
+  "18333871",
+  "20313395"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -43,14 +45,18 @@
   "Proverbs 3:24",
   "Psalm 121:1",
   "Psalm 121:2",
-  "Psalm 121:8"
+  "Psalm 121:8",
+  "Isaiah 46:4",
+  "Psalm 68:19",
+  "Deuteronomy 1:31"
  ],
  "usedAudio": [
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
   "Battle Belongs by Phil Wickham",
   "Peace Be Still by Hope Darst",
-  "Trust in God by Elevation Worship"
+  "Trust in God by Elevation Worship",
+  "Rest On Us by Maverick City Music"
  ],
- "lastPostId": "2026-09-10",
- "lastRunAt": "2026-09-10T12:07:07+00:00"
+ "lastPostId": "2026-09-11",
+ "lastRunAt": "2026-09-11T12:06:29+00:00"
 }
