@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 10,
- "postCount": 9,
+ "nextSetIndex": 11,
+ "postCount": 10,
  "usedSets": [
   0,
   1,
@@ -10,7 +10,8 @@
   5,
   7,
   8,
-  9
+  9,
+  10
  ],
  "usedBackgrounds": [
   "5850090",
@@ -48,15 +49,19 @@
   "Psalm 121:8",
   "Isaiah 46:4",
   "Psalm 68:19",
-  "Deuteronomy 1:31"
+  "Deuteronomy 1:31",
+  "Isaiah 40:31",
+  "Philippians 4:13",
+  "Psalm 28:7"
  ],
  "usedAudio": [
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
   "Battle Belongs by Phil Wickham",
   "Peace Be Still by Hope Darst",
   "Trust in God by Elevation Worship",
-  "Rest On Us by Maverick City Music"
+  "Rest On Us by Maverick City Music",
+  "Firm Foundation (He Won't) by Cody Carnes"
  ],
- "lastPostId": "2026-09-11",
- "lastRunAt": "2026-09-11T12:06:29+00:00"
+ "lastPostId": "2026-09-12",
+ "lastRunAt": "2026-09-12T12:06:12+00:00"
 }
