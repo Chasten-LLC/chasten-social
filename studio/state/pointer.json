@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 11,
- "postCount": 10,
+ "nextSetIndex": 15,
+ "postCount": 11,
  "usedSets": [
   0,
   1,
@@ -11,7 +11,8 @@
   7,
   8,
   9,
-  10
+  10,
+  14
  ],
  "usedBackgrounds": [
   "5850090",
@@ -22,7 +23,10 @@
   "11468694",
   "29058322",
   "18333871",
-  "20313395"
+  "20313395",
+  "2588231",
+  "2440300",
+  "38782176"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -52,7 +56,10 @@
   "Deuteronomy 1:31",
   "Isaiah 40:31",
   "Philippians 4:13",
-  "Psalm 28:7"
+  "Psalm 28:7",
+  "2 Corinthians 12:9",
+  "Psalm 73:26",
+  "Nehemiah 8:10"
  ],
  "usedAudio": [
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
@@ -60,8 +67,9 @@
   "Peace Be Still by Hope Darst",
   "Trust in God by Elevation Worship",
   "Rest On Us by Maverick City Music",
-  "Firm Foundation (He Won't) by Cody Carnes"
+  "Firm Foundation (He Won't) by Cody Carnes",
+  "Same God by Elevation Worship"
  ],
- "lastPostId": "2026-09-12",
- "lastRunAt": "2026-09-12T12:06:12+00:00"
+ "lastPostId": "2026-09-13",
+ "lastRunAt": "2026-09-13T12:05:58+00:00"
 }
