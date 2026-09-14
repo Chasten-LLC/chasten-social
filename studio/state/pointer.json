@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 15,
- "postCount": 11,
+ "nextSetIndex": 16,
+ "postCount": 12,
  "usedSets": [
   0,
   1,
@@ -12,7 +12,8 @@
   8,
   9,
   10,
-  14
+  14,
+  15
  ],
  "usedBackgrounds": [
   "5850090",
@@ -59,7 +60,10 @@
   "Psalm 28:7",
   "2 Corinthians 12:9",
   "Psalm 73:26",
-  "Nehemiah 8:10"
+  "Nehemiah 8:10",
+  "Exodus 14:14",
+  "Deuteronomy 20:4",
+  "2 Chronicles 20:15"
  ],
  "usedAudio": [
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
@@ -68,8 +72,9 @@
   "Trust in God by Elevation Worship",
   "Rest On Us by Maverick City Music",
   "Firm Foundation (He Won't) by Cody Carnes",
-  "Same God by Elevation Worship"
+  "Same God by Elevation Worship",
+  "Battle Belongs by Phil Wickham"
  ],
- "lastPostId": "2026-09-13",
- "lastRunAt": "2026-09-13T12:05:58+00:00"
+ "lastPostId": "2026-09-14",
+ "lastRunAt": "2026-09-14T12:08:35+00:00"
 }
