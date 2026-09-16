@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 18,
- "postCount": 13,
+ "nextSetIndex": 19,
+ "postCount": 14,
  "usedSets": [
   0,
   1,
@@ -14,7 +14,8 @@
   10,
   14,
   15,
-  17
+  17,
+  18
  ],
  "usedBackgrounds": [
   "5850090",
@@ -66,7 +67,10 @@
   "Exodus 14:14",
   "Deuteronomy 20:4",
   "2 Chronicles 20:15",
-  "Daniel 6:22"
+  "Daniel 6:22",
+  "Romans 15:13",
+  "Romans 5:5",
+  "Hebrews 6:19"
  ],
  "usedAudio": [
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
@@ -77,8 +81,9 @@
   "Firm Foundation (He Won't) by Cody Carnes",
   "Same God by Elevation Worship",
   "Battle Belongs by Phil Wickham",
-  "Firm Foundation (He Won't) by Cody Carnes"
+  "Firm Foundation (He Won't) by Cody Carnes",
+  "Goodness of God by Bethel Music"
  ],
- "lastPostId": "2026-09-15",
- "lastRunAt": "2026-09-15T12:07:02+00:00"
+ "lastPostId": "2026-09-16",
+ "lastRunAt": "2026-09-16T12:08:18+00:00"
 }
