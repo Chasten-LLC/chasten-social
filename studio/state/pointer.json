@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 19,
- "postCount": 14,
+ "nextSetIndex": 20,
+ "postCount": 15,
  "usedSets": [
   0,
   1,
@@ -15,7 +15,8 @@
   14,
   15,
   17,
-  18
+  18,
+  19
  ],
  "usedBackgrounds": [
   "5850090",
@@ -30,7 +31,10 @@
   "2588231",
   "2440300",
   "38782176",
-  "18205491"
+  "18205491",
+  "4627371",
+  "20528955",
+  "31032435"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -70,7 +74,10 @@
   "Daniel 6:22",
   "Romans 15:13",
   "Romans 5:5",
-  "Hebrews 6:19"
+  "Hebrews 6:19",
+  "Lamentations 3:22",
+  "Lamentations 3:23",
+  "Lamentations 3:24"
  ],
  "usedAudio": [
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
@@ -82,8 +89,9 @@
   "Same God by Elevation Worship",
   "Battle Belongs by Phil Wickham",
   "Firm Foundation (He Won't) by Cody Carnes",
-  "Goodness of God by Bethel Music"
+  "Goodness of God by Bethel Music",
+  "Way Maker by Sinach"
  ],
- "lastPostId": "2026-09-16",
- "lastRunAt": "2026-09-16T12:08:18+00:00"
+ "lastPostId": "2026-09-17",
+ "lastRunAt": "2026-09-17T12:05:55+00:00"
 }
