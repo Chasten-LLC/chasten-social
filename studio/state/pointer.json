@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 20,
- "postCount": 15,
+ "nextSetIndex": 24,
+ "postCount": 16,
  "usedSets": [
   0,
   1,
@@ -16,7 +16,8 @@
   15,
   17,
   18,
-  19
+  19,
+  23
  ],
  "usedBackgrounds": [
   "5850090",
@@ -77,7 +78,8 @@
   "Hebrews 6:19",
   "Lamentations 3:22",
   "Lamentations 3:23",
-  "Lamentations 3:24"
+  "Lamentations 3:24",
+  "Mark 4:39"
  ],
  "usedAudio": [
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
@@ -90,8 +92,9 @@
   "Battle Belongs by Phil Wickham",
   "Firm Foundation (He Won't) by Cody Carnes",
   "Goodness of God by Bethel Music",
-  "Way Maker by Sinach"
+  "Way Maker by Sinach",
+  "Peace Be Still by Hope Darst"
  ],
- "lastPostId": "2026-09-17",
- "lastRunAt": "2026-09-17T12:05:55+00:00"
+ "lastPostId": "2026-09-18",
+ "lastRunAt": "2026-09-18T12:06:07+00:00"
 }
