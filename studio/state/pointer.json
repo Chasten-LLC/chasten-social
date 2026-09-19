@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 24,
- "postCount": 16,
+ "nextSetIndex": 25,
+ "postCount": 17,
  "usedSets": [
   0,
   1,
@@ -17,7 +17,8 @@
   17,
   18,
   19,
-  23
+  23,
+  24
  ],
  "usedBackgrounds": [
   "5850090",
@@ -35,7 +36,8 @@
   "18205491",
   "4627371",
   "20528955",
-  "31032435"
+  "31032435",
+  "6541879"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -79,10 +81,12 @@
   "Lamentations 3:22",
   "Lamentations 3:23",
   "Lamentations 3:24",
-  "Mark 4:39"
+  "Mark 4:39",
+  "John 3:16",
+  "Romans 5:8",
+  "1 John 4:10"
  ],
  "usedAudio": [
-  "Oceans (Where Feet May Fail) by Hillsong UNITED",
   "Battle Belongs by Phil Wickham",
   "Peace Be Still by Hope Darst",
   "Trust in God by Elevation Worship",
@@ -93,8 +97,9 @@
   "Firm Foundation (He Won't) by Cody Carnes",
   "Goodness of God by Bethel Music",
   "Way Maker by Sinach",
-  "Peace Be Still by Hope Darst"
+  "Peace Be Still by Hope Darst",
+  "Gratitude by Brandon Lake"
  ],
- "lastPostId": "2026-09-18",
- "lastRunAt": "2026-09-18T12:06:07+00:00"
+ "lastPostId": "2026-09-19",
+ "lastRunAt": "2026-09-19T12:06:07+00:00"
 }
