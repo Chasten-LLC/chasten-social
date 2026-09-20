@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 25,
- "postCount": 17,
+ "nextSetIndex": 26,
+ "postCount": 18,
  "usedSets": [
   0,
   1,
@@ -18,7 +18,8 @@
   18,
   19,
   23,
-  24
+  24,
+  25
  ],
  "usedBackgrounds": [
   "5850090",
@@ -84,10 +85,12 @@
   "Mark 4:39",
   "John 3:16",
   "Romans 5:8",
-  "1 John 4:10"
+  "1 John 4:10",
+  "Romans 8:37",
+  "Romans 8:38",
+  "Romans 8:39"
  ],
  "usedAudio": [
-  "Battle Belongs by Phil Wickham",
   "Peace Be Still by Hope Darst",
   "Trust in God by Elevation Worship",
   "Rest On Us by Maverick City Music",
@@ -98,8 +101,9 @@
   "Goodness of God by Bethel Music",
   "Way Maker by Sinach",
   "Peace Be Still by Hope Darst",
-  "Gratitude by Brandon Lake"
+  "Gratitude by Brandon Lake",
+  "Reckless Love by Cory Asbury"
  ],
- "lastPostId": "2026-09-19",
- "lastRunAt": "2026-09-19T12:06:07+00:00"
+ "lastPostId": "2026-09-20",
+ "lastRunAt": "2026-09-20T12:05:59+00:00"
 }
