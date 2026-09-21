@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 26,
- "postCount": 18,
+ "nextSetIndex": 27,
+ "postCount": 19,
  "usedSets": [
   0,
   1,
@@ -19,7 +19,8 @@
   19,
   23,
   24,
-  25
+  25,
+  26
  ],
  "usedBackgrounds": [
   "5850090",
@@ -38,7 +39,10 @@
   "4627371",
   "20528955",
   "31032435",
-  "6541879"
+  "6541879",
+  "35376005",
+  "34691689",
+  "35061559"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -88,10 +92,12 @@
   "1 John 4:10",
   "Romans 8:37",
   "Romans 8:38",
-  "Romans 8:39"
+  "Romans 8:39",
+  "Psalm 136:1",
+  "Jeremiah 31:3",
+  "Zephaniah 3:17"
  ],
  "usedAudio": [
-  "Peace Be Still by Hope Darst",
   "Trust in God by Elevation Worship",
   "Rest On Us by Maverick City Music",
   "Firm Foundation (He Won't) by Cody Carnes",
@@ -102,8 +108,9 @@
   "Way Maker by Sinach",
   "Peace Be Still by Hope Darst",
   "Gratitude by Brandon Lake",
-  "Reckless Love by Cory Asbury"
+  "Reckless Love by Cory Asbury",
+  "Living Hope by Phil Wickham"
  ],
- "lastPostId": "2026-09-20",
- "lastRunAt": "2026-09-20T12:05:59+00:00"
+ "lastPostId": "2026-09-21",
+ "lastRunAt": "2026-09-21T12:06:08+00:00"
 }
