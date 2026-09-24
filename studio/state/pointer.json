@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 30,
- "postCount": 21,
+ "nextSetIndex": 35,
+ "postCount": 22,
  "usedSets": [
   0,
   1,
@@ -22,7 +22,8 @@
   25,
   26,
   28,
-  29
+  29,
+  34
  ],
  "usedBackgrounds": [
   "5850090",
@@ -102,10 +103,12 @@
   "1 Corinthians 13:4",
   "1 Corinthians 13:7",
   "1 Corinthians 13:13",
-  "Matthew 28:6"
+  "Matthew 28:6",
+  "2 Corinthians 5:17",
+  "Ezekiel 36:26",
+  "Isaiah 43:19"
  ],
  "usedAudio": [
-  "Firm Foundation (He Won't) by Cody Carnes",
   "Same God by Elevation Worship",
   "Battle Belongs by Phil Wickham",
   "Firm Foundation (He Won't) by Cody Carnes",
@@ -116,8 +119,9 @@
   "Reckless Love by Cory Asbury",
   "Living Hope by Phil Wickham",
   "Gratitude by Brandon Lake",
-  "King of Kings by Hillsong Worship"
+  "King of Kings by Hillsong Worship",
+  "Goodness of God by Bethel Music"
  ],
- "lastPostId": "2026-09-23",
- "lastRunAt": "2026-09-23T12:14:48+00:00"
+ "lastPostId": "2026-09-24",
+ "lastRunAt": "2026-09-24T12:15:07+00:00"
 }
