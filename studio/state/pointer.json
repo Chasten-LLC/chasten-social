@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 39,
- "postCount": 25,
+ "nextSetIndex": 42,
+ "postCount": 26,
  "usedSets": [
   0,
   1,
@@ -26,7 +26,8 @@
   34,
   35,
   36,
-  38
+  38,
+  41
  ],
  "usedBackgrounds": [
   "5850090",
@@ -120,10 +121,10 @@
   "Romans 10:9",
   "Psalm 103:1",
   "Psalm 103:2",
-  "Psalm 103:3"
+  "Psalm 103:3",
+  "Genesis 28:12"
  ],
  "usedAudio": [
-  "Goodness of God by Bethel Music",
   "Way Maker by Sinach",
   "Peace Be Still by Hope Darst",
   "Gratitude by Brandon Lake",
@@ -134,8 +135,9 @@
   "Goodness of God by Bethel Music",
   "Way Maker by Sinach",
   "Reckless Love by Cory Asbury",
-  "How Great Is Our God by Chris Tomlin"
+  "How Great Is Our God by Chris Tomlin",
+  "Oceans (Where Feet May Fail) by Hillsong UNITED"
  ],
- "lastPostId": "2026-09-27",
- "lastRunAt": "2026-09-27T12:15:34+00:00"
+ "lastPostId": "2026-09-28",
+ "lastRunAt": "2026-09-28T12:15:32+00:00"
 }
