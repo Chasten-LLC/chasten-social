@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 42,
- "postCount": 26,
+ "nextSetIndex": 43,
+ "postCount": 27,
  "usedSets": [
   0,
   1,
@@ -27,7 +27,8 @@
   35,
   36,
   38,
-  41
+  41,
+  42
  ],
  "usedBackgrounds": [
   "5850090",
@@ -54,7 +55,10 @@
   "24245164",
   "11246510",
   "31544462",
-  "16292210"
+  "16292210",
+  "792972",
+  "36033428",
+  "10807887"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -122,10 +126,12 @@
   "Psalm 103:1",
   "Psalm 103:2",
   "Psalm 103:3",
-  "Genesis 28:12"
+  "Genesis 28:12",
+  "Proverbs 3:5",
+  "Proverbs 3:6",
+  "Proverbs 3:7"
  ],
  "usedAudio": [
-  "Way Maker by Sinach",
   "Peace Be Still by Hope Darst",
   "Gratitude by Brandon Lake",
   "Reckless Love by Cory Asbury",
@@ -136,8 +142,9 @@
   "Way Maker by Sinach",
   "Reckless Love by Cory Asbury",
   "How Great Is Our God by Chris Tomlin",
-  "Oceans (Where Feet May Fail) by Hillsong UNITED"
+  "Oceans (Where Feet May Fail) by Hillsong UNITED",
+  "Trust in God by Elevation Worship"
  ],
- "lastPostId": "2026-09-28",
- "lastRunAt": "2026-09-28T12:15:32+00:00"
+ "lastPostId": "2026-09-29",
+ "lastRunAt": "2026-09-29T12:15:24+00:00"
 }
