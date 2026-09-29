@@ -174,6 +174,22 @@
      "ref": "Daniel 3:25",
      "text": "“Look!” he exclaimed. “I see four men, unbound and unharmed, walking around in the fire—and the fourth looks like a son of the gods! ”",
      "chars": 134
+    },
+    {
+     "book": "Daniel",
+     "chapter": 3,
+     "chars": 217,
+     "ref": "Daniel 3:26",
+     "text": "Then Nebuchadnezzar approached the door of the blazing fiery furnace and called out, “Shadrach, Meshach, and Abednego, servants of the Most High God, come out!” So Shadrach, Meshach, and Abednego came out of the fire,",
+     "verse": 26
+    },
+    {
+     "book": "Daniel",
+     "chapter": 3,
+     "chars": 254,
+     "ref": "Daniel 3:27",
+     "text": "and when the satraps, prefects, governors, and royal advisers had gathered around, they saw that the fire had no effect on the bodies of these men. Not a hair of their heads was singed, their robes were unaffected, and there was no smell of fire on them.",
+     "verse": 27
     }
    ],
    "context": [
@@ -373,6 +389,14 @@
      "ref": "Exodus 14:22",
      "text": "and the Israelites went through the sea on dry ground, with walls of water on their right and on their left.",
      "chars": 108
+    },
+    {
+     "book": "Exodus",
+     "chapter": 14,
+     "chars": 152,
+     "ref": "Exodus 14:31",
+     "text": "When Israel saw the great power that the LORD had exercised over the Egyptians, the people feared the LORD and believed in Him and in His servant Moses.",
+     "verse": 31
     }
    ],
    "context": [
@@ -564,6 +588,22 @@
      "ref": "Daniel 6:22",
      "text": "My God sent His angel and shut the mouths of the lions. They have not hurt me, for I was found innocent in His sight, and I have done no wrong against you, O king.”",
      "chars": 164
+    },
+    {
+     "book": "Daniel",
+     "chapter": 6,
+     "chars": 187,
+     "ref": "Daniel 6:23",
+     "text": "The king was overjoyed and gave orders to lift Daniel out of the den, and when Daniel was lifted out of the den, no wounds whatsoever were found on him, because he had trusted in his God.",
+     "verse": 23
+    },
+    {
+     "book": "Daniel",
+     "chapter": 6,
+     "chars": 222,
+     "ref": "Daniel 6:26",
+     "text": "I hereby decree that in every part of my kingdom, men are to tremble in fear before the God of Daniel: For He is the living God, and He endures forever; His kingdom will never be destroyed, and His dominion will never end.",
+     "verse": 26
     }
    ],
    "context": [
@@ -755,6 +795,22 @@
      "ref": "Mark 4:39",
      "text": "Then Jesus got up and rebuked the wind and the sea. “Silence!” He commanded. “Be still!” And the wind died down, and it was perfectly calm.",
      "chars": 139
+    },
+    {
+     "book": "Mark",
+     "chapter": 4,
+     "chars": 64,
+     "ref": "Mark 4:40",
+     "text": "“Why are you so afraid?” He asked. “Do you still have no faith?”",
+     "verse": 40
+    },
+    {
+     "book": "Mark",
+     "chapter": 4,
+     "chars": 102,
+     "ref": "Mark 4:41",
+     "text": "Overwhelmed with fear, they asked one another, “Who is this, that even the wind and the sea obey Him?”",
+     "verse": 41
     }
    ],
    "context": [
@@ -946,6 +1002,22 @@
      "ref": "Matthew 28:6",
      "text": "He is not here; He has risen, just as He said! Come, see the place where He lay.",
      "chars": 80
+    },
+    {
+     "book": "Matthew",
+     "chapter": 28,
+     "chars": 155,
+     "ref": "Matthew 28:7",
+     "text": "Then go quickly and tell His disciples, ‘He has risen from the dead and is going ahead of you into Galilee. There you will see Him.’ See, I have told you.”",
+     "verse": 7
+    },
+    {
+     "book": "Matthew",
+     "chapter": 28,
+     "chars": 88,
+     "ref": "Matthew 28:8",
+     "text": "So they hurried away from the tomb in fear and great joy, and ran to tell His disciples.",
+     "verse": 8
     }
    ],
    "context": [
@@ -1137,6 +1209,22 @@
      "ref": "Genesis 8:11",
      "text": "And behold, the dove returned to him in the evening with a freshly plucked olive leaf in her beak. So Noah knew that the waters had receded from the earth.",
      "chars": 155
+    },
+    {
+     "book": "Genesis",
+     "chapter": 8,
+     "chars": 101,
+     "ref": "Genesis 8:12",
+     "text": "And Noah waited seven more days and sent out the dove again, but this time she did not return to him.",
+     "verse": 12
+    },
+    {
+     "book": "Genesis",
+     "chapter": 8,
+     "chars": 119,
+     "ref": "Genesis 8:22",
+     "text": "As long as the earth endures, seedtime and harvest, cold and heat, summer and winter, day and night shall never cease.”",
+     "verse": 22
     }
    ],
    "context": [
@@ -1328,6 +1416,22 @@
      "ref": "Genesis 28:12",
      "text": "And Jacob had a dream about a ladder that rested on the earth with its top reaching up to heaven, and God’s angels were going up and down the ladder.",
      "chars": 149
+    },
+    {
+     "book": "Genesis",
+     "chapter": 28,
+     "chars": 173,
+     "ref": "Genesis 28:15",
+     "text": "Look, I am with you, and I will watch over you wherever you go, and I will bring you back to this land. For I will not leave you until I have done what I have promised you.”",
+     "verse": 15
+    },
+    {
+     "book": "Genesis",
+     "chapter": 28,
+     "chars": 92,
+     "ref": "Genesis 28:16",
+     "text": "When Jacob woke up, he thought, “Surely the LORD is in this place, and I was unaware of it.”",
+     "verse": 16
     }
    ],
    "context": [
@@ -1519,6 +1623,22 @@
      "ref": "Exodus 3:2",
      "text": "There the angel of the LORD appeared to him in a blazing fire from within a bush. Moses saw the bush ablaze with fire, but it was not consumed.",
      "chars": 143
+    },
+    {
+     "book": "Exodus",
+     "chapter": 3,
+     "chars": 113,
+     "ref": "Exodus 3:5",
+     "text": "“Do not come any closer,” God said. “Take off your sandals, for the place where you are standing is holy ground.”",
+     "verse": 5
+    },
+    {
+     "book": "Exodus",
+     "chapter": 3,
+     "chars": 109,
+     "ref": "Exodus 3:14",
+     "text": "God said to Moses, “I AM WHO I AM. This is what you are to say to the Israelites: ‘I AM has sent me to you.’”",
+     "verse": 14
     }
    ],
    "context": [
@@ -1710,6 +1830,22 @@
      "ref": "Exodus 16:14",
      "text": "When the layer of dew had evaporated, there were thin flakes on the desert floor, as fine as frost on the ground.",
      "chars": 113
+    },
+    {
+     "book": "Exodus",
+     "chapter": 16,
+     "chars": 173,
+     "ref": "Exodus 16:15",
+     "text": "When the Israelites saw it, they asked one another, “What is it?” For they did not know what it was. So Moses told them, “It is the bread that the LORD has given you to eat.",
+     "verse": 15
+    },
+    {
+     "book": "Exodus",
+     "chapter": 16,
+     "chars": 162,
+     "ref": "Exodus 16:18",
+     "text": "When they measured it by the omer, he who gathered much had no excess, and he who gathered little had no shortfall. Each one gathered as much as he needed to eat.",
+     "verse": 18
     }
    ],
    "context": [
@@ -1901,6 +2037,22 @@
      "ref": "Joshua 6:20",
      "text": "So when the rams’ horns sounded, the people shouted. When they heard the blast of the horn, the people gave a great shout, and the wall collapsed. Then all the people charged straight into the city and captured it.",
      "chars": 214
+    },
+    {
+     "book": "Joshua",
+     "chapter": 6,
+     "chars": 207,
+     "ref": "Joshua 6:25",
+     "text": "And Joshua spared Rahab the prostitute, with her father’s household and all who belonged to her, because she hid the men Joshua had sent to spy out Jericho. So she has lived among the Israelites to this day.",
+     "verse": 25
+    },
+    {
+     "book": "Joshua",
+     "chapter": 6,
+     "chars": 69,
+     "ref": "Joshua 6:27",
+     "text": "So the LORD was with Joshua, and his fame spread throughout the land.",
+     "verse": 27
     }
    ],
    "context": [
@@ -2092,6 +2244,22 @@
      "ref": "1 Samuel 17:45",
      "text": "But David said to the Philistine, “You come against me with sword and spear and javelin, but I come against you in the name of the LORD of Hosts, the God of the armies of Israel, whom you have defied.",
      "chars": 200
+    },
+    {
+     "book": "1 Samuel",
+     "chapter": 17,
+     "chars": 167,
+     "ref": "1 Samuel 17:47",
+     "text": "And all those assembled here will know that it is not by sword or spear that the LORD saves; for the battle is the LORD’s, and He will give all of you into our hands.”",
+     "verse": 47
+    },
+    {
+     "book": "1 Samuel",
+     "chapter": 17,
+     "chars": 140,
+     "ref": "1 Samuel 17:50",
+     "text": "Thus David prevailed over the Philistine with a sling and a stone; without a sword in his hand he struck down the Philistine and killed him.",
+     "verse": 50
     }
    ],
    "context": [
@@ -2283,6 +2451,22 @@
      "ref": "1 Kings 19:12",
      "text": "After the earthquake there was a fire, but the LORD was not in the fire. And after the fire came a still, small voice.",
      "chars": 118
+    },
+    {
+     "book": "1 Kings",
+     "chapter": 19,
+     "chars": 177,
+     "ref": "1 Kings 19:13",
+     "text": "When Elijah heard it, he wrapped his face in his cloak and went out and stood at the mouth of the cave. Suddenly a voice came to him and said, “What are you doing here, Elijah?”",
+     "verse": 13
+    },
+    {
+     "book": "1 Kings",
+     "chapter": 19,
+     "chars": 132,
+     "ref": "1 Kings 19:18",
+     "text": "Nevertheless, I have reserved seven thousand in Israel—all whose knees have not bowed to Baal and whose mouths have not kissed him.”",
+     "verse": 18
     }
    ],
    "context": [
@@ -2474,6 +2658,22 @@
      "ref": "1 Kings 17:6",
      "text": "The ravens would bring him bread and meat in the morning and evening, and he would drink from the brook.",
      "chars": 104
+    },
+    {
+     "book": "1 Kings",
+     "chapter": 17,
+     "chars": 125,
+     "ref": "1 Kings 17:15",
+     "text": "So she went and did according to the word of Elijah, and there was food every day for Elijah and the woman and her household.",
+     "verse": 15
+    },
+    {
+     "book": "1 Kings",
+     "chapter": 17,
+     "chars": 133,
+     "ref": "1 Kings 17:16",
+     "text": "The jar of flour was not exhausted and the jug of oil did not run dry, according to the word that the LORD had spoken through Elijah.",
+     "verse": 16
     }
    ],
    "context": [
@@ -2665,6 +2865,22 @@
      "ref": "2 Kings 6:17",
      "text": "Then Elisha prayed, “O LORD, please open his eyes that he may see.” And the LORD opened the eyes of the young man, and he saw that the hills were full of horses and chariots of fire all around Elisha.",
      "chars": 200
+    },
+    {
+     "book": "2 Kings",
+     "chapter": 6,
+     "chars": 193,
+     "ref": "2 Kings 6:22",
+     "text": "“Do not kill them,” he replied. “Would you kill those you have captured with your own sword or bow? Set food and water before them, that they may eat and drink and then return to their master.”",
+     "verse": 22
+    },
+    {
+     "book": "2 Kings",
+     "chapter": 6,
+     "chars": 215,
+     "ref": "2 Kings 6:23",
+     "text": "So the king prepared a great feast for them, and after they had finished eating and drinking, he sent them away, and they returned to their master. And the Aramean raiders did not come into the land of Israel again.",
+     "verse": 23
     }
    ],
    "context": [
@@ -2856,6 +3072,22 @@
      "ref": "Jonah 2:10",
      "text": "And the LORD commanded the fish, and it vomited Jonah onto dry land.",
      "chars": 68
+    },
+    {
+     "book": "Jonah",
+     "chapter": 3,
+     "chars": 120,
+     "ref": "Jonah 3:5",
+     "text": "And the Ninevites believed God. They proclaimed a fast and dressed in sackcloth, from the greatest of them to the least.",
+     "verse": 5
+    },
+    {
+     "book": "Jonah",
+     "chapter": 3,
+     "chars": 136,
+     "ref": "Jonah 3:10",
+     "text": "When God saw their actions—that they had turned from their evil ways—He relented from the disaster He had threatened to bring upon them.",
+     "verse": 10
     }
    ],
    "context": [
@@ -3048,6 +3280,22 @@
      "ref": "Ezekiel 37:7",
      "text": "So I prophesied as I had been commanded. And as I prophesied, there was suddenly a noise, a rattling, and the bones came together, bone to bone.",
      "chars": 144
+    },
+    {
+     "book": "Ezekiel",
+     "chapter": 37,
+     "chars": 127,
+     "ref": "Ezekiel 37:10",
+     "text": "So I prophesied as He had commanded me, and the breath entered them, and they came to life and stood on their feet—a vast army.",
+     "verse": 10
+    },
+    {
+     "book": "Ezekiel",
+     "chapter": 37,
+     "chars": 175,
+     "ref": "Ezekiel 37:14",
+     "text": "I will put My Spirit in you and you will live, and I will settle you in your own land. Then you will know that I, the LORD, have spoken, and I will do it, declares the LORD.’”",
+     "verse": 14
     }
    ],
    "context": [
@@ -3394,6 +3642,22 @@
      "ref": "Job 38:4",
      "text": "Where were you when I laid the foundations of the earth? Tell Me, if you have understanding.",
      "chars": 92
+    },
+    {
+     "book": "Job",
+     "chapter": 38,
+     "chars": 78,
+     "ref": "Job 38:7",
+     "text": "while the morning stars sang together and all the sons of God shouted for joy?",
+     "verse": 7
+    },
+    {
+     "book": "Job",
+     "chapter": 42,
+     "chars": 56,
+     "ref": "Job 42:5",
+     "text": "My ears had heard of You, but now my eyes have seen You.",
+     "verse": 5
     }
    ],
    "context": [
@@ -3585,6 +3849,22 @@
      "ref": "Matthew 2:9",
      "text": "After they had heard the king, they went on their way, and the star they had seen in the east went ahead of them until it stood over the place where the Child was.",
      "chars": 163
+    },
+    {
+     "book": "Matthew",
+     "chapter": 2,
+     "chars": 57,
+     "ref": "Matthew 2:10",
+     "text": "When they saw the star, they rejoiced with great delight.",
+     "verse": 10
+    },
+    {
+     "book": "Matthew",
+     "chapter": 2,
+     "chars": 200,
+     "ref": "Matthew 2:11",
+     "text": "On coming to the house, they saw the Child with His mother Mary, and they fell down and worshiped Him. Then they opened their treasures and presented Him with gifts of gold and frankincense and myrrh.",
+     "verse": 11
     }
    ],
    "context": [
@@ -3776,6 +4056,22 @@
      "ref": "John 11:43",
      "text": "After Jesus had said this, He called out in a loud voice, “Lazarus, come out!”",
      "chars": 78
+    },
+    {
+     "book": "John",
+     "chapter": 11,
+     "chars": 163,
+     "ref": "John 11:44",
+     "text": "The man who had been dead came out with his hands and feet bound in strips of linen, and his face wrapped in a cloth. “Unwrap him and let him go,” Jesus told them.",
+     "verse": 44
+    },
+    {
+     "book": "John",
+     "chapter": 11,
+     "chars": 94,
+     "ref": "John 11:45",
+     "text": "Therefore many of the Jews who had come to Mary, and had seen what Jesus did, believed in Him.",
+     "verse": 45
     }
    ],
    "context": [
@@ -3967,6 +4263,22 @@
      "ref": "Acts 16:26",
      "text": "Suddenly a strong earthquake shook the foundations of the prison. At once all the doors flew open and everyone’s chains came loose.",
      "chars": 131
+    },
+    {
+     "book": "Acts",
+     "chapter": 16,
+     "chars": 71,
+     "ref": "Acts 16:30",
+     "text": "Then he brought them out and asked, “Sirs, what must I do to be saved?”",
+     "verse": 30
+    },
+    {
+     "book": "Acts",
+     "chapter": 16,
+     "chars": 88,
+     "ref": "Acts 16:31",
+     "text": "They replied, “Believe in the Lord Jesus and you will be saved, you and your household.”",
+     "verse": 31
     }
    ],
    "context": [
@@ -4158,6 +4470,22 @@
      "ref": "Acts 9:3",
      "text": "As Saul drew near to Damascus on his journey, suddenly a light from heaven flashed around him.",
      "chars": 94
+    },
+    {
+     "book": "Acts",
+     "chapter": 9,
+     "chars": 90,
+     "ref": "Acts 9:4",
+     "text": "He fell to the ground and heard a voice say to him, “Saul, Saul, why do you persecute Me?”",
+     "verse": 4
+    },
+    {
+     "book": "Acts",
+     "chapter": 9,
+     "chars": 84,
+     "ref": "Acts 9:5",
+     "text": "“Who are You, Lord?” Saul asked. “I am Jesus, whom you are persecuting,” He replied.",
+     "verse": 5
     }
    ],
    "context": [
@@ -4349,6 +4677,22 @@
      "ref": "Acts 2:3",
      "text": "They saw tongues like flames of fire that separated and came to rest on each of them.",
      "chars": 85
+    },
+    {
+     "book": "Acts",
+     "chapter": 2,
+     "chars": 109,
+     "ref": "Acts 2:4",
+     "text": "And they were all filled with the Holy Spirit and began to speak in other tongues as the Spirit enabled them.",
+     "verse": 4
+    },
+    {
+     "book": "Acts",
+     "chapter": 2,
+     "chars": 108,
+     "ref": "Acts 2:41",
+     "text": "Those who embraced his message were baptized, and about three thousand were added to the believers that day.",
+     "verse": 41
     }
    ],
    "context": [
@@ -5496,6 +5840,22 @@
      "ref": "Matthew 14:27",
      "text": "But Jesus spoke up at once: “Take courage! It is I. Do not be afraid.”",
      "chars": 70
+    },
+    {
+     "book": "Matthew",
+     "chapter": 14,
+     "chars": 100,
+     "ref": "Matthew 14:29",
+     "text": "“Come,” said Jesus. Then Peter got down out of the boat, walked on the water, and came toward Jesus.",
+     "verse": 29
+    },
+    {
+     "book": "Matthew",
+     "chapter": 14,
+     "chars": 115,
+     "ref": "Matthew 14:31",
+     "text": "Immediately Jesus reached out His hand and took hold of Peter. “You of little faith,” He said, “why did you doubt?”",
+     "verse": 31
     }
    ],
    "context": [

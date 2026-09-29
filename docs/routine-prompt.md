@@ -50,7 +50,7 @@ Read `$W/work/card1.jpg` once with the Read tool to confirm the verse is legible
 
 ## STEP 3. Caption
 
-Read `$W/work/plan.json` and the `captionRules` and `hashtags` in `$R/studio/config/settings.json`. Write the caption to `$W/work/caption.txt` following those rules exactly: hook line under 110 characters, one to three plain sentences, the references line, one primary and one secondary call to action, the sign-off line, then twelve to fifteen lowercase hashtags on the last line. Warm, reverent, plain. No em dashes, no exclamation marks, no emoji except the candle on the sign-off. The three verses are printed on the cards, so do not retype them.
+Read `$W/work/plan.json` and the `captionRules` and `hashtags` in `$R/studio/config/settings.json`. Write the caption to `$W/work/caption.txt` following those rules exactly: hook line under 110 characters, one to three plain sentences, the references line, one primary and one secondary call to action, the sign-off line, then twelve to fifteen lowercase hashtags on the last line. Warm, reverent, plain. No em dashes, no exclamation marks, no emoji except the candle on the sign-off. The verses are printed on the cards, so do not retype them.
 
 Check mechanically: hook under 110 chars, total under 2200, no em dash, no exclamation mark, 12 to 15 hashtags, all lowercase.
 
@@ -58,17 +58,14 @@ Then choose today's audio. `$W/work/plan.json` has `audioRecent`, the songs sugg
 
 ## STEP 4. Publish the cards to GitHub
 
-Instagram can only fetch images from a public URL, so the cards must be pushed before STEP 5. The checkout arrives on a detached HEAD, so the branch line below is required.
+Instagram can only fetch images from a public URL, so the cards must be pushed before STEP 5. The checkout arrives on a detached HEAD, so the branch line below is required. The plan decides how many cards there are: three verse cards and the follow card on almost every day. Publish every card it rendered, in order, whatever the count.
 
     cd $R && git fetch -q origin main && git checkout -B main origin/main -q
     mkdir -p $R/posts/<today>
-    cp $W/work/card1.jpg $R/posts/<today>/1.jpg
-    cp $W/work/card2.jpg $R/posts/<today>/2.jpg
-    cp $W/work/card3.jpg $R/posts/<today>/3.jpg
-    cp $W/work/card4.jpg $R/posts/<today>/4.jpg
+    n=0; for f in $(ls $W/work/card*.jpg | sort -V); do n=$((n+1)); cp "$f" "$R/posts/<today>/$n.jpg"; done; echo "cards: $n"
     git add posts && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "Cards for <today>" && git push -q origin main
 
-Confirm each of the four public URLs returns 200:
+Confirm each card's public URL returns 200:
 
     curl -sI <url> | head -1
 
@@ -80,7 +77,7 @@ Load the Composio Instagram tools with ToolSearch. If none are available, set st
 
 The carousel takes image URLs directly, so this is two calls, not one per image. Do not create per image child containers and do not sleep manually.
 
-1. `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id` 28607820282164259, `child_image_urls` set to the four public URLs in slide order with the follow card last, and `caption` set to the contents of `$W/work/caption.txt`. Keep the returned creation_id.
+1. `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id` 28607820282164259, `child_image_urls` set to every card's public URL in slide order (1.jpg first, the follow card last), and `caption` set to the contents of `$W/work/caption.txt`. Keep the returned creation_id. A carousel needs at least two cards; if the plan made fewer, set status "failed" with that reason and continue.
 2. `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with the same `ig_user_id`, that `creation_id`, and `max_wait_seconds` 120. It polls for FINISHED on its own. Keep the returned media id.
 3. `INSTAGRAM_GET_IG_MEDIA` with that media id and `fields` "id,permalink" for the permalink.
 

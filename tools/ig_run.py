@@ -163,7 +163,9 @@ def plan(work):
         }
         if style == "photo":
             bg = backgrounds[[c["style"] for c in cards].count("photo")]
-            card.update({"photo": os.path.join(work, "work", "bg", f"{bg['id']}.jpg"), "photo_ink": bg["ink"], "scrim": bg["scrim"], "light_ink": bg["light"], "bgId": bg["id"], "bgCredit": bg.get("credit", "")})
+            card.update({"photo": os.path.join(work, "work", "bg", f"{bg['id']}.jpg"), "photo_ink": bg["ink"], "scrim": bg["scrim"], "light_ink": bg["light"], "bgId": bg["id"], "bgCredit": bg.get("credit", ""),
+                         # a busy photo carries its own extra veil (tools/add_backgrounds.py)
+                         "dim": bg.get("dim", 0.0)})
         else:
             card["ink"] = ink
         cards.append(card)

@@ -4,7 +4,7 @@ Everything the daily Chasten Instagram post needs, and the public home of the
 cards it publishes.
 
 A Claude Code cloud routine fires daily at 12:00 UTC (7:00am America/Chicago
-during daylight saving), renders three 1080x1350 verse cards, commits them here,
+during daylight saving), renders three 1080x1350 verse cards and a closing follow card, commits them here,
 and publishes them to Instagram as a carousel using their public GitHub URLs.
 It runs in Anthropic's cloud, so it does not need any particular machine awake.
 
@@ -23,13 +23,15 @@ touches no permissioned API. Zero prompts.
 studio/config/settings.json      caption rules, hashtags, audio map, email rules
 studio/state/pointer.json        rotation state, the only file the run mutates
 studio/verses/sets.json          the verse sets, in rotation order
-studio/library/backgrounds.json  background manifest: ink, scrim, credit
-studio/bg/<id>.jpg               67 background photos
+studio/library/backgrounds.json  the photos in rotation: ink, scrim, dim, credit
+studio/library/backgrounds-retired.json  the earlier pool, kept to restore
+studio/bg/<id>.jpg               background photos, cut to 1080x1350
 tools/ig_run.py                  orchestration: bootstrap, plan, render, preview, package
 tools/chasten_cards.py           the renderer
+tools/add_backgrounds.py         cuts new photos for Instagram and adds them
 tools/assets/fonts/*.ttf         Literata and Inter
 tools/assets/img/*.png           wordmarks
-posts/<YYYY-MM-DD>/1.jpg 2.jpg 3.jpg   the published cards
+posts/<YYYY-MM-DD>/1.jpg 2.jpg ...    the published cards, one per slide
 posts/<YYYY-MM-DD>/post.json           what was posted, with caption and permalink
 docs/routine-prompt.md           the prompt the routine runs
 ```
@@ -39,6 +41,29 @@ Public URL pattern:
 ```
 https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/posts/<YYYY-MM-DD>/1.jpg
 ```
+
+## Backgrounds
+
+Since 2026-09-29 the photos in rotation are the app's Verse of the Day photos,
+so the feed looks like the app. To add more, put the originals in a folder and
+run:
+
+```bash
+python3 tools/add_backgrounds.py ~/Downloads/chasten-florals
+```
+
+It cuts each photo to 1080x1350 around its subject (a `FOCUS_X` override fixes
+the rare wrong pick), chooses light or dark ink from how bright the verse area
+is, and gives busy or patchy photos an extra `dim` veil so the verse always
+reads. Photos already in the pool are skipped. The earlier pool is listed in
+`studio/library/backgrounds-retired.json`; its photos are still in `studio/bg`.
+
+## Verse sets
+
+Every set carries at least three verses, so every carousel has three verse
+cards and the follow card. Story sets (kind `narrative`) keep their key verse
+first and add the verses that finish the moment; the reel builder reads only
+the first `verseCount` of them, so a story's reel is unchanged.
 
 ## Running it by hand
 
