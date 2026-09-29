@@ -1,0 +1,81 @@
+{
+ "date": "2026-09-29",
+ "theme": "trust",
+ "approved": "Ric approved this sample on 2026-09-29 (\"I think this is GREAT!\"); every word was checked against the BSB.",
+ "drawn": 10,
+ "caption": "Which one did you need today? Tell us its number.\n\nEight promises for whatever this week is holding. Save this for the day you need it, and send it to someone carrying a lot.\n\nRomans 8:31, 1 Peter 5:7, Exodus 14:14, Isaiah 60:22, Lamentations 3:23, Psalm 46:10, Philippians 4:13, Psalm 119:105 (BSB)\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #scripture #faith #christian #trustgod",
+ "slides": [
+  {
+   "n": 1,
+   "line": "rom-8-31",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "If God is for us, who can be against us?",
+   "ref": "Romans 8:31"
+  },
+  {
+   "n": 2,
+   "line": "1pe-5-7",
+   "kind": "verse",
+   "scene": "cafe-chalkboard",
+   "text": "Cast all your anxiety on Him, because He cares for you.",
+   "ref": "1 Peter 5:7"
+  },
+  {
+   "n": 3,
+   "line": "exo-14-14",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "The LORD will fight for you; you need only to be still.",
+   "ref": "Exodus 14:14"
+  },
+  {
+   "n": 4,
+   "line": "isa-60-22",
+   "kind": "verse",
+   "scene": "split-flap",
+   "text": "I am the LORD; in its time I will accomplish it quickly.",
+   "ref": "Isaiah 60:22"
+  },
+  {
+   "n": 5,
+   "line": "lam-3-23",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "They are new every morning; great is Your faithfulness!",
+   "ref": "Lamentations 3:23"
+  },
+  {
+   "n": 6,
+   "line": "psa-46-10",
+   "kind": "verse",
+   "scene": "sand",
+   "text": "Be still and know that I am God",
+   "ref": "Psalm 46:10"
+  },
+  {
+   "n": 7,
+   "line": "php-4-13",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "I can do all things through Christ who gives me strength.",
+   "ref": "Philippians 4:13"
+  },
+  {
+   "n": 8,
+   "line": "psa-119-105",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "Your word is a lamp to my feet and a light to my path.",
+   "ref": "Psalm 119:105"
+  },
+  {
+   "n": 9,
+   "line": "cta-amen",
+   "kind": "cta",
+   "scene": "coffee-cup",
+   "text": "Say Amen if you needed this today",
+   "ref": "@chasten.app"
+  }
+ ]
+}

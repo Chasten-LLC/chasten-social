@@ -1,0 +1,258 @@
+{
+ "note": "Where a line appears. {TEXT}, {REF} and {ROWS} are filled in by tools/world_run.py. kind 'cta' scenes are for the closing slide. case 'upper' sets the words in capitals; rows wraps them for boards; maxWords keeps a line short enough to draw cleanly. Boards must say how many rows they have, or the model adds a header and a row of nonsense letters, and every scene forbids other words, because any extra text fails the word check. Never add a phone, app, website or screen: Scripture on a screen must look like Chasten, which a drawn scene cannot promise. Keep every scene our own: nothing here copies another account's slides. opener marks scenes striking enough for the first slide.",
+ "scenes": [
+  {
+   "id": "billboard",
+   "kind": "content",
+   "case": "upper",
+   "rows": 0,
+   "maxWords": 14,
+   "prompt": "A large roadside billboard above an empty two-lane highway at dusk, seen from the road below at a slight upward angle, power lines crossing the sky, the billboard lit by its own lamps. The billboard face is plain white with the words painted in heavy black condensed sans-serif capitals: {TEXT}, and beneath them, much smaller: {REF}.",
+   "opener": true
+  },
+  {
+   "id": "cafe-chalkboard",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 16,
+   "prompt": "A wooden A-frame chalkboard sign standing on a wet city sidewalk outside a cafe on a rainy morning, a blurred passerby with an umbrella behind it. Hand-lettered on the chalkboard in neat white chalk: {TEXT}, and below it, smaller: {REF}. No shop names, logos or other words anywhere.",
+   "opener": true
+  },
+  {
+   "id": "dashboard-note",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 12,
+   "prompt": "Inside a car stopped in heavy traffic on a rainy evening, one square paper sticky note stuck on the dashboard just below the windshield, raindrops on the glass and blurred brake lights ahead. Handwritten on the sticky note in black pen, large and neat: {TEXT}, and below it: {REF}. No license plates or other readable text."
+  },
+  {
+   "id": "split-flap",
+   "kind": "content",
+   "case": "upper",
+   "rows": 16,
+   "maxWords": 12,
+   "prompt": "A vintage split-flap board in a grand train station hall, light falling from high windows, a traveler with a suitcase blurred in the foreground. The board has exactly {ROWS} rows of white flap letters on black, with no header, title or clock. Its rows read, one row each: {TEXT}, then a last row: {REF}. Every other flap on the board is blank black.",
+   "opener": true
+  },
+  {
+   "id": "mirror-marker",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 14,
+   "prompt": "A bathroom mirror in soft morning window light, a little steam fogging its edges, a toothbrush in a cup on the sink below, nobody in the reflection. Handwritten on the mirror in black dry-erase marker: {TEXT}, and below it: {REF}."
+  },
+  {
+   "id": "sand",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 8,
+   "prompt": "Words written with a finger in smooth wet sand at the edge of the sea at dawn, a gentle wave approaching from the top of the frame, seen from above at an angle. The words in the sand: {TEXT}, and below them: {REF}.",
+   "opener": true
+  },
+  {
+   "id": "letter-board",
+   "kind": "content",
+   "case": "upper",
+   "rows": 14,
+   "maxWords": 12,
+   "prompt": "A black felt letter board with white plastic letters leaning against the wall on a kitchen shelf beside a coffee mug and a small plant, morning light. The board holds exactly {ROWS} rows of letters and nothing else. They spell, one row each: {TEXT}, then a last row: {REF}.",
+   "opener": true
+  },
+  {
+   "id": "candle-label",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 16,
+   "prompt": "A lit candle in a clear glass jar on a windowsill at night, rain on the window behind it, the flame glowing softly. The jar's cream paper label is printed in an elegant serif: {TEXT}, and below it, smaller: {REF}. No brand name on the jar."
+  },
+  {
+   "id": "typewriter",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 22,
+   "prompt": "A sheet of white paper rolled into a vintage typewriter on a wooden desk, warm lamp light, the rest of the room dark and soft. Typed on the paper in typewriter letters: {TEXT}, and below it: {REF}. No brand name on the typewriter."
+  },
+  {
+   "id": "notebook",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 22,
+   "prompt": "An open spiral notebook on a kitchen table beside a cup of tea, soft window light. Handwritten across the page in dark ballpoint pen, neat and easy to read: {TEXT}, and below it: {REF}. The rest of the page is blank."
+  },
+  {
+   "id": "church-marquee",
+   "kind": "content",
+   "case": "upper",
+   "rows": 18,
+   "maxWords": 12,
+   "prompt": "A small-town church's roadside sign with black changeable letters on a white panel, at dusk, a white steeple softly lit behind it. The panel holds exactly {ROWS} rows and nothing else, no church name and no service times. Its rows read, one row each: {TEXT}, then a last row: {REF}.",
+   "opener": true
+  },
+  {
+   "id": "shop-window",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 12,
+   "prompt": "Hand-painted gold sign lettering on the glass window of a small-town shop, seen from the sidewalk in morning light, the interior softly blurred behind the glass. The window lettering reads: {TEXT}, and beneath it, smaller: {REF}. No shop names, logos or other words anywhere.",
+   "opener": true
+  },
+  {
+   "id": "brick-mural",
+   "kind": "content",
+   "case": "upper",
+   "rows": 0,
+   "maxWords": 10,
+   "prompt": "Large hand-painted white letters on an old red brick wall in a quiet city alley, a bicycle leaning against the wall below, late afternoon light: {TEXT}, and beneath them, smaller: {REF}. No graffiti or other words.",
+   "opener": true
+  },
+  {
+   "id": "tshirt-back",
+   "kind": "content",
+   "case": "upper",
+   "rows": 0,
+   "maxWords": 8,
+   "prompt": "A person seen from behind walking through a busy city street at night, wearing a plain white T-shirt printed on the back in bold black letters: {TEXT}, and beneath, smaller: {REF}. No faces visible, no other shirts with writing, no shop signs.",
+   "opener": true
+  },
+  {
+   "id": "cardboard-sign",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 10,
+   "prompt": "A hand-lettered cardboard sign held up in both hands above a crowd at a sunny outdoor gathering, seen from behind the crowd. Written on the cardboard in thick black marker: {TEXT}, and below it: {REF}. No other signs or banners.",
+   "opener": true
+  },
+  {
+   "id": "fog-window",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 6,
+   "prompt": "Words written with a fingertip in the fog on a rainy window at night, city lights blurred beyond the glass: {TEXT}, and below them: {REF}."
+  },
+  {
+   "id": "road-paint",
+   "kind": "content",
+   "case": "upper",
+   "rows": 0,
+   "maxWords": 5,
+   "prompt": "Big white painted road-marking letters on an empty two-lane country road, seen from low on the asphalt at golden hour, fields on both sides: {TEXT}, and beneath them, smaller: {REF}. No road signs.",
+   "opener": true
+  },
+  {
+   "id": "blackboard",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 22,
+   "prompt": "A classroom blackboard after school, empty wooden desks in the foreground, afternoon sun through tall windows. Written neatly in white chalk across the board: {TEXT}, and below it: {REF}. The rest of the board is clean."
+  },
+  {
+   "id": "fridge-note",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 12,
+   "prompt": "A handwritten note held by a small round magnet on a white refrigerator door in a sunny kitchen. Written on the note in black marker: {TEXT}, and below it: {REF}. Nothing else on the fridge."
+  },
+  {
+   "id": "diner-napkin",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 10,
+   "prompt": "A paper napkin on a diner table beside a cup of black coffee, morning light through the window. Written on the napkin in black pen: {TEXT}, and below it: {REF}. No menus or signs in view."
+  },
+  {
+   "id": "bus-poster",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 18,
+   "prompt": "A large backlit poster inside a city bus shelter at night, rain on the street behind it. The poster is plain cream with elegant black serif type: {TEXT}, and beneath it, smaller: {REF}. No logos, route maps or other words.",
+   "opener": true
+  },
+  {
+   "id": "neon",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 8,
+   "prompt": "A warm neon sign glowing in the window of a small diner at night, the words bent in flowing cursive neon tubing: {TEXT}, and beneath, in smaller neon: {REF}. No other neon or signs.",
+   "opener": true
+  },
+  {
+   "id": "mug",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 8,
+   "prompt": "A white ceramic mug on a wooden table by a window at sunrise, steam rising. Printed on the mug in simple black type: {TEXT}, and beneath it, smaller: {REF}. No brand name."
+  },
+  {
+   "id": "index-card",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 14,
+   "prompt": "A white index card pinned to a cork board above a desk, a desk lamp glowing beside it. Handwritten on the card in black marker: {TEXT}, and below it: {REF}. Nothing else pinned on the board."
+  },
+  {
+   "id": "letter-desk",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 20,
+   "prompt": "A handwritten letter on cream paper lying on a wooden desk beside a fountain pen, warm window light. Written in neat ink handwriting: {TEXT}, and below it: {REF}. No address, date or signature."
+  },
+  {
+   "id": "embroidery",
+   "kind": "content",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 6,
+   "prompt": "A wooden embroidery hoop resting on a linen tablecloth, the words stitched in dark thread across the fabric: {TEXT}, and below them, smaller: {REF}."
+  },
+  {
+   "id": "coffee-cup",
+   "kind": "cta",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 10,
+   "prompt": "A white paper coffee cup on a wooden cafe counter, soft window light. Handwritten on the side of the cup in black marker, the way a barista writes a name: {TEXT}, and below it: {REF}. No logo on the cup."
+  },
+  {
+   "id": "door-note",
+   "kind": "cta",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 10,
+   "prompt": "A yellow sticky note on a white front door at eye level, morning light. Handwritten on the note in black marker: {TEXT}, and below it: {REF}. No house numbers or other words."
+  },
+  {
+   "id": "lunch-note",
+   "kind": "cta",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 10,
+   "prompt": "A paper napkin note tucked into an open lunch bag beside an apple on a kitchen counter. Handwritten on the napkin in black marker: {TEXT}, and below it: {REF}."
+  },
+  {
+   "id": "sidewalk-chalk",
+   "kind": "cta",
+   "case": "as-is",
+   "rows": 0,
+   "maxWords": 10,
+   "prompt": "Big sidewalk chalk letters on a sunny driveway, a piece of chalk lying beside them: {TEXT}, and below them: {REF}."
+  }
+ ]
+}

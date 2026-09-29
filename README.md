@@ -88,6 +88,38 @@ Cron is UTC and does not follow daylight saving, so `0 12 * * *` is 7:00am
 Central only during daylight time. It needs to move to `0 13 * * *` when Central
 returns to standard time on 2026-11-01.
 
+## The 11 AM post: Scripture in the world
+
+A second routine, "Chasten 11 AM Instagram post" (`0 16 * * *`, 11:00am Central in
+daylight time; move it to `0 17 * * *` on 2026-11-01), posts a carousel of photographs
+with one short line placed in each scene: a billboard, a cafe chalkboard, a note on a
+dashboard, a departure board. Its prompt is `docs/world-routine-prompt.md`, which must
+match the live one.
+
+- **Lines** live in `studio/world/lines.json`. Most are word-for-word BSB fragments;
+  `python3 tools/check_world_lines.py` checks every one against the app's Bible
+  (`../chasten-bible-app/assets/bible/bible.db`) and must pass before a line ships.
+  Two a day are our own conversational lines, printed with the verse they come from.
+  Those are never signed "God", never presented as Scripture, and never promise what
+  Scripture does not.
+- **Scenes** live in `studio/world/scenes.json`. Every scene forbids other words, and
+  boards state their row count, or the model adds headers and nonsense letters.
+  Scenes never include a phone, app or website screen: Scripture on a screen must look
+  like Chasten's own app.
+- **Drawing** is Google's `gemini-3-pro-image`, about $0.13 a slide at 2K. The key is an
+  API credential on the routines' shared cloud environment (header `x-goog-api-key`,
+  host `generativelanguage.googleapis.com`), so no file or variable holds it. On a Mac,
+  `tools/world_run.py` reads `GEMINI_API_KEY` or `--env-file`.
+- **Checking:** the routine reads every slide back, and `world_run.py verify` compares
+  the words with the plan. A failed slide is redrawn once and then left out.
+- **Staging:** a post Ric approves in advance goes in `world/<date>/` with its cards
+  and a `staged.json`; the routine publishes it as is that day.
+- **State** is `studio/state/world-pointer.json` (theme rotation, the lines and scenes
+  of the last posts). Records live in `world/<date>/post.json`, which triggers the
+  Slack notice.
+
+Try a day's plan without drawing: `python3 tools/world_run.py plan /tmp/w --date 2026-10-01`.
+
 ## The dashboard
 
 The "Chasten Instagram Studio" artifact still holds the history written before

@@ -1,0 +1,1363 @@
+{
+ "note": "Lines for the 11 AM 'Scripture in the world' carousel. kind 'verse' is a word-for-word, contiguous piece of one BSB verse (tools/check_world_lines.py checks every one against the app's Bible). kind 'said' is our own conversational line; its ref names the verse it comes from and is printed beneath it. A 'said' line is never signed 'God', never quoted as Scripture, and never promises what Scripture does not. kind 'cta' is the closing slide. hook marks lines strong enough to open a post.",
+ "lines": [
+  {
+   "id": "rom-8-31",
+   "kind": "verse",
+   "verse": "ROM 8:31",
+   "ref": "Romans 8:31",
+   "themes": [
+    "courage",
+    "trust"
+   ],
+   "text": "If God is for us, who can be against us?",
+   "hook": true
+  },
+  {
+   "id": "pro-3-5",
+   "kind": "verse",
+   "verse": "PRO 3:5",
+   "ref": "Proverbs 3:5",
+   "themes": [
+    "trust"
+   ],
+   "text": "Trust in the LORD with all your heart, and lean not on your own understanding",
+   "hook": true
+  },
+  {
+   "id": "pro-3-6",
+   "kind": "verse",
+   "verse": "PRO 3:6",
+   "ref": "Proverbs 3:6",
+   "themes": [
+    "trust",
+    "guidance"
+   ],
+   "text": "In all your ways acknowledge Him, and He will make your paths straight."
+  },
+  {
+   "id": "psa-37-5",
+   "kind": "verse",
+   "verse": "PSA 37:5",
+   "ref": "Psalm 37:5",
+   "themes": [
+    "trust"
+   ],
+   "text": "Commit your way to the LORD; trust in Him, and He will do it."
+  },
+  {
+   "id": "psa-56-3",
+   "kind": "verse",
+   "verse": "PSA 56:3",
+   "ref": "Psalm 56:3",
+   "themes": [
+    "courage",
+    "trust"
+   ],
+   "text": "When I am afraid, I put my trust in You.",
+   "hook": true
+  },
+  {
+   "id": "pro-16-9",
+   "kind": "verse",
+   "verse": "PRO 16:9",
+   "ref": "Proverbs 16:9",
+   "themes": [
+    "guidance",
+    "timing"
+   ],
+   "text": "A man's heart plans his course, but the LORD determines his steps."
+  },
+  {
+   "id": "pro-19-21",
+   "kind": "verse",
+   "verse": "PRO 19:21",
+   "ref": "Proverbs 19:21",
+   "themes": [
+    "timing",
+    "trust"
+   ],
+   "text": "Many plans are in a man's heart, but the purpose of the LORD will prevail."
+  },
+  {
+   "id": "pro-16-3",
+   "kind": "verse",
+   "verse": "PRO 16:3",
+   "ref": "Proverbs 16:3",
+   "themes": [
+    "trust",
+    "guidance"
+   ],
+   "text": "Commit your works to the LORD and your plans will be achieved."
+  },
+  {
+   "id": "psa-119-105",
+   "kind": "verse",
+   "verse": "PSA 119:105",
+   "ref": "Psalm 119:105",
+   "themes": [
+    "guidance"
+   ],
+   "text": "Your word is a lamp to my feet and a light to my path."
+  },
+  {
+   "id": "psa-32-8",
+   "kind": "verse",
+   "verse": "PSA 32:8",
+   "ref": "Psalm 32:8",
+   "themes": [
+    "guidance"
+   ],
+   "text": "I will instruct you and teach you the way you should go"
+  },
+  {
+   "id": "jas-1-5",
+   "kind": "verse",
+   "verse": "JAS 1:5",
+   "ref": "James 1:5",
+   "themes": [
+    "guidance",
+    "prayer"
+   ],
+   "text": "If any of you lacks wisdom, he should ask God"
+  },
+  {
+   "id": "mic-6-8",
+   "kind": "verse",
+   "verse": "MIC 6:8",
+   "ref": "Micah 6:8",
+   "themes": [
+    "guidance"
+   ],
+   "text": "to act justly, to love mercy, and to walk humbly with your God"
+  },
+  {
+   "id": "heb-11-1",
+   "kind": "verse",
+   "verse": "HEB 11:1",
+   "ref": "Hebrews 11:1",
+   "themes": [
+    "trust",
+    "hope"
+   ],
+   "text": "Now faith is the assurance of what we hope for and the certainty of what we do not see."
+  },
+  {
+   "id": "1pe-5-7",
+   "kind": "verse",
+   "verse": "1PE 5:7",
+   "ref": "1 Peter 5:7",
+   "themes": [
+    "peace"
+   ],
+   "text": "Cast all your anxiety on Him, because He cares for you.",
+   "hook": true
+  },
+  {
+   "id": "exo-14-14",
+   "kind": "verse",
+   "verse": "EXO 14:14",
+   "ref": "Exodus 14:14",
+   "themes": [
+    "peace",
+    "trust"
+   ],
+   "text": "The LORD will fight for you; you need only to be still.",
+   "hook": true
+  },
+  {
+   "id": "psa-46-10",
+   "kind": "verse",
+   "verse": "PSA 46:10",
+   "ref": "Psalm 46:10",
+   "themes": [
+    "peace",
+    "rest"
+   ],
+   "text": "Be still and know that I am God",
+   "hook": true
+  },
+  {
+   "id": "php-4-6",
+   "kind": "verse",
+   "verse": "PHP 4:6",
+   "ref": "Philippians 4:6",
+   "themes": [
+    "peace",
+    "prayer"
+   ],
+   "text": "Be anxious for nothing, but in everything, by prayer and petition, with thanksgiving, present your requests to God."
+  },
+  {
+   "id": "php-4-7",
+   "kind": "verse",
+   "verse": "PHP 4:7",
+   "ref": "Philippians 4:7",
+   "themes": [
+    "peace"
+   ],
+   "text": "The peace of God, which surpasses all understanding, will guard your hearts"
+  },
+  {
+   "id": "jhn-16-33",
+   "kind": "verse",
+   "verse": "JHN 16:33",
+   "ref": "John 16:33",
+   "themes": [
+    "courage",
+    "peace"
+   ],
+   "text": "In the world you will have tribulation. But take courage; I have overcome the world!"
+  },
+  {
+   "id": "psa-94-19",
+   "kind": "verse",
+   "verse": "PSA 94:19",
+   "ref": "Psalm 94:19",
+   "themes": [
+    "peace"
+   ],
+   "text": "When anxiety overwhelms me, Your consolation delights my soul."
+  },
+  {
+   "id": "isa-26-3",
+   "kind": "verse",
+   "verse": "ISA 26:3",
+   "ref": "Isaiah 26:3",
+   "themes": [
+    "peace",
+    "trust"
+   ],
+   "text": "You will keep in perfect peace the steadfast of mind, because he trusts in You."
+  },
+  {
+   "id": "mat-6-34",
+   "kind": "verse",
+   "verse": "MAT 6:34",
+   "ref": "Matthew 6:34",
+   "themes": [
+    "peace"
+   ],
+   "text": "Therefore do not worry about tomorrow, for tomorrow will worry about itself."
+  },
+  {
+   "id": "jhn-14-27",
+   "kind": "verse",
+   "verse": "JHN 14:27",
+   "ref": "John 14:27",
+   "themes": [
+    "peace"
+   ],
+   "text": "Peace I leave with you; My peace I give to you.",
+   "hook": true
+  },
+  {
+   "id": "php-4-13",
+   "kind": "verse",
+   "verse": "PHP 4:13",
+   "ref": "Philippians 4:13",
+   "themes": [
+    "strength"
+   ],
+   "text": "I can do all things through Christ who gives me strength.",
+   "hook": true
+  },
+  {
+   "id": "2co-12-9",
+   "kind": "verse",
+   "verse": "2CO 12:9",
+   "ref": "2 Corinthians 12:9",
+   "themes": [
+    "grace",
+    "strength"
+   ],
+   "text": "My grace is sufficient for you, for My power is perfected in weakness."
+  },
+  {
+   "id": "psa-46-1",
+   "kind": "verse",
+   "verse": "PSA 46:1",
+   "ref": "Psalm 46:1",
+   "themes": [
+    "strength",
+    "presence"
+   ],
+   "text": "God is our refuge and strength, an ever-present help in times of trouble."
+  },
+  {
+   "id": "neh-8-10",
+   "kind": "verse",
+   "verse": "NEH 8:10",
+   "ref": "Nehemiah 8:10",
+   "themes": [
+    "joy",
+    "strength"
+   ],
+   "text": "the joy of the LORD is your strength.",
+   "hook": true
+  },
+  {
+   "id": "eph-6-10",
+   "kind": "verse",
+   "verse": "EPH 6:10",
+   "ref": "Ephesians 6:10",
+   "themes": [
+    "strength"
+   ],
+   "text": "Be strong in the Lord and in His mighty power."
+  },
+  {
+   "id": "psa-18-2",
+   "kind": "verse",
+   "verse": "PSA 18:2",
+   "ref": "Psalm 18:2",
+   "themes": [
+    "strength"
+   ],
+   "text": "The LORD is my rock, my fortress, and my deliverer."
+  },
+  {
+   "id": "psa-27-1",
+   "kind": "verse",
+   "verse": "PSA 27:1",
+   "ref": "Psalm 27:1",
+   "themes": [
+    "courage"
+   ],
+   "text": "The LORD is my light and my salvation"
+  },
+  {
+   "id": "2ti-1-7",
+   "kind": "verse",
+   "verse": "2TI 1:7",
+   "ref": "2 Timothy 1:7",
+   "themes": [
+    "courage"
+   ],
+   "text": "For God has not given us a spirit of fear, but of power, love, and self-control."
+  },
+  {
+   "id": "isa-40-31",
+   "kind": "verse",
+   "verse": "ISA 40:31",
+   "ref": "Isaiah 40:31",
+   "themes": [
+    "strength",
+    "timing"
+   ],
+   "text": "Those who wait upon the LORD will renew their strength",
+   "hook": true
+  },
+  {
+   "id": "isa-40-29",
+   "kind": "verse",
+   "verse": "ISA 40:29",
+   "ref": "Isaiah 40:29",
+   "themes": [
+    "strength"
+   ],
+   "text": "He gives power to the faint and increases the strength of the weak."
+  },
+  {
+   "id": "psa-121-2",
+   "kind": "verse",
+   "verse": "PSA 121:2",
+   "ref": "Psalm 121:2",
+   "themes": [
+    "strength",
+    "presence"
+   ],
+   "text": "My help comes from the LORD, the Maker of heaven and earth."
+  },
+  {
+   "id": "1jn-4-4",
+   "kind": "verse",
+   "verse": "1JN 4:4",
+   "ref": "1 John 4:4",
+   "themes": [
+    "courage"
+   ],
+   "text": "greater is He who is in you than he who is in the world."
+  },
+  {
+   "id": "psa-118-6",
+   "kind": "verse",
+   "verse": "PSA 118:6",
+   "ref": "Psalm 118:6",
+   "themes": [
+    "courage"
+   ],
+   "text": "The LORD is on my side; I will not be afraid."
+  },
+  {
+   "id": "isa-41-10",
+   "kind": "verse",
+   "verse": "ISA 41:10",
+   "ref": "Isaiah 41:10",
+   "themes": [
+    "courage",
+    "presence"
+   ],
+   "text": "Do not fear, for I am with you",
+   "hook": true
+  },
+  {
+   "id": "isa-41-13",
+   "kind": "verse",
+   "verse": "ISA 41:13",
+   "ref": "Isaiah 41:13",
+   "themes": [
+    "courage"
+   ],
+   "text": "Do not fear, I will help you."
+  },
+  {
+   "id": "jos-1-9",
+   "kind": "verse",
+   "verse": "JOS 1:9",
+   "ref": "Joshua 1:9",
+   "themes": [
+    "courage",
+    "presence"
+   ],
+   "text": "the LORD your God is with you wherever you go."
+  },
+  {
+   "id": "psa-16-8",
+   "kind": "verse",
+   "verse": "PSA 16:8",
+   "ref": "Psalm 16:8",
+   "themes": [
+    "courage",
+    "presence"
+   ],
+   "text": "Because He is at my right hand, I will not be shaken."
+  },
+  {
+   "id": "isa-60-22",
+   "kind": "verse",
+   "verse": "ISA 60:22",
+   "ref": "Isaiah 60:22",
+   "themes": [
+    "timing",
+    "trust"
+   ],
+   "text": "I am the LORD; in its time I will accomplish it quickly."
+  },
+  {
+   "id": "lam-3-23",
+   "kind": "verse",
+   "verse": "LAM 3:23",
+   "ref": "Lamentations 3:23",
+   "themes": [
+    "hope",
+    "morning"
+   ],
+   "text": "They are new every morning; great is Your faithfulness!"
+  },
+  {
+   "id": "heb-10-23",
+   "kind": "verse",
+   "verse": "HEB 10:23",
+   "ref": "Hebrews 10:23",
+   "themes": [
+    "hope",
+    "trust"
+   ],
+   "text": "He who promised is faithful.",
+   "hook": true
+  },
+  {
+   "id": "psa-42-11",
+   "kind": "verse",
+   "verse": "PSA 42:11",
+   "ref": "Psalm 42:11",
+   "themes": [
+    "hope"
+   ],
+   "text": "Put your hope in God, for I will yet praise Him"
+  },
+  {
+   "id": "isa-43-19",
+   "kind": "verse",
+   "verse": "ISA 43:19",
+   "ref": "Isaiah 43:19",
+   "themes": [
+    "hope",
+    "timing"
+   ],
+   "text": "Behold, I am about to do something new; even now it is coming."
+  },
+  {
+   "id": "isa-43-19b",
+   "kind": "verse",
+   "verse": "ISA 43:19",
+   "ref": "Isaiah 43:19",
+   "themes": [
+    "hope",
+    "provision"
+   ],
+   "text": "I will make a way in the wilderness and streams in the desert."
+  },
+  {
+   "id": "rev-21-4",
+   "kind": "verse",
+   "verse": "REV 21:4",
+   "ref": "Revelation 21:4",
+   "themes": [
+    "hope",
+    "comfort"
+   ],
+   "text": "He will wipe away every tear from their eyes"
+  },
+  {
+   "id": "psa-30-5",
+   "kind": "verse",
+   "verse": "PSA 30:5",
+   "ref": "Psalm 30:5",
+   "themes": [
+    "hope",
+    "joy"
+   ],
+   "text": "Weeping may stay the night, but joy comes in the morning.",
+   "hook": true
+  },
+  {
+   "id": "hab-2-3",
+   "kind": "verse",
+   "verse": "HAB 2:3",
+   "ref": "Habakkuk 2:3",
+   "themes": [
+    "timing"
+   ],
+   "text": "Though it lingers, wait for it, since it will surely come and will not delay."
+  },
+  {
+   "id": "ecc-3-11",
+   "kind": "verse",
+   "verse": "ECC 3:11",
+   "ref": "Ecclesiastes 3:11",
+   "themes": [
+    "timing",
+    "hope"
+   ],
+   "text": "He has made everything beautiful in its time.",
+   "hook": true
+  },
+  {
+   "id": "php-1-6",
+   "kind": "verse",
+   "verse": "PHP 1:6",
+   "ref": "Philippians 1:6",
+   "themes": [
+    "hope",
+    "identity"
+   ],
+   "text": "He who began a good work in you will carry it on to completion"
+  },
+  {
+   "id": "jhn-10-10",
+   "kind": "verse",
+   "verse": "JHN 10:10",
+   "ref": "John 10:10",
+   "themes": [
+    "hope"
+   ],
+   "text": "I have come that they may have life, and have it in all its fullness."
+  },
+  {
+   "id": "rom-12-12",
+   "kind": "verse",
+   "verse": "ROM 12:12",
+   "ref": "Romans 12:12",
+   "themes": [
+    "hope",
+    "prayer"
+   ],
+   "text": "Be joyful in hope, patient in affliction, persistent in prayer."
+  },
+  {
+   "id": "jhn-8-12",
+   "kind": "verse",
+   "verse": "JHN 8:12",
+   "ref": "John 8:12",
+   "themes": [
+    "hope",
+    "presence"
+   ],
+   "text": "I am the light of the world."
+  },
+  {
+   "id": "jhn-3-16",
+   "kind": "verse",
+   "verse": "JHN 3:16",
+   "ref": "John 3:16",
+   "themes": [
+    "love"
+   ],
+   "text": "For God so loved the world that He gave His one and only Son",
+   "hook": true
+  },
+  {
+   "id": "1jn-4-8",
+   "kind": "verse",
+   "verse": "1JN 4:8",
+   "ref": "1 John 4:8",
+   "themes": [
+    "love"
+   ],
+   "text": "God is love."
+  },
+  {
+   "id": "rom-5-8",
+   "kind": "verse",
+   "verse": "ROM 5:8",
+   "ref": "Romans 5:8",
+   "themes": [
+    "love",
+    "grace"
+   ],
+   "text": "While we were still sinners, Christ died for us."
+  },
+  {
+   "id": "jer-31-3",
+   "kind": "verse",
+   "verse": "JER 31:3",
+   "ref": "Jeremiah 31:3",
+   "themes": [
+    "love"
+   ],
+   "text": "I have loved you with an everlasting love",
+   "hook": true
+  },
+  {
+   "id": "1co-13-8",
+   "kind": "verse",
+   "verse": "1CO 13:8",
+   "ref": "1 Corinthians 13:8",
+   "themes": [
+    "love"
+   ],
+   "text": "Love never fails."
+  },
+  {
+   "id": "1co-13-4",
+   "kind": "verse",
+   "verse": "1CO 13:4",
+   "ref": "1 Corinthians 13:4",
+   "themes": [
+    "love"
+   ],
+   "text": "Love is patient, love is kind."
+  },
+  {
+   "id": "1jn-4-19",
+   "kind": "verse",
+   "verse": "1JN 4:19",
+   "ref": "1 John 4:19",
+   "themes": [
+    "love"
+   ],
+   "text": "We love because He first loved us.",
+   "hook": true
+  },
+  {
+   "id": "isa-54-10",
+   "kind": "verse",
+   "verse": "ISA 54:10",
+   "ref": "Isaiah 54:10",
+   "themes": [
+    "love",
+    "presence"
+   ],
+   "text": "My loving devotion will not depart from you"
+  },
+  {
+   "id": "zep-3-17",
+   "kind": "verse",
+   "verse": "ZEP 3:17",
+   "ref": "Zephaniah 3:17",
+   "themes": [
+    "love",
+    "joy"
+   ],
+   "text": "He will rejoice over you with singing."
+  },
+  {
+   "id": "isa-49-15",
+   "kind": "verse",
+   "verse": "ISA 49:15",
+   "ref": "Isaiah 49:15",
+   "themes": [
+    "presence",
+    "love"
+   ],
+   "text": "I will not forget you!"
+  },
+  {
+   "id": "mat-11-28",
+   "kind": "verse",
+   "verse": "MAT 11:28",
+   "ref": "Matthew 11:28",
+   "themes": [
+    "rest"
+   ],
+   "text": "Come to Me, all you who are weary and burdened, and I will give you rest.",
+   "hook": true
+  },
+  {
+   "id": "mat-11-30",
+   "kind": "verse",
+   "verse": "MAT 11:30",
+   "ref": "Matthew 11:30",
+   "themes": [
+    "rest"
+   ],
+   "text": "For My yoke is easy and My burden is light."
+  },
+  {
+   "id": "psa-23-1",
+   "kind": "verse",
+   "verse": "PSA 23:1",
+   "ref": "Psalm 23:1",
+   "themes": [
+    "provision",
+    "rest"
+   ],
+   "text": "The LORD is my shepherd; I shall not want.",
+   "hook": true
+  },
+  {
+   "id": "psa-23-3",
+   "kind": "verse",
+   "verse": "PSA 23:3",
+   "ref": "Psalm 23:3",
+   "themes": [
+    "rest"
+   ],
+   "text": "He restores my soul"
+  },
+  {
+   "id": "psa-62-1",
+   "kind": "verse",
+   "verse": "PSA 62:1",
+   "ref": "Psalm 62:1",
+   "themes": [
+    "rest"
+   ],
+   "text": "In God alone my soul finds rest"
+  },
+  {
+   "id": "exo-33-14",
+   "kind": "verse",
+   "verse": "EXO 33:14",
+   "ref": "Exodus 33:14",
+   "themes": [
+    "presence",
+    "rest"
+   ],
+   "text": "My Presence will go with you, and I will give you rest."
+  },
+  {
+   "id": "psa-4-8",
+   "kind": "verse",
+   "verse": "PSA 4:8",
+   "ref": "Psalm 4:8",
+   "themes": [
+    "rest",
+    "peace"
+   ],
+   "text": "I will lie down and sleep in peace"
+  },
+  {
+   "id": "psa-118-24",
+   "kind": "verse",
+   "verse": "PSA 118:24",
+   "ref": "Psalm 118:24",
+   "themes": [
+    "joy",
+    "gratitude"
+   ],
+   "text": "This is the day that the LORD has made; we will rejoice and be glad in it.",
+   "hook": true
+  },
+  {
+   "id": "1th-5-16",
+   "kind": "verse",
+   "verse": "1TH 5:16",
+   "ref": "1 Thessalonians 5:16",
+   "themes": [
+    "joy"
+   ],
+   "text": "Rejoice at all times."
+  },
+  {
+   "id": "1th-5-17",
+   "kind": "verse",
+   "verse": "1TH 5:17",
+   "ref": "1 Thessalonians 5:17",
+   "themes": [
+    "prayer"
+   ],
+   "text": "Pray without ceasing."
+  },
+  {
+   "id": "1th-5-18",
+   "kind": "verse",
+   "verse": "1TH 5:18",
+   "ref": "1 Thessalonians 5:18",
+   "themes": [
+    "gratitude"
+   ],
+   "text": "Give thanks in every circumstance"
+  },
+  {
+   "id": "psa-107-1",
+   "kind": "verse",
+   "verse": "PSA 107:1",
+   "ref": "Psalm 107:1",
+   "themes": [
+    "gratitude"
+   ],
+   "text": "Give thanks to the LORD, for He is good",
+   "hook": true
+  },
+  {
+   "id": "php-4-4",
+   "kind": "verse",
+   "verse": "PHP 4:4",
+   "ref": "Philippians 4:4",
+   "themes": [
+    "joy"
+   ],
+   "text": "Rejoice in the Lord always."
+  },
+  {
+   "id": "psa-139-14",
+   "kind": "verse",
+   "verse": "PSA 139:14",
+   "ref": "Psalm 139:14",
+   "themes": [
+    "identity"
+   ],
+   "text": "I am fearfully and wonderfully made.",
+   "hook": true
+  },
+  {
+   "id": "eph-2-10",
+   "kind": "verse",
+   "verse": "EPH 2:10",
+   "ref": "Ephesians 2:10",
+   "themes": [
+    "identity"
+   ],
+   "text": "For we are God's workmanship, created in Christ Jesus to do good works"
+  },
+  {
+   "id": "2co-5-17",
+   "kind": "verse",
+   "verse": "2CO 5:17",
+   "ref": "2 Corinthians 5:17",
+   "themes": [
+    "identity",
+    "grace"
+   ],
+   "text": "If anyone is in Christ, he is a new creation."
+  },
+  {
+   "id": "isa-43-1",
+   "kind": "verse",
+   "verse": "ISA 43:1",
+   "ref": "Isaiah 43:1",
+   "themes": [
+    "identity",
+    "love"
+   ],
+   "text": "I have called you by your name; you are Mine!",
+   "hook": true
+  },
+  {
+   "id": "1pe-2-9",
+   "kind": "verse",
+   "verse": "1PE 2:9",
+   "ref": "1 Peter 2:9",
+   "themes": [
+    "identity"
+   ],
+   "text": "But you are a chosen people"
+  },
+  {
+   "id": "1jn-1-9",
+   "kind": "verse",
+   "verse": "1JN 1:9",
+   "ref": "1 John 1:9",
+   "themes": [
+    "grace"
+   ],
+   "text": "He is faithful and just to forgive us our sins"
+  },
+  {
+   "id": "eph-2-8",
+   "kind": "verse",
+   "verse": "EPH 2:8",
+   "ref": "Ephesians 2:8",
+   "themes": [
+    "grace"
+   ],
+   "text": "For it is by grace you have been saved through faith"
+  },
+  {
+   "id": "psa-103-12",
+   "kind": "verse",
+   "verse": "PSA 103:12",
+   "ref": "Psalm 103:12",
+   "themes": [
+    "grace"
+   ],
+   "text": "As far as the east is from the west, so far has He removed our transgressions from us."
+  },
+  {
+   "id": "rom-8-1",
+   "kind": "verse",
+   "verse": "ROM 8:1",
+   "ref": "Romans 8:1",
+   "themes": [
+    "grace"
+   ],
+   "text": "there is now no condemnation for those who are in Christ Jesus.",
+   "hook": true
+  },
+  {
+   "id": "mat-28-20",
+   "kind": "verse",
+   "verse": "MAT 28:20",
+   "ref": "Matthew 28:20",
+   "themes": [
+    "presence"
+   ],
+   "text": "And surely I am with you always, even to the end of the age.",
+   "hook": true
+  },
+  {
+   "id": "isa-43-2",
+   "kind": "verse",
+   "verse": "ISA 43:2",
+   "ref": "Isaiah 43:2",
+   "themes": [
+    "presence",
+    "courage"
+   ],
+   "text": "When you pass through the waters, I will be with you"
+  },
+  {
+   "id": "deu-31-8",
+   "kind": "verse",
+   "verse": "DEU 31:8",
+   "ref": "Deuteronomy 31:8",
+   "themes": [
+    "presence"
+   ],
+   "text": "He will never leave you nor forsake you.",
+   "hook": true
+  },
+  {
+   "id": "psa-34-18",
+   "kind": "verse",
+   "verse": "PSA 34:18",
+   "ref": "Psalm 34:18",
+   "themes": [
+    "presence",
+    "comfort"
+   ],
+   "text": "The LORD is near to the brokenhearted"
+  },
+  {
+   "id": "psa-46-11",
+   "kind": "verse",
+   "verse": "PSA 46:11",
+   "ref": "Psalm 46:11",
+   "themes": [
+    "presence"
+   ],
+   "text": "The LORD of Hosts is with us"
+  },
+  {
+   "id": "psa-145-18",
+   "kind": "verse",
+   "verse": "PSA 145:18",
+   "ref": "Psalm 145:18",
+   "themes": [
+    "presence",
+    "prayer"
+   ],
+   "text": "The LORD is near to all who call on Him"
+  },
+  {
+   "id": "psa-147-3",
+   "kind": "verse",
+   "verse": "PSA 147:3",
+   "ref": "Psalm 147:3",
+   "themes": [
+    "comfort"
+   ],
+   "text": "He heals the brokenhearted and binds up their wounds."
+  },
+  {
+   "id": "jhn-11-35",
+   "kind": "verse",
+   "verse": "JHN 11:35",
+   "ref": "John 11:35",
+   "themes": [
+    "comfort"
+   ],
+   "text": "Jesus wept."
+  },
+  {
+   "id": "php-4-19",
+   "kind": "verse",
+   "verse": "PHP 4:19",
+   "ref": "Philippians 4:19",
+   "themes": [
+    "provision"
+   ],
+   "text": "And my God will supply all your needs according to His glorious riches in Christ Jesus."
+  },
+  {
+   "id": "mat-6-33",
+   "kind": "verse",
+   "verse": "MAT 6:33",
+   "ref": "Matthew 6:33",
+   "themes": [
+    "provision",
+    "trust"
+   ],
+   "text": "seek first the kingdom of God and His righteousness"
+  },
+  {
+   "id": "psa-34-10",
+   "kind": "verse",
+   "verse": "PSA 34:10",
+   "ref": "Psalm 34:10",
+   "themes": [
+    "provision"
+   ],
+   "text": "those who seek the LORD lack no good thing."
+  },
+  {
+   "id": "say-pray",
+   "kind": "said",
+   "verse": "PHP 4:6",
+   "ref": "Philippians 4:6",
+   "themes": [
+    "peace",
+    "prayer"
+   ],
+   "text": "Don't panic. Just pray.",
+   "hook": true
+  },
+  {
+   "id": "say-carry",
+   "kind": "said",
+   "verse": "1PE 5:7",
+   "ref": "1 Peter 5:7",
+   "themes": [
+    "peace",
+    "rest"
+   ],
+   "text": "Give it to Him. He can carry it."
+  },
+  {
+   "id": "say-tomorrow",
+   "kind": "said",
+   "verse": "MAT 6:34",
+   "ref": "Matthew 6:34",
+   "themes": [
+    "peace"
+   ],
+   "text": "You don't have to figure out tomorrow today."
+  },
+  {
+   "id": "say-brave",
+   "kind": "said",
+   "verse": "JOS 1:9",
+   "ref": "Joshua 1:9",
+   "themes": [
+    "courage",
+    "presence"
+   ],
+   "text": "Brave doesn't mean unafraid. It means not alone.",
+   "hook": true
+  },
+  {
+   "id": "say-mercies",
+   "kind": "said",
+   "verse": "LAM 3:23",
+   "ref": "Lamentations 3:23",
+   "themes": [
+    "hope",
+    "morning"
+   ],
+   "text": "New mercies. New morning. Same faithful God.",
+   "hook": true
+  },
+  {
+   "id": "say-worth",
+   "kind": "said",
+   "verse": "ROM 5:8",
+   "ref": "Romans 5:8",
+   "themes": [
+    "identity",
+    "love"
+   ],
+   "text": "Your worth was settled at the cross.",
+   "hook": true
+  },
+  {
+   "id": "say-approval",
+   "kind": "said",
+   "verse": "GAL 1:10",
+   "ref": "Galatians 1:10",
+   "themes": [
+    "identity"
+   ],
+   "text": "Chase God, not approval.",
+   "hook": true
+  },
+  {
+   "id": "say-plan",
+   "kind": "said",
+   "verse": "PRO 16:3",
+   "ref": "Proverbs 16:3",
+   "themes": [
+    "trust",
+    "guidance"
+   ],
+   "text": "Pray first. Plan second."
+  },
+  {
+   "id": "say-alone",
+   "kind": "said",
+   "verse": "MAT 11:28",
+   "ref": "Matthew 11:28",
+   "themes": [
+    "rest"
+   ],
+   "text": "You were never meant to carry it alone.",
+   "hook": true
+  },
+  {
+   "id": "say-grace",
+   "kind": "said",
+   "verse": "ROM 5:20",
+   "ref": "Romans 5:20",
+   "themes": [
+    "grace"
+   ],
+   "text": "Grace goes deeper than your worst day.",
+   "hook": true
+  },
+  {
+   "id": "say-working",
+   "kind": "said",
+   "verse": "EXO 14:14",
+   "ref": "Exodus 14:14",
+   "themes": [
+    "peace",
+    "trust"
+   ],
+   "text": "Be still. He is already working."
+  },
+  {
+   "id": "say-morning",
+   "kind": "said",
+   "verse": "PSA 30:5",
+   "ref": "Psalm 30:5",
+   "themes": [
+    "hope",
+    "joy"
+   ],
+   "text": "Morning is coming. Joy comes with it."
+  },
+  {
+   "id": "say-loved",
+   "kind": "said",
+   "verse": "ROM 8:39",
+   "ref": "Romans 8:39",
+   "themes": [
+    "love"
+   ],
+   "text": "Loved on your best day. Loved on your worst.",
+   "hook": true
+  },
+  {
+   "id": "say-bigger",
+   "kind": "said",
+   "verse": "1JN 4:4",
+   "ref": "1 John 4:4",
+   "themes": [
+    "courage"
+   ],
+   "text": "Nothing you face today is bigger than Him."
+  },
+  {
+   "id": "say-chapter",
+   "kind": "said",
+   "verse": "PRO 16:9",
+   "ref": "Proverbs 16:9",
+   "themes": [
+    "guidance",
+    "trust"
+   ],
+   "text": "Let Him write the next chapter."
+  },
+  {
+   "id": "say-heard",
+   "kind": "said",
+   "verse": "1JN 5:14",
+   "ref": "1 John 5:14",
+   "themes": [
+    "prayer"
+   ],
+   "text": "Your prayers are heard."
+  },
+  {
+   "id": "say-forgotten",
+   "kind": "said",
+   "verse": "ISA 49:15",
+   "ref": "Isaiah 49:15",
+   "themes": [
+    "presence",
+    "love"
+   ],
+   "text": "He has not forgotten you.",
+   "hook": true
+  },
+  {
+   "id": "say-storm",
+   "kind": "said",
+   "verse": "JHN 16:33",
+   "ref": "John 16:33",
+   "themes": [
+    "peace",
+    "courage"
+   ],
+   "text": "Peace isn't the absence of storms. It's Jesus in them."
+  },
+  {
+   "id": "say-finished",
+   "kind": "said",
+   "verse": "PHP 1:6",
+   "ref": "Philippians 1:6",
+   "themes": [
+    "hope",
+    "identity"
+   ],
+   "text": "Keep going. He is not finished with you.",
+   "hook": true
+  },
+  {
+   "id": "say-fear",
+   "kind": "said",
+   "verse": "2TI 1:7",
+   "ref": "2 Timothy 1:7",
+   "themes": [
+    "courage"
+   ],
+   "text": "Faith over fear. Every single time."
+  },
+  {
+   "id": "say-mountains",
+   "kind": "said",
+   "verse": "MAT 17:20",
+   "ref": "Matthew 17:20",
+   "themes": [
+    "trust",
+    "courage"
+   ],
+   "text": "Small faith still moves big mountains."
+  },
+  {
+   "id": "say-invitation",
+   "kind": "said",
+   "verse": "MAT 11:28",
+   "ref": "Matthew 11:28",
+   "themes": [
+    "rest"
+   ],
+   "text": "Rest is not a reward. It is an invitation."
+  },
+  {
+   "id": "say-thanks",
+   "kind": "said",
+   "verse": "1TH 5:18",
+   "ref": "1 Thessalonians 5:18",
+   "themes": [
+    "gratitude"
+   ],
+   "text": "Thank Him in the middle of it."
+  },
+  {
+   "id": "say-his-plan",
+   "kind": "said",
+   "verse": "PRO 19:21",
+   "ref": "Proverbs 19:21",
+   "themes": [
+    "trust",
+    "timing"
+   ],
+   "text": "His plan. My trust."
+  },
+  {
+   "id": "say-held",
+   "kind": "said",
+   "verse": "ISA 41:13",
+   "ref": "Isaiah 41:13",
+   "themes": [
+    "presence",
+    "timing"
+   ],
+   "text": "You are not behind. You are held."
+  },
+  {
+   "id": "say-still-his",
+   "kind": "said",
+   "verse": "ISA 43:1",
+   "ref": "Isaiah 43:1",
+   "themes": [
+    "identity",
+    "love"
+   ],
+   "text": "Still His. Still loved."
+  },
+  {
+   "id": "cta-amen",
+   "kind": "cta",
+   "ref": "@chasten.app",
+   "text": "Say Amen if you needed this today"
+  },
+  {
+   "id": "cta-send",
+   "kind": "cta",
+   "ref": "@chasten.app",
+   "text": "Send this to someone who needs it"
+  },
+  {
+   "id": "cta-save",
+   "kind": "cta",
+   "ref": "@chasten.app",
+   "text": "Save this for the day you need it"
+  },
+  {
+   "id": "cta-follow",
+   "kind": "cta",
+   "ref": "@chasten.app",
+   "text": "Follow for a verse every day"
+  },
+  {
+   "id": "cta-found",
+   "kind": "cta",
+   "ref": "@chasten.app",
+   "text": "Type Amen if one of these found you"
+  }
+ ]
+}

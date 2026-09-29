@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Post a short Slack message when a carousel or a reel is ready.
+"""Post a short Slack message when a carousel (7 AM or 11 AM) or a reel is ready.
 
 Runs in GitHub Actions on push, because that is the only place in this system
 that can hold a secret: cloud routines reject environment variables, and the
@@ -46,6 +46,17 @@ def carousel(path):
     return "\n".join(lines)
 
 
+def world(path):
+    """The 11 AM "Scripture in the world" carousel (tools/world_run.py)."""
+    p = json.load(open(os.path.join(REPO, path)))
+    if p.get("status") != "posted":
+        return (f":warning: *Chasten IG 11 AM {p['date']}* did not post: {p.get('note') or 'see the run log'}.\n"
+                f"Any finished cards are in the repo under world/{p['date']}.")
+    drawn = f" \u00b7 {p['drawn']} drawings, about ${p.get('cost', 0):.2f}" if p.get("drawn") else ""
+    return (f":white_check_mark: *Chasten IG 11 AM {p['date']}* posted: <{p['permalink']}|{p['title']}>\n"
+            f"{len(p.get('slides', []))} slides \u00b7 theme: {p.get('theme', 'mixed')}{drawn}")
+
+
 def reel(path):
     day = path.split("/")[1]
     meta = json.load(open(os.path.join(REPO, "reels", day, "meta.json")))
@@ -87,6 +98,8 @@ if __name__ == "__main__":
     for f in args or changed_files():
         if f.startswith("posts/") and f.endswith("/post.json"):
             send(carousel(f)); sent += 1
+        elif f.startswith("world/") and f.endswith("/post.json"):
+            send(world(f)); sent += 1
         elif f.startswith("reels/") and f.endswith("/caption.md"):
             send(reel(f)); sent += 1
         elif f.startswith("reels/") and f.endswith("/shelved.json"):

@@ -8,6 +8,7 @@ on:
     branches: [main]
     paths:
       - "posts/*/post.json"
+      - "world/*/post.json"
       - "reels/*/caption.md"
       - "reels/*/shelved.json"
   workflow_dispatch:
