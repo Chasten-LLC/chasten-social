@@ -281,9 +281,13 @@ def shadowed_text_layer(size, draw_fn, shadow_color, radius, passes=2):
 
 
 # ----------------------------------------------------------------- render
-def render_cta(spec, fonts, img_dir):
+HOOK_CUE, HOOK_CUE_SIZE = ">>>", 66
+
+
+def render_cta(spec, fonts, img_dir, font_size=None, cue=None):
     """Closing call to action. Same ground, ink, fonts and footer as the verse cards,
-    minus the header and number block, so it reads as slide four rather than an advert."""
+    minus the header and number block, so it reads as slide four rather than an advert.
+    The opening card (render_hook) is the same card with bigger words and a swipe cue."""
     style = spec.get("style", "paper")
     ink = spec.get("ink", "amber")
     text = " ".join(spec["text"].split())
@@ -295,7 +299,7 @@ def render_cta(spec, fonts, img_dir):
     overlay = Image.new("RGBA", (CARD_W, CARD_H), (0, 0, 0, 0))
     od = ImageDraw.Draw(overlay)
 
-    font_size = verse_font_size(len(text) + 60)   # a notch calmer than a full verse
+    font_size = font_size or verse_font_size(len(text) + 60)   # a notch calmer than a full verse
     pitch = VERSE_LINE_HEIGHT_EM * font_size
     serif = fonts.serif(font_size)
     dom_font = fonts.sans(DOMAIN_SIZE)
@@ -304,7 +308,8 @@ def render_cta(spec, fonts, img_dir):
 
     footer_h = int(round(WORDMARK_WIDTH / WORDMARK_ASPECT))
     band_top, band_bottom = PAD_TOP, CARD_H - PAD_BOTTOM - footer_h
-    text_top = band_top + (band_bottom - band_top - len(lines) * pitch) / 2
+    cue_h = HOOK_CUE_SIZE * 2.2 if cue else 0
+    text_top = band_top + (band_bottom - band_top - len(lines) * pitch - cue_h) / 2
     # The wash blocks are what make the verse ink legible on a night ground, so the
     # call to action carries them too and reads as the same kind of card.
     ascent, descent = serif.getmetrics()
@@ -321,6 +326,10 @@ def render_cta(spec, fonts, img_dir):
     for i, (ltxt, lx, lw) in enumerate(lines):
         baseline = text_top + i * pitch + pitch / 2 + (ascent - descent) / 2
         od.text((PAD_SIDE + lx, baseline), ltxt, font=serif, fill=rgba(body_ink), anchor="ls")
+    if cue:
+        cue_font = fonts.sans(HOOK_CUE_SIZE)
+        cue_y = text_top + len(lines) * pitch + HOOK_CUE_SIZE * 1.2
+        draw_tracked(od, (PAD_SIDE, cue_y), cue, cue_font, rgba(pal["ink"], 0.6), 0.18 * HOOK_CUE_SIZE)
 
     wm = Image.open(os.path.join(img_dir, f"wordmark-{pal['wordmark']}.png")).convert("RGBA")
     wm_h = int(round(WORDMARK_WIDTH / WORDMARK_ASPECT))
@@ -344,9 +353,20 @@ def render_cta(spec, fonts, img_dir):
     return out.convert("RGB")
 
 
+def render_hook(spec, fonts, img_dir):
+    """The opening card: one short line that makes someone swipe (written by the
+    routine under settings.hookRules), set large on the day's ground with its ink
+    wash, and a quiet >>> beneath it. It never carries Scripture; the verses do."""
+    text = " ".join(spec["text"].split())
+    size = min(104, verse_font_size(len(text)) + 8)
+    return render_cta(dict(spec, style=spec.get("ground", "paper")), fonts, img_dir, font_size=size, cue=HOOK_CUE)
+
+
 def render_card(spec, fonts, img_dir):
     if spec.get("style") == "cta":
         return render_cta(dict(spec, style=spec.get("ground", "paper")), fonts, img_dir)
+    if spec.get("style") == "hook":
+        return render_hook(spec, fonts, img_dir)
     style = spec.get("style", "paper")
     reference = spec["ref"]
     translation = spec.get("translation", "BSB")
@@ -510,7 +530,7 @@ def main():
     ap = argparse.ArgumentParser()
     sub = ap.add_subparsers(dest="cmd", required=True)
     r = sub.add_parser("render")
-    r.add_argument("--style", default="paper", choices=["paper", "night", "photo", "cta"])
+    r.add_argument("--style", default="paper", choices=["paper", "night", "photo", "cta", "hook"])
     r.add_argument("--ink", default="amber")
     r.add_argument("--ref", required=True)
     r.add_argument("--verse", required=True, type=int)

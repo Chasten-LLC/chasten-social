@@ -69,7 +69,7 @@
   "Then the references on one line, e.g. 'Philippians 4:6, 4:7 and 4:8 (BSB)' or 'Isaiah 41:10, Psalm 56:3, Deuteronomy 31:6 (BSB)'.",
   "Then one primary call to action and one secondary, rotating across days: save it for the day you need it; send it to someone carrying a lot; comment which slide you needed (1, 2 or 3); read the whole chapter free in Chasten.",
   "Sign-off line: 'Chasten is a free Bible app. chasten.ai' (the candle emoji may go before it).",
-  "Hashtags on their own line at the end: the core set plus two or three theme tags, twelve to fifteen total, lowercase.",
+  "Hashtags on their own line at the end: three to five, lowercase: #bibleverse and #faith plus one to three that fit the theme.",
   "Keep the whole caption under 1,200 characters including hashtags."
  ],
  "dashboardUrl": "https://claude.ai/code/artifact/5c46d039-2e10-43b4-a8d4-993d9645f4c2",
@@ -83,17 +83,7 @@
  "hashtags": {
   "core": [
    "#bibleverse",
-   "#scripture",
-   "#dailybread",
-   "#verseoftheday",
-   "#bible",
-   "#faith",
-   "#jesus",
-   "#christianquotes",
-   "#biblestudy",
-   "#godisgood",
-   "#bibleapp",
-   "#chasten"
+   "#faith"
   ],
   "themes": {
    "character": [
@@ -384,5 +374,12 @@
   "channelId": "UCkF1ippR_H4fEpa9sWmmj-Q",
   "handle": "@chasten_app",
   "link": "https://www.youtube.com/@chasten_app"
- }
+ },
+ "hookRules": [
+  "The opening card holds one line you write, 3 to 12 words, that makes someone want to swipe to the verses.",
+  "Speak to the reader or name a felt need or a quiet promise the verses keep, for example: 'For the one who can't sleep tonight', 'Read this before you worry about tomorrow', 'Send this to someone who needs rest'.",
+  "It must fit today's verses and never promise what they do not. Never clickbait or superstition ('this works immediately', 'don't scroll past this'), never scold or pressure.",
+  "Never quote Scripture on the opening card; the verses come next. No emoji, no em dashes, no exclamation marks, and no punctuation at the end. The card adds the >>> itself.",
+  "Vary the kind of line from day to day: some for the reader, some to send to someone, some naming the day's worry."
+ ]
 }

@@ -6,7 +6,7 @@ UNATTENDED. Nobody is watching. Never ask a question, never wait for approval. I
 
 Everything you need is in this git checkout. Do NOT use the Artifact tool at all, for reads or writes. It raises permission prompts that an unattended run cannot answer, which is why this repo exists.
 
-NEVER pull image bytes into your context. Do not cat, Read, echo or print any .b64 file, any base64 string, or any .jpg, with one exception: the single Read of card1.jpg in STEP 2. Images move as file paths and public URLs, never as bytes.
+NEVER pull image bytes into your context. Do not cat, Read, echo or print any .b64 file, any base64 string, or any .jpg, with one exception: one Read each of card0.jpg and card1.jpg in STEP 2. Images move as file paths and public URLs, never as bytes.
 
 Never write em dashes in anything you produce. Keep your final reply to one short paragraph.
 
@@ -41,24 +41,28 @@ Otherwise:
 
 It prints the recipe, ink, set title and verse refs. Backgrounds come from `studio/bg`, already in the checkout, so there is nothing to fetch.
 
+## STEP 1b. Write the opening line
+
+Read `hookRules` in `$R/studio/config/settings.json` and today's set in `$W/work/plan.json` (its title and verses). Write one line to `$W/work/hook.txt` following those rules exactly: 3 to 12 words that make someone want to swipe to the verses, true to today's verses, no Scripture, no emoji, no em dash, no exclamation mark, and no punctuation at the end. It becomes the opening card, slide one; the card adds the >>> itself.
+
 ## STEP 2. Render
 
     python3 tools/ig_run.py render $W
     python3 tools/ig_run.py preview $W
 
-Read `$W/work/card1.jpg` once with the Read tool to confirm the verse is legible. This is the only image you may open. If a card is clearly broken, note it in your final reply and continue.
+Read `$W/work/card0.jpg` and `$W/work/card1.jpg` once each with the Read tool to confirm the opening line and the first verse are legible. These are the only images you may open. If a card is clearly broken, note it in your final reply and continue.
 
 ## STEP 3. Caption
 
-Read `$W/work/plan.json` and the `captionRules` and `hashtags` in `$R/studio/config/settings.json`. Write the caption to `$W/work/caption.txt` following those rules exactly: hook line under 110 characters, one to three plain sentences, the references line, one primary and one secondary call to action, the sign-off line, then twelve to fifteen lowercase hashtags on the last line. Warm, reverent, plain. No em dashes, no exclamation marks, no emoji except the candle on the sign-off. The verses are printed on the cards, so do not retype them.
+Read `$W/work/plan.json` and the `captionRules` and `hashtags` in `$R/studio/config/settings.json`. Write the caption to `$W/work/caption.txt` following those rules exactly: hook line under 110 characters, one to three plain sentences, the references line, one primary and one secondary call to action, the sign-off line, then three to five lowercase hashtags on the last line. The caption's first line must not repeat the opening card's words. Warm, reverent, plain. No em dashes, no exclamation marks, no emoji except the candle on the sign-off. The verses are printed on the cards, so do not retype them.
 
-Check mechanically: hook under 110 chars, total under 2200, no em dash, no exclamation mark, 12 to 15 hashtags, all lowercase.
+Check mechanically: hook under 110 chars, total under 2200, no em dash, no exclamation mark, 3 to 5 hashtags, all lowercase.
 
 Then choose today's audio. `$W/work/plan.json` has `audioRecent`, the songs suggested on recent days. From `settings.audio.byTheme` take the theme that fits today's set, then pick the first song in that list that is not in `audioRecent`. If every song in that theme is in `audioRecent`, pick the one that appears earliest in `audioRecent`, which is the least recently used. Never suggest the same song two days running. Keep the choice for STEP 6.
 
 ## STEP 4. Publish the cards to GitHub
 
-Instagram can only fetch images from a public URL, so the cards must be pushed before STEP 5. The checkout arrives on a detached HEAD, so the branch line below is required. The plan decides how many cards there are: three verse cards and the follow card on almost every day. Publish every card it rendered, in order, whatever the count.
+Instagram can only fetch images from a public URL, so the cards must be pushed before STEP 5. The checkout arrives on a detached HEAD, so the branch line below is required. The plan decides how many cards there are: the opening card, three verse cards and the follow card on almost every day. Publish every card it rendered, in order, whatever the count.
 
     cd $R && git fetch -q origin main && git checkout -B main origin/main -q
     mkdir -p $R/posts/<today>

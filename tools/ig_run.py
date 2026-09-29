@@ -197,6 +197,17 @@ def plan(work):
 # ---------------------------------------------------------------- render
 def render(work):
     plan_doc = load(os.path.join(work, "work", "plan.json"))
+    # The opening card: the routine writes one line to work/hook.txt (settings
+    # hookRules) after planning; it becomes card0 and so slide one.
+    hook_path = os.path.join(work, "work", "hook.txt")
+    hook = " ".join(open(hook_path).read().split()) if os.path.exists(hook_path) else ""
+    plan_doc["cards"] = [c for c in plan_doc["cards"] if c.get("style") != "hook"]
+    if hook:
+        plan_doc["cards"].insert(0, {
+            "style": "hook", "ground": "night" if plan_doc["recipe"] == "night" else "paper",
+            "ink": plan_doc["ink"], "text": hook, "out": os.path.join(work, "work", "card0.jpg")})
+        plan_doc["hook"] = hook
+        dump(os.path.join(work, "work", "plan.json"), plan_doc)
     repo = os.environ.get("CHASTEN_REPO") or os.path.dirname(os.path.abspath(work))
     for bid in plan_doc["backgrounds"]:
         src = os.path.join(repo, "studio", "bg", f"{bid}.jpg")
