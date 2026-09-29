@@ -53,8 +53,11 @@ def world(path):
         return (f":warning: *Chasten IG 11 AM {p['date']}* did not post: {p.get('note') or 'see the run log'}.\n"
                 f"Any finished cards are in the repo under world/{p['date']}.")
     drawn = f" \u00b7 {p['drawn']} drawings, about ${p.get('cost', 0):.2f}" if p.get("drawn") else ""
-    return (f":white_check_mark: *Chasten IG 11 AM {p['date']}* posted: <{p['permalink']}|{p['title']}>\n"
-            f"{len(p.get('slides', []))} slides \u00b7 theme: {p.get('theme', 'mixed')}{drawn}")
+    lines = [f":white_check_mark: *Chasten IG 11 AM {p['date']}* posted: <{p['permalink']}|{p['title']}>",
+             f"{len(p.get('slides', []))} slides \u00b7 theme: {p.get('theme', 'mixed')}{drawn}"]
+    if p.get("audio"):
+        lines.append(f"Audio idea: search `{p['audio']}` in Instagram's music library.")
+    return "\n".join(lines)
 
 
 def reel(path):

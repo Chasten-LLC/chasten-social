@@ -52,6 +52,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 WORLD = os.path.join(ROOT, "studio", "world")
 STATE = os.path.join(ROOT, "studio", "state", "world-pointer.json")
+MORNING = os.path.join(ROOT, "studio", "state", "pointer.json")  # the 7 AM post's state
+SETTINGS = os.path.join(ROOT, "studio", "config", "settings.json")
 RAW = "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/{date}/{n}.jpg"
 MODEL = os.environ.get("WORLD_MODEL", "gemini-3-pro-image")
 API = "https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent"
@@ -213,6 +215,22 @@ def pick(date, lines, scenes, state):
     return theme, pairs
 
 
+def audio_for(theme, state):
+    """A song idea for Slack, the same way the 7 AM post suggests one: the
+    first song in the theme's list (studio/config/settings.json audio.byTheme)
+    that neither post used lately, so the two posts never suggest the same
+    song on the same day."""
+    audio = load(SETTINGS)["audio"]
+    word = {"timing": "waiting"}.get(theme, theme)
+    songs = next((v for k, v in audio["byTheme"].items() if word in [w.strip() for w in k.split(",")]),
+                 audio.get("fallback", []))
+    recent = list(state.get("usedAudio", []))[-8:] + list(load(MORNING, {}).get("usedAudio", []))[-3:]
+    fresh = [x for x in songs if x not in recent]
+    if fresh:
+        return fresh[0]
+    return min(songs, key=lambda x: recent.index(x) if x in recent else -1) if songs else None
+
+
 def plan(work):
     lines = load(os.path.join(WORLD, "lines.json"))["lines"]
     scenes = load(os.path.join(WORLD, "scenes.json"))["scenes"]
@@ -239,9 +257,10 @@ def plan(work):
         slides.append({"n": n, "line": line["id"], "kind": line["kind"], "scene": scene["id"],
                        "text": line["text"], "ref": line["ref"], "verse": line.get("verse"),
                        "prompt": prompt_for(line, scene)})
+    audio = audio_for(theme, load(STATE, {}))
     dump(os.path.join(work, "work", "plan.json"),
-         {"date": arg("--date"), "theme": theme, "model": MODEL, "slides": slides})
-    print(f"theme: {theme}")
+         {"date": arg("--date"), "theme": theme, "audio": audio, "model": MODEL, "slides": slides})
+    print(f"theme: {theme}; audio idea: {audio}")
     for s in slides:
         print(f'{s["n"]}. [{s["scene"]}] ({s["kind"]}) {s["text"]} ({s["ref"]})')
 
@@ -457,26 +476,30 @@ def package(work):
     date, st = arg("--date"), arg("--status")
     if st not in ("posted", "failed"):
         sys.exit("--status must be posted or failed")
+    state = load(STATE, {"postCount": 0, "lastPostDate": None, "history": []})
     if "--staged" in sys.argv:
         src = load(os.path.join(ROOT, "world", date, "staged.json"))
         slides, caption, theme, drawn = src["slides"], src["caption"], src.get("theme", "mixed"), src.get("drawn", 0)
+        audio = src.get("audio") or audio_for(theme, state)
     else:
         p = load(os.path.join(work, "work", "plan.json"))
         slides, theme = p.get("final", []), p.get("theme")
+        audio = p.get("audio")
         cap = os.path.join(work, "work", "caption.txt")
         caption = open(cap, encoding="utf-8").read().strip() if os.path.exists(cap) else ""
         drawn = sum(s.get("draws", 0) for s in p["slides"])
     post = {"id": date, "date": date, "kind": "world", "theme": theme,
             "title": slides[0]["text"] if slides else "Scripture in the world",
             "status": st, "permalink": arg("--permalink"), "mediaId": arg("--media-id"),
-            "note": arg("--note", ""), "caption": caption, "slides": slides,
+            "note": arg("--note", ""), "audio": audio, "caption": caption, "slides": slides,
             "cardUrls": [RAW.format(date=date, n=i) for i in range(1, len(slides) + 1)],
             "drawn": drawn, "cost": round(drawn * PRICE, 2)}
     dump(os.path.join(work, "out", "post.json"), post)
-    state = load(STATE, {"postCount": 0, "lastPostDate": None, "history": []})
     if st == "posted":  # a failed day leaves no mark, so a rerun plans the same post
         state["postCount"] = state.get("postCount", 0) + 1
         state["lastPostDate"] = date
+        if audio:
+            state["usedAudio"] = (state.get("usedAudio", []) + [audio])[-12:]
         state["history"] = (state.get("history", []) + [{
             "date": date, "theme": theme,
             "lines": [s["line"] for s in slides if s.get("kind") != "cta"],
