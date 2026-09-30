@@ -1,0 +1,109 @@
+{
+ "id": "2026-09-30",
+ "date": "2026-09-30",
+ "kind": "world",
+ "theme": "peace",
+ "title": "Don't panic. Just pray.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Dd6vcOAoOgS/",
+ "mediaId": "18630011647056773",
+ "note": "9 slides; slide 7 redrawn once for a stray quote mark and doodle",
+ "audio": "Peace Be Still by Hope Darst",
+ "caption": "Which slide are you keeping? Comment its number.\n\nFor the heart that has been restless lately, here is a little peace to carry through today. You are held, even when it does not feel that way.\n\nPhilippians 4:6, Exodus 14:14, Isaiah 26:3, John 16:33, Matthew 6:34, Psalm 94:19, Philippians 4:7, John 14:27 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n#bibleverse #faith #peace #anxiety #bestill",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-pray",
+   "kind": "said",
+   "scene": "neon",
+   "text": "Don't panic. Just pray.",
+   "ref": "Philippians 4:6"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "say-working",
+   "kind": "said",
+   "scene": "cardboard-sign",
+   "text": "Be still. He is already working.",
+   "ref": "Exodus 14:14"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "isa-26-3",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "You will keep in perfect peace the steadfast of mind, because he trusts in You.",
+   "ref": "Isaiah 26:3"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "jhn-16-33",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "In the world you will have tribulation. But take courage; I have overcome the world!",
+   "ref": "John 16:33"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "mat-6-34",
+   "kind": "verse",
+   "scene": "shop-window",
+   "text": "Therefore do not worry about tomorrow, for tomorrow will worry about itself.",
+   "ref": "Matthew 6:34"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "psa-94-19",
+   "kind": "verse",
+   "scene": "church-marquee",
+   "text": "When anxiety overwhelms me, Your consolation delights my soul.",
+   "ref": "Psalm 94:19"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "php-4-7",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "The peace of God, which surpasses all understanding, will guard your hearts",
+   "ref": "Philippians 4:7"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "jhn-14-27",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "Peace I leave with you; My peace I give to you.",
+   "ref": "John 14:27"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-send",
+   "kind": "cta",
+   "scene": "door-note",
+   "text": "Send this to someone who needs it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-09-30/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-09-30/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-09-30/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-09-30/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-09-30/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-09-30/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-09-30/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-09-30/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-09-30/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}

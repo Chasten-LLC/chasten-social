@@ -1,6 +1,6 @@
 {
- "postCount": 1,
- "lastPostDate": "2026-09-29",
+ "postCount": 2,
+ "lastPostDate": "2026-09-30",
  "history": [
   {
    "date": "2026-09-29",
@@ -25,9 +25,34 @@
     "letter-board",
     "candle-label"
    ]
+  },
+  {
+   "date": "2026-09-30",
+   "theme": "peace",
+   "lines": [
+    "say-pray",
+    "say-working",
+    "isa-26-3",
+    "jhn-16-33",
+    "mat-6-34",
+    "psa-94-19",
+    "php-4-7",
+    "jhn-14-27"
+   ],
+   "scenes": [
+    "neon",
+    "cardboard-sign",
+    "bus-poster",
+    "typewriter",
+    "shop-window",
+    "church-marquee",
+    "blackboard",
+    "letter-desk"
+   ]
   }
  ],
  "usedAudio": [
-  "I Will Trust in You by Lauren Daigle"
+  "I Will Trust in You by Lauren Daigle",
+  "Peace Be Still by Hope Darst"
  ]
 }
