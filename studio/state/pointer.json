@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 43,
- "postCount": 27,
+ "nextSetIndex": 44,
+ "postCount": 28,
  "usedSets": [
   0,
   1,
@@ -28,7 +28,8 @@
   36,
   38,
   41,
-  42
+  42,
+  43
  ],
  "usedBackgrounds": [
   "5850090",
@@ -129,10 +130,12 @@
   "Genesis 28:12",
   "Proverbs 3:5",
   "Proverbs 3:6",
-  "Proverbs 3:7"
+  "Proverbs 3:7",
+  "Proverbs 16:9",
+  "Psalm 37:23",
+  "Psalm 32:8"
  ],
  "usedAudio": [
-  "Peace Be Still by Hope Darst",
   "Gratitude by Brandon Lake",
   "Reckless Love by Cory Asbury",
   "Living Hope by Phil Wickham",
@@ -143,8 +146,9 @@
   "Reckless Love by Cory Asbury",
   "How Great Is Our God by Chris Tomlin",
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
-  "Trust in God by Elevation Worship"
+  "Trust in God by Elevation Worship",
+  "I Will Trust in You by Lauren Daigle"
  ],
- "lastPostId": "2026-09-29",
- "lastRunAt": "2026-09-29T12:15:24+00:00"
+ "lastPostId": "2026-09-30",
+ "lastRunAt": "2026-09-30T12:15:32+00:00"
 }
