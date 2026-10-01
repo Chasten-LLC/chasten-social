@@ -1,6 +1,6 @@
 {
- "postCount": 2,
- "lastPostDate": "2026-09-30",
+ "postCount": 3,
+ "lastPostDate": "2026-10-01",
  "history": [
   {
    "date": "2026-09-29",
@@ -49,10 +49,35 @@
     "blackboard",
     "letter-desk"
    ]
+  },
+  {
+   "date": "2026-10-01",
+   "theme": "strength",
+   "lines": [
+    "isa-40-31",
+    "say-worth",
+    "neh-8-10",
+    "say-alone",
+    "psa-121-2",
+    "psa-46-1",
+    "2co-12-9",
+    "eph-6-10"
+   ],
+   "scenes": [
+    "brick-mural",
+    "letter-board",
+    "mug",
+    "tshirt-back",
+    "fridge-note",
+    "index-card",
+    "notebook",
+    "diner-napkin"
+   ]
   }
  ],
  "usedAudio": [
   "I Will Trust in You by Lauren Daigle",
-  "Peace Be Still by Hope Darst"
+  "Peace Be Still by Hope Darst",
+  "Battle Belongs by Phil Wickham"
  ]
 }

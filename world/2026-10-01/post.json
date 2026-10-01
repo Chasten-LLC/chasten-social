@@ -1,0 +1,109 @@
+{
+ "id": "2026-10-01",
+ "date": "2026-10-01",
+ "kind": "world",
+ "theme": "strength",
+ "title": "Those who wait upon the LORD will renew their strength",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Dd9URPDm_aU/",
+ "mediaId": "18103421231365389",
+ "note": "9 slides; slide 7 redrawn once for garbled film-border lettering",
+ "audio": "Battle Belongs by Phil Wickham",
+ "caption": "Which one did you need today? Tell us its number.\n\nFor the days when you feel worn thin, here is a reminder that your strength does not have to come from you. Lean on Him a little more today.\n\nIsaiah 40:31, Romans 5:8, Nehemiah 8:10, Matthew 11:28, Psalm 121:2, Psalm 46:1, 2 Corinthians 12:9, Ephesians 6:10 (BSB)\n\nShare it with someone who is carrying a lot.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n#bibleverse #faith #strength #godisfaithful",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "isa-40-31",
+   "kind": "verse",
+   "scene": "brick-mural",
+   "text": "Those who wait upon the LORD will renew their strength",
+   "ref": "Isaiah 40:31"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "say-worth",
+   "kind": "said",
+   "scene": "letter-board",
+   "text": "Your worth was settled at the cross.",
+   "ref": "Romans 5:8"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "neh-8-10",
+   "kind": "verse",
+   "scene": "mug",
+   "text": "The joy of the LORD is your strength.",
+   "ref": "Nehemiah 8:10"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "say-alone",
+   "kind": "said",
+   "scene": "tshirt-back",
+   "text": "You were never meant to carry it alone.",
+   "ref": "Matthew 11:28"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "psa-121-2",
+   "kind": "verse",
+   "scene": "fridge-note",
+   "text": "My help comes from the LORD, the Maker of heaven and earth.",
+   "ref": "Psalm 121:2"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "psa-46-1",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "God is our refuge and strength, an ever-present help in times of trouble.",
+   "ref": "Psalm 46:1"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "2co-12-9",
+   "kind": "verse",
+   "scene": "notebook",
+   "text": "My grace is sufficient for you, for My power is perfected in weakness.",
+   "ref": "2 Corinthians 12:9"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "eph-6-10",
+   "kind": "verse",
+   "scene": "diner-napkin",
+   "text": "Be strong in the Lord and in His mighty power.",
+   "ref": "Ephesians 6:10"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-save",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Save this for the day you need it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-01/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-01/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-01/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-01/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-01/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-01/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-01/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-01/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-01/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}
