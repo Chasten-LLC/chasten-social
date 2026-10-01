@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 44,
- "postCount": 28,
+ "nextSetIndex": 46,
+ "postCount": 29,
  "usedSets": [
   0,
   1,
@@ -29,7 +29,8 @@
   38,
   41,
   42,
-  43
+  43,
+  45
  ],
  "usedBackgrounds": [
   "5850090",
@@ -59,7 +60,8 @@
   "16292210",
   "792972",
   "36033428",
-  "10807887"
+  "10807887",
+  "39181619"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -133,10 +135,12 @@
   "Proverbs 3:7",
   "Proverbs 16:9",
   "Psalm 37:23",
-  "Psalm 32:8"
+  "Psalm 32:8",
+  "Psalm 23:1",
+  "Psalm 23:2",
+  "Psalm 23:3"
  ],
  "usedAudio": [
-  "Gratitude by Brandon Lake",
   "Reckless Love by Cory Asbury",
   "Living Hope by Phil Wickham",
   "Gratitude by Brandon Lake",
@@ -147,8 +151,9 @@
   "How Great Is Our God by Chris Tomlin",
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
   "Trust in God by Elevation Worship",
-  "I Will Trust in You by Lauren Daigle"
+  "I Will Trust in You by Lauren Daigle",
+  "Jireh by Elevation Worship and Maverick City"
  ],
- "lastPostId": "2026-09-30",
- "lastRunAt": "2026-09-30T12:15:32+00:00"
+ "lastPostId": "2026-10-01",
+ "lastRunAt": "2026-10-01T12:15:39+00:00"
 }
