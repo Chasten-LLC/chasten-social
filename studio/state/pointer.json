@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 46,
- "postCount": 29,
+ "nextSetIndex": 48,
+ "postCount": 30,
  "usedSets": [
   0,
   1,
@@ -30,7 +30,8 @@
   41,
   42,
   43,
-  45
+  45,
+  47
  ],
  "usedBackgrounds": [
   "5850090",
@@ -138,10 +139,12 @@
   "Psalm 32:8",
   "Psalm 23:1",
   "Psalm 23:2",
-  "Psalm 23:3"
+  "Psalm 23:3",
+  "Exodus 3:2",
+  "Exodus 3:5",
+  "Exodus 3:14"
  ],
  "usedAudio": [
-  "Reckless Love by Cory Asbury",
   "Living Hope by Phil Wickham",
   "Gratitude by Brandon Lake",
   "King of Kings by Hillsong Worship",
@@ -152,8 +155,9 @@
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
   "Trust in God by Elevation Worship",
   "I Will Trust in You by Lauren Daigle",
-  "Jireh by Elevation Worship and Maverick City"
+  "Jireh by Elevation Worship and Maverick City",
+  "Holy Forever by Chris Tomlin"
  ],
- "lastPostId": "2026-10-01",
- "lastRunAt": "2026-10-01T12:15:39+00:00"
+ "lastPostId": "2026-10-02",
+ "lastRunAt": "2026-10-02T12:15:49+00:00"
 }
