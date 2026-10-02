@@ -1,0 +1,99 @@
+{
+ "id": "2026-10-02",
+ "date": "2026-10-02",
+ "kind": "world",
+ "theme": "hope",
+ "title": "Keep going. He is not finished with you.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Dd_5MfoG6xz/",
+ "mediaId": "18031178843909320",
+ "note": "8 slides; slides 2 and 5 redrawn, slide 8 left out (speedometer numbers visible)",
+ "audio": "Goodness of God by Bethel Music",
+ "caption": "Which slide are you keeping? Comment its number.\n\nIf today feels long, hold on a little longer. There is still good ahead of you, and you are not walking toward it alone.\n\nPhilippians 1:6, Isaiah 43:19, John 8:12, Romans 12:12, Hebrews 11:1, Hebrews 10:23, Psalm 30:5 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #hope #hopeinchrist",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-finished",
+   "kind": "said",
+   "scene": "cafe-chalkboard",
+   "text": "Keep going. He is not finished with you.",
+   "ref": "Philippians 1:6"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "isa-43-19",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "Behold, I am about to do something new; even now it is coming.",
+   "ref": "Isaiah 43:19"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "jhn-8-12",
+   "kind": "verse",
+   "scene": "split-flap",
+   "text": "I am the light of the world.",
+   "ref": "John 8:12"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "rom-12-12",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "Be joyful in hope, patient in affliction, persistent in prayer.",
+   "ref": "Romans 12:12"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "heb-11-1",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "Now faith is the assurance of what we hope for and the certainty of what we do not see.",
+   "ref": "Hebrews 11:1"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "heb-10-23",
+   "kind": "verse",
+   "scene": "fog-window",
+   "text": "He who promised is faithful.",
+   "ref": "Hebrews 10:23"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "say-morning",
+   "kind": "said",
+   "scene": "mirror-marker",
+   "text": "Morning is coming. Joy comes with it.",
+   "ref": "Psalm 30:5"
+  },
+  {
+   "n": 8,
+   "slide": 9,
+   "line": "cta-follow",
+   "kind": "cta",
+   "scene": "sidewalk-chalk",
+   "text": "Follow for a verse every day",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-02/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-02/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-02/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-02/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-02/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-02/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-02/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-02/8.jpg"
+ ],
+ "drawn": 12,
+ "cost": 1.61
+}
