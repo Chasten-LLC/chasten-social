@@ -1,6 +1,6 @@
 {
- "postCount": 4,
- "lastPostDate": "2026-10-02",
+ "postCount": 5,
+ "lastPostDate": "2026-10-03",
  "history": [
   {
    "date": "2026-09-29",
@@ -95,12 +95,37 @@
     "fog-window",
     "mirror-marker"
    ]
+  },
+  {
+   "date": "2026-10-03",
+   "theme": "love",
+   "lines": [
+    "say-forgotten",
+    "say-loved",
+    "isa-54-10",
+    "isa-43-1",
+    "jer-31-3",
+    "rom-5-8",
+    "jhn-3-16",
+    "1jn-4-19"
+   ],
+   "scenes": [
+    "sand",
+    "dashboard-note",
+    "cardboard-sign",
+    "church-marquee",
+    "shop-window",
+    "bus-poster",
+    "typewriter",
+    "neon"
+   ]
   }
  ],
  "usedAudio": [
   "I Will Trust in You by Lauren Daigle",
   "Peace Be Still by Hope Darst",
   "Battle Belongs by Phil Wickham",
-  "Goodness of God by Bethel Music"
+  "Goodness of God by Bethel Music",
+  "Gratitude by Brandon Lake"
  ]
 }

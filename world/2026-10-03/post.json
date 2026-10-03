@@ -1,0 +1,99 @@
+{
+ "id": "2026-10-03",
+ "date": "2026-10-03",
+ "kind": "world",
+ "theme": "love",
+ "title": "He has not forgotten you.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeCdvdUGzfb/",
+ "mediaId": "18050141996811094",
+ "note": "8 slides; slide 9 (Amen cup) redrawn then left out (cut-off word, then garbled film-edge lettering)",
+ "audio": "Gratitude by Brandon Lake",
+ "caption": "Which one did you need today? Tell us its number.\n\nOn your best day and your worst, you are loved with a love that does not run out. Let that be the first thing you remember this morning.\n\nIsaiah 49:15, Romans 8:39, Isaiah 54:10, Isaiah 43:1, Jeremiah 31:3, Romans 5:8, John 3:16, 1 John 4:19 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #godslove",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-forgotten",
+   "kind": "said",
+   "scene": "sand",
+   "text": "He has not forgotten you.",
+   "ref": "Isaiah 49:15"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "say-loved",
+   "kind": "said",
+   "scene": "dashboard-note",
+   "text": "Loved on your best day. Loved on your worst.",
+   "ref": "Romans 8:39"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "isa-54-10",
+   "kind": "verse",
+   "scene": "cardboard-sign",
+   "text": "My loving devotion will not depart from you",
+   "ref": "Isaiah 54:10"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "isa-43-1",
+   "kind": "verse",
+   "scene": "church-marquee",
+   "text": "I have called you by your name; you are Mine!",
+   "ref": "Isaiah 43:1"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "jer-31-3",
+   "kind": "verse",
+   "scene": "shop-window",
+   "text": "I have loved you with an everlasting love",
+   "ref": "Jeremiah 31:3"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "rom-5-8",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "While we were still sinners, Christ died for us.",
+   "ref": "Romans 5:8"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "jhn-3-16",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "For God so loved the world that He gave His one and only Son",
+   "ref": "John 3:16"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "1jn-4-19",
+   "kind": "verse",
+   "scene": "neon",
+   "text": "We love because He first loved us.",
+   "ref": "1 John 4:19"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-03/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-03/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-03/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-03/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-03/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-03/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-03/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-03/8.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}
