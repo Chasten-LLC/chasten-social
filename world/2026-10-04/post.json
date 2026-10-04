@@ -1,0 +1,109 @@
+{
+ "id": "2026-10-04",
+ "date": "2026-10-04",
+ "kind": "world",
+ "theme": "rest",
+ "title": "The LORD is my shepherd; I shall not want.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeFCmIQG7DP/",
+ "mediaId": "18355156012222286",
+ "note": "9 slides; slide 6 (fridge note) redrawn once for garbled background lettering, passed on redraw",
+ "audio": "It Is Well by Kristene DiMarco",
+ "caption": "Which slide are you keeping? Comment its number.\n\nIf you are tired today, you do not have to earn your rest. You are invited to lay it down and breathe.\n\nPsalm 23:1, Psalm 62:1, Matthew 11:30, Matthew 11:28, Psalm 4:8, Psalm 23:3, Exodus 33:14, 1 Peter 5:7 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #rest #sabbath",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "psa-23-1",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "The LORD is my shepherd; I shall not want.",
+   "ref": "Psalm 23:1"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "psa-62-1",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "In God alone my soul finds rest",
+   "ref": "Psalm 62:1"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "mat-11-30",
+   "kind": "verse",
+   "scene": "diner-napkin",
+   "text": "For My yoke is easy and My burden is light.",
+   "ref": "Matthew 11:30"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "say-invitation",
+   "kind": "said",
+   "scene": "brick-mural",
+   "text": "Rest is not a reward. It is an invitation.",
+   "ref": "Matthew 11:28"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "psa-4-8",
+   "kind": "verse",
+   "scene": "mug",
+   "text": "I will lie down and sleep in peace",
+   "ref": "Psalm 4:8"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "psa-23-3",
+   "kind": "verse",
+   "scene": "fridge-note",
+   "text": "He restores my soul",
+   "ref": "Psalm 23:3"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "exo-33-14",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "My Presence will go with you, and I will give you rest.",
+   "ref": "Exodus 33:14"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "say-carry",
+   "kind": "said",
+   "scene": "notebook",
+   "text": "Give it to Him. He can carry it.",
+   "ref": "1 Peter 5:7"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-amen",
+   "kind": "cta",
+   "scene": "door-note",
+   "text": "Say Amen if you needed this today",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-04/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-04/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-04/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-04/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-04/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-04/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-04/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-04/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-04/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}
