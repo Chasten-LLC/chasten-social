@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 49,
- "postCount": 31,
+ "nextSetIndex": 50,
+ "postCount": 32,
  "usedSets": [
   0,
   1,
@@ -32,7 +32,8 @@
   43,
   45,
   47,
-  48
+  48,
+  49
  ],
  "usedBackgrounds": [
   "5850090",
@@ -149,10 +150,12 @@
   "Exodus 3:14",
   "Romans 8:28",
   "Genesis 50:20",
-  "Jeremiah 32:27"
+  "Jeremiah 32:27",
+  "Isaiah 55:8",
+  "Isaiah 55:9",
+  "Romans 11:33"
  ],
  "usedAudio": [
-  "Gratitude by Brandon Lake",
   "King of Kings by Hillsong Worship",
   "Goodness of God by Bethel Music",
   "Way Maker by Sinach",
@@ -163,8 +166,9 @@
   "I Will Trust in You by Lauren Daigle",
   "Jireh by Elevation Worship and Maverick City",
   "Holy Forever by Chris Tomlin",
-  "Trust in God by Elevation Worship"
+  "Trust in God by Elevation Worship",
+  "I Will Trust in You by Lauren Daigle"
  ],
- "lastPostId": "2026-10-03",
- "lastRunAt": "2026-10-03T12:15:18+00:00"
+ "lastPostId": "2026-10-04",
+ "lastRunAt": "2026-10-04T12:15:38+00:00"
 }
