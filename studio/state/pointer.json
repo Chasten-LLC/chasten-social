@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 50,
- "postCount": 32,
+ "nextSetIndex": 51,
+ "postCount": 33,
  "usedSets": [
   0,
   1,
@@ -33,7 +33,8 @@
   45,
   47,
   48,
-  49
+  49,
+  50
  ],
  "usedBackgrounds": [
   "5850090",
@@ -67,7 +68,8 @@
   "39181619",
   "33857994",
   "7718469",
-  "31861009"
+  "31861009",
+  "822271"
  ],
  "recentVerses": [
   "Philippians 4:6",
@@ -153,10 +155,12 @@
   "Jeremiah 32:27",
   "Isaiah 55:8",
   "Isaiah 55:9",
-  "Romans 11:33"
+  "Romans 11:33",
+  "Psalm 37:3",
+  "Psalm 37:4",
+  "Psalm 37:5"
  ],
  "usedAudio": [
-  "King of Kings by Hillsong Worship",
   "Goodness of God by Bethel Music",
   "Way Maker by Sinach",
   "Reckless Love by Cory Asbury",
@@ -167,8 +171,9 @@
   "Jireh by Elevation Worship and Maverick City",
   "Holy Forever by Chris Tomlin",
   "Trust in God by Elevation Worship",
-  "I Will Trust in You by Lauren Daigle"
+  "I Will Trust in You by Lauren Daigle",
+  "Trust in God by Elevation Worship"
  ],
- "lastPostId": "2026-10-04",
- "lastRunAt": "2026-10-04T12:15:38+00:00"
+ "lastPostId": "2026-10-05",
+ "lastRunAt": "2026-10-05T12:17:37+00:00"
 }
