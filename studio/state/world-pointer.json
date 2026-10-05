@@ -1,6 +1,6 @@
 {
- "postCount": 6,
- "lastPostDate": "2026-10-04",
+ "postCount": 7,
+ "lastPostDate": "2026-10-05",
  "history": [
   {
    "date": "2026-09-29",
@@ -143,6 +143,30 @@
     "letter-desk",
     "notebook"
    ]
+  },
+  {
+   "date": "2026-10-05",
+   "theme": "courage",
+   "lines": [
+    "psa-56-3",
+    "psa-27-1",
+    "psa-16-8",
+    "say-mountains",
+    "psa-118-6",
+    "isa-41-13",
+    "isa-43-2",
+    "say-bigger"
+   ],
+   "scenes": [
+    "billboard",
+    "blackboard",
+    "mirror-marker",
+    "fog-window",
+    "cafe-chalkboard",
+    "tshirt-back",
+    "split-flap",
+    "candle-label"
+   ]
   }
  ],
  "usedAudio": [
@@ -151,6 +175,7 @@
   "Battle Belongs by Phil Wickham",
   "Goodness of God by Bethel Music",
   "Gratitude by Brandon Lake",
-  "It Is Well by Kristene DiMarco"
+  "It Is Well by Kristene DiMarco",
+  "Firm Foundation (He Won't) by Cody Carnes"
  ]
 }

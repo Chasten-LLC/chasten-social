@@ -1,0 +1,109 @@
+{
+ "id": "2026-10-05",
+ "date": "2026-10-05",
+ "kind": "world",
+ "theme": "courage",
+ "title": "When I am afraid, I put my trust in You.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeHnrU5IMP4/",
+ "mediaId": "18412762138086980",
+ "note": "9 slides; slide 4 redrawn once (big read as Dig)",
+ "audio": "Firm Foundation (He Won't) by Cody Carnes",
+ "caption": "Which one did you need today? Tell us its number.\n\nWhatever you are walking into today, you are not walking into it alone. Courage is not the absence of fear, it is trusting the One who stays beside you.\n\nPsalm 56:3, Psalm 27:1, Psalm 16:8, Matthew 17:20, Psalm 118:6, Isaiah 41:13, Isaiah 43:2, 1 John 4:4 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n#bibleverse #faith #courage #faithoverfear",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "psa-56-3",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "When I am afraid, I put my trust in You.",
+   "ref": "Psalm 56:3"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "psa-27-1",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "The LORD is my light and my salvation",
+   "ref": "Psalm 27:1"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "psa-16-8",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "Because He is at my right hand, I will not be shaken.",
+   "ref": "Psalm 16:8"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "say-mountains",
+   "kind": "said",
+   "scene": "fog-window",
+   "text": "Small faith still moves big mountains.",
+   "ref": "Matthew 17:20"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "psa-118-6",
+   "kind": "verse",
+   "scene": "cafe-chalkboard",
+   "text": "The LORD is on my side; I will not be afraid.",
+   "ref": "Psalm 118:6"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "isa-41-13",
+   "kind": "verse",
+   "scene": "tshirt-back",
+   "text": "Do not fear, I will help you.",
+   "ref": "Isaiah 41:13"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "isa-43-2",
+   "kind": "verse",
+   "scene": "split-flap",
+   "text": "When you pass through the waters, I will be with you",
+   "ref": "Isaiah 43:2"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "say-bigger",
+   "kind": "said",
+   "scene": "candle-label",
+   "text": "Nothing you face today is bigger than Him.",
+   "ref": "1 John 4:4"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-send",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Send this to someone who needs it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-05/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-05/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-05/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-05/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-05/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-05/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-05/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-05/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-05/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}
