@@ -1,0 +1,99 @@
+{
+ "id": "2026-10-06",
+ "date": "2026-10-06",
+ "kind": "world",
+ "theme": "identity",
+ "title": "Chase God, not approval.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeKMTLCG3ul/",
+ "mediaId": "18641701249037864",
+ "note": "8 slides; 2 and 6 redrawn once (doubled word, film-border lettering); 5 left out (hand covered reference after redraw)",
+ "audio": "Who You Say I Am by Hillsong Worship",
+ "caption": "Which slide are you keeping? Comment its number.\n\nBefore anyone else gets a say in who you are, God already has. You are His, made with care, and He is not finished with you yet.\n\nGalatians 1:10, Habakkuk 2:3, Philippians 1:6, 2 Corinthians 5:17, Ephesians 2:10, Isaiah 43:1, Psalm 139:14 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #childofgod #identityinchrist",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-approval",
+   "kind": "said",
+   "scene": "church-marquee",
+   "text": "Chase God, not approval.",
+   "ref": "Galatians 1:10"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "hab-2-3",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "Though it lingers, wait for it, since it will surely come and will not delay.",
+   "ref": "Habakkuk 2:3"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "php-1-6",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "He who began a good work in you will carry it on to completion",
+   "ref": "Philippians 1:6"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "2co-5-17",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "If anyone is in Christ, he is a new creation.",
+   "ref": "2 Corinthians 5:17"
+  },
+  {
+   "n": 5,
+   "slide": 6,
+   "line": "eph-2-10",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "For we are God's workmanship, created in Christ Jesus to do good works",
+   "ref": "Ephesians 2:10"
+  },
+  {
+   "n": 6,
+   "slide": 7,
+   "line": "say-still-his",
+   "kind": "said",
+   "scene": "embroidery",
+   "text": "Still His. Still loved.",
+   "ref": "Isaiah 43:1"
+  },
+  {
+   "n": 7,
+   "slide": 8,
+   "line": "psa-139-14",
+   "kind": "verse",
+   "scene": "neon",
+   "text": "I am fearfully and wonderfully made.",
+   "ref": "Psalm 139:14"
+  },
+  {
+   "n": 8,
+   "slide": 9,
+   "line": "cta-save",
+   "kind": "cta",
+   "scene": "sidewalk-chalk",
+   "text": "Save this for the day you need it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-06/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-06/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-06/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-06/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-06/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-06/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-06/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-06/8.jpg"
+ ],
+ "drawn": 12,
+ "cost": 1.61
+}
