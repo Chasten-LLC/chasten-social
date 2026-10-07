@@ -1,0 +1,109 @@
+{
+ "id": "2026-10-07",
+ "date": "2026-10-07",
+ "kind": "world",
+ "theme": "presence",
+ "title": "Brave doesn't mean unafraid. It means not alone.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeMxADtIPI2/",
+ "mediaId": "18118924711942658",
+ "note": "9 slides, all passed first draw, none redrawn",
+ "audio": "Holy Forever by Chris Tomlin",
+ "caption": "Which one are you sending to someone? Tell us its number.\n\nWherever today takes you, you do not walk into it by yourself. God stays near, in the busy street and the quiet kitchen alike.\n\nJoshua 1:9, Psalm 145:18, Isaiah 49:15, Psalm 46:11, Isaiah 41:13, Isaiah 41:10, Psalm 34:18, Matthew 28:20 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #godisfaithful #comfort",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-brave",
+   "kind": "said",
+   "scene": "shop-window",
+   "text": "Brave doesn't mean unafraid. It means not alone.",
+   "ref": "Joshua 1:9"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "psa-145-18",
+   "kind": "verse",
+   "scene": "brick-mural",
+   "text": "The LORD is near to all who call on Him",
+   "ref": "Psalm 145:18"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "isa-49-15",
+   "kind": "verse",
+   "scene": "diner-napkin",
+   "text": "I will not forget you!",
+   "ref": "Isaiah 49:15"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "psa-46-11",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "The LORD of Hosts is with us",
+   "ref": "Psalm 46:11"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "say-held",
+   "kind": "said",
+   "scene": "cardboard-sign",
+   "text": "You are not behind. You are held.",
+   "ref": "Isaiah 41:13"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "isa-41-10",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "Do not fear, for I am with you",
+   "ref": "Isaiah 41:10"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "psa-34-18",
+   "kind": "verse",
+   "scene": "sand",
+   "text": "The LORD is near to the brokenhearted",
+   "ref": "Psalm 34:18"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "mat-28-20",
+   "kind": "verse",
+   "scene": "notebook",
+   "text": "And surely I am with you always, even to the end of the age.",
+   "ref": "Matthew 28:20"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-follow",
+   "kind": "cta",
+   "scene": "coffee-cup",
+   "text": "Follow for a verse every day",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-07/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-07/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-07/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-07/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-07/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-07/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-07/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-07/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-07/9.jpg"
+ ],
+ "drawn": 9,
+ "cost": 1.21
+}

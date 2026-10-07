@@ -1,6 +1,6 @@
 {
- "postCount": 8,
- "lastPostDate": "2026-10-06",
+ "postCount": 9,
+ "lastPostDate": "2026-10-07",
  "history": [
   {
    "date": "2026-09-29",
@@ -189,6 +189,30 @@
     "embroidery",
     "neon"
    ]
+  },
+  {
+   "date": "2026-10-07",
+   "theme": "presence",
+   "lines": [
+    "say-brave",
+    "psa-145-18",
+    "isa-49-15",
+    "psa-46-11",
+    "say-held",
+    "isa-41-10",
+    "psa-34-18",
+    "mat-28-20"
+   ],
+   "scenes": [
+    "shop-window",
+    "brick-mural",
+    "diner-napkin",
+    "letter-board",
+    "cardboard-sign",
+    "letter-desk",
+    "sand",
+    "notebook"
+   ]
   }
  ],
  "usedAudio": [
@@ -199,6 +223,7 @@
   "Gratitude by Brandon Lake",
   "It Is Well by Kristene DiMarco",
   "Firm Foundation (He Won't) by Cody Carnes",
-  "Who You Say I Am by Hillsong Worship"
+  "Who You Say I Am by Hillsong Worship",
+  "Holy Forever by Chris Tomlin"
  ]
 }
