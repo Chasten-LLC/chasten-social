@@ -60,6 +60,28 @@ def world(path):
     return "\n".join(lines)
 
 
+def morning(path):
+    """The 7 AM interactive post (tools/morning.py): a different format each weekday."""
+    p = json.load(open(os.path.join(REPO, path)))
+    name = p.get("name", "7 AM post")
+    if p.get("status") != "posted":
+        return (f":warning: *Chasten IG 7 AM {p['date']}* ({name}) did not post: {p.get('note') or 'see the run log'}.\n"
+                f"Whatever was made is in the repo under morning/{p['date']}.")
+    kind = {"reel": "reel", "dove": "video carousel"}.get(p.get("format"), "carousel")
+    detail = f"{len(p.get('items', []))} slides" if kind != "reel" else "7.5 s, strings"
+    if p.get("format") == "reveal":
+        if p.get("drawn"):
+            detail += " \u00b7 photo drawn ({}), about ${:.2f}".format(p["drawn"], p.get("cost", 0))
+        else:
+            detail += " \u00b7 photo approved in advance"
+    refs = ", ".join(p.get("refs") or []) or f"{p.get('verseCount', 0)} verses"
+    lines = [f":white_check_mark: *Chasten IG 7 AM {p['date']}* \u00b7 {name}: <{p['permalink']}|{p.get('title', '')}>",
+             f"{kind} \u00b7 {detail} \u00b7 {refs}"]
+    if p.get("note"):
+        lines.append(p["note"])
+    return "\n".join(lines)
+
+
 def reel(path):
     day = path.split("/")[1]
     meta = json.load(open(os.path.join(REPO, "reels", day, "meta.json")))
@@ -103,6 +125,8 @@ if __name__ == "__main__":
             send(carousel(f)); sent += 1
         elif f.startswith("world/") and f.endswith("/post.json"):
             send(world(f)); sent += 1
+        elif f.startswith("morning/") and f.endswith("/post.json"):
+            send(morning(f)); sent += 1
         elif f.startswith("reels/") and f.endswith("/caption.md"):
             send(reel(f)); sent += 1
         elif f.startswith("reels/") and f.endswith("/shelved.json"):

@@ -1,0 +1,210 @@
+{
+ "note": "Follow the line. A question, four answers, four verses. People pick how they feel; Scripture answers. Never fortune-telling.",
+ "sets": [
+  {
+   "id": "morning-feel",
+   "title": [
+    "How does your",
+    "morning feel?"
+   ],
+   "answers": [
+    {
+     "label": "worried",
+     "icon": "cloud-rain",
+     "color": "blue",
+     "for": "if you picked worried",
+     "ref": "1 Peter 5:7",
+     "text": "Cast all your anxiety on Him, because He cares for you."
+    },
+    {
+     "label": "tired",
+     "icon": "battery-low",
+     "color": "plum",
+     "for": "if you picked tired",
+     "ref": "Matthew 11:28",
+     "text": "Come to Me, all you who are weary and burdened, and I will give you rest."
+    },
+    {
+     "label": "alone",
+     "icon": "user",
+     "color": "teal",
+     "for": "if you picked alone",
+     "ref": "Deuteronomy 31:8",
+     "text": "The LORD Himself goes before you; He will be with you. He will never leave you nor forsake you. Do not be afraid or discouraged."
+    },
+    {
+     "label": "thankful",
+     "icon": "sun",
+     "color": "gold",
+     "for": "if you picked thankful",
+     "ref": "Psalm 118:24",
+     "text": "This is the day that the LORD has made; we will rejoice and be glad in it."
+    }
+   ]
+  },
+  {
+   "id": "need-today",
+   "title": [
+    "What do you",
+    "need today?"
+   ],
+   "answers": [
+    {
+     "label": "peace",
+     "icon": "feather",
+     "color": "blue",
+     "for": "if you picked peace",
+     "ref": "2 Thessalonians 3:16",
+     "text": "Now may the Lord of peace Himself give you peace at all times and in every way. The Lord be with all of you."
+    },
+    {
+     "label": "strength",
+     "icon": "zap",
+     "color": "clay",
+     "for": "if you picked strength",
+     "ref": "Isaiah 40:29",
+     "text": "He gives power to the faint and increases the strength of the weak."
+    },
+    {
+     "label": "courage",
+     "icon": "anchor",
+     "color": "teal",
+     "for": "if you picked courage",
+     "ref": "Joshua 1:9",
+     "text": "Have I not commanded you to be strong and courageous? Do not be afraid; do not be discouraged, for the LORD your God is with you wherever you go."
+    },
+    {
+     "label": "direction",
+     "icon": "compass",
+     "color": "gold",
+     "for": "if you picked direction",
+     "ref": "Proverbs 3:5-6",
+     "text": "Trust in the LORD with all your heart, and lean not on your own understanding; in all your ways acknowledge Him, and He will make your paths straight."
+    }
+   ]
+  },
+  {
+   "id": "heart-today",
+   "title": [
+    "How's your",
+    "heart today?"
+   ],
+   "answers": [
+    {
+     "label": "heavy",
+     "icon": "cloud",
+     "color": "blue",
+     "for": "if you picked heavy",
+     "ref": "Psalm 55:22",
+     "text": "Cast your burden upon the LORD and He will sustain you; He will never let the righteous be shaken."
+    },
+    {
+     "label": "anxious",
+     "icon": "cloud-rain",
+     "color": "plum",
+     "for": "if you picked anxious",
+     "ref": "Philippians 4:6",
+     "text": "Be anxious for nothing, but in everything, by prayer and petition, with thanksgiving, present your requests to God."
+    },
+    {
+     "label": "restless",
+     "icon": "moon",
+     "color": "teal",
+     "for": "if you picked restless",
+     "ref": "Psalm 62:1",
+     "text": "In God alone my soul finds rest; my salvation comes from Him."
+    },
+    {
+     "label": "grateful",
+     "icon": "sun",
+     "color": "gold",
+     "for": "if you picked grateful",
+     "ref": "Psalm 107:1",
+     "text": "Give thanks to the LORD, for He is good; His loving devotion endures forever."
+    }
+   ]
+  },
+  {
+   "id": "facing",
+   "title": [
+    "What are you",
+    "facing this week?"
+   ],
+   "answers": [
+    {
+     "label": "a decision",
+     "icon": "key",
+     "color": "gold",
+     "for": "if you picked a decision",
+     "ref": "James 1:5",
+     "text": "Now if any of you lacks wisdom, he should ask God, who gives generously to all without finding fault, and it will be given to him."
+    },
+    {
+     "label": "a fear",
+     "icon": "anchor",
+     "color": "blue",
+     "for": "if you picked a fear",
+     "ref": "Psalm 56:3",
+     "text": "When I am afraid, I put my trust in You."
+    },
+    {
+     "label": "a long wait",
+     "icon": "hourglass",
+     "color": "plum",
+     "for": "if you picked a long wait",
+     "ref": "Isaiah 40:31",
+     "text": "But those who wait upon the LORD will renew their strength; they will mount up with wings like eagles; they will run and not grow weary, they will walk and not faint."
+    },
+    {
+     "label": "a loss",
+     "icon": "heart",
+     "color": "clay",
+     "for": "if you picked a loss",
+     "ref": "Psalm 34:18",
+     "text": "The LORD is near to the brokenhearted; He saves the contrite in spirit."
+    }
+   ]
+  },
+  {
+   "id": "on-your-mind",
+   "title": [
+    "What's on your",
+    "mind this morning?"
+   ],
+   "answers": [
+    {
+     "label": "work",
+     "icon": "coffee",
+     "color": "gold",
+     "for": "if you picked work",
+     "ref": "Proverbs 16:3",
+     "text": "Commit your works to the LORD and your plans will be achieved."
+    },
+    {
+     "label": "family",
+     "icon": "house",
+     "color": "clay",
+     "for": "if you picked family",
+     "ref": "Psalm 127:1",
+     "text": "Unless the LORD builds the house, its builders labor in vain; unless the LORD protects the city, its watchmen stand guard in vain."
+    },
+    {
+     "label": "money",
+     "icon": "key",
+     "color": "teal",
+     "for": "if you picked money",
+     "ref": "Philippians 4:19",
+     "text": "And my God will supply all your needs according to His glorious riches in Christ Jesus."
+    },
+    {
+     "label": "tomorrow",
+     "icon": "compass",
+     "color": "blue",
+     "for": "if you picked tomorrow",
+     "ref": "Matthew 6:34",
+     "text": "Therefore do not worry about tomorrow, for tomorrow will worry about itself. Today has enough trouble of its own."
+    }
+   ]
+  }
+ ]
+}

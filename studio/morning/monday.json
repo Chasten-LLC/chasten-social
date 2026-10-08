@@ -1,0 +1,118 @@
+{
+ "note": "Swipe to reveal. One moment a week: a candid, polished photo of young women of faith (drawn by gemini-3-pro-image), the verse revealed inside it. Each moment's framing leaves room for its layout; the verse must never touch a face. Ric's taste: glamorous, warm, modest by his standard, playful food moments, never gross.",
+ "style": "Candid close-up lifestyle photograph with the polish of a top lifestyle influencer's feed: shot by a friend on an 85mm lens at eye level, shallow depth of field, warm golden-hour light, glowing skin, rich natural colors, subtle film grain, a real joyful moment caught mid-laugh, photorealistic. The women are stunning, in their early twenties, with model-level natural beauty: full glossy lips, bright pearly-white smiles, big expressive eyes with long lashes and softly defined brows, flawless glowing skin with polished natural makeup, and big, bouncy, voluminous salon-blowout hair worn down. Modest, stylish, on-trend clothes. No text, no letters, no logos and no brand marks anywhere unless named below.",
+ "cast": [
+  "a blonde with long sun-kissed waves",
+  "a brunette with long glossy waves",
+  "a Black woman with big voluminous natural curls",
+  "a Latina woman with long dark glossy waves",
+  "an East Asian woman with long sleek black hair",
+  "a South Asian woman with long dark waves",
+  "a redhead with soft copper curls",
+  "a woman with honey-brown highlights in a bouncy blowout"
+ ],
+ "moments": [
+  {
+   "id": "turkey-club",
+   "people": 2,
+   "layout": "bottom",
+   "scene": "Two best friends at a county fair at dusk. One holds a giant smoked turkey leg up high like a club with a mock-serious, playful scowl, pretending she is about to bonk her friend on the head with it. Her friend ducks to the side, laughing hysterically, one hand half raised. String lights and a glowing Ferris wheel melt into soft bokeh behind them. One wears a light-wash denim jacket over a white tee, the other a cream crewneck sweatshirt with no print. Framing: close, faces large in the upper two thirds of a 5:4 frame; the lower third shows their clothes, hands and what they are holding, with no faces in it.",
+   "aspect": "5:4",
+   "text_at": 0.82,
+   "ref": "Psalm 34:8",
+   "text": "Taste and see that the LORD is good; blessed is the man who takes refuge in Him!"
+  },
+  {
+   "id": "beach-pizza",
+   "people": 1,
+   "layout": "left",
+   "scene": "A young woman walks up a sandy beach path through the dunes at sunset, a cozy cream knit blanket over one arm and a plain white pizza box with no printing on it in her other hand, glancing back over her shoulder at the camera with a playful, confident smile, hair blowing in the breeze. She wears a fitted red and white striped tee and light-wash denim shorts with no labels, tabs or logos. Soft pastel sunset sky over the ocean. Framing: square frame; she is in the right half of the frame, large and clearly visible; the left half is open sky and soft background with nothing in it.",
+   "aspect": "1:1",
+   "text_at": 0.3,
+   "col": 0.39,
+   "ref": "Psalm 118:24",
+   "text": "This is the day that the LORD has made; we will rejoice and be glad in it."
+  },
+  {
+   "id": "cap-selfie",
+   "people": 1,
+   "layout": "bottom",
+   "scene": "A close-up golden-hour selfie of a young woman in the driver's seat of a parked car, warm sunlight across her face, wearing a cream baseball cap embroidered with the words JESUS SAVES in light blue letters, big glossy waves falling from under the cap. She is laughing at something her friend just said off camera, eyes sparkling. Plain soft grey crewneck tee. Her arm reaches toward the camera but no phone is visible. The only readable words anywhere in the image are JESUS SAVES on the cap. Framing: close, faces large in the upper two thirds of a 5:4 frame; the lower third shows their clothes, hands and what they are holding, with no faces in it.",
+   "aspect": "5:4",
+   "text_at": 0.82,
+   "ref": "Psalm 126:3",
+   "text": "The LORD has done great things for us; we are filled with joy."
+  },
+  {
+   "id": "ice-cream-steal",
+   "people": 2,
+   "layout": "bottom",
+   "scene": "Two best friends on a sunny seaside boardwalk with ice cream cones. One leans in, pretending to steal a lick of her friend's cone; the friend pulls it away just in time, both bursting out laughing. One wears a soft yellow cardigan over a white tee, the other a light blue linen shirt. Framing: close, faces large in the upper two thirds of a 5:4 frame; the lower third shows their clothes, hands and what they are holding, with no faces in it.",
+   "aspect": "5:4",
+   "text_at": 0.82,
+   "ref": "Philippians 4:4",
+   "text": "Rejoice in the Lord always. I will say it again: Rejoice!"
+  },
+  {
+   "id": "road-trip",
+   "people": 2,
+   "layout": "bottom",
+   "scene": "Two best friends on a road trip at golden hour, windows down, singing at the top of their lungs, one drumming on the dashboard, the other belting into a hairbrush like a microphone, hair blowing in the wind, both laughing mid-song. Casual oversized sweaters. Framing: close, faces large in the upper two thirds of a 5:4 frame; the lower third shows their clothes, hands and what they are holding, with no faces in it.",
+   "aspect": "5:4",
+   "text_at": 0.82,
+   "ref": "Psalm 96:1",
+   "text": "Sing to the LORD a new song; sing to the LORD, all the earth."
+  },
+  {
+   "id": "picnic",
+   "people": 3,
+   "layout": "top",
+   "scene": "Three best friends laughing together on a picnic blanket in a park at golden hour, heads tipped back in genuine laughter, iced coffees and a basket of strawberries between them, one with a small Bible open on her lap. Plain solid-colored clothes with no prints or lettering. Framing: square frame; the friends are in the lower half of the frame, large and close; the upper third is open evening sky with nothing in it.",
+   "aspect": "1:1",
+   "text_at": 0.135,
+   "ref": "1 Thessalonians 5:11",
+   "text": "Therefore encourage and build one another up, just as you are already doing."
+  },
+  {
+   "id": "rain-umbrella",
+   "people": 2,
+   "layout": "bottom",
+   "scene": "Two best friends squeezed under one small clear umbrella in a sudden city downpour, rain splashing around them, laughing as they huddle close, city lights glowing in the wet street behind them. Trench coats over sweaters. Framing: close, faces large in the upper two thirds of a 5:4 frame; the lower third shows their clothes, hands and what they are holding, with no faces in it.",
+   "aspect": "5:4",
+   "text_at": 0.82,
+   "ref": "Psalm 91:4",
+   "text": "He will cover you with His feathers; under His wings you will find refuge; His faithfulness is a shield and rampart."
+  },
+  {
+   "id": "sunflowers",
+   "people": 1,
+   "layout": "left",
+   "scene": "A young woman at an outdoor farmers market at golden hour, laughing with her arms full of tall sunflowers, glancing at the camera. She wears a cream linen button-up shirt. Soft blurred market stalls and warm sky behind her. Framing: square frame; she is in the right half of the frame, large and clearly visible; the left half is open sky and soft background with nothing in it.",
+   "aspect": "1:1",
+   "text_at": 0.3,
+   "col": 0.39,
+   "ref": "Isaiah 40:8",
+   "text": "The grass withers and the flowers fall, but the word of our God stands forever."
+  },
+  {
+   "id": "bonfire",
+   "people": 3,
+   "layout": "top",
+   "scene": "Three best friends around a beach bonfire at dusk wrapped in blankets; one holds up a marshmallow that has just caught fire like a tiny torch, and they all burst out laughing. Warm firelight on their faces. Framing: square frame; the friends are in the lower half of the frame, large and close; the upper third is open evening sky with nothing in it.",
+   "aspect": "1:1",
+   "text_at": 0.135,
+   "ref": "Matthew 5:14",
+   "text": "You are the light of the world. A city on a hill cannot be hidden."
+  },
+  {
+   "id": "pancake-flip",
+   "people": 2,
+   "layout": "bottom",
+   "scene": "Two best friends in a sunny kitchen in the morning; one flips a pancake way too high out of the pan and they both shriek with laughter, watching it in the air. Cozy oversized sweaters, plants and morning light behind them. Framing: close, faces large in the upper two thirds of a 5:4 frame; the lower third shows their clothes, hands and what they are holding, with no faces in it.",
+   "aspect": "5:4",
+   "text_at": 0.82,
+   "ref": "Proverbs 17:22",
+   "text": "A joyful heart is good medicine, but a broken spirit dries up the bones."
+  }
+ ]
+}

@@ -4,9 +4,14 @@ Everything the daily Chasten Instagram post needs, and the public home of the
 cards it publishes.
 
 A Claude Code cloud routine fires daily at 12:00 UTC (7:00am America/Chicago
-during daylight saving), renders three 1080x1350 verse cards and a closing follow card, commits them here,
-and publishes them to Instagram as a carousel using their public GitHub URLs.
-It runs in Anthropic's cloud, so it does not need any particular machine awake.
+during daylight saving), builds that weekday's interactive post (see "The 7 AM
+post" below), commits it here under morning/<date>, and publishes it to Instagram
+from its public GitHub URLs. A second routine posts at 11 AM. Both run in
+Anthropic's cloud, so they do not need any particular machine awake.
+
+Until 2026-10-08 the 7 AM post was a carousel of verse cards over photos
+(tools/ig_run.py, posts/<date>, docs/routine-prompt-2026-09.md); that system is
+kept for its history but no routine runs it.
 
 ## Why everything lives in git
 
@@ -87,6 +92,34 @@ Managed at https://claude.ai/code/routines
 Cron is UTC and does not follow daylight saving, so `0 12 * * *` is 7:00am
 Central only during daylight time. It needs to move to `0 13 * * *` when Central
 returns to standard time on 2026-11-01.
+
+## The 7 AM post: a format a day
+
+`tools/morning.py` plans, draws (Mondays), renders, checks and records the post;
+`docs/routine-prompt.md` is the live routine's prompt and must stay identical to it.
+
+| Day | Format | What it is |
+|---|---|---|
+| Mon | Swipe to reveal | A candid photo of young women of faith, mosaic to sharp, the verse revealed inside it. The photo is drawn by gemini-3-pro-image each week (about $0.13), unless Ric approved one in advance in `studio/morning/staged/<date>-<moment>.jpg` |
+| Tue | Follow the line | A question, four answers, four coloured lines that tangle across slides to four verses |
+| Wed | Swipe to zoom in | "You're THIS close to..." and a verse between the fingertips of a halftone hand |
+| Thu, Sat | Stop on your verse | A 7.5 second reel: 45 verses flash in a paper card over a photo; hold the screen to stop on one. Strings music made with ElevenLabs (Starter plan: commercial use online, no attribution) |
+| Fri | Hold the dots: sunrise | A ten-frame flipbook of a drawn sunrise that ends on a morning verse |
+| Sun | The traveling dove | A carousel of short videos: a dove flies through a blessing, one verse per slide |
+
+The formats are in `tools/formats/`, drawn in code with the app's colours and fonts
+(Literata, Caveat, Inter; their OFL licences sit beside them) and the app's Lucide
+icons (ISC). Everything they say comes from the pools in `studio/morning/`. After
+editing a pool, run `python3 tools/check_morning.py`: it proves every verse word for
+word against the app's BSB (`../chasten-bible-app/assets/bible/bible.db`) and
+enforces each format's limits. The reel photos are 9:16 cuts of the app's Verse of
+the Day photos in `studio/bg-tall/`; the music is `studio/audio/strings.mp3`.
+Instagram accepts videos straight from raw.githubusercontent URLs (tested
+2026-10-08), so reels and video carousels use the same hosting as images.
+
+State: `studio/state/morning-pointer.json` remembers what each format used, so
+nothing repeats until a pool's cycle ends. Slack hears about every post through
+`morning/<date>/post.json`.
 
 ## The 11 AM post: Scripture in the world
 

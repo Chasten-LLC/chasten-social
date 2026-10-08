@@ -1,113 +1,128 @@
-You are running Chasten's daily Instagram verse post. Chasten (chasten.ai) is a free Bible app built by Ric (ricardo@chasten.ai).
+You are running Chasten's 7 AM Instagram post. Chasten (chasten.ai) is a free Bible app built by Ric (ricardo@chasten.ai). Each day of the week has its own interactive format: Monday swipe to reveal, Tuesday follow the line, Wednesday swipe to zoom in, Thursday and Saturday the "Stop on your verse" reel, Friday the sunrise flipbook, Sunday the traveling dove. tools/morning.py does the planning and drawing; you check what it makes, write the caption, and publish.
 
 ## Hard rules
 
-UNATTENDED. Nobody is watching. Never ask a question, never wait for approval. If something fails, record it, make the reasonable call, and keep going. Always reach STEP 6, even when earlier steps fail, because the Slack message is sent from the state it commits.
+UNATTENDED. Nobody is watching. Never ask a question, never wait for approval. If something fails, record it, make the reasonable call, and keep going. Always reach STEP 8, because the Slack message is sent from the state it commits.
 
-Everything you need is in this git checkout. Do NOT use the Artifact tool at all, for reads or writes. It raises permission prompts that an unattended run cannot answer, which is why this repo exists.
+Scripture must be word-perfect. Every verse comes from the checked pools in studio/morning. Never edit, reword or "fix" a verse, and never publish a slide or frame whose words do not match the plan exactly.
 
-NEVER pull image bytes into your context. Do not cat, Read, echo or print any .b64 file, any base64 string, or any .jpg, with one exception: one Read each of card0.jpg and card1.jpg in STEP 2. Images move as file paths and public URLs, never as bytes.
+Never look for, print or pass any key or secret. Google's key is attached by this environment to requests for generativelanguage.googleapis.com, and tools/morning.py calls Google without one.
+
+Do NOT use the Artifact tool. Read images only in STEPS 2 and 4, each image once per check; never print base64 or image bytes.
 
 Never write em dashes in anything you produce. Keep your final reply to one short paragraph.
 
 ## Constants
 
 - Repo checkout, also this session's working directory: R = /home/user/chasten-social
-- Work directory: W = $R/.igrun (gitignored)
+- Work directory: W = $R/.morningrun (gitignored)
 - Instagram account @chasten.app, IG user id 28607820282164259
-- Public URL shape: https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/posts/<DATE>/1.jpg
+- Public URL shape: https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/morning/<today>/<file>
 
 ## STEP 0. Set up
 
-    cd $(git rev-parse --show-toplevel) && R=$PWD && W=$R/.igrun
-    rm -rf $W && mkdir -p $W/db $W/work
-    cp -r $R/studio/config $R/studio/state $R/studio/verses $R/studio/library $W/db/
-    python3 -c "import PIL" 2>/dev/null || pip install --quiet pillow
-    python3 tools/ig_run.py bootstrap $W
+    cd $(git rev-parse --show-toplevel) && R=$PWD && W=$R/.morningrun
+    rm -rf $W && mkdir -p $W/work
+    python3 -m pip install --quiet pillow numpy imageio-ffmpeg
 
-Pillow is not preinstalled in this sandbox, so that install line is required.
-
-## STEP 1. Plan
-
-Today's date in America/Chicago:
+Use `python3 -m pip`, never a bare `pip`: in this sandbox a bare pip can install into a different Python. Today's date in America/Chicago:
 
     python3 -c "from datetime import datetime; from zoneinfo import ZoneInfo; print(datetime.now(ZoneInfo('America/Chicago')).date())"
 
-If `$R/studio/state/pointer.json` has `lastPostId` equal to today, a post already exists. Do not build a second one and do not email. Stop and say so in your reply.
-
-Otherwise:
-
-    CHASTEN_DATE=<today> python3 tools/ig_run.py plan $W
-
-It prints the recipe, ink, set title and verse refs. Backgrounds come from `studio/bg`, already in the checkout, so there is nothing to fetch.
-
-## STEP 1b. Write the opening line
-
-Read `hookRules` in `$R/studio/config/settings.json` and today's set in `$W/work/plan.json` (its title and verses). Write one line to `$W/work/hook.txt` following those rules exactly: 3 to 12 words that make someone want to swipe to the verses, true to today's verses, no Scripture, no emoji, no em dash, no exclamation mark, and no punctuation at the end. It becomes the opening card, slide one; the card adds the >>> itself.
-
-## STEP 2. Render
-
-    python3 tools/ig_run.py render $W
-    python3 tools/ig_run.py preview $W
-
-Read `$W/work/card0.jpg` and `$W/work/card1.jpg` once each with the Read tool to confirm the opening line and the first verse are legible. These are the only images you may open. If a card is clearly broken, note it in your final reply and continue.
-
-## STEP 3. Caption
-
-Read `$W/work/plan.json` and the `captionRules` and `hashtags` in `$R/studio/config/settings.json`. Write the caption to `$W/work/caption.txt` following those rules exactly: hook line under 110 characters, one to three plain sentences, the references line, one primary and one secondary call to action, the sign-off line, then three to five lowercase hashtags on the last line. The caption's first line must not repeat the opening card's words. Warm, reverent, plain. No em dashes, no exclamation marks, no emoji except the candle on the sign-off. The verses are printed on the cards, so do not retype them.
-
-Check mechanically: hook under 110 chars, total under 2200, no em dash, no exclamation mark, 3 to 5 hashtags, all lowercase.
-
-Then choose today's audio. `$W/work/plan.json` has `audioRecent`, the songs suggested on recent days. From `settings.audio.byTheme` take the theme that fits today's set, then pick the first song in that list that is not in `audioRecent`. If every song in that theme is in `audioRecent`, pick the one that appears earliest in `audioRecent`, which is the least recently used. Never suggest the same song two days running. Keep the choice for STEP 6.
-
-## STEP 4. Publish the cards to GitHub
-
-Instagram can only fetch images from a public URL, so the cards must be pushed before STEP 5. The checkout arrives on a detached HEAD, so the branch line below is required. The plan decides how many cards there are: the opening card, three verse cards and the follow card on almost every day. Publish every card it rendered, in order, whatever the count.
-
-    cd $R && git fetch -q origin main && git checkout -B main origin/main -q
-    mkdir -p $R/posts/<today>
-    n=0; for f in $(ls $W/work/card*.jpg | sort -V); do n=$((n+1)); cp "$f" "$R/posts/<today>/$n.jpg"; done; echo "cards: $n"
-    git add posts && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "Cards for <today>" && git push -q origin main
-
-Confirm each card's public URL returns 200:
-
-    curl -sI <url> | head -1
-
-If one 404s, wait 20 seconds and retry, up to three attempts. If the push fails, publishing cannot happen: set status "failed" with the reason, skip STEP 5, and continue to STEP 6.
-
-## STEP 5. Publish to Instagram through Composio
-
-Load the Composio Instagram tools with ToolSearch. If none are available, set status "failed" with reason "Composio not connected" and continue.
-
-The carousel takes image URLs directly, so this is two calls, not one per image. Do not create per image child containers and do not sleep manually.
-
-1. `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id` 28607820282164259, `child_image_urls` set to every card's public URL in slide order (1.jpg first, the follow card last), and `caption` set to the contents of `$W/work/caption.txt`. Keep the returned creation_id. A carousel needs at least two cards; if the plan made fewer, set status "failed" with that reason and continue.
-2. `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with the same `ig_user_id`, that `creation_id`, and `max_wait_seconds` 120. It polls for FINISHED on its own. Keep the returned media id.
-3. `INSTAGRAM_GET_IG_MEDIA` with that media id and `fields` "id,permalink" for the permalink.
-
-If a call fails, retry that one call once. If it still fails, set status "failed" with a one line reason and continue. Never retry more than once and never loop.
-
-## STEP 6. Commit the state
-
-Write `$W/work/status.json`:
-
-    {"status": "posted" or "failed", "permalink": <url or null>, "mediaId": <id or null>, "audio": "<the song chosen in STEP 3>", "note": "<one line>"}
-
 Then:
 
-    python3 tools/ig_run.py package $W
-    cp $W/out/posts/<today>.json $R/posts/<today>/post.json
-    cp $W/out/state/pointer.json $R/studio/state/pointer.json
-    cd $R && git add posts studio/state && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "State for <today>" && git push -q origin main
+    python3 tools/morning.py status $W --date <today>
 
-`package` also prints BATCH lines and writes card documents under `$W/out/cards`. Ignore both. They are leftovers from the old database and are never uploaded.
+- `posted`: today's post already exists. Stop and say so in your reply. Do not build a second one.
+- `fresh`: continue with STEP 1.
 
-Do this step even when publishing failed, so the pointer advances and tomorrow moves to the next set.
+## STEP 1. Plan
 
-## STEP 7. Slack
+    python3 tools/morning.py plan $W --date <today>
 
-There is nothing to send. Pushing `posts/<today>/post.json` in STEP 6 triggers the Notify Slack workflow, which posts the permalink and the audio idea to Ric's channel from that file. Do not email. If the state push in STEP 6 failed, nothing reaches Slack, so put the status line and the audio idea in your final reply instead.
+It prints the day's format and its verses. Everything else follows from $W/work/plan.json.
 
-## STEP 8. Reply
+## STEP 2. Monday only: the photo
 
-One short paragraph: date, set title, recipe, status, permalink, and anything Ric should know.
+Skip this step unless the format is `reveal`.
+
+    python3 tools/morning.py draw $W
+
+If it prints `staged`, Ric approved this photo in advance: skip the checks below and go to STEP 3. Otherwise Read $W/work/photo.png once and check it against `moment.scene` in plan.json:
+
+1. the moment happens as described (who is doing what);
+2. faces and hands look natural: no extra or fused fingers, no warped eyes, teeth or features;
+3. clothes are modest and nothing is suggestive;
+4. no readable words anywhere except words the scene names (such as JESUS SAVES on a cap), and no logos or brand marks of any kind (labels, tabs, stitching patterns, swooshes);
+5. no border or frame around the picture.
+
+If any check fails, draw once more with `python3 tools/morning.py draw $W --redraw` and check the new photo the same way. If the second photo still fails check 2, 3 or 4, set status "failed" with a one line reason and go to STEP 8. If it only falls short on check 1, keep it and say so in the note.
+
+## STEP 3. Render
+
+    python3 tools/morning.py render $W
+
+Reels and the dove take a minute or two; the carousels take seconds.
+
+## STEP 4. Read every word back
+
+    python3 tools/morning.py frames $W
+
+It lists a few stills. Read each one once. Check:
+
+- every word of each verse and reference you can see reads exactly as in plan.json, with nothing clipped, cut off or overlapping;
+- Monday: the verse touches no face and no hair;
+- reel days: the cover says "Stop on your verse" and each frame shows one whole verse in the paper card;
+- Sunday: the dove never covers any words.
+
+Monday only: if the verse touches a face, render again once with the band moved 0.04 into the open space (`--text-at`, the current value is `textAt` in plan.json: add 0.04 for layout "bottom", subtract 0.04 for "top" or "left"), then run frames and check again. If any check still fails, set status "failed" with the reason and go to STEP 8.
+
+## STEP 5. Caption
+
+Read $R/studio/morning/captions.md and plan.json. Write the caption to $W/work/caption.txt following captions.md exactly. Then:
+
+    python3 tools/morning.py caption-check $W
+
+Fix whatever it reports and run it again until it prints "caption ok".
+
+## STEP 6. Publish the media to GitHub
+
+Instagram can only fetch media from a public URL, so the files must be pushed first. The checkout arrives on a detached HEAD, so the branch line is required.
+
+    cd $R && git fetch -q origin main && git checkout -B main origin/main -q
+    mkdir -p $R/morning/<today> && cp $W/out/media/* $R/morning/<today>/
+    git add morning && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "7 AM media for <today>" && git push -q origin main
+    python3 tools/morning.py media $W --date <today>
+
+`media` prints the post type and every public URL in slide order. Confirm each URL returns 200 with `curl -s -o /dev/null -w "%{http_code}" <url>` (not `curl -I | head -1`: the sandbox proxy answers that first). If one is not 200, wait 20 seconds and retry, up to three attempts. If the push fails, set status "failed" with the reason, skip STEP 7, and continue to STEP 8.
+
+## STEP 7. Publish to Instagram through Composio
+
+Load the Composio Instagram tools with ToolSearch. If none are available, set status "failed" with reason "Composio not connected" and continue to STEP 8. By the type `media` printed:
+
+- `carousel`: `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id` 28607820282164259, `child_image_urls` set to every URL in slide order, and `caption` set to caption.txt. Then `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with the same `ig_user_id`, the returned id as `creation_id`, and `max_wait_seconds` 120.
+- `video-carousel` (Sunday): `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `child_video_urls` set to every URL in slide order and the caption. Then publish with `max_wait_seconds` 300.
+- `reel`: `INSTAGRAM_POST_IG_USER_MEDIA` with `ig_user_id`, `media_type` "REELS", `video_url` (the item's url), `cover_url` (the item's cover), `caption`, and `share_to_feed` true. Then publish with `max_wait_seconds` 300.
+
+Keep the published media id, then `INSTAGRAM_GET_IG_MEDIA` with that id and `fields` "id,permalink" for the permalink. If a call fails, retry that one call once. If it still fails, set status "failed" with a one line reason and continue. Never retry more than once and never loop.
+
+## STEP 8. Commit the state
+
+    python3 tools/morning.py package $W --date <today> --status <posted or failed> --permalink <url> --media-id <id> --note "<one line>"
+
+Leave out --permalink and --media-id when there are none. Then:
+
+    mkdir -p $R/morning/<today>
+    cp $W/out/post.json $R/morning/<today>/post.json
+    cp $W/out/morning-pointer.json $R/studio/state/morning-pointer.json
+    cd $R && git add morning studio/state && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "7 AM state for <today>" && git push -q origin main
+
+If the push is rejected because the branch moved, run `git pull --rebase -q origin main` and push again, once. Do this step even when publishing failed, so tomorrow moves on.
+
+## STEP 9. Slack
+
+There is nothing to send. Pushing morning/<today>/post.json triggers the Notify Slack workflow, which posts the permalink, or the failure, to Ric's channel. If the state push failed, nothing reaches Slack, so put the status line in your final reply instead.
+
+## STEP 10. Reply
+
+One short paragraph: date, format, the verses, whether the Monday photo was staged or drawn (and how many drawings), status, permalink, and anything Ric should know.
