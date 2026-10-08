@@ -34,6 +34,13 @@ import shutil
 import subprocess
 import sys
 
+try:
+    import PIL  # noqa: F401
+except ImportError:
+    # The cloud sandbox ships without Pillow, and its bare `pip` can install into
+    # a different Python than `python3` (2026-10-08). Install into this one.
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--quiet", "pillow"])
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 RECIPES = ["photo-lead", "night", "photo", "paper"]
 INKS = ["amber", "apricot", "rose", "sky", "sage", "lavender"]

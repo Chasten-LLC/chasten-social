@@ -41,10 +41,18 @@ import os
 import random
 import re
 import shutil
+import subprocess
 import sys
 import time
 import urllib.error
 import urllib.request
+
+try:
+    import PIL  # noqa: F401
+except ImportError:
+    # The cloud sandbox ships without Pillow, and its bare `pip` can install into
+    # a different Python than `python3` (2026-10-08). Install into this one.
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "--quiet", "pillow"])
 
 from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps, ImageStat
 
