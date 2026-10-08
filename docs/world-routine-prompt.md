@@ -142,7 +142,7 @@ Read each $S/work/photo-N.png once and check it against its prompt in plan.json:
 2. faces and hands look natural: no extra or fused fingers, no warped eyes, teeth or features;
 3. clothes are modest and nothing is suggestive;
 4. no readable words, letters, logos or brand marks anywhere, and no phone, screen or device;
-5. no border or frame around the picture;
+5. one single continuous photograph: no border, frame, seam, collage or stacked panels;
 6. the top quarter of the photo holds no face or head, because the words go there;
 7. Thursday only: both photos show the same two people in the same clothes, and the second is a different pose, not a copy of the first.
 
