@@ -1,6 +1,6 @@
 {
- "postCount": 9,
- "lastPostDate": "2026-10-07",
+ "postCount": 10,
+ "lastPostDate": "2026-10-08",
  "history": [
   {
    "date": "2026-09-29",
@@ -213,6 +213,30 @@
     "sand",
     "notebook"
    ]
+  },
+  {
+   "date": "2026-10-08",
+   "theme": "grace",
+   "lines": [
+    "say-grace",
+    "1jn-1-9",
+    "rom-8-1",
+    "say-heard",
+    "deu-31-8",
+    "psa-103-12",
+    "php-4-19",
+    "eph-2-8"
+   ],
+   "scenes": [
+    "tshirt-back",
+    "split-flap",
+    "billboard",
+    "fridge-note",
+    "candle-label",
+    "blackboard",
+    "cafe-chalkboard",
+    "mirror-marker"
+   ]
   }
  ],
  "usedAudio": [
@@ -224,6 +248,7 @@
   "It Is Well by Kristene DiMarco",
   "Firm Foundation (He Won't) by Cody Carnes",
   "Who You Say I Am by Hillsong Worship",
-  "Holy Forever by Chris Tomlin"
+  "Holy Forever by Chris Tomlin",
+  "Reckless Love by Cory Asbury"
  ]
 }

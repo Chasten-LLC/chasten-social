@@ -1,0 +1,109 @@
+{
+ "id": "2026-10-08",
+ "date": "2026-10-08",
+ "kind": "world",
+ "theme": "grace",
+ "title": "Grace goes deeper than your worst day.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DePWTn5GwnH/",
+ "mediaId": "18429670453144460",
+ "note": "9 of 9 slides posted; 4 drawings retried after Gemini 502s, none redrawn for text",
+ "audio": "Reckless Love by Cory Asbury",
+ "caption": "Which one did you need today? Tell us its number.\n\nGrace meets you on the hard days too, not only the good ones. You are forgiven, held, and heard, and none of it was earned.\n\nRomans 5:20, 1 John 1:9, Romans 8:1, 1 John 5:14, Deuteronomy 31:8, Psalm 103:12, Philippians 4:19, Ephesians 2:8 (BSB)\n\nShare it with someone who is carrying a lot.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #grace #forgiven",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-grace",
+   "kind": "said",
+   "scene": "tshirt-back",
+   "text": "Grace goes deeper than your worst day.",
+   "ref": "Romans 5:20"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "1jn-1-9",
+   "kind": "verse",
+   "scene": "split-flap",
+   "text": "He is faithful and just to forgive us our sins",
+   "ref": "1 John 1:9"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "rom-8-1",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "There is now no condemnation for those who are in Christ Jesus.",
+   "ref": "Romans 8:1"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "say-heard",
+   "kind": "said",
+   "scene": "fridge-note",
+   "text": "Your prayers are heard.",
+   "ref": "1 John 5:14"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "deu-31-8",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "He will never leave you nor forsake you.",
+   "ref": "Deuteronomy 31:8"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "psa-103-12",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "As far as the east is from the west, so far has He removed our transgressions from us.",
+   "ref": "Psalm 103:12"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "php-4-19",
+   "kind": "verse",
+   "scene": "cafe-chalkboard",
+   "text": "And my God will supply all your needs according to His glorious riches in Christ Jesus.",
+   "ref": "Philippians 4:19"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "eph-2-8",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "For it is by grace you have been saved through faith",
+   "ref": "Ephesians 2:8"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-found",
+   "kind": "cta",
+   "scene": "door-note",
+   "text": "Type Amen if one of these found you",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-08/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-08/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-08/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-08/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-08/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-08/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-08/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-08/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-08/9.jpg"
+ ],
+ "drawn": 13,
+ "cost": 1.74
+}
