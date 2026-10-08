@@ -52,9 +52,15 @@ def world(path):
     if p.get("status") != "posted":
         return (f":warning: *Chasten IG 11 AM {p['date']}* did not post: {p.get('note') or 'see the run log'}.\n"
                 f"Any finished cards are in the repo under world/{p['date']}.")
-    drawn = f" \u00b7 {p['drawn']} drawings, about ${p.get('cost', 0):.2f}" if p.get("drawn") else ""
+    drawn = f" \u00b7 {p['drawn']} drawing{'s' if p['drawn'] != 1 else ''}, about ${p.get('cost', 0):.2f}" if p.get("drawn") else ""
+    if p.get("kind") == "share":  # Wednesday, Thursday and Sunday (tools/share_run.py)
+        lines = [f":white_check_mark: *Chasten IG 11 AM {p['date']}* \u00b7 {p.get('name', 'share post')}: <{p['permalink']}|{p.get('title', '')}>",
+                 f"{len(p.get('items', []))} slides \u00b7 {', '.join(p.get('refs') or [])}{drawn}"]
+        if p.get("note"):
+            lines.append(p["note"])
+        return "\n".join(lines)
     lines = [f":white_check_mark: *Chasten IG 11 AM {p['date']}* posted: <{p['permalink']}|{p['title']}>",
-             f"{len(p.get('slides', []))} slides \u00b7 theme: {p.get('theme', 'mixed')}{drawn}"]
+             f"{len(p.get('slides', []))} slides \u00b7 theme: {p.get('theme', 'mixed')} \u00b7 look: {p.get('look', 'bw').replace('-', ' ')}{drawn}"]
     if p.get("audio"):
         lines.append(f"Audio idea: search `{p['audio']}` in Instagram's music library.")
     return "\n".join(lines)

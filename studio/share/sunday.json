@@ -1,0 +1,53 @@
+{
+ "note": "A blessing for your week: a cozy, seasonal still life with a blessing line in our words, then the verse card. The first Sunday of a month says Hello, <Month>.",
+ "style": "A warm, cozy lifestyle still-life photograph with the polish of a top lifestyle feed: soft natural window light, shallow depth of field, rich natural colors, subtle film grain, photorealistic. No people, no text, no letters, no logos and no brand marks anywhere.",
+ "cta": "Send this to someone you are praying for.",
+ "scenes": {
+  "autumn": [
+   "a knitted toy fox sitting on a wooden windowsill beside a steaming mug, autumn leaves outside a rain-speckled window",
+   "a candle, an open Bible with soft blurred pages and a cup of coffee on a wooden table, autumn leaves and morning light",
+   "a cozy reading corner with a plaid blanket, a mug of cocoa and a small pumpkin by a window in autumn rain"
+  ],
+  "winter": [
+   "a mug of cocoa with marshmallows by a frosty window, soft snow falling outside, a candle glowing",
+   "an open Bible with soft blurred pages beside a candle and a knit scarf, snow outside the window"
+  ],
+  "spring": [
+   "a vase of tulips beside an open window with morning light and a cup of tea",
+   "a picnic blanket with a basket of strawberries and wildflowers in soft spring light"
+  ],
+  "summer": [
+   "a glass of iced tea with lemon on a porch rail at golden hour, a garden behind",
+   "an open Bible with soft blurred pages on a beach towel beside sunglasses and seashells"
+  ]
+ },
+ "framing": "Vertical 4:5 frame; the objects sit in the lower half and the upper third is soft, clear background for a title.",
+ "lines": [
+  "May it bring you slow mornings, good news, and a peace that holds.",
+  "May your week hold small mercies and quiet strength.",
+  "May you find Him in the ordinary moments of this week.",
+  "May you rest well, and rise ready."
+ ],
+ "entries": [
+  {
+   "ref": "Psalm 29:11",
+   "text": "The LORD gives His people strength; the LORD blesses His people with peace."
+  },
+  {
+   "ref": "Psalm 115:14-15",
+   "text": "May the LORD give you increase, both you and your children. May you be blessed by the LORD, the Maker of heaven and earth."
+  },
+  {
+   "ref": "Isaiah 26:3",
+   "text": "You will keep in perfect peace the steadfast of mind, because he trusts in You."
+  },
+  {
+   "ref": "Psalm 20:1",
+   "text": "May the LORD answer you in the day of trouble; may the name of the God of Jacob protect you."
+  },
+  {
+   "ref": "Psalm 4:8",
+   "text": "I will lie down and sleep in peace, for You alone, O LORD, make me dwell in safety."
+  }
+ ]
+}

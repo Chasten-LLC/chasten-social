@@ -41,7 +41,8 @@ BOOKS = {
     "2 Thessalonians": "2TH", "1 Timothy": "1TI", "2 Timothy": "2TI", "Hebrews": "HEB", "James": "JAS",
     "1 Peter": "1PE", "1 John": "1JN", "Jude": "JUD",
 }
-LIMITS = {"monday": 22, "tuesday": 32, "wednesday": 32, "friday": 30, "reel": 30, "sunday": 34}
+LIMITS = {"monday": 22, "tuesday": 32, "wednesday": 32, "friday": 30, "reel": 30, "sunday": 34, "share": 40}
+SHARE = os.path.join(ROOT, "studio", "share")
 HUES = {"gold", "clay", "heart", "plum", "teal", "blue", "green"}
 EM_DASH = "—"
 
@@ -139,6 +140,28 @@ def main():
                 problems.append(f"sunday {bl['ref']} slide {k + 1}: {len(text.split())} words, over {LIMITS['sunday']}")
         if not bl["slides"][0].lstrip("\u201c\u2018")[:1].isupper() or not re.search(r"[.!?][\u201d\u2019]?$", bl["slides"][-1]):
             problems.append(f"sunday {bl['ref']}: the passage must start and end a sentence")
+
+    # the 11 AM share days (tools/share_run.py)
+    def share(name):
+        return json.load(open(os.path.join(SHARE, name), encoding="utf-8"))
+
+    def ours(where, text):
+        if EM_DASH in text or "!" in text:
+            problems.append(f"{where}: our line must have no em dash and no exclamation mark: {text}")
+        if "God says" in text or "the Lord says" in text.lower():
+            problems.append(f"{where}: our lines never put words in God's mouth: {text}")
+
+    for e in share("wednesday.json")["entries"]:
+        verse(f"share/thought {e['ref']}", e["ref"], e["text"], LIMITS["share"])
+        ours(f"share/thought {e['ref']}", e["line"])
+    for e in share("thursday.json")["dialogues"]:
+        verse(f"share/person {e['ref']}", e["ref"], e["text"], LIMITS["share"])
+        ours(f"share/person {e['ref']}", e["a"]); ours(f"share/person {e['ref']}", e["b"])
+    sun = share("sunday.json")
+    for e in sun["entries"]:
+        verse(f"share/blessing {e['ref']}", e["ref"], e["text"], LIMITS["share"])
+    for line in sun["lines"]:
+        ours("share/blessing line", line)
 
     for p in problems:
         print(p)

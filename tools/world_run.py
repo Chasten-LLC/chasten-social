@@ -60,6 +60,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 WORLD = os.path.join(ROOT, "studio", "world")
 STATE = os.path.join(ROOT, "studio", "state", "world-pointer.json")
+SHARE_STATE = os.path.join(ROOT, "studio", "state", "share-pointer.json")
+# Wednesday, Thursday and Sunday post a share format instead (tools/share_run.py).
+SHARE_DAYS = {2: "thought", 3: "person", 6: "blessing"}
 MORNING = os.path.join(ROOT, "studio", "state", "pointer.json")  # the 7 AM post's state
 SETTINGS = os.path.join(ROOT, "studio", "config", "settings.json")
 RAW = "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/{date}/{n}.jpg"
@@ -80,6 +83,19 @@ MIN_FINAL = 5        # cards a post needs after failed slides are left out
 STYLE = ("A black-and-white 35mm film photograph with a subtle warm tone, natural light, "
          "soft film grain, shallow depth of field, candid and cinematic, photorealistic. "
          "Vertical 4:5 framing, with the words large and clear enough to read on a phone.")
+# The look of the day (Ric, 2026-10-08: "none of the 11am posts are in color").
+# Black and white stays one day a week; the share days (Wed, Thu, Sun) run
+# tools/share_run.py instead, so their entries here are only a fallback.
+LOOKS = {
+    "bw": STYLE,
+    "warm-film": ("A color 35mm film photograph with warm, natural colors like Kodak Portra, soft daylight, gentle "
+                  "film grain, shallow depth of field, candid and cinematic, photorealistic. Vertical 4:5 framing, with "
+                  "the words large and clear enough to read on a phone."),
+    "golden-hour": ("A color photograph at golden hour: low warm sunlight, long soft shadows, a little lens glow, rich "
+                    "but natural colors, gentle film grain, shallow depth of field, candid and cinematic, photorealistic. "
+                    "Vertical 4:5 framing, with the words large and clear enough to read on a phone."),
+}
+WEEK_LOOKS = ["warm-film", "bw", "warm-film", "golden-hour", "golden-hour", "warm-film", "golden-hour"]  # Monday first
 RULE = ("These are the only readable words anywhere in the image: {words}. Spell every "
         "word exactly as written here and keep the punctuation. Add no other text, letters, "
         "numbers, logos, signs, labels, captions or watermarks anywhere.")
@@ -135,7 +151,7 @@ def shape(text, scene):
     return text.upper() if scene.get("case") == "upper" else text
 
 
-def prompt_for(line, scene):
+def prompt_for(line, scene, style=STYLE):
     text = shape(line["text"], scene)
     ref = shape(line["ref"], scene)
     if scene.get("rows"):
@@ -147,7 +163,7 @@ def prompt_for(line, scene):
     quoted = ", ".join(f'"{p}"' for p in parts + [ref])
     body = (scene["prompt"].replace("{TEXT}", text_q).replace("{REF}", f'"{ref}"')
             .replace("{ROWS}", str(len(parts) + 1)))
-    return f"{STYLE}\n\n{body}\n\n{RULE.format(words=quoted)}"
+    return f"{style}\n\n{body}\n\n{RULE.format(words=quoted)}"
 
 
 def fits(line, scene):
@@ -255,6 +271,8 @@ def plan(work):
         if not date:
             sys.exit("plan needs --date (or --lines and --scenes)")
         theme, pairs = pick(date, lines, scenes, load(STATE, {}))
+    import datetime as _dt
+    look = arg("--look") or (WEEK_LOOKS[_dt.date.fromisoformat(arg("--date")).weekday()] if arg("--date") else "bw")
     slides = []
     for n, (line, scene) in enumerate(pairs, 1):
         if not fits(line, scene):
@@ -264,11 +282,11 @@ def plan(work):
         line = dict(line, text=line["text"][:1].upper() + line["text"][1:])
         slides.append({"n": n, "line": line["id"], "kind": line["kind"], "scene": scene["id"],
                        "text": line["text"], "ref": line["ref"], "verse": line.get("verse"),
-                       "prompt": prompt_for(line, scene)})
+                       "prompt": prompt_for(line, scene, LOOKS[look])})
     audio = audio_for(theme, load(STATE, {}))
     dump(os.path.join(work, "work", "plan.json"),
-         {"date": arg("--date"), "theme": theme, "audio": audio, "model": MODEL, "slides": slides})
-    print(f"theme: {theme}; audio idea: {audio}")
+         {"date": arg("--date"), "theme": theme, "look": look, "audio": audio, "model": MODEL, "slides": slides})
+    print(f"theme: {theme}; look: {look}; audio idea: {audio}")
     for s in slides:
         print(f'{s["n"]}. [{s["scene"]}] ({s["kind"]}) {s["text"]} ({s["ref"]})')
 
@@ -353,9 +371,11 @@ def trim_border(im):
     return im.crop((left, top, w - right, h - bottom))
 
 
-def finish(im):
-    """The Chasten finish: cover-cut to 4:5, warm black and white, a little
-    grain and a soft vignette, so nine different scenes read as one post."""
+def finish(im, look="bw"):
+    """The Chasten finish: cover-cut to 4:5, a little grain and a soft vignette,
+    so nine different scenes read as one post. The "bw" look turns it warm black
+    and white; the color looks keep the color, a touch warmer, blacks lifted
+    like film."""
     im = trim_border(im.convert("RGB"))
     w, h = im.size
     if w / h > W_OUT / H_OUT:
@@ -365,6 +385,17 @@ def finish(im):
         nh = round(w * H_OUT / W_OUT)
         im = im.crop((0, (h - nh) // 2, w, (h - nh) // 2 + nh))
     im = im.resize((W_OUT, H_OUT), Image.LANCZOS)
+    if look != "bw":
+        r, g, b = im.split()
+        r = r.point(lambda v: min(255, int(v * 1.035)))
+        b = b.point(lambda v: int(v * 0.965))
+        out = Image.merge("RGB", (r, g, b)).point(lambda v: int(10 + v * 245 / 255))
+        out = out.point(lambda v: max(0, min(255, int(127.5 + 0.92 * (v - 127.5)))))
+        noise = Image.effect_noise((W_OUT, H_OUT), 14)
+        out = ImageChops.soft_light(out, Image.merge("RGB", [noise] * 3))
+        ring = Image.radial_gradient("L").resize((W_OUT, H_OUT), Image.BILINEAR)
+        ring = ring.point(lambda v: 255 - int(max(0, v - 110) * 0.30))
+        return ImageChops.multiply(out, Image.merge("RGB", [ring] * 3))
     mono = ImageOps.grayscale(im)
     mono = ImageOps.autocontrast(mono, cutoff=(0.4, 0.4))
     out = ImageOps.colorize(mono, black=(17, 14, 12), white=(248, 242, 233), mid=(128, 119, 108))
@@ -386,7 +417,7 @@ def grade(work):
         if not s.get("raw"):
             print(f'slide {s["n"]}: no drawing to finish')
             continue
-        out = finish(Image.open(s["raw"]))
+        out = finish(Image.open(s["raw"]), p.get("look", "bw"))
         path = os.path.join(work, "work", f"card{s['n']}.jpg")
         out.save(path, quality=90, optimize=True, progressive=True)
         s["card"] = path
@@ -472,10 +503,14 @@ def status(work):
     date = arg("--date")
     state = load(STATE, {})
     staged = os.path.join(ROOT, "world", date, "staged.json")
-    if state.get("lastPostDate") == date:
+    import datetime as _dt
+    share_kind = SHARE_DAYS.get(_dt.date.fromisoformat(date).weekday())
+    if state.get("lastPostDate") == date or load(SHARE_STATE, {}).get("lastPostId") == date:
         print("posted: today's 11 AM post already exists")
     elif os.path.exists(staged):
         print(f"staged: {len(load(staged)['slides'])} approved cards in world/{date}")
+    elif share_kind:
+        print(f"share: today is a share day ({share_kind}); build it with tools/share_run.py")
     else:
         print("fresh: plan and draw today's post")
 
@@ -489,14 +524,16 @@ def package(work):
         src = load(os.path.join(ROOT, "world", date, "staged.json"))
         slides, caption, theme, drawn = src["slides"], src["caption"], src.get("theme", "mixed"), src.get("drawn", 0)
         audio = src.get("audio") or audio_for(theme, state)
+        look = src.get("look", "bw")
     else:
         p = load(os.path.join(work, "work", "plan.json"))
         slides, theme = p.get("final", []), p.get("theme")
+        look = p.get("look", "bw")
         audio = p.get("audio")
         cap = os.path.join(work, "work", "caption.txt")
         caption = open(cap, encoding="utf-8").read().strip() if os.path.exists(cap) else ""
         drawn = sum(s.get("draws", 0) for s in p["slides"])
-    post = {"id": date, "date": date, "kind": "world", "theme": theme,
+    post = {"id": date, "date": date, "kind": "world", "theme": theme, "look": look,
             "title": slides[0]["text"] if slides else "Scripture in the world",
             "status": st, "permalink": arg("--permalink"), "mediaId": arg("--media-id"),
             "note": arg("--note", ""), "audio": audio, "caption": caption, "slides": slides,

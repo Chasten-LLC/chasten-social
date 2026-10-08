@@ -101,13 +101,13 @@ returns to standard time on 2026-11-01.
 | Day | Format | What it is |
 |---|---|---|
 | Mon | Swipe to reveal | A candid photo of young women of faith, mosaic to sharp, the verse revealed inside it. The photo is drawn by gemini-3-pro-image each week (about $0.13), unless Ric approved one in advance in `studio/morning/staged/<date>-<moment>.jpg` |
-| Tue | Follow the line | A question, four answers, four coloured lines that tangle across slides to four verses |
+| Tue | Follow the line | A question, four answers, four colored lines that tangle across slides to four verses |
 | Wed | Swipe to zoom in | "You're THIS close to..." and a verse between the fingertips of a halftone hand |
 | Thu, Sat | Stop on your verse | A 7.5 second reel: 45 verses flash in a paper card over a photo; hold the screen to stop on one. Strings music made with ElevenLabs (Starter plan: commercial use online, no attribution) |
 | Fri | Hold the dots: sunrise | A ten-frame flipbook of a drawn sunrise that ends on a morning verse |
 | Sun | The traveling dove | A carousel of short videos: a dove flies through a blessing, one verse per slide |
 
-The formats are in `tools/formats/`, drawn in code with the app's colours and fonts
+The formats are in `tools/formats/`, drawn in code with the app's colors and fonts
 (Literata, Caveat, Inter; their OFL licences sit beside them) and the app's Lucide
 icons (ISC). Everything they say comes from the pools in `studio/morning/`. After
 editing a pool, run `python3 tools/check_morning.py`: it proves every verse word for
@@ -128,6 +128,28 @@ daylight time; move it to `0 17 * * *` on 2026-11-01), posts a carousel of photo
 with one short line placed in each scene: a billboard, a cafe chalkboard, a note on a
 dashboard, a departure board. Its prompt is `docs/world-routine-prompt.md`, which must
 match the live one.
+
+Since 2026-10-08 the weekday decides two things:
+
+| Day | 11 AM post |
+|---|---|
+| Mon | Scripture in the world, warm film color |
+| Tue | Scripture in the world, black and white |
+| Wed | Share: "Saw this and thought of you" |
+| Thu | Share: "Send this to your person" |
+| Fri | Scripture in the world, golden hour |
+| Sat | Scripture in the world, warm film color |
+| Sun | Share: "A blessing for your week" ("Hello, October." on a month's first Sunday) |
+
+- **Looks** are `LOOKS` and `WEEK_LOOKS` in `tools/world_run.py`: the look sets both
+  the drawing's style and the finish (`grade`). Black and white stays one day a week.
+- **Share days** run `tools/share_run.py` (`world_run.py status` prints `share`). Each
+  is one or two drawn photos with a line set in real type, then the verse on the
+  app's dark card and a call to send it. Pools, prompts and caption rules live in
+  `studio/share/`; every verse is checked by `tools/check_morning.py`. On Thursday the
+  second photo is drawn from the first, so it is the same couple. If a share post
+  cannot be finished, the routine falls back to a regular world post that day.
+  State is `studio/state/share-pointer.json`; records still land in `world/<date>/`.
 
 - **Lines** live in `studio/world/lines.json`. Most are word-for-word BSB fragments;
   `python3 tools/check_world_lines.py` checks every one against the app's Bible

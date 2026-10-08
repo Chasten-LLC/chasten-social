@@ -1,0 +1,74 @@
+{
+ "note": "Send this to your person: two lines of a conversation over two photos of the same couple, then the verse that answers them.",
+ "style": "Candid lifestyle photograph with the polish of a top lifestyle influencer's feed: shot on an 85mm lens, shallow depth of field, warm natural light, glowing skin, rich natural colors, subtle film grain, a real tender moment, photorealistic. A stunning young couple in their twenties, both with model-level natural beauty, bright smiles and glossy hair. Modest, stylish clothes, sweet and tasteful, nothing suggestive. No text, no letters, no logos and no brand marks anywhere.",
+ "cta": "Send this to your person.",
+ "couples": [
+  "a woman with long glossy brunette waves and a man with short dark hair and a trimmed beard",
+  "a Black woman with big voluminous curls and a man with a close fade and a warm smile",
+  "a Latina woman with long dark waves and a man with tousled brown hair",
+  "a blonde woman with long sun-kissed waves and a man with sandy hair",
+  "an East Asian woman with long sleek black hair and a man with neat black hair"
+ ],
+ "moments": [
+  [
+   "walking close together under a shared umbrella on a rainy city street at night, laughing",
+   "she twirls under his raised arm in the rain, laughing, while he holds the umbrella over her and smiles at her"
+  ],
+  [
+   "sitting on a blanket at a sunset picnic, he is making her laugh",
+   "on the same picnic blanket in the last golden light, her forehead resting on his, eyes closed, both smiling"
+  ],
+  [
+   "sharing a bench by a lake at dusk, wrapped in one blanket, laughing",
+   "standing at the water's edge, he wraps the blanket around her shoulders and she smiles up at him"
+  ],
+  [
+   "walking through a pumpkin patch on a crisp autumn afternoon, he carries a pumpkin and she is laughing",
+   "in the same pumpkin patch, he lifts her into a spinning hug and they are both laughing"
+  ],
+  [
+   "holding hands across a small cafe table by a sunny window, both grinning",
+   "at the same cafe table, she leans in laughing as he offers her a forkful of cake"
+  ]
+ ],
+ "framing": "Vertical 4:5 frame; the top quarter of the frame is soft, quiet background (sky, lights, trees or a wall) with no faces or heads in it, and the couple fills the rest. No phone, screen or device is visible anywhere.",
+ "dialogues": [
+  {
+   "ref": "Genesis 29:20",
+   "text": "So Jacob served seven years for Rachel, yet it seemed but a few days because of his love for her.",
+   "a": "I'd wait for you.",
+   "b": "For how long?"
+  },
+  {
+   "ref": "1 Corinthians 13:7",
+   "text": "It bears all things, believes all things, hopes all things, endures all things.",
+   "a": "Even on my worst day?",
+   "b": "Especially then."
+  },
+  {
+   "ref": "Ecclesiastes 4:9-10",
+   "text": "Two are better than one, because they have a good return for their labor. For if one falls down, his companion can lift him up; but pity the one who falls without another to help him up!",
+   "a": "You're stuck with me.",
+   "b": "Good."
+  },
+  {
+   "ref": "1 John 4:19",
+   "text": "We love because He first loved us.",
+   "a": "Why do you love me?",
+   "b": "Because He loved me first."
+  },
+  {
+   "ref": "Ecclesiastes 4:12",
+   "text": "And though one may be overpowered, two can resist. Moreover, a cord of three strands is not quickly broken.",
+   "a": "What keeps us strong?",
+   "b": "We were never just two."
+  },
+  {
+   "ref": "Philippians 1:3",
+   "text": "I thank my God every time I remember you.",
+   "a": "Thank you for being you.",
+   "b": "Thank God for you."
+  }
+ ],
+ "sequel": "The image above is the first photo of this couple. Draw the second photo: the very same two people, with identical faces, hair, skin tones and clothes, in the same place a few moments later, in a clearly different pose, seen a little closer. Never repeat the first photo's pose."
+}
