@@ -70,8 +70,9 @@ def morning(path):
     """The 7 AM interactive post (tools/morning.py): a different format each weekday."""
     p = json.load(open(os.path.join(REPO, path)))
     name = p.get("name", "7 AM post")
+    slot = "extra post" if p.get("extra") else "7 AM"  # one made by hand outside the schedule
     if p.get("status") != "posted":
-        return (f":warning: *Chasten IG 7 AM {p['date']}* ({name}) did not post: {p.get('note') or 'see the run log'}.\n"
+        return (f":warning: *Chasten IG {slot} {p['date']}* ({name}) did not post: {p.get('note') or 'see the run log'}.\n"
                 f"Whatever was made is in the repo under morning/{p['date']}.")
     kind = {"reel": "reel", "dove": "video carousel"}.get(p.get("format"), "carousel")
     detail = f"{len(p.get('items', []))} slides" if kind != "reel" else "7.5 s, strings"
@@ -81,7 +82,7 @@ def morning(path):
         else:
             detail += " \u00b7 photo approved in advance"
     refs = ", ".join(p.get("refs") or []) or f"{p.get('verseCount', 0)} verses"
-    lines = [f":white_check_mark: *Chasten IG 7 AM {p['date']}* \u00b7 {name}: <{p['permalink']}|{p.get('title', '')}>",
+    lines = [f":white_check_mark: *Chasten IG {slot} {p['date']}* \u00b7 {name}: <{p['permalink']}|{p.get('title', '')}>",
              f"{kind} \u00b7 {detail} \u00b7 {refs}"]
     if p.get("note"):
         lines.append(p["note"])
