@@ -1,6 +1,6 @@
 {
- "nextSetIndex": 54,
- "postCount": 35,
+ "nextSetIndex": 55,
+ "postCount": 36,
  "usedSets": [
   0,
   1,
@@ -36,7 +36,8 @@
   49,
   50,
   52,
-  53
+  53,
+  54
  ],
  "usedBackgrounds": [
   "5850090",
@@ -169,10 +170,12 @@
   "Jeremiah 33:3",
   "Exodus 16:14",
   "Exodus 16:15",
-  "Exodus 16:18"
+  "Exodus 16:18",
+  "Matthew 7:7",
+  "Matthew 7:8",
+  "Luke 11:13"
  ],
  "usedAudio": [
-  "Reckless Love by Cory Asbury",
   "How Great Is Our God by Chris Tomlin",
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
   "Trust in God by Elevation Worship",
@@ -183,8 +186,9 @@
   "I Will Trust in You by Lauren Daigle",
   "Trust in God by Elevation Worship",
   "Oceans (Where Feet May Fail) by Hillsong UNITED",
-  "Jireh by Elevation Worship and Maverick City"
+  "Jireh by Elevation Worship and Maverick City",
+  "Build My Life by Housefires"
  ],
- "lastPostId": "2026-10-07",
- "lastRunAt": "2026-10-07T12:16:31+00:00"
+ "lastPostId": "2026-10-08",
+ "lastRunAt": "2026-10-08T12:16:10+00:00"
 }
