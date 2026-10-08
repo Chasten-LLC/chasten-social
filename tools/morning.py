@@ -391,7 +391,7 @@ def caption_check(work):
         problems.append("hashtags must be lowercase")
     if "\U0001F56F️ Chasten is a free Bible app. chasten.ai" not in t:
         problems.append("missing the sign-off line")
-    if p["format"] != "reel":
+    if p.get("format") != "reel":
         for r in p["refs"]:
             if r not in t:
                 problems.append(f"missing the reference {r}")
