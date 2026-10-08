@@ -29,16 +29,16 @@
      "icon": "user",
      "color": "teal",
      "for": "if you picked alone",
-     "ref": "Deuteronomy 31:8",
-     "text": "The LORD Himself goes before you; He will be with you. He will never leave you nor forsake you. Do not be afraid or discouraged."
+     "ref": "Psalm 23:4",
+     "text": "Even though I walk through the valley of the shadow of death, I will fear no evil, for You are with me; Your rod and Your staff, they comfort me."
     },
     {
      "label": "thankful",
      "icon": "sun",
      "color": "gold",
      "for": "if you picked thankful",
-     "ref": "Psalm 118:24",
-     "text": "This is the day that the LORD has made; we will rejoice and be glad in it."
+     "ref": "1 Thessalonians 5:18",
+     "text": "Give thanks in every circumstance, for this is God’s will for you in Christ Jesus."
     }
    ]
   },
@@ -54,8 +54,8 @@
      "icon": "feather",
      "color": "blue",
      "for": "if you picked peace",
-     "ref": "2 Thessalonians 3:16",
-     "text": "Now may the Lord of peace Himself give you peace at all times and in every way. The Lord be with all of you."
+     "ref": "John 14:27",
+     "text": "Peace I leave with you; My peace I give to you. I do not give to you as the world gives. Do not let your hearts be troubled; do not be afraid."
     },
     {
      "label": "strength",

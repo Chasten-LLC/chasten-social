@@ -58,6 +58,8 @@ _ensure([("PIL", "pillow"), ("numpy", "numpy")])
 
 from PIL import Image  # noqa: E402
 
+import verses  # noqa: E402  the record of what has been posted, for fresh Scripture
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
@@ -105,12 +107,12 @@ def state():
     return load(STATE, {"lastPostId": None, "count": 0, "used": {}, "bg": [], "cast": 0})
 
 
-def next_unused(ids, used):
-    """The first entry not used in this cycle; when every one has been used, a new cycle."""
-    for i in ids:
-        if i not in used:
-            return i, False
-    return ids[0], True
+def reel_verses(verses_, day, led):
+    """A reel's verses: those left out of recent reels first, so back-to-back reels
+    share as few as the pool allows; ties fall by the date."""
+    rng = random.Random(dt.date.fromisoformat(day).toordinal())
+    order = sorted(verses_, key=lambda v: (-led.reel_rest([v["ref"]], day), rng.random()))
+    return order[:REEL_VERSES]
 
 
 # ------------------------------------------------------------------ status
@@ -128,13 +130,30 @@ def plan(work):
     day = arg("--date")
     date = dt.date.fromisoformat(day)
     fmt = arg("--format") or WEEK[date.weekday()]
-    st = state()
-    used = st.get("used", {})
+    p = choose(fmt, day, state(), verses.from_repo())
+    dump(os.path.join(work, "work", "plan.json"), p)
+    print(f"{day}: {NAMES[fmt]} ({fmt})")
+    if fmt == "reveal":
+        print(f"moment: {p['pick']} ({p['moment']['layout']}), {p['people']} people; verse {p['moment']['ref']}")
+        print("next: python3 tools/morning.py draw W")
+    elif fmt == "reel":
+        print(f"background {p['background']}, {len(p['verses'])} verses, music strings")
+    else:
+        print("verses: " + ", ".join(p["refs"]))
+
+
+def choose(fmt, day, st, led):
+    """The day's post for one format. Each pool gives the entry whose verses have rested
+    longest across both daily posts (tools/verses.py); Monday's approved photos keep
+    their dates."""
+    date = dt.date.fromisoformat(day)
     p = {"date": day, "format": fmt, "name": NAMES[fmt]}
     if fmt == "reveal":
         data = pool("monday.json")
-        pick, reset = next_unused([m["id"] for m in data["moments"]], used.get("reveal", []))
-        m = next(x for x in data["moments"] if x["id"] == pick)
+        staged = [x for x in data["moments"]
+                  if os.path.exists(os.path.join(POOLS, "staged", f"{day}-{x['id']}.jpg"))]
+        m = staged[0] if staged else verses.freshest(data["moments"], lambda x: [x["ref"]], day, led)[0]
+        pick, reset = m["id"], False
         cast = data["cast"]
         k = st.get("cast", 0)
         people = [cast[(k + i) % len(cast)] for i in range(m["people"])]
@@ -147,32 +166,31 @@ def plan(work):
                   "refs": [m["ref"]], "title": m["text"]})
     elif fmt == "follow":
         data = pool("tuesday.json")
-        pick, reset = next_unused([s["id"] for s in data["sets"]], used.get("follow", []))
-        s = next(x for x in data["sets"] if x["id"] == pick)
+        s = verses.freshest(data["sets"], lambda x: [a["ref"] for a in x["answers"]], day, led)[0]
+        pick, reset = s["id"], False
         p.update({"pick": pick, "reset": reset, "set": s, "refs": [a["ref"] for a in s["answers"]],
                   "title": " ".join(s["title"]), "seed": date.toordinal()})
     elif fmt == "zoom":
         data = pool("wednesday.json")
-        pick, reset = next_unused([e["ref"] for e in data["entries"]], used.get("zoom", []))
-        e = next(x for x in data["entries"] if x["ref"] == pick)
+        e = verses.freshest(data["entries"], lambda x: [x["ref"]], day, led)[0]
+        pick, reset = e["ref"], False
         p.update({"pick": pick, "reset": reset, "entry": e, "hook": data["hook"], "refs": [e["ref"]],
                   "title": "You're THIS close to " + e["lead"].strip(".").strip()})
     elif fmt == "flip":
         data = pool("friday.json")
-        pick, reset = next_unused([e["ref"] for e in data["entries"]], used.get("flip", []))
-        e = next(x for x in data["entries"] if x["ref"] == pick)
+        e = verses.freshest(data["entries"], lambda x: [x["ref"]], day, led)[0]
+        pick, reset = e["ref"], False
         p.update({"pick": pick, "reset": reset, "entry": e, "heading": data["title"], "refs": [e["ref"]],
                   "title": "Sunrise, " + e["ref"]})
     elif fmt == "dove":
         data = pool("sunday.json")
-        pick, reset = next_unused([b["ref"] for b in data["blessings"]], used.get("dove", []))
-        b = next(x for x in data["blessings"] if x["ref"] == pick)
+        b = verses.freshest(data["blessings"], lambda x: [x["ref"]], day, led)[0]
+        pick, reset = b["ref"], False
         p.update({"pick": pick, "reset": reset, "blessing": b, "cta": data["cta"], "refs": [b["ref"]],
                   "title": "A blessing, " + b["ref"]})
     elif fmt == "reel":
-        verses = pool("reel.json")["verses"]
-        rng = random.Random(date.toordinal())
-        chosen = rng.sample(verses, min(REEL_VERSES, len(verses)))
+        chosen = reel_verses(pool("reel.json")["verses"], day, led)
+        random.Random(date.toordinal()).shuffle(chosen)
         photos = sorted(f[:-4] for f in os.listdir(BG_TALL) if f.endswith(".jpg"))
         recent = st.get("bg", [])[-BG_GAP:]
         fresh = [x for x in photos if x not in recent] or photos
@@ -181,15 +199,7 @@ def plan(work):
                   "title": f"{len(chosen)} verses"})
     else:
         raise SystemExit(f"unknown format {fmt}")
-    dump(os.path.join(work, "work", "plan.json"), p)
-    print(f"{day}: {NAMES[fmt]} ({fmt})")
-    if fmt == "reveal":
-        print(f"moment: {p['pick']} ({p['moment']['layout']}), {p['people']} people; verse {p['moment']['ref']}")
-        print("next: python3 tools/morning.py draw W")
-    elif fmt == "reel":
-        print(f"background {p['background']}, {len(p['verses'])} verses, music strings")
-    else:
-        print("verses: " + ", ".join(p["refs"]))
+    return p
 
 
 # -------------------------------------------------------------------- draw
@@ -428,6 +438,7 @@ def package(work):
     post = {"date": day, "format": p["format"], "name": p["name"], "title": p.get("title", ""), "status": status_,
             "permalink": arg("--permalink"), "mediaId": arg("--media-id"), "note": arg("--note", ""),
             "refs": p["refs"] if p["format"] != "reel" else [], "verseCount": len(p["refs"]),
+            "reelRefs": p["refs"] if p["format"] == "reel" else [],
             "items": [it["file"] for it in p.get("items", [])], "caption": caption}
     if p["format"] == "reveal":
         post.update({"moment": p["pick"], "drawn": p.get("drawings", 0), "cost": round(PRICE * p.get("drawings", 0), 2)})
@@ -441,7 +452,7 @@ def package(work):
         key = p["format"]
         if p.get("reset"):
             used[key] = []
-        used.setdefault(key, []).append(p["pick"])
+        used[key] = (used.get(key, []) + [p["pick"]])[-40:]  # a log only: tools/verses.py decides
     if p["format"] == "reel":
         st.setdefault("bg", []).append(p["background"])
         st["bg"] = st["bg"][-40:]

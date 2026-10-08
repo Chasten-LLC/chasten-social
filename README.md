@@ -175,6 +175,32 @@ Since 2026-10-08 the weekday decides two things:
 
 Try a day's plan without drawing: `python3 tools/world_run.py plan /tmp/w --date 2026-10-01`.
 
+## Fresh Scripture across both posts
+
+Ric, 2026-10-08: "material should be fresh as much as possible." The rules live in
+`tools/verses.py`, which reads what has gone out from the posts' own records
+(`posts/`, `morning/`, `world/`), so there is no second state to keep in step:
+
+- **Never twice in one post.** Every planner picks distinct verses.
+- **Never in both of a day's posts,** a reel's 45 verses included.
+- **Weekly pools take turns.** Each 7 AM format and share day runs its pool in order,
+  the entry that went out longest ago first. A verse lives in one weekly pool, once
+  (`tools/check_morning.py` fails otherwise), so fixed pools never collide.
+- **The world post steers.** Its pool is the large, flexible one: it leaves alone
+  every verse a weekly post will carry in the next 13 days (`world_run.upcoming`),
+  rests each verse at least 21 days when it can (then 14, 7), and takes the
+  longest-rested first.
+- **Approved posts hold their verse** from the day they are staged.
+- **Reels** rotate within their own pool and count for their own day only.
+
+`python3 tools/check_fresh.py --weeks 26` plays both routines forward from the real
+records with the planners themselves and fails on any repeat within a post or a day.
+On 2026-10-08, over a simulated year, it showed: no repeats in a post or a day; verses
+rest a median of 21 days; after the first two weeks (while the 11 AM leaves its old
+daily pace) one verse came back within two weeks, once, at 10 days, from the 11 AM's
+small set of our own lines. Back-to-back reels still share about 25 of their 45
+verses: the reel pool (66) is the one to grow next.
+
 ## The dashboard
 
 The "Chasten Instagram Studio" artifact still holds the history written before

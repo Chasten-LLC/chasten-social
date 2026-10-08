@@ -36,7 +36,8 @@ import time
 import urllib.error
 import urllib.request
 
-import morning as m  # helpers: arg, load, dump, next_unused, api_key, the Pillow and numpy guard
+import morning as m  # helpers: arg, load, dump, api_key, the Pillow and numpy guard
+import verses
 from formats import share as sh
 
 ROOT, POOLS = m.ROOT, os.path.join(m.ROOT, "studio", "share")
@@ -63,40 +64,43 @@ def status(work):
 
 def plan(work):
     day = arg("--date")
-    date = dt.date.fromisoformat(day)
-    kind = arg("--kind") or DAYS.get(date.weekday())
+    kind = arg("--kind") or DAYS.get(dt.date.fromisoformat(day).weekday())
     if not kind:
         raise SystemExit(f"{day} is not a share day; run tools/world_run.py")
-    st, used, turn = state(), state().get("used", {}), state().get("turn", {})
+    p = choose(kind, day, state(), verses.from_repo())
+    dump(os.path.join(work, "work", "plan.json"), p)
+    print(f"{day}: {NAMES[kind]} ({kind}); verse {p['entry']['ref']}; {len(p['prompts'])} photo(s) to draw")
+
+
+def choose(kind, day, st, led):
+    """The day's share post. Its verse is the one in the pool that has rested longest
+    across both daily posts (tools/verses.py); people, scenes and lines take turns."""
+    date = dt.date.fromisoformat(day)
+    turn = st.get("turn", {})
     data = load(os.path.join(POOLS, {"thought": "wednesday.json", "person": "thursday.json", "blessing": "sunday.json"}[kind]))
     p = {"date": day, "kind": kind, "name": NAMES[kind], "cta": data["cta"]}
+    e = verses.freshest(data["dialogues" if kind == "person" else "entries"], lambda x: [x["ref"]], day, led)[0]
+    p.update({"pick": e["ref"], "reset": False, "entry": e})
     if kind == "thought":
-        pick, reset = m.next_unused([e["ref"] for e in data["entries"]], used.get(kind, []))
-        e = next(x for x in data["entries"] if x["ref"] == pick)
         scene = data["scenes"][turn.get("scene", 0) % len(data["scenes"])]
-        p.update({"pick": pick, "reset": reset, "entry": e, "hook": data["hook"], "title": data["hook"],
+        p.update({"hook": data["hook"], "title": data["hook"],
                   "prompts": [f"{data['style']}\n\n{scene} {data['framing']}"]})
     elif kind == "person":
-        pick, reset = m.next_unused([e["ref"] for e in data["dialogues"]], used.get(kind, []))
-        e = next(x for x in data["dialogues"] if x["ref"] == pick)
         couple = data["couples"][turn.get("couple", 0) % len(data["couples"])]
         a, b = data["moments"][turn.get("moment", 0) % len(data["moments"])]
         base = f"{data['style']}\n\nThe couple: {couple}."
-        p.update({"pick": pick, "reset": reset, "entry": e, "title": f"“{e['a']}”", "basedOn": {"2": 1},
+        p.update({"title": f"\u201c{e['a']}\u201d", "basedOn": {"2": 1},
                   "prompts": [f"{base} Moment: {a}. {data['framing']}",
                               f"{data['sequel']}\n\n{base} Moment: {b}. {data['framing']}"]})
     else:
-        pick, reset = m.next_unused([e["ref"] for e in data["entries"]], used.get(kind, []))
-        e = next(x for x in data["entries"] if x["ref"] == pick)
         scenes = data["scenes"][SEASONS[date.month]]
         scene = scenes[turn.get("scene", 0) % len(scenes)]
         line = data["lines"][turn.get("line", 0) % len(data["lines"])]
         title = f"Hello, {date.strftime('%B')}." if date.day <= 7 else "A blessing for your week"
-        p.update({"pick": pick, "reset": reset, "entry": e, "heading": title, "line": line, "title": title,
+        p.update({"heading": title, "line": line, "title": title,
                   "prompts": [f"{data['style']}\n\n{scene}. {data['framing']}"]})
-    p["refs"] = [p["entry"]["ref"]]
-    dump(os.path.join(work, "work", "plan.json"), p)
-    print(f"{day}: {NAMES[kind]} ({kind}); verse {p['entry']['ref']}; {len(p['prompts'])} photo(s) to draw")
+    p["refs"] = [e["ref"]]
+    return p
 
 
 def _draw_one(prompt, out_png, refs=()):
@@ -217,10 +221,8 @@ def package(work):
     s = state()
     if st_ == "posted":  # like the world post: a failed day leaves no mark, so a rerun plans the same post
         s["lastPostId"], s["count"] = day, s.get("count", 0) + 1
-        used = s.setdefault("used", {})
-        if p.get("reset"):
-            used[p["kind"]] = []
-        used.setdefault(p["kind"], []).append(p["pick"])
+        used = s.setdefault("used", {})  # a log only: tools/verses.py decides
+        used[p["kind"]] = (used.get(p["kind"], []) + [p["pick"]])[-40:]
         t = s.setdefault("turn", {})
         for k in {"thought": ["scene"], "person": ["couple", "moment"], "blessing": ["scene", "line"]}[p["kind"]]:
             t[k] = t.get(k, 0) + 1

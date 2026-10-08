@@ -36,6 +36,7 @@ leaves it out. Nothing that misquotes Scripture is ever posted.
 
 import base64
 import concurrent.futures
+import datetime as dt
 import json
 import os
 import random
@@ -55,6 +56,8 @@ except ImportError:
     subprocess.check_call([sys.executable, "-m", "pip", "install", "--quiet", "pillow"])
 
 from PIL import Image, ImageChops, ImageDraw, ImageFont, ImageOps, ImageStat
+
+import verses  # the record of what has been posted, for fresh Scripture
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -76,7 +79,8 @@ THEMES = ["trust", "peace", "strength", "hope", "love", "rest", "courage", "iden
           "presence", "grace", "guidance", "timing", "joy", "prayer", "gratitude"]
 CONTENT_SLIDES = 8   # plus the closing slide
 SAID_PER_POST = 2    # our own conversational lines; the rest are Scripture
-LINE_GAP = 12        # posts before a line may appear again
+REST_FLOORS = (21, 14, 7, 1)  # days a verse rests, the strictest that still fills a post
+LOOK_AHEAD = 13      # days of coming 7 AM and share posts whose verses the world post leaves alone
 SCENE_GAP = 2        # posts before a scene may appear again
 MIN_FINAL = 5        # cards a post needs after failed slides are left out
 
@@ -170,25 +174,66 @@ def fits(line, scene):
     return len(words(line["text"])) <= scene.get("maxWords", 99)
 
 
-def pick(date, lines, scenes, state):
+def upcoming(date, led, days=LOOK_AHEAD):
+    """{verse: days until a coming 7 AM or share post carries it}, as their planners would
+    choose now. Their pools are small and fixed and this one is large, so this one gives
+    way. Reels are left out: they count for their own day only."""
+    import morning   # here rather than at the top: share_run imports this module
+    import share_run
+    mst, sst = morning.state(), share_run.state()
+    start, out, led = dt.date.fromisoformat(date), {}, led.copy()  # each guess sees the ones before it
+    for i in range(1, days + 1):
+        day = start + dt.timedelta(days=i)
+        refs = []
+        fmt = morning.WEEK[day.weekday()]
+        if fmt != "reel":
+            refs += morning.choose(fmt, day.isoformat(), mst, led)["refs"]
+        if day.weekday() in SHARE_DAYS:
+            refs += share_run.choose(SHARE_DAYS[day.weekday()], day.isoformat(), sst, led)["refs"]
+        led.add(day.isoformat(), refs)
+        for k in verses.all_keys(refs):
+            out.setdefault(k, i)
+    return out
+
+
+def pick(date, lines, scenes, state, led=None):
     """Today's lines and scenes: a theme's lines first, SAID_PER_POST of our
-    own, nothing used in the last LINE_GAP posts, an opener that is strong
-    enough to stop the scroll, and no scene from the last SCENE_GAP posts.
-    Every choice follows from the date and the state, so a rerun is the same."""
+    own, an opener that is strong enough to stop the scroll, and no scene from
+    the last SCENE_GAP posts. Scripture stays fresh across both daily posts
+    (tools/verses.py): never a verse posted today, never two lines from one verse,
+    never one a 7 AM or share post will carry within LOOK_AHEAD days, every verse
+    rested at least the strictest of REST_FLOORS the pool allows, and the
+    longest-rested first. Every choice follows from the date and the records,
+    so a rerun is the same."""
     rng = random.Random(f"world-{date}")
     hist = state.get("history", [])
     theme = THEMES[state.get("postCount", 0) % len(THEMES)]
-    used = {i for h in hist[-LINE_GAP:] for i in h.get("lines", [])}
-    pool = [l for l in lines if l["kind"] in ("verse", "said") and l["id"] not in used]
-    if len(pool) < CONTENT_SLIDES + SAID_PER_POST:  # a short pool: allow repeats
-        pool = [l for l in lines if l["kind"] in ("verse", "said")]
+    led = led or verses.from_repo()
+    content_lines = [l for l in lines if l["kind"] in ("verse", "said")]
+    ahead = upcoming(date, led)
+    rested = {l["id"]: led.rest([l["ref"]], date) for l in content_lines}
+    clear = {l["id"] for l in content_lines if not (verses.keys(l["ref"]) & ahead.keys())}
+
+    def rested_pool(kind, need):
+        """This kind's lines clear of the coming weekly posts, rested at least the
+        strictest floor that still leaves `need` different verses (our own lines are
+        few, so each kind finds its own floor)."""
+        cands = [l for l in content_lines if l["kind"] == kind]
+        for keep_clear in (True, False):
+            for floor in REST_FLOORS:
+                ls = [l for l in cands if rested[l["id"]] >= floor and (l["id"] in clear or not keep_clear)]
+                if len({l["verse"] for l in ls}) >= need:
+                    return ls
+        return [l for l in cands if rested[l["id"]] > 0] or cands  # too few for any rule
+
+    pool = rested_pool("said", SAID_PER_POST) + rested_pool("verse", CONTENT_SLIDES)
 
     verses_taken = set()
 
     def draw(cands, n):
-        """n lines from cands, never two from the same verse in one post."""
-        cands = list(cands)
-        rng.shuffle(cands)
+        """n lines from cands, never two from the same verse in one post; the
+        longest-rested weeks first, shuffled within a week."""
+        cands = sorted(cands, key=lambda l: (-min(rested[l["id"]] // 7, 8), rng.random()))
         out = []
         for l in cands:
             if len(out) >= n:

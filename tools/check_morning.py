@@ -163,6 +163,29 @@ def main():
     for line in sun["lines"]:
         ours("share/blessing line", line)
 
+    # Each verse lives in one weekly pool, once. Weekly pools rotate in a fixed order
+    # so the 11 AM world post can steer around them (tools/verses.py); two pools
+    # sharing a verse would bring it back within days. The reel is left out: it
+    # flashes 45 verses and counts for its own day only.
+    import verses as vv
+    weekly = {
+        "monday": [m["ref"] for m in load("monday.json")["moments"]],
+        "tuesday": [a["ref"] for s in load("tuesday.json")["sets"] for a in s["answers"]],
+        "wednesday": [e["ref"] for e in load("wednesday.json")["entries"]],
+        "friday": [e["ref"] for e in load("friday.json")["entries"]],
+        "sunday": [b["ref"] for b in load("sunday.json")["blessings"]],
+        "share/thought": [e["ref"] for e in share("wednesday.json")["entries"]],
+        "share/person": [e["ref"] for e in share("thursday.json")["dialogues"]],
+        "share/blessing": [e["ref"] for e in sun["entries"]],
+    }
+    home = {}
+    for name, refs in weekly.items():
+        for ref in refs:
+            for k in vv.keys(ref):
+                if k in home:
+                    problems.append(f"{name} {ref}: this verse is already in {home[k]}; each verse lives in one weekly pool, once")
+                home[k] = f"{name} ({ref})"
+
     for p in problems:
         print(p)
     print(f"{checked} verses checked, {len(problems)} problems")
