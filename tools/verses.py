@@ -166,6 +166,15 @@ def refs_of_record(p, folder):
     return [s["ref"] for s in p.get("slides", []) if s.get("kind") != "cta" and s.get("ref")], False
 
 
+def _iso(date):
+    """True for a YYYY-MM-DD date: a stray record or file name must never stop a day's planning."""
+    try:
+        dt.date.fromisoformat(date)
+        return True
+    except (TypeError, ValueError):
+        return False
+
+
 def from_repo(root=ROOT):
     """The ledger of every post that went out, from the records in the repo, and of the
     posts Ric approved in advance (staged), on the dates they are waiting for."""
@@ -176,6 +185,8 @@ def from_repo(root=ROOT):
             if not p or p.get("status") != "posted":
                 continue
             date = p.get("date") or os.path.basename(os.path.dirname(path))
+            if not _iso(date):
+                continue
             refs, reel = refs_of_record(p, folder)
             led.add(date, refs, reel)
     monday = _load(os.path.join(root, "studio", "morning", "monday.json")) or {}
@@ -183,10 +194,11 @@ def from_repo(root=ROOT):
     for path in glob.glob(os.path.join(root, "studio", "morning", "staged", "*.jpg")):
         name = os.path.basename(path)[:-4]
         date, moment = name[:10], name[11:]
-        if moment in refs_by_moment:
+        if moment in refs_by_moment and _iso(date):
             led.add(date, [refs_by_moment[moment]])
     for path in glob.glob(os.path.join(root, "world", "*", "staged.json")):
         p = _load(path) or {}
         date = os.path.basename(os.path.dirname(path))
-        led.add(date, [s["ref"] for s in p.get("slides", []) if s.get("kind") != "cta" and s.get("ref")])
+        if _iso(date):
+            led.add(date, [s["ref"] for s in p.get("slides", []) if s.get("kind") != "cta" and s.get("ref")])
     return led
