@@ -1,0 +1,100 @@
+{
+ "id": "2026-10-09",
+ "date": "2026-10-09",
+ "kind": "world",
+ "theme": "guidance",
+ "look": "golden-hour",
+ "title": "He has made everything beautiful in its time.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeR6myolXdm/",
+ "mediaId": "18104592434112245",
+ "note": "8 of 9 slides posted; slide 7 (1 Peter 2:9 marquee) left out after redraw still read I PETER",
+ "audio": "Trust in God by Elevation Worship",
+ "caption": "Which slide are you keeping? Comment its number.\n\nWhen you cannot see the next step, you can still ask for wisdom and trust the One who already sees it. Bring your plans to Him first and hold them loosely.\n\nEcclesiastes 3:11, Proverbs 19:21, Proverbs 16:3, James 1:5, 1 Thessalonians 5:17, Philippians 4:4, Micah 6:8 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #guidance #trustgod",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "ecc-3-11",
+   "kind": "verse",
+   "scene": "neon",
+   "text": "He has made everything beautiful in its time.",
+   "ref": "Ecclesiastes 3:11"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "say-his-plan",
+   "kind": "said",
+   "scene": "road-paint",
+   "text": "His plan. My trust.",
+   "ref": "Proverbs 19:21"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "say-plan",
+   "kind": "said",
+   "scene": "fog-window",
+   "text": "Pray first. Plan second.",
+   "ref": "Proverbs 16:3"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "jas-1-5",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "If any of you lacks wisdom, he should ask God",
+   "ref": "James 1:5"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "1th-5-17",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "Pray without ceasing.",
+   "ref": "1 Thessalonians 5:17"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "php-4-4",
+   "kind": "verse",
+   "scene": "mug",
+   "text": "Rejoice in the Lord always.",
+   "ref": "Philippians 4:4"
+  },
+  {
+   "n": 7,
+   "slide": 8,
+   "line": "mic-6-8",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "To act justly, to love mercy, and to walk humbly with your God",
+   "ref": "Micah 6:8"
+  },
+  {
+   "n": 8,
+   "slide": 9,
+   "line": "cta-amen",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Say Amen if you needed this today",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-09/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-09/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-09/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-09/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-09/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-09/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-09/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-09/8.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}
