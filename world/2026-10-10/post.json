@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-10",
+ "date": "2026-10-10",
+ "kind": "world",
+ "theme": "timing",
+ "look": "warm-film",
+ "title": "New mercies. New morning. Same faithful God.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeUfeWYIMCH/",
+ "mediaId": "18112990772147349",
+ "note": "9 slides posted; slide 2 redrawn once to remove a mirrored reflection of the poster text",
+ "audio": "Way Maker by Sinach",
+ "caption": "Type Amen if one of these found you today.\n\nGod's timing rarely matches ours, but it has never once been late. Whatever you are waiting on this weekend, He is faithful in the waiting too.\n\nLamentations 3:23, Psalm 42:11, 1 Peter 2:9, 1 Thessalonians 5:16, Psalm 18:2, Exodus 14:14, Revelation 21:4, Matthew 6:33 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n#bibleverse #faith #trustgod #godisfaithful",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-mercies",
+   "kind": "said",
+   "scene": "sand",
+   "text": "New mercies. New morning. Same faithful God.",
+   "ref": "Lamentations 3:23"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "psa-42-11",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "Put your hope in God, for I will yet praise Him",
+   "ref": "Psalm 42:11"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "1pe-2-9",
+   "kind": "verse",
+   "scene": "embroidery",
+   "text": "But you are a chosen people",
+   "ref": "1 Peter 2:9"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "1th-5-16",
+   "kind": "verse",
+   "scene": "cardboard-sign",
+   "text": "Rejoice at all times.",
+   "ref": "1 Thessalonians 5:16"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "psa-18-2",
+   "kind": "verse",
+   "scene": "brick-mural",
+   "text": "The LORD is my rock, my fortress, and my deliverer.",
+   "ref": "Psalm 18:2"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "say-working",
+   "kind": "said",
+   "scene": "notebook",
+   "text": "Be still. He is already working.",
+   "ref": "Exodus 14:14"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "rev-21-4",
+   "kind": "verse",
+   "scene": "church-marquee",
+   "text": "He will wipe away every tear from their eyes",
+   "ref": "Revelation 21:4"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "mat-6-33",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "Seek first the kingdom of God and His righteousness",
+   "ref": "Matthew 6:33"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-send",
+   "kind": "cta",
+   "scene": "sidewalk-chalk",
+   "text": "Send this to someone who needs it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-10/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-10/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-10/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-10/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-10/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-10/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-10/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-10/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-10/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}

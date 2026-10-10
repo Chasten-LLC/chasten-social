@@ -1,6 +1,6 @@
 {
- "postCount": 11,
- "lastPostDate": "2026-10-09",
+ "postCount": 12,
+ "lastPostDate": "2026-10-10",
  "history": [
   {
    "date": "2026-09-29",
@@ -259,6 +259,30 @@
     "mug",
     "index-card"
    ]
+  },
+  {
+   "date": "2026-10-10",
+   "theme": "timing",
+   "lines": [
+    "say-mercies",
+    "psa-42-11",
+    "1pe-2-9",
+    "1th-5-16",
+    "psa-18-2",
+    "say-working",
+    "rev-21-4",
+    "mat-6-33"
+   ],
+   "scenes": [
+    "sand",
+    "bus-poster",
+    "embroidery",
+    "cardboard-sign",
+    "brick-mural",
+    "notebook",
+    "church-marquee",
+    "letter-board"
+   ]
   }
  ],
  "usedAudio": [
@@ -272,6 +296,7 @@
   "Who You Say I Am by Hillsong Worship",
   "Holy Forever by Chris Tomlin",
   "Reckless Love by Cory Asbury",
-  "Trust in God by Elevation Worship"
+  "Trust in God by Elevation Worship",
+  "Way Maker by Sinach"
  ]
 }
