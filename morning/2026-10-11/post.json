@@ -3,10 +3,10 @@
  "format": "dove",
  "name": "The traveling dove",
  "title": "A blessing, Psalm 121:7-8",
- "status": "failed",
- "permalink": null,
- "mediaId": null,
- "note": "Composio carousel container call timed out twice (60s MCP limit); media is on GitHub, nothing published",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeXtfwXCTaI/",
+ "mediaId": "18421020991153952",
+ "note": "Posted by hand at 5:16 PM Central: the 7 AM run's video carousel call timed out (60 s tool limit). Slides now go up one by one, then publish (fixed in tools/morning.py and docs/routine-prompt.md).",
  "refs": [
   "Psalm 121:7-8"
  ],

@@ -91,20 +91,30 @@ Instagram can only fetch media from a public URL, so the files must be pushed fi
 
     cd $R && git fetch -q origin main && git checkout -B main origin/main -q
     mkdir -p $R/morning/<today> && cp $W/out/media/* $R/morning/<today>/
-    git add morning && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "7 AM media for <today>" && git push -q origin main
+    git add morning && (git diff --cached --quiet || git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "7 AM media for <today>") && git push -q origin main
     python3 tools/morning.py media $W --date <today>
+
+On a rerun the media may already be there, so there can be nothing new to commit; that is fine.
 
 `media` prints the post type and every public URL in slide order. Confirm each URL returns 200 with `curl -s -o /dev/null -w "%{http_code}" <url>` (not `curl -I | head -1`: the sandbox proxy answers that first). If one is not 200, wait 20 seconds and retry, up to three attempts. If the push fails, set status "failed" with the reason, skip STEP 7, and continue to STEP 8.
 
 ## STEP 7. Publish to Instagram through Composio
 
-Load the Composio Instagram tools with ToolSearch. If none are available, set status "failed" with reason "Composio not connected" and continue to STEP 8. By the type `media` printed:
+Load the Composio Instagram tools with ToolSearch. If none are available, set status "failed" with reason "Composio not connected" and continue to STEP 8.
 
-- `carousel`: `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id` 28607820282164259, `child_image_urls` set to every URL in slide order, and `caption` set to caption.txt. Then `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with the same `ig_user_id`, the returned id as `creation_id`, and `max_wait_seconds` 120.
-- `video-carousel` (Sunday): `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `child_video_urls` set to every URL in slide order and the caption. Then publish with `max_wait_seconds` 300.
-- `reel`: `INSTAGRAM_POST_IG_USER_MEDIA` with `ig_user_id`, `media_type` "REELS", `video_url` (the item's url), `cover_url` (the item's cover), `caption`, and `share_to_feed` true. Then publish with `max_wait_seconds` 300.
+Every Composio call must come back within 60 seconds or it times out, so never ask one call to wait while Instagram processes a video (on 2026-10-11 the dove failed exactly that way). Videos go up in short steps: create, check until ready, then publish. To wait between checks, run `python3 -c "import time; time.sleep(20)"`.
 
-Keep the published media id, then `INSTAGRAM_GET_IG_MEDIA` with that id and `fields` "id,permalink" for the permalink. If a call fails, retry that one call once. If it still fails, set status "failed" with a one line reason and continue. Never retry more than once and never loop.
+- `carousel` (images): `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id` 28607820282164259, `child_image_urls` set to every URL in slide order, and `caption` set to caption.txt. Then `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with the same `ig_user_id`, the returned id as `creation_id`, and `max_wait_seconds` 30.
+- `video-carousel` (Sunday):
+  1. For every URL, in slide order, `INSTAGRAM_POST_IG_USER_MEDIA` with `ig_user_id`, `video_url` (that URL) and `is_carousel_item` true, all in one COMPOSIO_MULTI_EXECUTE_TOOL call. Keep the returned ids in slide order.
+  2. `INSTAGRAM_GET_POST_STATUS` with each id as `creation_id`. While any says IN_PROGRESS, wait 20 seconds and check again, up to 15 times. If any says ERROR, set status "failed" with the reason and continue to STEP 8.
+  3. When all say FINISHED: `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id`, `children` set to the ids in slide order, and `caption` set to caption.txt.
+  4. `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with that new id as `creation_id` and `max_wait_seconds` 30.
+- `reel`: `INSTAGRAM_POST_IG_USER_MEDIA` with `ig_user_id`, `media_type` "REELS", `video_url` (the item's url), `cover_url` (the item's cover), `caption`, and `share_to_feed` true. Check it with `INSTAGRAM_GET_POST_STATUS` the same way until FINISHED, then `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with `max_wait_seconds` 30.
+
+Keep the published media id, then `INSTAGRAM_GET_IG_MEDIA` with that id and `fields` "id,permalink" for the permalink.
+
+If a create or status call fails or times out, retry that one call once. If a publish call fails or times out, never publish again before checking: `INSTAGRAM_GET_IG_USER_MEDIA` with `ig_user_id`, `limit` 3 and `fields` "id,permalink,timestamp". If a post from the last 15 minutes is there, it went out: use its id and permalink. Otherwise retry the publish once. If it still fails, set status "failed" with a one line reason and continue. Never loop beyond these limits.
 
 ## STEP 8. Commit the state
 

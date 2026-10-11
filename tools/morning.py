@@ -117,12 +117,14 @@ def reel_verses(verses_, day, led):
 
 # ------------------------------------------------------------------ status
 def status(work):
+    """Only a post that went out counts: a failed run leaves a record too, and a rerun
+    must build the day's post again (2026-10-11: the failed dove would have stopped one)."""
     day = arg("--date")
-    st = state()
-    if st.get("lastPostId") == day or os.path.exists(os.path.join(ROOT, "morning", day, "post.json")):
+    rec = load(os.path.join(ROOT, "morning", day, "post.json"), {})
+    if rec.get("status") == "posted":
         print("posted: today's 7 AM post already exists")
     else:
-        print("fresh: plan and build today's post")
+        print("fresh: plan and build today's post" + (" (an earlier run failed; build it again)" if rec else ""))
 
 
 # -------------------------------------------------------------------- plan
@@ -445,8 +447,9 @@ def package(work):
     if p["format"] == "reel":
         post.update({"background": p["background"], "music": p["music"]})
     st = state()
-    st["lastPostId"] = day
-    st["count"] = st.get("count", 0) + 1
+    if status_ == "posted":
+        st["lastPostId"] = day
+        st["count"] = st.get("count", 0) + 1
     used = st.setdefault("used", {})
     if p.get("pick") is not None:
         key = p["format"]
