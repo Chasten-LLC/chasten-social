@@ -304,9 +304,12 @@ def render(work):
         items = [{"kind": "image", "file": os.path.basename(x)} for x in paths]
     elif fmt == "dove":
         _ensure([("imageio_ffmpeg", "imageio-ffmpeg")]) if not shutil.which("ffmpeg") else None
-        from formats import traveling
+        from formats import dove_sound, traveling
         b = p["blessing"]
         paths = traveling.render_blessing(out, b["hook"], b["slides"], b["ref"], p["cta"])
+        # harp music and wingbeats that follow the dove (Ric, 2026-10-11: the dove needs its sound)
+        rows = traveling.timeline(traveling.blessing_points(b["slides"]), len(paths))
+        dove_sound.add(out, rows, os.path.join(work, "work", "sound"))
         items = [{"kind": "video", "file": os.path.basename(x)} for x in paths]
     elif fmt == "reel":
         _ensure([("imageio_ffmpeg", "imageio-ffmpeg")]) if not shutil.which("ffmpeg") else None

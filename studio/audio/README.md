@@ -1,8 +1,25 @@
 # Audio library
 
-Instrumental beds for future Reels. **These are not usable on the daily carousel.**
+Instrumental beds for Reels, and the Sunday dove's sound.
 
-## Why not carousels
+## The Sunday dove (made for Chasten, 2026-10-08)
+
+- `dove-harp.mp3`: ElevenLabs music (`music_v2_5`, instrumental), harp arpeggios and celesta
+  over strings and organ. The first note is at 0.19 s.
+- `dove-wings.mp3`: ElevenLabs sound effect, a dove's steady wingbeats (looped under the flight).
+- `dove-landing.mp3`: ElevenLabs sound effect, a soft flutter as the dove lands.
+
+`tools/formats/dove_sound.py` mixes them under every Sunday dove. All three were generated on
+Chasten's paid ElevenLabs plan: Eleven Music's terms allow commercial online use with no
+attribution, and ElevenLabs states that with a paid account its sound effects may be used
+royalty-free "in commercial projects, including YouTube videos, social media content, and
+even advertising" (elevenlabs.io/sound-effects, read 2026-10-08). Boosting is covered.
+
+Audio does reach Instagram inside the video slides of a carousel: each slide keeps its own
+sound (checked 2026-10-11, Instagram serves an audio track for every slide of
+https://www.instagram.com/p/DeQAk7rideZ/). Image slides cannot carry audio.
+
+## Why not image carousels
 
 Instagram's in-app "Add music" picks from Instagram's own licensed catalogue. There
 is no upload path for your own audio file on a feed post, and the Graph API exposes

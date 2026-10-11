@@ -109,12 +109,8 @@ def _encode(frames_iter, out_mp4):
     return out_mp4
 
 
-def render(out_dir, slides_text, path_points, land_hold=1.6, sprite_name="dove-up"):
-    """slides_text: one callable per slide, f(draw, image) that sets that slide's words.
-    path_points: control points across the whole strip (len(slides_text) * 1080 wide)."""
-    n = len(slides_text)
-    sprite = Image.open(os.path.join(c.ART_DIR, f"{sprite_name}.png")).convert("RGBA")
-    sprite = sprite.resize((DOVE_W, int(DOVE_W * sprite.height / sprite.width)), Image.LANCZOS)
+def _segments(path_points, n, land_hold):
+    """The path, its arc lengths, and per slide (s_start, s_end, fly, frames)."""
     path = _catmull(path_points)
     acc = _arclen(path)
     total = acc[-1]
@@ -125,6 +121,38 @@ def render(out_dir, slides_text, path_points, land_hold=1.6, sprite_name="dove-u
         s_cross = next(acc[i] for i in range(1, len(path)) if path[i - 1][0] < x_seam <= path[i][0])
         seams.append(s_cross)
     bounds = [0.0] + seams + [total]
+    segs = []
+    for k in range(n):
+        s_start = 0.0 if k == 0 else bounds[k] - EXIT
+        s_end = total if k == n - 1 else bounds[k + 1] + EXIT
+        fly = int(math.ceil((s_end - s_start) / SPEED * FPS))
+        hold = int(land_hold * FPS) if k == n - 1 else 0
+        segs.append((s_start, s_end, fly, max(fly + hold, 3 * FPS + 2)))
+    return path, acc, segs
+
+
+def timeline(path_points, n, land_hold=1.6):
+    """Per slide, per frame: (the dove's x on that slide, still flying?), so the
+    wingbeats can follow it (formats/dove_sound.py). Same numbers render() draws."""
+    path, acc, segs = _segments(path_points, n, land_hold)
+    rows = []
+    for k, (s_start, s_end, fly, frames) in enumerate(segs):
+        row = []
+        for f in range(frames):
+            u = min(1.0, f / max(1, fly - 1))
+            x, _, _ = _at(path, acc, s_start + (s_end - s_start) * u)
+            row.append((x - k * c.W, u < 1.0))
+        rows.append(row)
+    return rows
+
+
+def render(out_dir, slides_text, path_points, land_hold=1.6, sprite_name="dove-up"):
+    """slides_text: one callable per slide, f(draw, image) that sets that slide's words.
+    path_points: control points across the whole strip (len(slides_text) * 1080 wide)."""
+    n = len(slides_text)
+    sprite = Image.open(os.path.join(c.ART_DIR, f"{sprite_name}.png")).convert("RGBA")
+    sprite = sprite.resize((DOVE_W, int(DOVE_W * sprite.height / sprite.width)), Image.LANCZOS)
+    path, acc, segs = _segments(path_points, n, land_hold)
     grounds = []
     for k in range(n):
         g = c.paper(seed=70 + k)
@@ -132,11 +160,7 @@ def render(out_dir, slides_text, path_points, land_hold=1.6, sprite_name="dove-u
         grounds.append(g)
     outs = []
     for k in range(n):
-        s_start = 0.0 if k == 0 else bounds[k] - EXIT
-        s_end = total if k == n - 1 else bounds[k + 1] + EXIT
-        fly = int(math.ceil((s_end - s_start) / SPEED * FPS))
-        hold = int(land_hold * FPS) if k == n - 1 else 0
-        frames = max(fly + hold, 3 * FPS + 2)
+        s_start, s_end, fly, frames = segs[k]
         ox = k * c.W
 
         def gen(k=k, s_start=s_start, s_end=s_end, fly=fly, ox=ox, frames=frames):
@@ -193,6 +217,13 @@ def render_blessing(out_dir, hook, slides, ref, cta):
         return draw
 
     drawers = [draw_hook] + [draw_verse(t, k == len(slides) - 1) for k, t in enumerate(slides)]
+    return render(out_dir, drawers, blessing_points(slides))
+
+
+def blessing_points(slides):
+    """The dove's path through a blessing: a loop on every other verse, a wave on the
+    rest, landing beside the last words."""
+    n = 1 + len(slides)
     last_bottom = _verse_layout(slides[-1])[2] + 70
     land_y = max(820, min(1040, last_bottom + 230))
     pts = [(230, 880), (520, 790), (820, 900)]
@@ -205,4 +236,4 @@ def render_blessing(out_dir, hook, slides, ref, cta):
                     (x0 + 520, 830), (x0 + 530, 960), (x0 + 680, 1050), (x0 + 900, 990)]
         else:
             pts += [(x0 + 250, 960), (x0 + 520, 1080), (x0 + 780, 990)]
-    return render(out_dir, drawers, pts)
+    return pts
