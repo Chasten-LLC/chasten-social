@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-12",
+ "date": "2026-10-12",
+ "kind": "world",
+ "theme": "joy",
+ "look": "warm-film",
+ "title": "Give thanks to the LORD, for He is good",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeZo_pNm6Ck/",
+ "mediaId": "18133615489681051",
+ "note": "9 slides, joy theme, warm film, all passed first draw",
+ "audio": "How Great Is Our God by Chris Tomlin",
+ "caption": "Which slide are you keeping? Comment its number.\n\nJoy is not pretending things are fine. It is knowing the One who stays with you when they are not, and trusting that morning still comes.\n\nPsalm 107:1, Matthew 6:34, Psalm 30:5, John 11:35, 1 John 4:8, 1 Corinthians 13:8, John 10:10, Psalm 147:3 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #joy",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "psa-107-1",
+   "kind": "verse",
+   "scene": "shop-window",
+   "text": "Give thanks to the LORD, for He is good",
+   "ref": "Psalm 107:1"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "say-tomorrow",
+   "kind": "said",
+   "scene": "billboard",
+   "text": "You don't have to figure out tomorrow today.",
+   "ref": "Matthew 6:34"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "say-morning",
+   "kind": "said",
+   "scene": "split-flap",
+   "text": "Morning is coming. Joy comes with it.",
+   "ref": "Psalm 30:5"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "jhn-11-35",
+   "kind": "verse",
+   "scene": "fridge-note",
+   "text": "Jesus wept.",
+   "ref": "John 11:35"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "1jn-4-8",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "God is love.",
+   "ref": "1 John 4:8"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "1co-13-8",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "Love never fails.",
+   "ref": "1 Corinthians 13:8"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "jhn-10-10",
+   "kind": "verse",
+   "scene": "cafe-chalkboard",
+   "text": "I have come that they may have life, and have it in all its fullness.",
+   "ref": "John 10:10"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "psa-147-3",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "He heals the brokenhearted and binds up their wounds.",
+   "ref": "Psalm 147:3"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-save",
+   "kind": "cta",
+   "scene": "coffee-cup",
+   "text": "Save this for the day you need it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-12/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-12/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-12/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-12/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-12/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-12/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-12/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-12/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-12/9.jpg"
+ ],
+ "drawn": 9,
+ "cost": 1.21
+}

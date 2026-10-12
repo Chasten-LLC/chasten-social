@@ -1,6 +1,6 @@
 {
- "postCount": 12,
- "lastPostDate": "2026-10-10",
+ "postCount": 13,
+ "lastPostDate": "2026-10-12",
  "history": [
   {
    "date": "2026-09-29",
@@ -283,10 +283,33 @@
     "church-marquee",
     "letter-board"
    ]
+  },
+  {
+   "date": "2026-10-12",
+   "theme": "joy",
+   "lines": [
+    "psa-107-1",
+    "say-tomorrow",
+    "say-morning",
+    "jhn-11-35",
+    "1jn-4-8",
+    "1co-13-8",
+    "jhn-10-10",
+    "psa-147-3"
+   ],
+   "scenes": [
+    "shop-window",
+    "billboard",
+    "split-flap",
+    "fridge-note",
+    "letter-desk",
+    "mirror-marker",
+    "cafe-chalkboard",
+    "candle-label"
+   ]
   }
  ],
  "usedAudio": [
-  "I Will Trust in You by Lauren Daigle",
   "Peace Be Still by Hope Darst",
   "Battle Belongs by Phil Wickham",
   "Goodness of God by Bethel Music",
@@ -297,6 +320,7 @@
   "Holy Forever by Chris Tomlin",
   "Reckless Love by Cory Asbury",
   "Trust in God by Elevation Worship",
-  "Way Maker by Sinach"
+  "Way Maker by Sinach",
+  "How Great Is Our God by Chris Tomlin"
  ]
 }
