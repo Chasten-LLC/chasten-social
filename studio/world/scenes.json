@@ -25,7 +25,8 @@
    "case": "as-is",
    "rows": 0,
    "maxWords": 12,
-   "prompt": "Inside a car stopped in heavy traffic on a rainy evening, one square paper sticky note stuck on the dashboard just below the windshield, raindrops on the glass and blurred brake lights ahead. Handwritten on the sticky note in black pen, large and neat: {TEXT}, and below it: {REF}. No license plates or other readable text."
+   "prompt": "Inside a car stopped in heavy traffic on a rainy evening, one square paper sticky note stuck on the dashboard just below the windshield, raindrops on the glass and blurred brake lights ahead. Handwritten on the sticky note in black pen, large and neat: {TEXT}, and below it: {REF}. No license plates or other readable text.",
+   "tone": "hushed"
   },
   {
    "id": "split-flap",
@@ -68,7 +69,8 @@
    "case": "as-is",
    "rows": 0,
    "maxWords": 16,
-   "prompt": "A lit candle in a clear glass jar on a windowsill at night, rain on the window behind it, the flame glowing softly. The jar's cream paper label is printed in an elegant serif: {TEXT}, and below it, smaller: {REF}. No brand name on the jar."
+   "prompt": "A lit candle in a clear glass jar on a windowsill at night, rain on the window behind it, the flame glowing softly. The jar's cream paper label is printed in an elegant serif: {TEXT}, and below it, smaller: {REF}. No brand name on the jar.",
+   "tone": "hushed"
   },
   {
    "id": "typewriter",
@@ -120,7 +122,8 @@
    "rows": 0,
    "maxWords": 8,
    "prompt": "A person seen from behind walking through a busy city street at night, wearing a plain white T-shirt printed on the back in bold black letters: {TEXT}, and beneath, smaller: {REF}. No faces visible, no other shirts with writing, no shop signs.",
-   "opener": true
+   "opener": true,
+   "tone": "lively"
   },
   {
    "id": "cardboard-sign",
@@ -129,7 +132,8 @@
    "rows": 0,
    "maxWords": 10,
    "prompt": "A hand-lettered cardboard sign held up in both hands above a crowd at a sunny outdoor gathering, seen from behind the crowd. Written on the cardboard in thick black marker: {TEXT}, and below it: {REF}. No other signs or banners.",
-   "opener": true
+   "opener": true,
+   "tone": "lively"
   },
   {
    "id": "fog-window",
@@ -137,7 +141,8 @@
    "case": "as-is",
    "rows": 0,
    "maxWords": 6,
-   "prompt": "Words written with a fingertip in the fog on a rainy window at night, city lights blurred beyond the glass: {TEXT}, and below them: {REF}."
+   "prompt": "Words written with a fingertip in the fog on a rainy window at night, city lights blurred beyond the glass: {TEXT}, and below them: {REF}.",
+   "tone": "hushed"
   },
   {
    "id": "road-paint",
@@ -179,7 +184,8 @@
    "rows": 0,
    "maxWords": 18,
    "prompt": "A large backlit poster inside a city bus shelter at night, rain on the street behind it. The poster is plain cream with elegant black serif type: {TEXT}, and beneath it, smaller: {REF}. No logos, route maps or other words.",
-   "opener": true
+   "opener": true,
+   "tone": "hushed"
   },
   {
    "id": "neon",
@@ -188,7 +194,8 @@
    "rows": 0,
    "maxWords": 8,
    "prompt": "A warm neon sign glowing in the window of a small diner at night, the words bent in flowing cursive neon tubing: {TEXT}, and beneath, in smaller neon: {REF}. No other neon or signs.",
-   "opener": true
+   "opener": true,
+   "tone": "lively"
   },
   {
    "id": "mug",
@@ -254,5 +261,6 @@
    "maxWords": 10,
    "prompt": "Big sidewalk chalk letters on a sunny driveway, a piece of chalk lying beside them: {TEXT}, and below them: {REF}."
   }
- ]
+ ],
+ "toneNote": "Mood first (Ric, 2026-10-13): a scene's feel must suit its line. 'lively' scenes never carry a comfort or rest line; 'hushed' scenes never carry a joy line. Untagged scenes suit any line. world_run.pick enforces it."
 }

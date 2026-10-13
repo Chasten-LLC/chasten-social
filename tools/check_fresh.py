@@ -65,12 +65,15 @@ def main():
             q = share_run.choose(kind, day, sst, led)
             pm_refs = q["refs"]
             t = sst.setdefault("turn", {})
-            for k in {"thought": ["scene"], "person": ["couple", "moment"], "blessing": ["scene", "line"]}[kind]:
+            for k in q.get("turns", []):
                 t[k] = t.get(k, 0) + 1
             pm_name = f"11 AM {kind}"
         else:
             theme, pairs = world_run.pick(day, lines, scenes, wst, led)
             content = [(line, scene) for line, scene in pairs if line["kind"] != "cta"]
+            for line, scene in content:  # mood first: a scene's feel must suit its line
+                if not world_run.suits(line, scene):
+                    problems.append(f"{day} 11 AM world: '{line['text']}' ({world_run.line_tone(line)}) in {scene['id']} ({scene['tone']})")
             pm_refs = [line["ref"] for line, _ in content]
             wst["postCount"] = wst.get("postCount", 0) + 1
             wst["history"] = (wst.get("history", []) + [{

@@ -163,7 +163,9 @@ def choose(fmt, day, st, led):
             who = f"The young woman is {people[0]}."
         else:
             who = "The friends: " + ", ".join(people[:-1]) + f" and {people[-1]}."
-        prompt = f"{data['style']}\n\n{m['scene']}\n\nCast: {who}"
+        # mood first: the photo must feel like the verse (Ric, 2026-10-13)
+        prompt = (f"{data['style']}\n\n{m['scene']}\n\nMood: {m['mood']}. Every face, gesture and the light carry "
+                  f"this mood; nothing jokey or slapstick unless the mood says lighthearted.\n\nCast: {who}")
         p.update({"pick": pick, "reset": reset, "moment": m, "prompt": prompt, "people": len(people),
                   "refs": [m["ref"]], "title": m["text"]})
     elif fmt == "follow":

@@ -81,23 +81,30 @@ def choose(kind, day, st, led):
     p = {"date": day, "kind": kind, "name": NAMES[kind], "cta": data["cta"]}
     e = verses.freshest(data["dialogues" if kind == "person" else "entries"], lambda x: [x["ref"]], day, led)[0]
     p.update({"pick": e["ref"], "reset": False, "entry": e})
-    if kind == "thought":
-        scene = data["scenes"][turn.get("scene", 0) % len(data["scenes"])]
-        p.update({"hook": data["hook"], "title": data["hook"],
-                  "prompts": [f"{data['style']}\n\n{scene} {data['framing']}"]})
-    elif kind == "person":
+    if kind == "thought":  # the verse's mood picks her scene (mood first, 2026-10-13)
+        mood = e["mood"]
+        scenes = data["scenes"][mood]
+        scene = scenes[turn.get(f"scene:{mood}", 0) % len(scenes)]
+        feel = f"Mood: {data['moods'][mood]}. Her expression and the light carry this mood."
+        p.update({"hook": data["hook"], "title": data["hook"], "mood": mood, "turns": [f"scene:{mood}"],
+                  "prompts": [f"{data['style']}\n\n{scene} {data['framing']}\n\n{feel}"]})
+    elif kind == "person":  # the conversation's mood picks the couple's moment
+        mood = e["mood"]
         couple = data["couples"][turn.get("couple", 0) % len(data["couples"])]
-        a, b = data["moments"][turn.get("moment", 0) % len(data["moments"])]
+        pairs = [x["pair"] for x in data["moments"] if x["mood"] == mood]
+        a, b = pairs[turn.get(f"moment:{mood}", 0) % len(pairs)]
         base = f"{data['style']}\n\nThe couple: {couple}."
-        p.update({"title": f"\u201c{e['a']}\u201d", "basedOn": {"2": 1},
-                  "prompts": [f"{base} Moment: {a}. {data['framing']}",
-                              f"{data['sequel']}\n\n{base} Moment: {b}. {data['framing']}"]})
+        feel = f"Mood: {data['moods'][mood]}. Their faces and the light carry this mood."
+        p.update({"title": f"\u201c{e['a']}\u201d", "basedOn": {"2": 1}, "mood": mood,
+                  "turns": ["couple", f"moment:{mood}"],
+                  "prompts": [f"{base} Moment: {a}. {data['framing']}\n\n{feel}",
+                              f"{data['sequel']}\n\n{base} Moment: {b}. {data['framing']}\n\n{feel}"]})
     else:
         scenes = data["scenes"][SEASONS[date.month]]
         scene = scenes[turn.get("scene", 0) % len(scenes)]
         line = data["lines"][turn.get("line", 0) % len(data["lines"])]
         title = f"Hello, {date.strftime('%B')}." if date.day <= 7 else "A blessing for your week"
-        p.update({"heading": title, "line": line, "title": title,
+        p.update({"heading": title, "line": line, "title": title, "turns": ["scene", "line"],
                   "prompts": [f"{data['style']}\n\n{scene}. {data['framing']}"]})
     p["refs"] = [e["ref"]]
     return p
@@ -224,7 +231,7 @@ def package(work):
         used = s.setdefault("used", {})  # a log only: tools/verses.py decides
         used[p["kind"]] = (used.get(p["kind"], []) + [p["pick"]])[-40:]
         t = s.setdefault("turn", {})
-        for k in {"thought": ["scene"], "person": ["couple", "moment"], "blessing": ["scene", "line"]}[p["kind"]]:
+        for k in p.get("turns", []):
             t[k] = t.get(k, 0) + 1
     dump(os.path.join(work, "out", "post.json"), post)
     dump(os.path.join(work, "out", "share-pointer.json"), s)

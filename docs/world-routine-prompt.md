@@ -138,7 +138,7 @@ Each photo takes 20 to 60 seconds. On Thursday the second photo is drawn from th
 
 Read each $S/work/photo-N.png once and check it against its prompt in plan.json:
 
-1. the moment happens as described (who is doing what);
+1. the moment happens as described (who is doing what), and the faces and light carry the post's mood (`mood` in plan.json; Sunday's still life is calm), the same feeling as the verse;
 2. faces and hands look natural: no extra or fused fingers, no warped eyes, teeth or features;
 3. clothes are modest and nothing is suggestive;
 4. no readable words, letters, logos or brand marks anywhere, and no phone, screen or device;
@@ -146,7 +146,7 @@ Read each $S/work/photo-N.png once and check it against its prompt in plan.json:
 6. the top quarter of the photo holds no face or head, because the words go there;
 7. Thursday only: both photos show the same two people in the same clothes, and the second is a different pose, not a copy of the first.
 
-If a photo fails check 2, 3, 4, 5 or 7, redraw it once with `python3 tools/share_run.py draw $S --only N` (on Thursday, redrawing photo 1 redraws photo 2 as well) and check the new photo the same way. If it only falls short on check 1, keep it and say so in the note. If it fails check 6, keep it and render with `--place bottom` in B4. If check 2, 3, 4, 5 or 7 still fails after the redraw, go to B-FALLBACK.
+If a photo fails check 2, 3, 4, 5 or 7, or its mood does not match the verse, redraw it once with `python3 tools/share_run.py draw $S --only N` (on Thursday, redrawing photo 1 redraws photo 2 as well) and check the new photo the same way. If it only falls short on the details of check 1 (who is doing what), keep it and say so in the note. If it fails check 6, keep it and render with `--place bottom` in B4. If check 2, 3, 4, 5 or 7 or the mood still fails after the redraw, go to B-FALLBACK.
 
 ## B4. Render
 

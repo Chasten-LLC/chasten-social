@@ -175,6 +175,24 @@ Since 2026-10-08 the weekday decides two things:
 
 Try a day's plan without drawing: `python3 tools/world_run.py plan /tmp/w --date 2026-10-01`.
 
+## Mood first: every picture feels like its verse
+
+Ric, 2026-10-13, after friends found a turkey leg swung like a club beside "Taste and see that
+the LORD is good" jarring: the image's mood must match the verse it carries. The rule is to
+pair by mood, never by an object that echoes a word (food with "taste", flowers with
+"flowers", fire with "light"), and no pranks or slapstick beside a verse that is not
+lighthearted.
+
+- **Monday reveal:** every moment in `studio/morning/monday.json` has a `mood`; the drawing
+  prompt states it and the routine checks the photo carries it (a second miss fails the post).
+- **Wednesday and Thursday shares:** each entry's `mood` picks the scene or the couple's moment
+  (`studio/share/*.json`), and the prompt states it.
+- **World posts:** `studio/world/scenes.json` tags the few scenes with a strong feel. "Lively"
+  scenes never carry a comfort or rest line, "hushed" scenes never carry a joy line
+  (`world_run.suits`).
+- `tools/check_morning.py` fails on a missing mood, a gag word in a non-lighthearted moment, or
+  a world line with no suitable scene; `tools/check_fresh.py` fails on any mood clash it plans.
+
 ## Fresh Scripture across both posts
 
 Ric, 2026-10-08: "material should be fresh as much as possible." The rules live in

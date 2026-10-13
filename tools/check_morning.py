@@ -163,6 +163,35 @@ def main():
     for line in sun["lines"]:
         ours("share/blessing line", line)
 
+    # Mood first (Ric, 2026-10-13: friends found a turkey leg swung like a club beside "Taste and see
+    # that the LORD is good" jarring). Every drawn photo carries its verse's mood; pair by mood, never
+    # by an object that echoes a word, and no pranks or slapstick beside a verse unless it is lighthearted.
+    JOKEY = ("pretend", "prank", "bonk", "steal", "like a club", "hairbrush", "shriek", "torch", "mock-serious", "scowl")
+    for m in load("monday.json")["moments"]:
+        if not m.get("mood"):
+            problems.append(f"monday {m['id']}: needs a mood, the feeling its photo shares with {m['ref']}")
+        elif "lighthearted" not in m["mood"]:
+            gags = [w for w in JOKEY if w in m["scene"].lower()]
+            if gags:
+                problems.append(f"monday {m['id']}: '{', '.join(gags)}' is a gag beside {m['ref']}, whose mood is {m['mood']}")
+    wed = share("wednesday.json")
+    for e in wed["entries"]:
+        if e.get("mood") not in wed["moods"] or not wed["scenes"].get(e.get("mood")):
+            problems.append(f"share/thought {e['ref']}: mood {e.get('mood')} needs an entry in moods and at least one scene")
+    thu = share("thursday.json")
+    for e in thu["dialogues"]:
+        if e.get("mood") not in thu["moods"] or not any(x["mood"] == e.get("mood") for x in thu["moments"]):
+            problems.append(f"share/person {e['ref']}: mood {e.get('mood')} needs an entry in moods and a moment pair")
+    import world_run as wr
+    scenes = json.load(open(os.path.join(ROOT, "studio", "world", "scenes.json"), encoding="utf-8"))["scenes"]
+    content = [s for s in scenes if s["kind"] == "content"]
+    for s in scenes:
+        if s.get("tone") not in (None, "lively", "hushed"):
+            problems.append(f"world scene {s['id']}: unknown tone {s['tone']}")
+    for line in json.load(open(os.path.join(ROOT, "studio", "world", "lines.json"), encoding="utf-8"))["lines"]:
+        if line["kind"] in ("verse", "said") and not any(wr.fits(line, s) and wr.suits(line, s) for s in content):
+            problems.append(f"world line {line['id']}: no scene both holds it and suits its mood")
+
     # Each verse lives in one weekly pool, once. Weekly pools rotate in a fixed order
     # so the 11 AM world post can steer around them (tools/verses.py); two pools
     # sharing a verse would bring it back within days. The reel is left out: it

@@ -174,6 +174,28 @@ def fits(line, scene):
     return len(words(line["text"])) <= scene.get("maxWords", 99)
 
 
+# Mood first (Ric, 2026-10-13): a scene's feel must suit its line. Comfort and rest lines are tender,
+# joy lines exuberant; scenes.json tags the few scenes with a strong feel ("lively", "hushed").
+TENDER_THEMES = {"comfort", "rest"}
+EXUBERANT_THEMES = {"joy"}
+CLASHES = {("tender", "lively"), ("exuberant", "hushed")}
+
+
+def line_tone(line):
+    if line.get("tone"):
+        return line["tone"]
+    themes = set(line.get("themes", []))
+    if themes & TENDER_THEMES:
+        return "tender"
+    if themes & EXUBERANT_THEMES:
+        return "exuberant"
+    return None
+
+
+def suits(line, scene):
+    return (line_tone(line), scene.get("tone")) not in CLASHES
+
+
 def upcoming(date, led, days=LOOK_AHEAD):
     """{verse: days until a coming 7 AM or share post carries it}, as their planners would
     choose now. Their pools are small and fixed and this one is large, so this one gives
@@ -263,9 +285,9 @@ def pick(date, lines, scenes, state, led=None):
     # Longest lines first, so the few scenes that hold a long verse go to them.
     for idx in sorted(range(len(ordered)), key=lambda i: (-len(words(ordered[i]["text"])), i)):
         line = ordered[idx]
-        for relax in (0, 1):
+        for relax in (0, 1, 2):  # a mood clash is the last thing given up, after a recent scene
             cands = [s for s in content if fits(line, s) and s["id"] not in taken
-                     and (relax or s["id"] not in recent)]
+                     and (relax >= 1 or s["id"] not in recent) and (relax >= 2 or suits(line, s))]
             if idx == 0 and any(s.get("opener") for s in cands):
                 cands = [s for s in cands if s.get("opener")]
             if cands:

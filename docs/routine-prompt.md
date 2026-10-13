@@ -50,13 +50,13 @@ Skip this step unless the format is `reveal`.
 
 If it prints `staged`, Ric approved this photo in advance: skip the checks below and go to STEP 3. Otherwise Read $W/work/photo.png once and check it against `moment.scene` in plan.json:
 
-1. the moment happens as described (who is doing what);
+1. the moment happens as described (who is doing what), and the faces, gestures and light carry its mood (`moment.mood` in plan.json), the same feeling as the verse: nothing jokey or slapstick beside a verse that is not lighthearted;
 2. faces and hands look natural: no extra or fused fingers, no warped eyes, teeth or features;
 3. clothes are modest and nothing is suggestive;
 4. no readable words anywhere except words the scene names (such as JESUS SAVES on a cap), and no logos or brand marks of any kind (labels, tabs, stitching patterns, swooshes);
 5. no border or frame around the picture.
 
-If any check fails, draw once more with `python3 tools/morning.py draw $W --redraw` and check the new photo the same way. If the second photo still fails check 2, 3 or 4, set status "failed" with a one line reason and go to STEP 8. If it only falls short on check 1, keep it and say so in the note.
+If any check fails, draw once more with `python3 tools/morning.py draw $W --redraw` and check the new photo the same way. If the second photo still fails check 2, 3 or 4, or its mood still does not match the verse, set status "failed" with a one line reason and go to STEP 8. If it only falls short on the details of check 1 (who is doing what), keep it and say so in the note.
 
 ## STEP 3. Render
 
