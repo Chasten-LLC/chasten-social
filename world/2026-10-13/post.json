@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-13",
+ "date": "2026-10-13",
+ "kind": "world",
+ "theme": "prayer",
+ "look": "bw",
+ "title": "Don't panic. Just pray.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DecN6SJILRX/",
+ "mediaId": "18563914312072588",
+ "note": "9 slides posted; slide 1 (neon) redrawn once for ghosted duplicate letters",
+ "audio": "Holy Forever by Chris Tomlin",
+ "caption": "Which one did you need today? Tell us its number.\n\nPrayer is where the worry gets set down, one honest word at a time. Whatever is heavy this Tuesday, you can bring it to Him just as it is.\n\nPhilippians 4:6, Romans 12:12, Romans 8:31, Psalm 46:10, Isaiah 43:1, 1 Corinthians 13:4, Psalm 34:10, Isaiah 60:22 (BSB)\n\nShare it with someone who is carrying a lot.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n#bibleverse #faith #prayer #pray",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-pray",
+   "kind": "said",
+   "scene": "neon",
+   "text": "Don't panic. Just pray.",
+   "ref": "Philippians 4:6"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "rom-12-12",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "Be joyful in hope, patient in affliction, persistent in prayer.",
+   "ref": "Romans 12:12"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "rom-8-31",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "If God is for us, who can be against us?",
+   "ref": "Romans 8:31"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "psa-46-10",
+   "kind": "verse",
+   "scene": "diner-napkin",
+   "text": "Be still and know that I am God",
+   "ref": "Psalm 46:10"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "say-still-his",
+   "kind": "said",
+   "scene": "tshirt-back",
+   "text": "Still His. Still loved.",
+   "ref": "Isaiah 43:1"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "1co-13-4",
+   "kind": "verse",
+   "scene": "fog-window",
+   "text": "Love is patient, love is kind.",
+   "ref": "1 Corinthians 13:4"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "psa-34-10",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "Those who seek the LORD lack no good thing.",
+   "ref": "Psalm 34:10"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "isa-60-22",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "I am the LORD; in its time I will accomplish it quickly.",
+   "ref": "Isaiah 60:22"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-follow",
+   "kind": "cta",
+   "scene": "door-note",
+   "text": "Follow for a verse every day",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-13/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-13/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-13/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-13/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-13/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-13/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-13/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-13/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-13/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}

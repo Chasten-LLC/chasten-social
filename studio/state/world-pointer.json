@@ -1,6 +1,6 @@
 {
- "postCount": 13,
- "lastPostDate": "2026-10-12",
+ "postCount": 14,
+ "lastPostDate": "2026-10-13",
  "history": [
   {
    "date": "2026-09-29",
@@ -307,10 +307,33 @@
     "cafe-chalkboard",
     "candle-label"
    ]
+  },
+  {
+   "date": "2026-10-13",
+   "theme": "prayer",
+   "lines": [
+    "say-pray",
+    "rom-12-12",
+    "rom-8-31",
+    "psa-46-10",
+    "say-still-his",
+    "1co-13-4",
+    "psa-34-10",
+    "isa-60-22"
+   ],
+   "scenes": [
+    "neon",
+    "typewriter",
+    "blackboard",
+    "diner-napkin",
+    "tshirt-back",
+    "fog-window",
+    "index-card",
+    "dashboard-note"
+   ]
   }
  ],
  "usedAudio": [
-  "Peace Be Still by Hope Darst",
   "Battle Belongs by Phil Wickham",
   "Goodness of God by Bethel Music",
   "Gratitude by Brandon Lake",
@@ -321,6 +344,7 @@
   "Reckless Love by Cory Asbury",
   "Trust in God by Elevation Worship",
   "Way Maker by Sinach",
-  "How Great Is Our God by Chris Tomlin"
+  "How Great Is Our God by Chris Tomlin",
+  "Holy Forever by Chris Tomlin"
  ]
 }
