@@ -1,13 +1,17 @@
 {
- "lastPostId": "2026-10-11",
- "count": 1,
+ "lastPostId": "2026-10-14",
+ "count": 2,
  "used": {
   "blessing": [
    "Psalm 115:14-15"
+  ],
+  "thought": [
+   "2 Timothy 1:7"
   ]
  },
  "turn": {
   "scene": 1,
-  "line": 1
+  "line": 1,
+  "scene:confident": 1
  }
 }
