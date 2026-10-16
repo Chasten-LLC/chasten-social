@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-16",
+ "date": "2026-10-16",
+ "kind": "world",
+ "theme": "gratitude",
+ "look": "golden-hour",
+ "title": "The joy of the LORD is your strength.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Dej8MZQEZw0/",
+ "mediaId": "18059437526635933",
+ "note": "9 slides posted; slide 6 redrawn once for an edge seam",
+ "audio": "Praise by Elevation Worship",
+ "caption": "Which one are you sending to someone? Tell us its number.\n\nGratitude has a way of turning an ordinary Friday into something holy. Here are a few reminders of who holds every good thing in your life.\n\nNehemiah 8:10, John 8:12, Psalm 119:105, Psalm 121:2, Isaiah 43:19, Hebrews 11:1, Proverbs 16:9, John 16:33 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n#bibleverse #faith #gratitude #thankful",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "neh-8-10",
+   "kind": "verse",
+   "scene": "cardboard-sign",
+   "text": "The joy of the LORD is your strength.",
+   "ref": "Nehemiah 8:10"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "jhn-8-12",
+   "kind": "verse",
+   "scene": "brick-mural",
+   "text": "I am the light of the world.",
+   "ref": "John 8:12"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "psa-119-105",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "Your word is a lamp to my feet and a light to my path.",
+   "ref": "Psalm 119:105"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "psa-121-2",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "My help comes from the LORD, the Maker of heaven and earth.",
+   "ref": "Psalm 121:2"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "isa-43-19",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "Behold, I am about to do something new; even now it is coming.",
+   "ref": "Isaiah 43:19"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "heb-11-1",
+   "kind": "verse",
+   "scene": "notebook",
+   "text": "Now faith is the assurance of what we hope for and the certainty of what we do not see.",
+   "ref": "Hebrews 11:1"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "say-chapter",
+   "kind": "said",
+   "scene": "embroidery",
+   "text": "Let Him write the next chapter.",
+   "ref": "Proverbs 16:9"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "say-storm",
+   "kind": "said",
+   "scene": "church-marquee",
+   "text": "Peace isn't the absence of storms. It's Jesus in them.",
+   "ref": "John 16:33"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-found",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Type Amen if one of these found you",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-16/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-16/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-16/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-16/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-16/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-16/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-16/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-16/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-16/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}
