@@ -1,0 +1,100 @@
+{
+ "id": "2026-10-17",
+ "date": "2026-10-17",
+ "kind": "world",
+ "theme": "trust",
+ "look": "warm-film",
+ "title": "He who promised is faithful.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Demg4uTFOGz/",
+ "mediaId": "17898038070673788",
+ "note": "8 slides posted; slide 5 (Philippians 4:7 split-flap) misspelled twice and left out; slide 6 redrawn once for stray lettering",
+ "audio": "I Will Trust in You by Lauren Daigle",
+ "caption": "Which one did you need today? Tell us its number.\n\nTrust is hard when the road ahead is unclear. These are a few quiet reminders that the One holding your week has never once let go.\n\nHebrews 10:23, Proverbs 16:3, Jeremiah 31:3, Exodus 14:14, Isaiah 54:10, John 3:16, Isaiah 40:31 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #trustgod #guidance",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "heb-10-23",
+   "kind": "verse",
+   "scene": "shop-window",
+   "text": "He who promised is faithful.",
+   "ref": "Hebrews 10:23"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "say-plan",
+   "kind": "said",
+   "scene": "road-paint",
+   "text": "Pray first. Plan second.",
+   "ref": "Proverbs 16:3"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "jer-31-3",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "I have loved you with an everlasting love",
+   "ref": "Jeremiah 31:3"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "say-working",
+   "kind": "said",
+   "scene": "mug",
+   "text": "Be still. He is already working.",
+   "ref": "Exodus 14:14"
+  },
+  {
+   "n": 5,
+   "slide": 6,
+   "line": "isa-54-10",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "My loving devotion will not depart from you",
+   "ref": "Isaiah 54:10"
+  },
+  {
+   "n": 6,
+   "slide": 7,
+   "line": "jhn-3-16",
+   "kind": "verse",
+   "scene": "cafe-chalkboard",
+   "text": "For God so loved the world that He gave His one and only Son",
+   "ref": "John 3:16"
+  },
+  {
+   "n": 7,
+   "slide": 8,
+   "line": "isa-40-31",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "Those who wait upon the LORD will renew their strength",
+   "ref": "Isaiah 40:31"
+  },
+  {
+   "n": 8,
+   "slide": 9,
+   "line": "cta-amen",
+   "kind": "cta",
+   "scene": "sidewalk-chalk",
+   "text": "Say Amen if you needed this today",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-17/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-17/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-17/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-17/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-17/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-17/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-17/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-17/8.jpg"
+ ],
+ "drawn": 11,
+ "cost": 1.47
+}
