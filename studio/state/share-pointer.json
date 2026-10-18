@@ -1,9 +1,10 @@
 {
- "lastPostId": "2026-10-15",
- "count": 3,
+ "lastPostId": "2026-10-18",
+ "count": 4,
  "used": {
   "blessing": [
-   "Psalm 115:14-15"
+   "Psalm 115:14-15",
+   "Psalm 20:1"
   ],
   "thought": [
    "2 Timothy 1:7"
@@ -13,8 +14,8 @@
   ]
  },
  "turn": {
-  "scene": 1,
-  "line": 1,
+  "scene": 2,
+  "line": 2,
   "scene:confident": 1,
   "couple": 1,
   "moment:joyful": 1
