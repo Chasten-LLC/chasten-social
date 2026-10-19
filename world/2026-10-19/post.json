@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-19",
+ "date": "2026-10-19",
+ "kind": "world",
+ "theme": "peace",
+ "look": "warm-film",
+ "title": "Your worth was settled at the cross.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Derql3NFGA3/",
+ "mediaId": "18351835264269683",
+ "note": "9 slides; slide 9 redrawn once for film-border brand lettering",
+ "audio": "Peace Be Still by Hope Darst",
+ "caption": "Which slide are you keeping? Comment its number.\n\nPeace is not the absence of hard days. It is the quiet that comes from knowing God is near in every one of them.\n\nRomans 5:8, Isaiah 43:2, Psalm 4:8, Psalm 46:1, Psalm 94:19, Ephesians 6:10, Psalm 23:3, Matthew 17:20 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #peace #anxiety #bestill",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-worth",
+   "kind": "said",
+   "scene": "neon",
+   "text": "Your worth was settled at the cross.",
+   "ref": "Romans 5:8"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "isa-43-2",
+   "kind": "verse",
+   "scene": "split-flap",
+   "text": "When you pass through the waters, I will be with you",
+   "ref": "Isaiah 43:2"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "psa-4-8",
+   "kind": "verse",
+   "scene": "sand",
+   "text": "I will lie down and sleep in peace",
+   "ref": "Psalm 4:8"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "psa-46-1",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "God is our refuge and strength, an ever-present help in times of trouble.",
+   "ref": "Psalm 46:1"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "psa-94-19",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "When anxiety overwhelms me, Your consolation delights my soul.",
+   "ref": "Psalm 94:19"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "eph-6-10",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "Be strong in the Lord and in His mighty power.",
+   "ref": "Ephesians 6:10"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "psa-23-3",
+   "kind": "verse",
+   "scene": "fog-window",
+   "text": "He restores my soul",
+   "ref": "Psalm 23:3"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "say-mountains",
+   "kind": "said",
+   "scene": "tshirt-back",
+   "text": "Small faith still moves big mountains.",
+   "ref": "Matthew 17:20"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-send",
+   "kind": "cta",
+   "scene": "coffee-cup",
+   "text": "Send this to someone who needs it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-19/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-19/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-19/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-19/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-19/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-19/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-19/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-19/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-19/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}
