@@ -1,6 +1,6 @@
 {
- "postCount": 17,
- "lastPostDate": "2026-10-19",
+ "postCount": 18,
+ "lastPostDate": "2026-10-20",
  "history": [
   {
    "date": "2026-09-29",
@@ -401,10 +401,33 @@
     "fog-window",
     "tshirt-back"
    ]
+  },
+  {
+   "date": "2026-10-20",
+   "theme": "strength",
+   "lines": [
+    "php-4-13",
+    "psa-56-3",
+    "say-approval",
+    "exo-33-14",
+    "2co-12-9",
+    "say-loved",
+    "psa-139-14",
+    "psa-32-8"
+   ],
+   "scenes": [
+    "letter-board",
+    "blackboard",
+    "fridge-note",
+    "typewriter",
+    "notebook",
+    "church-marquee",
+    "diner-napkin",
+    "bus-poster"
+   ]
   }
  ],
  "usedAudio": [
-  "It Is Well by Kristene DiMarco",
   "Firm Foundation (He Won't) by Cody Carnes",
   "Who You Say I Am by Hillsong Worship",
   "Holy Forever by Chris Tomlin",
@@ -415,6 +438,7 @@
   "Holy Forever by Chris Tomlin",
   "Praise by Elevation Worship",
   "I Will Trust in You by Lauren Daigle",
-  "Peace Be Still by Hope Darst"
+  "Peace Be Still by Hope Darst",
+  "Battle Belongs by Phil Wickham"
  ]
 }

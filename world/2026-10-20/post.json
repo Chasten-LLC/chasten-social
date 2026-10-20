@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-20",
+ "date": "2026-10-20",
+ "kind": "world",
+ "theme": "strength",
+ "look": "bw",
+ "title": "I can do all things through Christ who gives me strength.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DeuPRYlm4TE/",
+ "mediaId": "17975571011939605",
+ "note": "9 slides, none redrawn; slide 6 marquee shows a comma for the period in the conversational line",
+ "audio": "Battle Belongs by Phil Wickham",
+ "caption": "Type Amen if one of these found you today.\n\nToday is about strength, the kind that shows up when yours runs out. If you feel weak right now, you are in good company and good hands.\n\nPhilippians 4:13, Psalm 56:3, Galatians 1:10, Exodus 33:14, 2 Corinthians 12:9, Romans 8:39, Psalm 139:14, Psalm 32:8 (BSB)\n\nShare it with someone who is carrying a lot.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #strength #godisfaithful",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "php-4-13",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "I can do all things through Christ who gives me strength.",
+   "ref": "Philippians 4:13"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "psa-56-3",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "When I am afraid, I put my trust in You.",
+   "ref": "Psalm 56:3"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "say-approval",
+   "kind": "said",
+   "scene": "fridge-note",
+   "text": "Chase God, not approval.",
+   "ref": "Galatians 1:10"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "exo-33-14",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "My Presence will go with you, and I will give you rest.",
+   "ref": "Exodus 33:14"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "2co-12-9",
+   "kind": "verse",
+   "scene": "notebook",
+   "text": "My grace is sufficient for you, for My power is perfected in weakness.",
+   "ref": "2 Corinthians 12:9"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "say-loved",
+   "kind": "said",
+   "scene": "church-marquee",
+   "text": "Loved on your best day. Loved on your worst.",
+   "ref": "Romans 8:39"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "psa-139-14",
+   "kind": "verse",
+   "scene": "diner-napkin",
+   "text": "I am fearfully and wonderfully made.",
+   "ref": "Psalm 139:14"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "psa-32-8",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "I will instruct you and teach you the way you should go",
+   "ref": "Psalm 32:8"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-save",
+   "kind": "cta",
+   "scene": "door-note",
+   "text": "Save this for the day you need it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-20/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-20/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-20/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-20/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-20/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-20/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-20/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-20/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-20/9.jpg"
+ ],
+ "drawn": 9,
+ "cost": 1.21
+}
