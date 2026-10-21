@@ -1,13 +1,14 @@
 {
- "lastPostId": "2026-10-18",
- "count": 4,
+ "lastPostId": "2026-10-21",
+ "count": 5,
  "used": {
   "blessing": [
    "Psalm 115:14-15",
    "Psalm 20:1"
   ],
   "thought": [
-   "2 Timothy 1:7"
+   "2 Timothy 1:7",
+   "Zephaniah 3:17"
   ],
   "person": [
    "Genesis 29:20"
@@ -18,6 +19,7 @@
   "line": 2,
   "scene:confident": 1,
   "couple": 1,
-  "moment:joyful": 1
+  "moment:joyful": 1,
+  "scene:joyful": 1
  }
 }
