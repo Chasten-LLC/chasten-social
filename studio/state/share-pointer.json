@@ -1,6 +1,6 @@
 {
- "lastPostId": "2026-10-21",
- "count": 5,
+ "lastPostId": "2026-10-22",
+ "count": 6,
  "used": {
   "blessing": [
    "Psalm 115:14-15",
@@ -11,15 +11,16 @@
    "Zephaniah 3:17"
   ],
   "person": [
-   "Genesis 29:20"
+   "Genesis 29:20",
+   "Ecclesiastes 4:9-10"
   ]
  },
  "turn": {
   "scene": 2,
   "line": 2,
   "scene:confident": 1,
-  "couple": 1,
-  "moment:joyful": 1,
+  "couple": 2,
+  "moment:joyful": 2,
   "scene:joyful": 1
  }
 }
