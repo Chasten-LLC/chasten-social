@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-23",
+ "date": "2026-10-23",
+ "kind": "world",
+ "theme": "hope",
+ "look": "golden-hour",
+ "title": "Keep going. He is not finished with you.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/De19s6DFAwH/",
+ "mediaId": "17993790570024971",
+ "note": "9 slides, all passed first draw; slide 7 candle scene reads blue and rainy rather than golden hour",
+ "audio": "Goodness of God by Bethel Music",
+ "caption": "Which one did you need today? Tell us its number.\n\nHope is not pretending things are fine. It is trusting that God is near and still at work, even in the slow and quiet seasons.\n\nPhilippians 1:6, 1 John 5:14, Ephesians 2:10, Psalm 145:18, 2 Corinthians 5:17, Ecclesiastes 3:11, 1 John 1:9, Psalm 16:8 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #hope #hopeinchrist",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-finished",
+   "kind": "said",
+   "scene": "cafe-chalkboard",
+   "text": "Keep going. He is not finished with you.",
+   "ref": "Philippians 1:6"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "say-heard",
+   "kind": "said",
+   "scene": "road-paint",
+   "text": "Your prayers are heard.",
+   "ref": "1 John 5:14"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "eph-2-10",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "For we are God's workmanship, created in Christ Jesus to do good works",
+   "ref": "Ephesians 2:10"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "psa-145-18",
+   "kind": "verse",
+   "scene": "brick-mural",
+   "text": "The LORD is near to all who call on Him",
+   "ref": "Psalm 145:18"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "2co-5-17",
+   "kind": "verse",
+   "scene": "shop-window",
+   "text": "If anyone is in Christ, he is a new creation.",
+   "ref": "2 Corinthians 5:17"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "ecc-3-11",
+   "kind": "verse",
+   "scene": "cardboard-sign",
+   "text": "He has made everything beautiful in its time.",
+   "ref": "Ecclesiastes 3:11"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "1jn-1-9",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "He is faithful and just to forgive us our sins",
+   "ref": "1 John 1:9"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "psa-16-8",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "Because He is at my right hand, I will not be shaken.",
+   "ref": "Psalm 16:8"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-follow",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Follow for a verse every day",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-23/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-23/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-23/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-23/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-23/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-23/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-23/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-23/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-23/9.jpg"
+ ],
+ "drawn": 9,
+ "cost": 1.21
+}

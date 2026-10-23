@@ -1,6 +1,6 @@
 {
- "postCount": 18,
- "lastPostDate": "2026-10-20",
+ "postCount": 19,
+ "lastPostDate": "2026-10-23",
  "history": [
   {
    "date": "2026-09-29",
@@ -425,10 +425,33 @@
     "diner-napkin",
     "bus-poster"
    ]
+  },
+  {
+   "date": "2026-10-23",
+   "theme": "hope",
+   "lines": [
+    "say-finished",
+    "say-heard",
+    "eph-2-10",
+    "psa-145-18",
+    "2co-5-17",
+    "ecc-3-11",
+    "1jn-1-9",
+    "psa-16-8"
+   ],
+   "scenes": [
+    "cafe-chalkboard",
+    "road-paint",
+    "letter-desk",
+    "brick-mural",
+    "shop-window",
+    "cardboard-sign",
+    "candle-label",
+    "billboard"
+   ]
   }
  ],
  "usedAudio": [
-  "Firm Foundation (He Won't) by Cody Carnes",
   "Who You Say I Am by Hillsong Worship",
   "Holy Forever by Chris Tomlin",
   "Reckless Love by Cory Asbury",
@@ -439,6 +462,7 @@
   "Praise by Elevation Worship",
   "I Will Trust in You by Lauren Daigle",
   "Peace Be Still by Hope Darst",
-  "Battle Belongs by Phil Wickham"
+  "Battle Belongs by Phil Wickham",
+  "Goodness of God by Bethel Music"
  ]
 }
