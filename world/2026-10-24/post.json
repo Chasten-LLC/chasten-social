@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-24",
+ "date": "2026-10-24",
+ "kind": "world",
+ "theme": "love",
+ "look": "warm-film",
+ "title": "He has not forgotten you.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/De4i7DEEY2y/",
+ "mediaId": "17915000535471464",
+ "note": "9 slides; redrew 2 (pasted-looking cork board), 5 (reference overlapped text), 7 (readable gauge numbers); slide 8 drawn twice after a 502",
+ "audio": "Gratitude by Brandon Lake",
+ "caption": "Which slide are you keeping? Comment its number.\n\nToday is about love, the kind that found us first and has not let go. Wherever this weekend finds you, you are loved.\n\nIsaiah 49:15, Matthew 11:30, Ephesians 2:8, 1 John 4:19, 1 Thessalonians 5:16, Romans 5:20, Revelation 21:4, Psalm 118:6 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #godslove #loveoneanother",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-forgotten",
+   "kind": "said",
+   "scene": "sand",
+   "text": "He has not forgotten you.",
+   "ref": "Isaiah 49:15"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "mat-11-30",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "For My yoke is easy and My burden is light.",
+   "ref": "Matthew 11:30"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "eph-2-8",
+   "kind": "verse",
+   "scene": "split-flap",
+   "text": "For it is by grace you have been saved through faith",
+   "ref": "Ephesians 2:8"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "1jn-4-19",
+   "kind": "verse",
+   "scene": "tshirt-back",
+   "text": "We love because He first loved us.",
+   "ref": "1 John 4:19"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "1th-5-16",
+   "kind": "verse",
+   "scene": "embroidery",
+   "text": "Rejoice at all times.",
+   "ref": "1 Thessalonians 5:16"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "say-grace",
+   "kind": "said",
+   "scene": "mug",
+   "text": "Grace goes deeper than your worst day.",
+   "ref": "Romans 5:20"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "rev-21-4",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "He will wipe away every tear from their eyes",
+   "ref": "Revelation 21:4"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "psa-118-6",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "The LORD is on my side; I will not be afraid.",
+   "ref": "Psalm 118:6"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-found",
+   "kind": "cta",
+   "scene": "sidewalk-chalk",
+   "text": "Type Amen if one of these found you",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-24/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-24/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-24/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-24/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-24/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-24/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-24/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-24/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-24/9.jpg"
+ ],
+ "drawn": 13,
+ "cost": 1.74
+}
