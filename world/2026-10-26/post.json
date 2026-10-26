@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-26",
+ "date": "2026-10-26",
+ "kind": "world",
+ "theme": "rest",
+ "look": "warm-film",
+ "title": "The LORD is my shepherd; I shall not want.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/De9r_AyG-xB/",
+ "mediaId": "18099057023531716",
+ "note": "rest, warm film, 9 slides; slide 7 redrawn once (clock numerals in background)",
+ "audio": "It Is Well by Kristene DiMarco",
+ "caption": "Which one did you need today? Tell us its number.\n\nRest is not something you earn. It is what you find when you remember who is holding you and how faithfully He keeps you.\n\nPsalm 23:1, 1 John 4:4, Psalm 27:1, Psalm 37:5, Psalm 30:5, Deuteronomy 31:8, Habakkuk 2:3, 1 Corinthians 13:8 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #rest #sabbath",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "psa-23-1",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "The LORD is my shepherd; I shall not want.",
+   "ref": "Psalm 23:1"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "say-bigger",
+   "kind": "said",
+   "scene": "church-marquee",
+   "text": "Nothing you face today is bigger than Him.",
+   "ref": "1 John 4:4"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "psa-27-1",
+   "kind": "verse",
+   "scene": "neon",
+   "text": "The LORD is my light and my salvation",
+   "ref": "Psalm 27:1"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "psa-37-5",
+   "kind": "verse",
+   "scene": "notebook",
+   "text": "Commit your way to the LORD; trust in Him, and He will do it.",
+   "ref": "Psalm 37:5"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "say-morning",
+   "kind": "said",
+   "scene": "fridge-note",
+   "text": "Morning is coming. Joy comes with it.",
+   "ref": "Psalm 30:5"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "deu-31-8",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "He will never leave you nor forsake you.",
+   "ref": "Deuteronomy 31:8"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "hab-2-3",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "Though it lingers, wait for it, since it will surely come and will not delay.",
+   "ref": "Habakkuk 2:3"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "1co-13-8",
+   "kind": "verse",
+   "scene": "diner-napkin",
+   "text": "Love never fails.",
+   "ref": "1 Corinthians 13:8"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-amen",
+   "kind": "cta",
+   "scene": "coffee-cup",
+   "text": "Say Amen if you needed this today",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-26/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-26/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-26/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-26/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-26/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-26/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-26/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-26/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-26/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}

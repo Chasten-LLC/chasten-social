@@ -1,6 +1,6 @@
 {
- "postCount": 20,
- "lastPostDate": "2026-10-24",
+ "postCount": 21,
+ "lastPostDate": "2026-10-26",
  "history": [
   {
    "date": "2026-09-29",
@@ -473,10 +473,33 @@
     "dashboard-note",
     "mirror-marker"
    ]
+  },
+  {
+   "date": "2026-10-26",
+   "theme": "rest",
+   "lines": [
+    "psa-23-1",
+    "say-bigger",
+    "psa-27-1",
+    "psa-37-5",
+    "say-morning",
+    "deu-31-8",
+    "hab-2-3",
+    "1co-13-8"
+   ],
+   "scenes": [
+    "letter-board",
+    "church-marquee",
+    "neon",
+    "notebook",
+    "fridge-note",
+    "bus-poster",
+    "blackboard",
+    "diner-napkin"
+   ]
   }
  ],
  "usedAudio": [
-  "Holy Forever by Chris Tomlin",
   "Reckless Love by Cory Asbury",
   "Trust in God by Elevation Worship",
   "Way Maker by Sinach",
@@ -487,6 +510,7 @@
   "Peace Be Still by Hope Darst",
   "Battle Belongs by Phil Wickham",
   "Goodness of God by Bethel Music",
-  "Gratitude by Brandon Lake"
+  "Gratitude by Brandon Lake",
+  "It Is Well by Kristene DiMarco"
  ]
 }
