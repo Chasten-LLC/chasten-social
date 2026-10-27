@@ -1,0 +1,100 @@
+{
+ "id": "2026-10-27",
+ "date": "2026-10-27",
+ "kind": "world",
+ "theme": "courage",
+ "look": "bw",
+ "title": "If God is for us, who can be against us?",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DfAQ143G18e/",
+ "mediaId": "17943340587362536",
+ "note": "8 slides; slide 6 (Matthew 11:28 chalkboard) left out after redraw, background shop text; slide 8 redrawn for duplicated words",
+ "audio": "Firm Foundation (He Won't) by Cody Carnes",
+ "caption": "Type Amen if one of these found you today.\n\nCourage does not mean you stop feeling afraid. It means remembering you are not facing any of it on your own.\n\nRomans 8:31, Matthew 28:20, Psalm 34:10, Matthew 6:34, Isaiah 41:13, Psalm 46:10, Proverbs 19:21 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #courage #fearnot",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "rom-8-31",
+   "kind": "verse",
+   "scene": "shop-window",
+   "text": "If God is for us, who can be against us?",
+   "ref": "Romans 8:31"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "mat-28-20",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "And surely I am with you always, even to the end of the age.",
+   "ref": "Matthew 28:20"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "psa-34-10",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "Those who seek the LORD lack no good thing.",
+   "ref": "Psalm 34:10"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "say-tomorrow",
+   "kind": "said",
+   "scene": "cardboard-sign",
+   "text": "You don't have to figure out tomorrow today.",
+   "ref": "Matthew 6:34"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "isa-41-13",
+   "kind": "verse",
+   "scene": "brick-mural",
+   "text": "Do not fear, I will help you.",
+   "ref": "Isaiah 41:13"
+  },
+  {
+   "n": 6,
+   "slide": 7,
+   "line": "psa-46-10",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "Be still and know that I am God",
+   "ref": "Psalm 46:10"
+  },
+  {
+   "n": 7,
+   "slide": 8,
+   "line": "pro-19-21",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "Many plans are in a man's heart, but the purpose of the LORD will prevail.",
+   "ref": "Proverbs 19:21"
+  },
+  {
+   "n": 8,
+   "slide": 9,
+   "line": "cta-send",
+   "kind": "cta",
+   "scene": "door-note",
+   "text": "Send this to someone who needs it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-27/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-27/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-27/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-27/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-27/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-27/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-27/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-27/8.jpg"
+ ],
+ "drawn": 11,
+ "cost": 1.47
+}

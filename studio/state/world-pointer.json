@@ -1,6 +1,6 @@
 {
- "postCount": 21,
- "lastPostDate": "2026-10-26",
+ "postCount": 22,
+ "lastPostDate": "2026-10-27",
  "history": [
   {
    "date": "2026-09-29",
@@ -497,10 +497,31 @@
     "blackboard",
     "diner-napkin"
    ]
+  },
+  {
+   "date": "2026-10-27",
+   "theme": "courage",
+   "lines": [
+    "rom-8-31",
+    "mat-28-20",
+    "psa-34-10",
+    "say-tomorrow",
+    "isa-41-13",
+    "psa-46-10",
+    "pro-19-21"
+   ],
+   "scenes": [
+    "shop-window",
+    "billboard",
+    "typewriter",
+    "cardboard-sign",
+    "brick-mural",
+    "candle-label",
+    "letter-desk"
+   ]
   }
  ],
  "usedAudio": [
-  "Reckless Love by Cory Asbury",
   "Trust in God by Elevation Worship",
   "Way Maker by Sinach",
   "How Great Is Our God by Chris Tomlin",
@@ -511,6 +532,7 @@
   "Battle Belongs by Phil Wickham",
   "Goodness of God by Bethel Music",
   "Gratitude by Brandon Lake",
-  "It Is Well by Kristene DiMarco"
+  "It Is Well by Kristene DiMarco",
+  "Firm Foundation (He Won't) by Cody Carnes"
  ]
 }
