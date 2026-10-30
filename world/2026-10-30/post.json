@@ -1,0 +1,110 @@
+{
+ "id": "2026-10-30",
+ "date": "2026-10-30",
+ "kind": "world",
+ "theme": "identity",
+ "look": "golden-hour",
+ "title": "New mercies. New morning. Same faithful God.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DfH_Z18EY7S/",
+ "mediaId": "18112672253335656",
+ "note": "identity, golden hour, 9 slides, slide 1 redrawn once for stray background sign text",
+ "audio": "Who You Say I Am by Hillsong Worship",
+ "caption": "Which slide are you keeping? Comment its number.\n\nBefore anything else, you belong to Him. Whatever today says about you, His mercy is new and His claim on you has not changed.\n\nLamentations 3:23, 1 Thessalonians 5:17, 1 Peter 2:9, Romans 8:1, Philippians 4:4, Isaiah 43:1, Psalm 103:12, Psalm 46:11 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #childofgod #identityinchrist",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-mercies",
+   "kind": "said",
+   "scene": "cafe-chalkboard",
+   "text": "New mercies. New morning. Same faithful God.",
+   "ref": "Lamentations 3:23"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "1th-5-17",
+   "kind": "verse",
+   "scene": "road-paint",
+   "text": "Pray without ceasing.",
+   "ref": "1 Thessalonians 5:17"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "1pe-2-9",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "But you are a chosen people",
+   "ref": "1 Peter 2:9"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "rom-8-1",
+   "kind": "verse",
+   "scene": "split-flap",
+   "text": "There is now no condemnation for those who are in Christ Jesus.",
+   "ref": "Romans 8:1"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "php-4-4",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "Rejoice in the Lord always.",
+   "ref": "Philippians 4:4"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "say-still-his",
+   "kind": "said",
+   "scene": "embroidery",
+   "text": "Still His. Still loved.",
+   "ref": "Isaiah 43:1"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "psa-103-12",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "As far as the east is from the west, so far has He removed our transgressions from us.",
+   "ref": "Psalm 103:12"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "psa-46-11",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "The LORD of Hosts is with us",
+   "ref": "Psalm 46:11"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-save",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Save this for the day you need it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-30/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-30/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-30/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-30/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-30/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-30/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-30/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-30/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-30/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}
