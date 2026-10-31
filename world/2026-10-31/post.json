@@ -1,0 +1,100 @@
+{
+ "id": "2026-10-31",
+ "date": "2026-10-31",
+ "kind": "world",
+ "theme": "presence",
+ "look": "warm-film",
+ "title": "Let Him write the next chapter.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DfKj3_DFO-q/",
+ "mediaId": "18351718519265684",
+ "note": "8 of 9 slides; slide 2 redrawn for a brand-like label; slide 5 (John 8:12 neon) left out after redraw for ghost reflected letters",
+ "audio": "Holy Forever by Chris Tomlin",
+ "caption": "Which one did you need today? Tell us its number.\n\nHe has not gone anywhere. Wherever this weekend finds you, His presence and His steady love are already there.\n\nProverbs 16:9, Isaiah 54:10, Micah 6:8, Matthew 6:33, Psalm 42:11, 1 Thessalonians 5:18, Psalm 18:2 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #godisgood #hope",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-chapter",
+   "kind": "said",
+   "scene": "tshirt-back",
+   "text": "Let Him write the next chapter.",
+   "ref": "Proverbs 16:9"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "isa-54-10",
+   "kind": "verse",
+   "scene": "diner-napkin",
+   "text": "My loving devotion will not depart from you",
+   "ref": "Isaiah 54:10"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "mic-6-8",
+   "kind": "verse",
+   "scene": "notebook",
+   "text": "To act justly, to love mercy, and to walk humbly with your God",
+   "ref": "Micah 6:8"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "mat-6-33",
+   "kind": "verse",
+   "scene": "fridge-note",
+   "text": "Seek first the kingdom of God and His righteousness",
+   "ref": "Matthew 6:33"
+  },
+  {
+   "n": 5,
+   "slide": 6,
+   "line": "psa-42-11",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "Put your hope in God, for I will yet praise Him",
+   "ref": "Psalm 42:11"
+  },
+  {
+   "n": 6,
+   "slide": 7,
+   "line": "say-thanks",
+   "kind": "said",
+   "scene": "bus-poster",
+   "text": "Thank Him in the middle of it.",
+   "ref": "1 Thessalonians 5:18"
+  },
+  {
+   "n": 7,
+   "slide": 8,
+   "line": "psa-18-2",
+   "kind": "verse",
+   "scene": "church-marquee",
+   "text": "The LORD is my rock, my fortress, and my deliverer.",
+   "ref": "Psalm 18:2"
+  },
+  {
+   "n": 8,
+   "slide": 9,
+   "line": "cta-follow",
+   "kind": "cta",
+   "scene": "sidewalk-chalk",
+   "text": "Follow for a verse every day",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-31/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-31/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-31/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-31/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-31/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-31/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-31/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-10-31/8.jpg"
+ ],
+ "drawn": 11,
+ "cost": 1.47
+}
