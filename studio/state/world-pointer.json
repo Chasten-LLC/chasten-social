@@ -1,6 +1,6 @@
 {
- "postCount": 24,
- "lastPostDate": "2026-10-31",
+ "postCount": 25,
+ "lastPostDate": "2026-11-02",
  "history": [
   {
    "date": "2026-09-29",
@@ -565,10 +565,33 @@
     "bus-poster",
     "church-marquee"
    ]
+  },
+  {
+   "date": "2026-11-02",
+   "theme": "grace",
+   "lines": [
+    "say-alone",
+    "jhn-10-10",
+    "jhn-11-35",
+    "rom-5-8",
+    "psa-147-3",
+    "1jn-4-8",
+    "say-carry",
+    "jhn-16-33"
+   ],
+   "scenes": [
+    "shop-window",
+    "candle-label",
+    "sand",
+    "billboard",
+    "brick-mural",
+    "neon",
+    "typewriter",
+    "letter-desk"
+   ]
   }
  ],
  "usedAudio": [
-  "How Great Is Our God by Chris Tomlin",
   "Holy Forever by Chris Tomlin",
   "Praise by Elevation Worship",
   "I Will Trust in You by Lauren Daigle",
@@ -579,6 +602,7 @@
   "It Is Well by Kristene DiMarco",
   "Firm Foundation (He Won't) by Cody Carnes",
   "Who You Say I Am by Hillsong Worship",
-  "Holy Forever by Chris Tomlin"
+  "Holy Forever by Chris Tomlin",
+  "Reckless Love by Cory Asbury"
  ]
 }
