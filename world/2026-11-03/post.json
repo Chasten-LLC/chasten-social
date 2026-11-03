@@ -1,0 +1,100 @@
+{
+ "id": "2026-11-03",
+ "date": "2026-11-03",
+ "kind": "world",
+ "theme": "guidance",
+ "look": "bw",
+ "title": "Chase God, not approval.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DfSTjHMlIrW/",
+ "mediaId": "18133645804666977",
+ "note": "8 slides; slides 4, 5, 9 redrawn once; slide 4 (Psalm 119:105) left out after redraw showed a film border",
+ "audio": "Trust in God by Elevation Worship",
+ "caption": "Which one did you need today? Tell us its number.\n\nToday is about guidance. When the next step feels unclear, God is still leading, one faithful step at a time.\n\nGalatians 1:10, Proverbs 3:6, Exodus 14:14, 1 Corinthians 13:4, Romans 12:12, Psalm 32:8, Isaiah 60:22 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #trustgod #guidance",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-approval",
+   "kind": "said",
+   "scene": "road-paint",
+   "text": "Chase God, not approval.",
+   "ref": "Galatians 1:10"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "pro-3-6",
+   "kind": "verse",
+   "scene": "cafe-chalkboard",
+   "text": "In all your ways acknowledge Him, and He will make your paths straight.",
+   "ref": "Proverbs 3:6"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "say-working",
+   "kind": "said",
+   "scene": "split-flap",
+   "text": "Be still. He is already working.",
+   "ref": "Exodus 14:14"
+  },
+  {
+   "n": 4,
+   "slide": 5,
+   "line": "1co-13-4",
+   "kind": "verse",
+   "scene": "cardboard-sign",
+   "text": "Love is patient, love is kind.",
+   "ref": "1 Corinthians 13:4"
+  },
+  {
+   "n": 5,
+   "slide": 6,
+   "line": "rom-12-12",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "Be joyful in hope, patient in affliction, persistent in prayer.",
+   "ref": "Romans 12:12"
+  },
+  {
+   "n": 6,
+   "slide": 7,
+   "line": "psa-32-8",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "I will instruct you and teach you the way you should go",
+   "ref": "Psalm 32:8"
+  },
+  {
+   "n": 7,
+   "slide": 8,
+   "line": "isa-60-22",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "I am the LORD; in its time I will accomplish it quickly.",
+   "ref": "Isaiah 60:22"
+  },
+  {
+   "n": 8,
+   "slide": 9,
+   "line": "cta-amen",
+   "kind": "cta",
+   "scene": "door-note",
+   "text": "Say Amen if you needed this today",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-03/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-03/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-03/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-03/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-03/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-03/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-03/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-03/8.jpg"
+ ],
+ "drawn": 12,
+ "cost": 1.61
+}
