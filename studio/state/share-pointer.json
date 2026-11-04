@@ -1,6 +1,6 @@
 {
- "lastPostId": "2026-11-01",
- "count": 10,
+ "lastPostId": "2026-11-04",
+ "count": 11,
  "used": {
   "blessing": [
    "Psalm 115:14-15",
@@ -11,7 +11,8 @@
   "thought": [
    "2 Timothy 1:7",
    "Zephaniah 3:17",
-   "Isaiah 26:3"
+   "Isaiah 26:3",
+   "Isaiah 41:10"
   ],
   "person": [
    "Genesis 29:20",
@@ -27,6 +28,7 @@
   "moment:joyful": 2,
   "scene:joyful": 1,
   "scene:peaceful": 1,
-  "moment:reverent": 1
+  "moment:reverent": 1,
+  "scene:reassuring": 1
  }
 }
