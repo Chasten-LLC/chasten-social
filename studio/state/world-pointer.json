@@ -1,6 +1,6 @@
 {
- "postCount": 26,
- "lastPostDate": "2026-11-03",
+ "postCount": 27,
+ "lastPostDate": "2026-11-06",
  "history": [
   {
    "date": "2026-09-29",
@@ -611,10 +611,33 @@
     "index-card",
     "blackboard"
    ]
+  },
+  {
+   "date": "2026-11-06",
+   "theme": "timing",
+   "lines": [
+    "ecc-3-11",
+    "jhn-8-12",
+    "isa-43-19",
+    "neh-8-10",
+    "psa-121-2",
+    "say-loved",
+    "say-mountains",
+    "psa-119-105"
+   ],
+   "scenes": [
+    "church-marquee",
+    "mug",
+    "mirror-marker",
+    "tshirt-back",
+    "notebook",
+    "fridge-note",
+    "diner-napkin",
+    "bus-poster"
+   ]
   }
  ],
  "usedAudio": [
-  "Praise by Elevation Worship",
   "I Will Trust in You by Lauren Daigle",
   "Peace Be Still by Hope Darst",
   "Battle Belongs by Phil Wickham",
@@ -625,6 +648,7 @@
   "Who You Say I Am by Hillsong Worship",
   "Holy Forever by Chris Tomlin",
   "Reckless Love by Cory Asbury",
-  "Trust in God by Elevation Worship"
+  "Trust in God by Elevation Worship",
+  "Way Maker by Sinach"
  ]
 }

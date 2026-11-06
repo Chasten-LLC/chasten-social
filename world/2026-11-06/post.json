@@ -1,0 +1,110 @@
+{
+ "id": "2026-11-06",
+ "date": "2026-11-06",
+ "kind": "world",
+ "theme": "timing",
+ "look": "golden-hour",
+ "title": "He has made everything beautiful in its time.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DfaAwRcESIl/",
+ "mediaId": "18129400357917111",
+ "note": "timing, golden-hour, 9 slides; redrew 3 (stray mark) and 6 (text ran off note); system Pillow broken so reinstalled Pillow to /usr/local",
+ "audio": "Way Maker by Sinach",
+ "caption": "Which slide are you keeping? Comment its number.\n\nToday is about timing. If you are waiting on something, you are not forgotten. God is not late, and He is still at work in your story.\n\nEcclesiastes 3:11, John 8:12, Isaiah 43:19, Nehemiah 8:10, Psalm 121:2, Romans 8:39, Matthew 17:20, Psalm 119:105 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #trustgod #hope",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "ecc-3-11",
+   "kind": "verse",
+   "scene": "church-marquee",
+   "text": "He has made everything beautiful in its time.",
+   "ref": "Ecclesiastes 3:11"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "jhn-8-12",
+   "kind": "verse",
+   "scene": "mug",
+   "text": "I am the light of the world.",
+   "ref": "John 8:12"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "isa-43-19",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "Behold, I am about to do something new; even now it is coming.",
+   "ref": "Isaiah 43:19"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "neh-8-10",
+   "kind": "verse",
+   "scene": "tshirt-back",
+   "text": "The joy of the LORD is your strength.",
+   "ref": "Nehemiah 8:10"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "psa-121-2",
+   "kind": "verse",
+   "scene": "notebook",
+   "text": "My help comes from the LORD, the Maker of heaven and earth.",
+   "ref": "Psalm 121:2"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "say-loved",
+   "kind": "said",
+   "scene": "fridge-note",
+   "text": "Loved on your best day. Loved on your worst.",
+   "ref": "Romans 8:39"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "say-mountains",
+   "kind": "said",
+   "scene": "diner-napkin",
+   "text": "Small faith still moves big mountains.",
+   "ref": "Matthew 17:20"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "psa-119-105",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "Your word is a lamp to my feet and a light to my path.",
+   "ref": "Psalm 119:105"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-send",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Send this to someone who needs it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-06/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-06/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-06/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-06/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-06/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-06/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-06/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-06/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-06/9.jpg"
+ ],
+ "drawn": 11,
+ "cost": 1.47
+}
