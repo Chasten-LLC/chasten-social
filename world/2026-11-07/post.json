@@ -1,0 +1,110 @@
+{
+ "id": "2026-11-07",
+ "date": "2026-11-07",
+ "kind": "world",
+ "theme": "joy",
+ "look": "warm-film",
+ "title": "This is the day that the LORD has made; we will rejoice and be glad in it.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DfclYeilLtU/",
+ "mediaId": "18107852444632521",
+ "note": "joy, warm film, 9 slides; slides 6 and 9 redrawn once (border on 6, stray chalk mark on 9)",
+ "audio": "How Great Is Our God by Chris Tomlin",
+ "caption": "Type Amen if one of these found you today.\n\nToday is about joy. Not the kind that depends on a good week, but the quiet gladness of being loved, remembered and forgiven.\n\nPsalm 118:24, 2 Corinthians 12:9, Isaiah 49:15, Zephaniah 3:17, Hebrews 10:23, Romans 5:20, Jeremiah 31:3, 1 John 1:9 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #joy #rejoice",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "psa-118-24",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "This is the day that the LORD has made; we will rejoice and be glad in it.",
+   "ref": "Psalm 118:24"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "2co-12-9",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "My grace is sufficient for you, for My power is perfected in weakness.",
+   "ref": "2 Corinthians 12:9"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "say-forgotten",
+   "kind": "said",
+   "scene": "neon",
+   "text": "He has not forgotten you.",
+   "ref": "Isaiah 49:15"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "zep-3-17",
+   "kind": "verse",
+   "scene": "brick-mural",
+   "text": "He will rejoice over you with singing.",
+   "ref": "Zephaniah 3:17"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "heb-10-23",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "He who promised is faithful.",
+   "ref": "Hebrews 10:23"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "say-grace",
+   "kind": "said",
+   "scene": "sand",
+   "text": "Grace goes deeper than your worst day.",
+   "ref": "Romans 5:20"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "jer-31-3",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "I have loved you with an everlasting love",
+   "ref": "Jeremiah 31:3"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "1jn-1-9",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "He is faithful and just to forgive us our sins",
+   "ref": "1 John 1:9"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-save",
+   "kind": "cta",
+   "scene": "sidewalk-chalk",
+   "text": "Save this for the day you need it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-07/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-07/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-07/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-07/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-07/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-07/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-07/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-07/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-07/9.jpg"
+ ],
+ "drawn": 11,
+ "cost": 1.47
+}
