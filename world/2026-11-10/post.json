@@ -1,0 +1,110 @@
+{
+ "id": "2026-11-10",
+ "date": "2026-11-10",
+ "kind": "world",
+ "theme": "gratitude",
+ "look": "bw",
+ "title": "Brave doesn't mean unafraid. It means not alone.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DfkUQVulC0R/",
+ "mediaId": "18127122880908547",
+ "note": "9 slides; slide 1 redrawn once for garbled background sign lettering",
+ "audio": "Praise by Elevation Worship",
+ "caption": "Which one did you need today? Tell us its number.\n\nToday is about gratitude. Thankfulness for the strength, the peace and the presence that keep showing up for us, even on ordinary days.\n\nJoshua 1:9, Proverbs 3:5, Philippians 4:13, Isaiah 40:29, Isaiah 41:13, John 3:16, Exodus 33:14, John 14:27 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #gratitude #thankful",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-brave",
+   "kind": "said",
+   "scene": "tshirt-back",
+   "text": "Brave doesn't mean unafraid. It means not alone.",
+   "ref": "Joshua 1:9"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "pro-3-5",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "Trust in the LORD with all your heart, and lean not on your own understanding",
+   "ref": "Proverbs 3:5"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "php-4-13",
+   "kind": "verse",
+   "scene": "church-marquee",
+   "text": "I can do all things through Christ who gives me strength.",
+   "ref": "Philippians 4:13"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "isa-40-29",
+   "kind": "verse",
+   "scene": "notebook",
+   "text": "He gives power to the faint and increases the strength of the weak.",
+   "ref": "Isaiah 40:29"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "say-held",
+   "kind": "said",
+   "scene": "diner-napkin",
+   "text": "You are not behind. You are held.",
+   "ref": "Isaiah 41:13"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "jhn-3-16",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "For God so loved the world that He gave His one and only Son",
+   "ref": "John 3:16"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "exo-33-14",
+   "kind": "verse",
+   "scene": "fridge-note",
+   "text": "My Presence will go with you, and I will give you rest.",
+   "ref": "Exodus 33:14"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "jhn-14-27",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "Peace I leave with you; My peace I give to you.",
+   "ref": "John 14:27"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-found",
+   "kind": "cta",
+   "scene": "door-note",
+   "text": "Type Amen if one of these found you",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-10/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-10/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-10/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-10/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-10/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-10/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-10/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-10/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-10/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34
+}
