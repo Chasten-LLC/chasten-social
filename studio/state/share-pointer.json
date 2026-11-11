@@ -1,6 +1,6 @@
 {
- "lastPostId": "2026-11-08",
- "count": 13,
+ "lastPostId": "2026-11-11",
+ "count": 14,
  "used": {
   "blessing": [
    "Psalm 115:14-15",
@@ -13,7 +13,8 @@
    "2 Timothy 1:7",
    "Zephaniah 3:17",
    "Isaiah 26:3",
-   "Isaiah 41:10"
+   "Isaiah 41:10",
+   "2 Timothy 1:7"
   ],
   "person": [
    "Genesis 29:20",
@@ -25,7 +26,7 @@
  "turn": {
   "scene": 5,
   "line": 5,
-  "scene:confident": 1,
+  "scene:confident": 2,
   "couple": 4,
   "moment:joyful": 2,
   "scene:joyful": 1,
