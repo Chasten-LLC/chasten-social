@@ -1,6 +1,6 @@
 {
- "lastPostId": "2026-11-11",
- "count": 14,
+ "lastPostId": "2026-11-12",
+ "count": 15,
  "used": {
   "blessing": [
    "Psalm 115:14-15",
@@ -20,19 +20,20 @@
    "Genesis 29:20",
    "Ecclesiastes 4:9-10",
    "Ecclesiastes 4:12",
-   "Philippians 1:3"
+   "Philippians 1:3",
+   "1 Corinthians 13:7"
   ]
  },
  "turn": {
   "scene": 5,
   "line": 5,
   "scene:confident": 2,
-  "couple": 4,
+  "couple": 5,
   "moment:joyful": 2,
   "scene:joyful": 1,
   "scene:peaceful": 1,
   "moment:reverent": 1,
   "scene:reassuring": 1,
-  "moment:tender": 1
+  "moment:tender": 2
  }
 }
