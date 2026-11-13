@@ -1,0 +1,110 @@
+{
+ "id": "2026-11-13",
+ "date": "2026-11-13",
+ "kind": "world",
+ "theme": "trust",
+ "look": "golden-hour",
+ "title": "If God is for us, who can be against us?",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DfsEe4Pm1si/",
+ "mediaId": "18083627042353767",
+ "note": "9 slides, trust theme, golden hour, no redraws",
+ "audio": "I Will Trust in You by Lauren Daigle",
+ "caption": "Which slide are you keeping? Comment its number.\n\nFor the days when you cannot see the whole road. You can still trust the One who is walking it with you.\n\nRomans 8:31, Isaiah 26:3, Psalm 16:8, Ephesians 2:10, 2 Corinthians 5:17, Psalm 37:5, Proverbs 19:21, Philippians 1:6 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n#bibleverse #faith #trustgod #guidance",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "rom-8-31",
+   "kind": "verse",
+   "scene": "brick-mural",
+   "text": "If God is for us, who can be against us?",
+   "ref": "Romans 8:31"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "isa-26-3",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "You will keep in perfect peace the steadfast of mind, because he trusts in You.",
+   "ref": "Isaiah 26:3"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "psa-16-8",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "Because He is at my right hand, I will not be shaken.",
+   "ref": "Psalm 16:8"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "eph-2-10",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "For we are God's workmanship, created in Christ Jesus to do good works",
+   "ref": "Ephesians 2:10"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "2co-5-17",
+   "kind": "verse",
+   "scene": "fridge-note",
+   "text": "If anyone is in Christ, he is a new creation.",
+   "ref": "2 Corinthians 5:17"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "psa-37-5",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "Commit your way to the LORD; trust in Him, and He will do it.",
+   "ref": "Psalm 37:5"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "say-his-plan",
+   "kind": "said",
+   "scene": "road-paint",
+   "text": "His plan. My trust.",
+   "ref": "Proverbs 19:21"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "say-finished",
+   "kind": "said",
+   "scene": "mug",
+   "text": "Keep going. He is not finished with you.",
+   "ref": "Philippians 1:6"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-amen",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Say Amen if you needed this today",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-13/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-13/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-13/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-13/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-13/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-13/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-13/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-13/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-13/9.jpg"
+ ],
+ "drawn": 9,
+ "cost": 1.21
+}
