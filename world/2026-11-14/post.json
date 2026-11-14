@@ -1,0 +1,100 @@
+{
+ "id": "2026-11-14",
+ "date": "2026-11-14",
+ "kind": "world",
+ "theme": "peace",
+ "look": "warm-film",
+ "title": "Be still and know that I am God",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Dfum81dlE0v/",
+ "mediaId": "18102390629531300",
+ "note": "Slides 5 and 8 redrawn once; slide 8 (Revelation 21:4) left out because dashboard gauge numbers showed in both drawings",
+ "audio": "Peace Be Still by Hope Darst",
+ "caption": "Type Amen if one of these found you today.\n\nFor the weeks that feel loud and heavy. There is a quiet place to rest, and you are still held in it.\n\nPsalm 46:10, Ephesians 2:8, Isaiah 43:1, Psalm 118:6, Proverbs 16:9, Matthew 11:30, 1 Thessalonians 5:16 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #peace #bestill",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "psa-46-10",
+   "kind": "verse",
+   "scene": "shop-window",
+   "text": "Be still and know that I am God",
+   "ref": "Psalm 46:10"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "eph-2-8",
+   "kind": "verse",
+   "scene": "cafe-chalkboard",
+   "text": "For it is by grace you have been saved through faith",
+   "ref": "Ephesians 2:8"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "say-still-his",
+   "kind": "said",
+   "scene": "sand",
+   "text": "Still His. Still loved.",
+   "ref": "Isaiah 43:1"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "psa-118-6",
+   "kind": "verse",
+   "scene": "split-flap",
+   "text": "The LORD is on my side; I will not be afraid.",
+   "ref": "Psalm 118:6"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "say-chapter",
+   "kind": "said",
+   "scene": "fog-window",
+   "text": "Let Him write the next chapter.",
+   "ref": "Proverbs 16:9"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "mat-11-30",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "For My yoke is easy and My burden is light.",
+   "ref": "Matthew 11:30"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "1th-5-16",
+   "kind": "verse",
+   "scene": "embroidery",
+   "text": "Rejoice at all times.",
+   "ref": "1 Thessalonians 5:16"
+  },
+  {
+   "n": 8,
+   "slide": 9,
+   "line": "cta-send",
+   "kind": "cta",
+   "scene": "sidewalk-chalk",
+   "text": "Send this to someone who needs it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-14/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-14/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-14/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-14/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-14/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-14/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-14/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-14/8.jpg"
+ ],
+ "drawn": 11,
+ "cost": 1.47
+}
