@@ -1,0 +1,110 @@
+{
+ "id": "2026-11-16",
+ "date": "2026-11-16",
+ "kind": "world",
+ "theme": "strength",
+ "look": "warm-film",
+ "title": "He will never leave you nor forsake you.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Dfzw2kPlLh6/",
+ "mediaId": "17911131093570691",
+ "note": "9 of 9 slides passed on first draw, nothing redrawn",
+ "audio": "Battle Belongs by Phil Wickham",
+ "caption": "Which slide are you keeping? Comment its number.\n\nFor the days you feel worn thin, here is a reminder that your strength does not have to come from you. He has not gone anywhere.\n\nDeuteronomy 31:8, Psalm 30:5, Psalm 27:1, Habakkuk 2:3, 1 Corinthians 13:8, John 16:33, Revelation 21:4, 1 John 4:19 (BSB)\n\nShare it with someone who is carrying a lot.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #strength #godisfaithful",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "deu-31-8",
+   "kind": "verse",
+   "scene": "tshirt-back",
+   "text": "He will never leave you nor forsake you.",
+   "ref": "Deuteronomy 31:8"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "say-morning",
+   "kind": "said",
+   "scene": "mirror-marker",
+   "text": "Morning is coming. Joy comes with it.",
+   "ref": "Psalm 30:5"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "psa-27-1",
+   "kind": "verse",
+   "scene": "church-marquee",
+   "text": "The LORD is my light and my salvation",
+   "ref": "Psalm 27:1"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "hab-2-3",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "Though it lingers, wait for it, since it will surely come and will not delay.",
+   "ref": "Habakkuk 2:3"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "1co-13-8",
+   "kind": "verse",
+   "scene": "diner-napkin",
+   "text": "Love never fails.",
+   "ref": "1 Corinthians 13:8"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "say-storm",
+   "kind": "said",
+   "scene": "dashboard-note",
+   "text": "Peace isn't the absence of storms. It's Jesus in them.",
+   "ref": "John 16:33"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "rev-21-4",
+   "kind": "verse",
+   "scene": "blackboard",
+   "text": "He will wipe away every tear from their eyes",
+   "ref": "Revelation 21:4"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "1jn-4-19",
+   "kind": "verse",
+   "scene": "bus-poster",
+   "text": "We love because He first loved us.",
+   "ref": "1 John 4:19"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-save",
+   "kind": "cta",
+   "scene": "coffee-cup",
+   "text": "Save this for the day you need it",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-16/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-16/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-16/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-16/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-16/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-16/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-16/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-16/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-16/9.jpg"
+ ],
+ "drawn": 9,
+ "cost": 1.21
+}
