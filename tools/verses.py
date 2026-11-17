@@ -13,7 +13,7 @@ The rules every planner follows:
 The record is built from the posts' own records, so there is no second state
 file to keep in step: posts/<date>/post.json (the old 7 AM), morning/<date>/
 post.json (the 7 AM formats) and world/<date>/post.json (the 11 AM, world and
-share). The word reel's approved days (word/schedule.json) hold their verse for that day only. Only posts that went out count. A reel flashes 45 verses, so a reel
+share). The word reel's days (word/calendar.json) hold their verse for that day only. Only posts that went out count. A reel flashes 45 verses, so a reel
 counts for its own day only; counting it for weeks would starve every pool.
 
     from verses import from_repo
@@ -199,12 +199,11 @@ def from_repo(root=ROOT):
         if moment in refs_by_moment and _iso(date):
             led.add(date, [refs_by_moment[moment]])
     # The word reel (tools/word_reel.py): the app's calendar fixes its verse, so it never moves.
-    # Every approved day holds its verse for that day, posted or not yet, and the other two
-    # posts of the day step around it.
-    sched = _load(os.path.join(root, "word", "schedule.json")) or {}
-    for date, day in (sched.get("days") or {}).items():
-        if _iso(date) and day.get("approved") and day.get("ref"):
-            led.add(date, [day["ref"]], day_only=True)
+    # word/calendar.json names the coming days' verses ahead; each holds its verse for its own
+    # day, and the other two posts of the day step around it.
+    for date, ref in (_load(os.path.join(root, "word", "calendar.json")) or {}).items():
+        if _iso(date) and ref:
+            led.add(date, [ref], day_only=True)
     for path in glob.glob(os.path.join(root, "word", "*", "post.json")):
         p = _load(path)
         date = os.path.basename(os.path.dirname(path))

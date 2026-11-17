@@ -43,9 +43,9 @@ def main():
     lines = world_run.load(os.path.join(world_run.WORLD, "lines.json"))["lines"]
     scenes = world_run.load(os.path.join(world_run.WORLD, "scenes.json"))["scenes"]
 
-    # The word reel's verse is fixed by the app's calendar: from the repo's schedule, or a
-    # calendar exported ahead (word_render.py calendar), {date: ref}.
-    word = {d: x["ref"] for d, x in (verses._load(os.path.join(verses.ROOT, "word", "schedule.json")) or {}).get("days", {}).items()}
+    # The word reel's verse is fixed by the app's calendar: from word/calendar.json, or a
+    # calendar exported ahead (word_render.py calendar), {date: ref}; word/calendar.json is read first.
+    word = dict(verses._load(os.path.join(verses.ROOT, "word", "calendar.json")) or {})
     if arg("--word-calendar"):
         word.update(verses._load(arg("--word-calendar")) or {})
     problems, seen = [], collections.defaultdict(list)   # verse -> dates it was posted (reels aside)

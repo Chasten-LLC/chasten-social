@@ -221,28 +221,30 @@ verses: the reel pool (66) is the one to grow next.
 
 ## The word reel: the app's Hebrew or Greek word of the day
 
-A third daily post, beside the 7 AM post (Ric, 2026-11-10): a 14 second reel of the
-app's own Verse of the Day with the Hebrew or Greek word behind one of its words, the
-word said twice by the native voice the app plays, over one quiet theme. It is set by
-code from the app's bank, so the Scripture is exact and the reel shows the same verse
-the app shows that day.
+A third daily post, at 7 AM Central beside the 7 AM post (Ric, 2026-11-10): a 14 second
+reel of the app's own Verse of the Day with the Hebrew or Greek word behind one of its
+words, the word said twice by the native voice the app plays, over one quiet theme. It is
+set by code from the app's bank, so the Scripture is exact and the reel shows the verse the
+app shows that day.
 
-- **Made ahead, approved by Ric.** `tools/word_render.py` runs on a Mac with an app
-  checkout: `render` (a month of dates, each held by checks that measure the words,
-  layout, ink, file and sound), `review` (one page with every reel and its caption),
-  `approve` (copies the approved reels to `word/reels/` and marks their days in
-  `word/schedule.json`). Captions are written from the bank and approved with the reel.
-- **Posted by the routine.** `docs/word-routine-prompt.md` (must equal the live routine)
-  runs `tools/word_reel.py`: at 7 AM Central it posts today's approved reel once, writes
-  `word/<date>/post.json`, and Slack hears about it. A missing, unapproved or changed
-  reel posts nothing and says so in Slack. Dry run: `docs/word-routine-dry-run.md`.
+- **Made and posted each morning** (Ric, 2026-11-17: every day the app has a word, no
+  approval step). `docs/word-routine-prompt.md` (must equal the live routine) checks out
+  this repo and the app at release/next, runs `tools/word_render.py today`, which refuses a
+  reel that fails any measured check (words equal the bank and the BSB, layout and ink in
+  the safe area, every glyph in its face, an Instagram-ready mp4 with no edit list, the
+  theme and the word at the approved levels), commits it to `word/<date>/`, posts it once
+  with `tools/word_reel.py`, and leaves `word/<date>/post.json` for Slack. Dry run:
+  `docs/word-routine-dry-run.md`.
+- **On a Mac**, `word_render.py render` makes any run of days (or `--ids all`, every
+  entry) and `review` puts them on one page, to look before they post.
 - **Starts by itself.** Until production readers on both iPhone and Android have sent
   the app's `today_verse_cards_shown` event (counted in PostHog), it posts nothing. The
   first morning they have, `studio/state/word-switch.json` turns on and never turns off.
-- **Fresh Scripture.** The app's calendar fixes the reel's verse, so each approved day
-  holds its verse for that day in `tools/verses.py`, and the 7 AM and 11 AM posts step
-  around it. `tools/check_fresh.py --word-calendar FILE` plays it forward
-  (`word_render.py calendar` writes the file).
+- **Fresh Scripture.** The app's calendar fixes the reel's verse, so `word/calendar.json`
+  names the coming 90 days' verses and `tools/verses.py` holds each for its own day; the
+  7 AM and 11 AM posts step around it. `tools/check_fresh.py` plays it forward.
+- **Faces.** Literata and Inter as everywhere; Hebrew in Noto Serif Hebrew (OFL), a file
+  here so the cloud and a Mac draw the same letters.
 
 ## The dashboard
 

@@ -1,23 +1,25 @@
 #!/usr/bin/env python3
 """
-The daily word reel's posting side: what the cloud routine runs each morning (docs/word-routine-prompt.md).
+The daily word reel's posting side: what the cloud routine runs each morning around
+tools/word_render.py (docs/word-routine-prompt.md).
 
-The reels are made ahead on a Mac in a monthly batch (tools/word_render.py) and Ric approves
-them; approval copies each one into word/reels/ and marks its day in word/schedule.json. This
-file only reads that schedule. It never renders and never changes a reel.
+Each morning at 7 AM Central the routine makes today's reel from the app's own bank
+(`word_render.py today`), which refuses a reel that fails any of its measured checks, then
+puts the reel, its cover, its caption and its record in word/<date>/, posts it once, and
+leaves word/<date>/post.json for Slack. Ric decided on 2026-11-17 that reels run every
+day the app has a verse and word for, with no approval step.
 
     python3 tools/word_reel.py switch  [--date D --ios N --android M]   # read, or turn on once
-    python3 tools/word_reel.py status  --date D      # posted | switch-off | missing | unapproved | broken | ready
+    python3 tools/word_reel.py status  --date D      # posted | switch-off | fresh
     python3 tools/word_reel.py media   --date D      # the public video and cover URLs and the caption, as JSON
-    python3 tools/word_reel.py package --date D --status posted|failed|skipped [--permalink U] [--media-id I] [--note T]
-    python3 tools/word_reel.py caption-check --date D
+    python3 tools/word_reel.py package --date D --status posted|failed [--permalink U] [--media-id I] [--note T]
 
 The switch (Ric, 2026-11-10): reels start by themselves once readers have the app's new Today
 cards. The routine counts production readers who sent `today_verse_cards_shown` on iPhone and
 on Android; the first morning both are above zero, `switch` writes studio/state/word-switch.json
 and it never turns off again.
 
-Standard library only: the cloud sandbox needs nothing installed to post.
+Standard library only.
 """
 
 import datetime as dt
@@ -27,8 +29,8 @@ import os
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-REELS = "word/reels"
-SCHEDULE = os.path.join(ROOT, "word", "schedule.json")
+WORD = os.path.join(ROOT, "word")
+CALENDAR = os.path.join(WORD, "calendar.json")      # {date: reference} ahead, for tools/verses.py
 SWITCH = os.path.join(ROOT, "studio", "state", "word-switch.json")
 RAW = "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main"
 
@@ -52,20 +54,6 @@ def _dump(path, obj):
         f.write("\n")
 
 
-def load_schedule():
-    return _load(SCHEDULE, {"days": {}})
-
-
-def save_schedule(s):
-    s["days"] = dict(sorted(s["days"].items()))
-    _dump(SCHEDULE, s)
-
-
-def reel_name(entry_id, sha):
-    """A reel's file name never changes once posted: the entry and the start of its hash."""
-    return f"{entry_id}.{sha[:8]}"
-
-
 def sha256(path):
     h = hashlib.sha256()
     with open(path, "rb") as f:
@@ -77,9 +65,8 @@ def sha256(path):
 # ------------------------------------------------------------------ the caption
 
 def caption(r, date):
-    """The caption, written from the bank alone so Ric approves it with the reel. The verse is
-    the BSB's own text, whole; every other line is about the word and says only what the card
-    in the app says."""
+    """The caption, written from the bank alone. The verse is the BSB's own text, whole; every
+    other line is about the word and says only what the card in the app says."""
     hebrew = r["lang"] == "hebrew"
     lang = "Hebrew" if hebrew else "Greek"
     said = "-".join(r["say"])
@@ -141,77 +128,57 @@ def cmd_switch(argv):
     return 0
 
 
-def day_record(date):
-    return os.path.join(ROOT, "word", date, "post.json")
-
-
-def status_of(date):
-    rec = _load(day_record(date), {})
-    if rec.get("status") == "posted":
-        return "posted", rec
-    if not switch_state().get("on"):
-        return "switch-off", {}
-    day = load_schedule()["days"].get(date)
-    if not day:
-        return "missing", {}
-    if not day.get("approved"):
-        return "unapproved", day
-    path = os.path.join(ROOT, day["file"])
-    if not os.path.exists(path) or sha256(path) != day["sha256"]:
-        return "broken", day
-    if not os.path.exists(os.path.join(ROOT, day["cover"])):
-        return "broken", day
-    return "ready", day
+def day_dir(date):
+    return os.path.join(WORD, date)
 
 
 def cmd_status(argv):
-    s, day = status_of(arg(argv, "--date"))
-    print(json.dumps({"status": s, "id": day.get("id"), "ref": day.get("ref"), "permalink": day.get("permalink")}))
+    date = arg(argv, "--date")
+    rec = _load(os.path.join(day_dir(date), "post.json"), {})
+    if rec.get("status") == "posted":
+        s = "posted"
+    elif not switch_state().get("on"):
+        s = "switch-off"
+    else:
+        s = "fresh"
+    print(json.dumps({"status": s, "ref": rec.get("ref"), "permalink": rec.get("permalink")}))
     return 0
 
 
 def cmd_media(argv):
+    """The public URLs, only for a reel whose file is the one its record was checked as."""
     date = arg(argv, "--date")
-    s, day = status_of(date)
-    if s != "ready":
-        print(json.dumps({"status": s}))
+    d = day_dir(date)
+    rec = _load(os.path.join(d, "reel.json"), {})
+    mp4, jpg, cap = (os.path.join(d, x) for x in ("reel.mp4", "cover.jpg", "caption.txt"))
+    if not rec or rec.get("fails") or not all(os.path.exists(x) for x in (mp4, jpg, cap)):
+        print(json.dumps({"status": "not-ready", "why": "the reel, its cover, caption or record is missing, or it failed a check"}))
         return 1
-    print(json.dumps({"status": s, "video_url": f"{RAW}/{day['file']}", "cover_url": f"{RAW}/{day['cover']}",
-                      "caption": day["caption"]}, ensure_ascii=False))
+    if sha256(mp4) != rec["sha256"]:
+        print(json.dumps({"status": "not-ready", "why": "reel.mp4 is not the file that passed the checks"}))
+        return 1
+    print(json.dumps({"status": "ready", "video_url": f"{RAW}/word/{date}/reel.mp4", "cover_url": f"{RAW}/word/{date}/cover.jpg",
+                      "caption": open(cap, encoding="utf-8").read()}, ensure_ascii=False))
     return 0
-
-
-def cmd_caption_check(argv):
-    day = load_schedule()["days"].get(arg(argv, "--date"), {})
-    if not day:
-        print("no reel for this date")
-        return 1
-    r = dict(day, mark=day["caption"].split("“", 1)[1].split("”", 1)[0], more="")
-    verse_line = [x for x in day["caption"].split("\n\n") if x.startswith(f"{day['ref']} (BSB): ")]
-    r["verse"] = verse_line[0][len(f"{day['ref']} (BSB): "):] if verse_line else ""
-    p = caption_problems(day["caption"], r)
-    print("caption ok" if not p else "; ".join(p))
-    return 1 if p else 0
 
 
 def cmd_package(argv):
     date, status = arg(argv, "--date"), arg(argv, "--status")
-    if status not in ("posted", "failed", "skipped"):
-        raise SystemExit("--status is posted, failed or skipped")
-    old = _load(day_record(date), {})
-    if old.get("status") == "posted":
+    if status not in ("posted", "failed"):
+        raise SystemExit("--status is posted or failed")
+    path = os.path.join(day_dir(date), "post.json")
+    if _load(path, {}).get("status") == "posted":
         raise SystemExit(f"{date} is already posted; the record stays as it is")
-    day = load_schedule()["days"].get(date, {})
-    rec = {"date": date, "kind": "word-reel", "status": status, "id": day.get("id"), "ref": day.get("ref"),
-           "refs": [day["ref"]] if day.get("ref") else [], "word": day.get("word"), "roman": day.get("roman"),
-           "lang": day.get("lang"), "file": day.get("file"), "permalink": arg(argv, "--permalink"),
+    r = _load(os.path.join(day_dir(date), "reel.json"), {})
+    rec = {"date": date, "kind": "word-reel", "status": status, "id": r.get("id"), "ref": r.get("ref"),
+           "refs": [r["ref"]] if r.get("ref") else [], "word": r.get("word"), "roman": r.get("roman"),
+           "lang": r.get("lang"), "app": r.get("app"), "permalink": arg(argv, "--permalink"),
            "mediaId": arg(argv, "--media-id"), "note": arg(argv, "--note")}
-    _dump(day_record(date), {k: v for k, v in rec.items() if v is not None})
-    print(day_record(date))
+    _dump(path, {k: v for k, v in rec.items() if v is not None})
+    print(path)
     return 0
 
 
 if __name__ == "__main__":
     cmd, rest = sys.argv[1], sys.argv[2:]
-    sys.exit({"switch": cmd_switch, "status": cmd_status, "media": cmd_media, "package": cmd_package,
-              "caption-check": cmd_caption_check}[cmd](rest))
+    sys.exit({"switch": cmd_switch, "status": cmd_status, "media": cmd_media, "package": cmd_package}[cmd](rest))

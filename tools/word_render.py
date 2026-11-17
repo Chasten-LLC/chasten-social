@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-The daily word reel, made ahead in a monthly batch (Ric, 2026-11-10 and 2026-11-17).
+The daily word reel (Ric, 2026-11-10 and 2026-11-17): made in the cloud each morning, or ahead on a Mac to look at.
 
 Each reel is one screen, set by code so the Scripture is exact: the day's verse in the
 BSB with one word marked by a hand-drawn gold underline, its reference, then the Hebrew
@@ -14,13 +14,16 @@ that says which entry each date shows (the same table the app reads), the verse 
 the bundled Bible, the word, the picture and the app's own voice clip. Nothing here
 writes or edits Scripture.
 
-This runs on a Mac (it photographs the words with headless Chrome). The cloud routine
-never renders: it only posts a reel Ric approved (tools/word_reel.py).
+It photographs the words with a headless browser through Playwright: the Mac's own Chrome
+when there is one, otherwise Playwright's Chromium (the cloud). Every face is a file in this
+repo, so both draw the same letters.
 
-    python3 tools/word_render.py render --app APP --from 2026-11-18 [--to 2026-12-17] --out DIR
-    python3 tools/word_render.py check  DIR                 # measures every reel in DIR again
-    python3 tools/word_render.py review DIR                 # DIR/index.html, one page to approve
-    python3 tools/word_render.py approve DIR --dates 2026-11-18..2026-12-17 [--by "Ric, 2026-11-18"]
+    python3 tools/word_render.py today    --app APP --date D --out DIR   # the routine: one day, or exit 1
+    python3 tools/word_render.py render   --app APP --from D [--to D] --out DIR   # a run of days to look at
+    python3 tools/word_render.py render   --app APP --ids all --out DIR  # every entry, as a layout matrix
+    python3 tools/word_render.py check    DIR                 # measures every reel in DIR again
+    python3 tools/word_render.py review   DIR                 # DIR/index.html, every reel and its caption
+    python3 tools/word_render.py calendar --app APP --from D --to D [--write]   # {date: reference}; --write keeps word/calendar.json
 
 Every reel is held by checks that measure rather than look (render refuses a reel that
 fails any of them):
@@ -47,15 +50,16 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
-import word_reel  # noqa: E402  (the shared names: schedule, captions, file names)
+import word_reel  # noqa: E402  (the shared names: captions, file names)
 
-CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
+CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"   # used when present
 FONTS = os.path.join(ROOT, "tools", "assets", "fonts")
 THEME = os.path.join(ROOT, "studio", "audio", "word-theme.mp3")
-# Literata has no Hebrew, and the app leaves Hebrew to the phone's own face. New Peninim MT
-# is a book serif that ships with macOS, sits beside Literata, and holds every letter and
-# vowel point in the bank (measured from its character map before each render).
-HEBREW_FACE = "/System/Library/Fonts/Supplemental/NewPeninimMT.ttc"
+# Literata has no Hebrew, and the app leaves Hebrew to the phone's own face. Noto Serif Hebrew
+# (SIL Open Font License, NotoSerifHebrew-OFL.txt) is a book serif that sits beside Literata
+# and holds every letter and vowel point in the bank (measured from its character map before
+# each render). It is a file here so the cloud and a Mac draw the same Hebrew.
+HEBREW_FACE = os.path.join(FONTS, "NotoSerifHebrew-Variable.ttf")
 
 W, H, SCALE = 360, 640, 3            # the page in points; the frame is 1080 x 1920
 FPS = 30
@@ -197,7 +201,7 @@ FACES = "".join([
     _face("Inter", os.path.join(FONTS, "Inter_500Medium.ttf"), 500),
     _face("Inter", os.path.join(FONTS, "Inter_600SemiBold.ttf"), 600),
     _face("Inter", os.path.join(FONTS, "Inter_700Bold.ttf"), 700),
-    "@font-face{font-family:'ChastenHebrew';src:local('New Peninim MT');font-weight:400}",
+    f"@font-face{{font-family:'ChastenHebrew';src:url('file://{HEBREW_FACE}');font-weight:100 900}}",
 ])
 
 # Runs in the page. MEASURE: fit the block into the band, then report every box, every
@@ -233,14 +237,15 @@ document.fonts.ready.then(function () {
       out.boxes[k].lastLine = words.filter(function (w) { return Math.abs(w[1] - last) < 3; }).map(function (w) { return w[0]; }).join(' ');
     });
     [['Literata', '400 21px Literata'], ['Literata italic', 'italic 400 15px Literata'], ['Inter', '600 10px Inter'],
-     ['Hebrew', '400 44px ChastenHebrew']].forEach(function (p) { out.fonts[p[0]] = document.fonts.check(p[1]); });
+     ['Hebrew', '500 44px ChastenHebrew']].forEach(function (p) { out.fonts[p[0]] = document.fonts.check(p[1]); });
     out.loaded = Array.from(document.fonts).filter(function (x) { return x.status === 'loaded'; }).map(function (x) {
       return x.family + ' ' + x.weight + ' ' + x.style; });
     document.getElementById('report').textContent = JSON.stringify(out);
+    window.__done = true;
     return;
   }
   place(FIT);
-  if (!SHOW) return;
+  if (!SHOW) { window.__done = true; return; }
   var mk = function (s) { return function (a, b) { s |= 0; s = s + 0x6D2B79F5 | 0; var t = Math.imul(s ^ s >>> 15, 1 | s);
     t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return a + (b - a) * (((t ^ t >>> 14) >>> 0) / 4294967296); }; };
   var shape = mk(4242), nudge = mk(SEED * 7919 + 13);
@@ -265,6 +270,7 @@ document.fonts.ready.then(function () {
   svg.appendChild(p);
   var L = p.getTotalLength();
   p.setAttribute('stroke-dasharray', L + ' ' + L); p.setAttribute('stroke-dashoffset', L * (1 - PROG));
+  window.__done = true;
 });
 """
 
@@ -279,7 +285,7 @@ def page(r, wordmark, syl=-1, show=True, seed=0, prog=1.0, fit=1.0, measure=Fals
     eyebrow = "font-size:calc(10px*var(--s));font-weight:700;letter-spacing:.2em"
     if hebrew:
         word = (f'<div style="margin-top:calc(4px*var(--s));display:flex;align-items:center;justify-content:center;gap:calc(10px*var(--s))">'
-                f'<span data-k="word" dir="rtl" lang="he" style="font-family:ChastenHebrew;font-size:calc(46px*var(--s));'
+                f'<span data-k="word" dir="rtl" lang="he" style="font-family:ChastenHebrew;font-weight:500;font-size:calc(46px*var(--s));'
                 f'line-height:calc(62px*var(--s));{shade}">{e(r["word"])}</span>'
                 f'<span data-k="rtl" style="font-size:calc(11px*var(--s));font-weight:600;letter-spacing:.02em;line-height:calc(14px*var(--s));'
                 f'color:rgba(255,249,241,.62);{shade}">reads right to left</span></div>')
@@ -325,37 +331,44 @@ def note_html(r):
     return f"{first_html} {e(r['more'])}"
 
 
-def chrome(args, tries=3):
-    """Headless Chrome, which now and then hangs on a busy Mac (2026-11-17, one page in 90):
-    a hang is killed after a minute and the same page is tried again."""
-    for attempt in range(tries):
-        try:
-            return subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--allow-file-access-from-files",
-                                   "--virtual-time-budget=8000", "--run-all-compositor-stages-before-draw"] + args,
-                                  capture_output=True, text=True, stdin=subprocess.DEVNULL, timeout=60, check=False).stdout
-        except subprocess.TimeoutExpired:
-            if attempt == tries - 1:
-                raise SystemExit(f"Chrome hung {tries} times on {args[-1]}")
+class Browser:
+    """One headless browser for a reel's pages. Playwright drives the installed Google Chrome:
+    the Mac's, or /usr/bin/google-chrome in the cloud (whose network refuses Playwright's own
+    browser download, 2026-11-17)."""
+
+    def __enter__(self):
+        from playwright.sync_api import sync_playwright
+        self._p = sync_playwright().start()
+        linux = shutil.which("google-chrome") or shutil.which("google-chrome-stable")
+        kw = {"channel": "chrome"} if os.path.exists(CHROME) else {"executable_path": linux} if linux else {}
+        self.browser = self._p.chromium.launch(args=["--allow-file-access-from-files"], **kw)
+        self.page = self.browser.new_page(viewport={"width": W, "height": H}, device_scale_factor=SCALE)
+        return self
+
+    def __exit__(self, *a):
+        self.browser.close()
+        self._p.stop()
+
+    def load(self, path):
+        self.page.goto("file://" + path, wait_until="load", timeout=60_000)
+        self.page.wait_for_function("window.__done === true", timeout=60_000)
 
 
-def measure(r, wordmark, work):
+def measure(r, wordmark, work, br):
     hp = os.path.join(work, "measure.html")
     open(hp, "w").write(page(r, wordmark, measure=True))
-    out = chrome([f"--window-size={W},{H}", "--dump-dom", "file://" + hp])
-    a, b = out.find('<pre id="report">'), out.find("</pre>")
-    raw = html.unescape(out[a + len('<pre id="report">'):b]) if a >= 0 else ""
+    br.load(hp)
+    raw = br.page.evaluate("document.getElementById('report').textContent")
     if not raw.strip():
-        raise SystemExit(f"{r['id']}: the page reported nothing (fonts or Chrome failed)")
+        raise SystemExit(f"{r['id']}: the page reported nothing (fonts or the browser failed)")
     return json.loads(raw)
 
 
-def shoot(name, html_text, work):
+def shoot(name, html_text, work, br):
     hp, png = os.path.join(work, name + ".html"), os.path.join(work, name + ".png")
     open(hp, "w").write(html_text)
-    chrome([f"--force-device-scale-factor={SCALE}", f"--window-size={W},{H}", "--default-background-color=00000000",
-            f"--screenshot={png}", "file://" + hp])
-    if not os.path.exists(png):
-        raise SystemExit(f"Chrome made no picture for {name}")
+    br.load(hp)
+    br.page.screenshot(path=png, omit_background=True)
     return png
 
 
@@ -411,14 +424,14 @@ def check_layout(r, rep, bank_reel):
 def check_glyphs(r):
     """Every letter of the word, and every letter of the English, is in the face that sets it."""
     try:
-        from fontTools.ttLib import TTCollection, TTFont
+        from fontTools.ttLib import TTFont
     except ImportError:
         raise SystemExit("python3 -m pip install fonttools (the glyph check needs it)")
     fails = []
     lit = TTFont(os.path.join(FONTS, "Literata_400Regular.ttf")).getBestCmap()
     inter = TTFont(os.path.join(FONTS, "Inter_600SemiBold.ttf")).getBestCmap()
     if r["lang"] == "hebrew":
-        heb = TTCollection(HEBREW_FACE).fonts[0].getBestCmap()
+        heb = TTFont(HEBREW_FACE).getBestCmap()
         miss = [c for c in r["word"] if ord(c) not in heb]
         if miss:
             fails.append(f"fonts: the Hebrew face has no {''.join(miss)!r}")
@@ -594,18 +607,18 @@ def render_one(bank, e, out_dir, work_root, log=lambda m: print(m, flush=True)):
     os.makedirs(work)
     wordmark = os.path.join(bank.app, "assets", "images", "wordmark-white.png")
     fails = check_glyphs(r)
-    rep = measure(r, wordmark, work)
-    fails += check_layout(r, rep, bank.reel(e))           # read the bank again: the page must equal it
-    fit = rep["fit"]
-
-    # The words, one see-through layer per thing that changes.
     n = len(r["say"])
-    shoot("plain", page(r, wordmark, show=False, fit=fit), work)
-    for k in range(1, DRAW_STEPS + 1):
-        shoot(f"draw-{k}", page(r, wordmark, seed=0, prog=k / DRAW_STEPS, fit=fit), work)
-    for b in range(BOILS):
-        for s in range(-1, n):
-            shoot(f"boil-{b}-syl{s}", page(r, wordmark, syl=s, seed=b, fit=fit), work)
+    with Browser() as br:
+        rep = measure(r, wordmark, work, br)
+        fails += check_layout(r, rep, bank.reel(e))       # read the bank again: the page must equal it
+        fit = rep["fit"]
+        # The words, one see-through layer per thing that changes.
+        shoot("plain", page(r, wordmark, show=False, fit=fit), work, br)
+        for k in range(1, DRAW_STEPS + 1):
+            shoot(f"draw-{k}", page(r, wordmark, seed=0, prog=k / DRAW_STEPS, fit=fit), work, br)
+        for b in range(BOILS):
+            for s in range(-1, n):
+                shoot(f"boil-{b}-syl{s}", page(r, wordmark, syl=s, seed=b, fit=fit), work, br)
     for name in ("plain", f"boil-0-syl-1", f"boil-0-syl{n - 1}"):
         fails += check_ink(os.path.join(work, name + ".png"))
 
@@ -814,50 +827,50 @@ video{{width:230px;aspect-ratio:9/16;border-radius:10px;background:#000;flex:non
     return 0
 
 
-def cmd_approve(argv):
-    """Copy the approved reels into the repo and mark their days. Only Ric's word runs this."""
-    out = os.path.abspath(argv[0])
-    a = dict(zip(argv[1::2], argv[2::2]))
-    lo, hi = a["--dates"].split("..")
-    by = a.get("--by", "Ric")
-    batch = json.load(open(os.path.join(out, "batch.json")))
-    sched = word_reel.load_schedule()
-    n = 0
-    for d in dates_between(lo, hi):
-        x = batch["days"].get(d.isoformat())
-        if not x:
-            raise SystemExit(f"{d}: not in this batch")
-        meta = json.load(open(os.path.join(out, x["id"] + ".json")))
-        if meta["fails"] or not x["ok"]:
-            raise SystemExit(f"{d}: {x['id']} failed its checks and cannot be approved")
-        mp4 = os.path.join(out, x["id"] + ".mp4")
-        if sha256(mp4) != x["sha256"]:
-            raise SystemExit(f"{d}: {x['id']}.mp4 changed after it was checked")
-        name = word_reel.reel_name(x["id"], x["sha256"])
-        dest = os.path.join(ROOT, word_reel.REELS, name)
-        os.makedirs(os.path.dirname(dest), exist_ok=True)
-        if not os.path.exists(dest + ".mp4"):
-            shutil.copyfile(mp4, dest + ".mp4")
-            shutil.copyfile(os.path.join(out, x["id"] + ".jpg"), dest + ".jpg")
-        r = meta["reel"]
-        sched["days"][d.isoformat()] = dict(id=x["id"], file=f"{word_reel.REELS}/{name}.mp4", cover=f"{word_reel.REELS}/{name}.jpg",
-                                            sha256=x["sha256"], ref=r["ref"], word=r["word"], roman=r["roman"], lang=r["lang"],
-                                            caption=x["caption"], app=batch.get("app"), approved=by)
-        n += 1
-    word_reel.save_schedule(sched)
-    print(f"{n} days approved by {by}")
-    return 0
+def cmd_today(argv):
+    """The routine's step: today's reel, its cover, its caption and its record, or exit 1."""
+    a = dict(zip(argv[::2], argv[1::2]))
+    bank = Bank(a["--app"])
+    d = dt.date.fromisoformat(a["--date"])
+    out = os.path.abspath(a["--out"])
+    shutil.rmtree(out, ignore_errors=True)
+    os.makedirs(out)
+    e = bank.entry_for(d)
+    try:
+        m = render_one(bank, e, out, os.path.join(out, "_work"))
+    finally:
+        shutil.rmtree(os.path.join(out, "_work"), ignore_errors=True)
+    r = m["reel"]
+    cap = word_reel.caption(r, d.isoformat())
+    problems = word_reel.caption_problems(cap, r)
+    fails = m["fails"] + [f"caption: {p}" for p in problems]
+    os.rename(os.path.join(out, e["id"] + ".mp4"), os.path.join(out, "reel.mp4"))
+    os.rename(os.path.join(out, e["id"] + ".jpg"), os.path.join(out, "cover.jpg"))
+    os.remove(os.path.join(out, e["id"] + ".json"))
+    open(os.path.join(out, "caption.txt"), "w", encoding="utf-8").write(cap)
+    rec = dict(date=d.isoformat(), id=e["id"], ref=r["ref"], word=r["word"], roman=r["roman"], lang=r["lang"],
+               sha256=m["sha256"], app=bank.commit, facts=m["facts"], fit=m["fit"], fails=fails)
+    with open(os.path.join(out, "reel.json"), "w", encoding="utf-8") as f:
+        json.dump(rec, f, ensure_ascii=False, indent=1)
+    print(json.dumps({"ok": not fails, "id": e["id"], "ref": r["ref"], "fails": fails}, ensure_ascii=False))
+    return 1 if fails else 0
 
 
 def cmd_calendar(argv):
     """{date: reference} the app shows, for tools/check_fresh.py --word-calendar."""
-    a = dict(zip(argv[::2], argv[1::2]))
+    a = dict(zip([x for x in argv if x != "--write"][::2], [x for x in argv if x != "--write"][1::2]))
     bank = Bank(a["--app"])
     out = {d.isoformat(): bank.label(bank.entry_for(d)["ref"]) for d in dates_between(a["--from"], a["--to"])}
-    print(json.dumps(out, indent=1))
+    if "--write" in argv:  # word/calendar.json: the coming days' verses, so the other posts step around them
+        old = {k: v for k, v in (word_reel._load(word_reel.CALENDAR, {}) or {}).items() if k >= a["--from"]}
+        old.update(out)
+        word_reel._dump(word_reel.CALENDAR, dict(sorted(old.items())))
+        print(f"{word_reel.CALENDAR}: {len(old)} days, {min(old)} to {max(old)}")
+    else:
+        print(json.dumps(out, indent=1))
     return 0
 
 
 if __name__ == "__main__":
     cmd, rest = sys.argv[1], sys.argv[2:]
-    sys.exit({"calendar": cmd_calendar, "render": cmd_render, "check": cmd_check, "review": cmd_review, "approve": cmd_approve}[cmd](rest))
+    sys.exit({"today": cmd_today, "calendar": cmd_calendar, "render": cmd_render, "check": cmd_check, "review": cmd_review}[cmd](rest))

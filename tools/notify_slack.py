@@ -97,7 +97,7 @@ def word(path):
     if p.get("status") != "posted":
         note = (p.get("note") or "see the run log").rstrip(".")
         return (f":warning: *Chasten IG word reel {p['date']}* did not post: {note}."
-                + (f"\nToday's {lang} word was {what}." if p.get("ref") else ""))
+                + (f"\nToday's {lang} word was {what}. Whatever was made is in the repo under word/{p['date']}." if p.get("ref") else ""))
     lines = [f":white_check_mark: *Chasten IG word reel {p['date']}* \u00b7 {lang} word: <{p['permalink']}|{what}>"]
     if p.get("note"):
         lines.append(p["note"])
