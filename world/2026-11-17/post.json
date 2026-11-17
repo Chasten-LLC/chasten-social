@@ -1,0 +1,110 @@
+{
+ "id": "2026-11-17",
+ "date": "2026-11-17",
+ "kind": "world",
+ "theme": "hope",
+ "look": "bw",
+ "title": "Don't panic. Just pray.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Df2VhkioQ1C/",
+ "mediaId": "18428299399153041",
+ "note": "hope, black and white, 9 slides, all passed first draw",
+ "audio": "Goodness of God by Bethel Music",
+ "caption": "Which one did you need today? Tell us its number.\n\nToday is about hope, the quiet kind that holds on when things feel heavy. Whatever you are walking through, you are not walking it alone.\n\nPhilippians 4:6, Psalm 34:10, John 10:10, Psalm 107:1, Psalm 42:11, Matthew 28:20, Romans 12:12, Romans 5:8 (BSB)\n\nSave this for the day you need it.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #hope #hopeinchrist",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-pray",
+   "kind": "said",
+   "scene": "brick-mural",
+   "text": "Don't panic. Just pray.",
+   "ref": "Philippians 4:6"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "psa-34-10",
+   "kind": "verse",
+   "scene": "cardboard-sign",
+   "text": "Those who seek the LORD lack no good thing.",
+   "ref": "Psalm 34:10"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "jhn-10-10",
+   "kind": "verse",
+   "scene": "candle-label",
+   "text": "I have come that they may have life, and have it in all its fullness.",
+   "ref": "John 10:10"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "psa-107-1",
+   "kind": "verse",
+   "scene": "letter-board",
+   "text": "Give thanks to the LORD, for He is good",
+   "ref": "Psalm 107:1"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "psa-42-11",
+   "kind": "verse",
+   "scene": "billboard",
+   "text": "Put your hope in God, for I will yet praise Him",
+   "ref": "Psalm 42:11"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "mat-28-20",
+   "kind": "verse",
+   "scene": "notebook",
+   "text": "And surely I am with you always, even to the end of the age.",
+   "ref": "Matthew 28:20"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "rom-12-12",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "Be joyful in hope, patient in affliction, persistent in prayer.",
+   "ref": "Romans 12:12"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "say-worth",
+   "kind": "said",
+   "scene": "neon",
+   "text": "Your worth was settled at the cross.",
+   "ref": "Romans 5:8"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-follow",
+   "kind": "cta",
+   "scene": "door-note",
+   "text": "Follow for a verse every day",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-17/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-17/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-17/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-17/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-17/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-17/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-17/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-17/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-17/9.jpg"
+ ],
+ "drawn": 9,
+ "cost": 1.21
+}
