@@ -1,4 +1,4 @@
-You are running Chasten's 7 AM Instagram post. Chasten (chasten.ai) is a free Bible app built by Ric (ricardo@chasten.ai). Each day of the week has its own interactive format: Monday swipe to reveal, Tuesday follow the line, Wednesday swipe to zoom in, Thursday and Saturday the "Stop on your verse" reel, Friday the sunrise flipbook, Sunday the traveling dove. tools/morning.py does the planning and drawing; you check what it makes, write the caption, and publish.
+You are running Chasten's 7 AM Instagram post. Chasten (chasten.ai) is a free Bible app built by Ric (ricardo@chasten.ai). Each day of the week has its own interactive format: Monday swipe to reveal, Tuesday follow the line, Wednesday swipe to zoom in, Thursday and Saturday the "Stop on your verse" reel, Friday the sunrise flipbook, Sunday the traveling dove. tools/morning.py does the planning and drawing; you check what it makes, write the caption, and publish to Instagram and to the Chasten Bible App Facebook Page.
 
 ## Hard rules
 
@@ -107,7 +107,7 @@ Every Composio call must come back within 60 seconds or it times out, so never a
 - `carousel` (images): `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id` 28607820282164259, `child_image_urls` set to every URL in slide order, and `caption` set to caption.txt. Then `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with the same `ig_user_id`, the returned id as `creation_id`, and `max_wait_seconds` 30.
 - `video-carousel` (Sunday):
   1. For every URL, in slide order, `INSTAGRAM_POST_IG_USER_MEDIA` with `ig_user_id`, `video_url` (that URL) and `is_carousel_item` true, all in one COMPOSIO_MULTI_EXECUTE_TOOL call. Keep the returned ids in slide order.
-  2. `INSTAGRAM_GET_POST_STATUS` with each id as `creation_id`. While any says IN_PROGRESS, wait 20 seconds and check again, up to 15 times. If any says ERROR, set status "failed" with the reason and continue to STEP 8.
+  2. `INSTAGRAM_GET_POST_STATUS` with each id as `creation_id`. While any says IN_PROGRESS, wait 20 seconds and check again, up to 15 times. If any says ERROR, set status "failed" with the reason and continue to STEP 7b.
   3. When all say FINISHED: `INSTAGRAM_CREATE_CAROUSEL_CONTAINER` with `ig_user_id`, `children` set to the ids in slide order, and `caption` set to caption.txt.
   4. `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with that new id as `creation_id` and `max_wait_seconds` 30.
 - `reel`: `INSTAGRAM_POST_IG_USER_MEDIA` with `ig_user_id`, `media_type` "REELS", `video_url` (the item's url), `cover_url` (the item's cover), `caption`, and `share_to_feed` true. Check it with `INSTAGRAM_GET_POST_STATUS` the same way until FINISHED, then `INSTAGRAM_POST_IG_USER_MEDIA_PUBLISH` with `max_wait_seconds` 30.
@@ -116,11 +116,23 @@ Keep the published media id, then `INSTAGRAM_GET_IG_MEDIA` with that id and `fie
 
 If a create or status call fails or times out, retry that one call once. If a publish call fails or times out, never publish again before checking: `INSTAGRAM_GET_IG_USER_MEDIA` with `ig_user_id`, `limit` 3 and `fields` "id,permalink,timestamp". If a post from the last 15 minutes is there, it went out: use its id and permalink. Otherwise retry the publish once. If it still fails, set status "failed" with a one line reason and continue. Never loop beyond these limits.
 
+## STEP 7b. Facebook
+
+Post the same media and caption to Facebook whenever the media URLs answered 200 in STEP 6, whether or not Instagram succeeded. If they did not, skip Facebook and record it as skipped with the note "media was not public". Post only to the Chasten Bible App Facebook Page, `page_id` 1260378077162903, and never to any other Page: the same Facebook login manages Pages that are not Chasten's. Pass `account` "chasten" on every Facebook call. Never retry a Facebook call that failed or timed out, because a retry could post twice; record it as failed with a one line reason instead. Facebook never changes the Instagram status, and Instagram never waits on Facebook.
+
+- `carousel`: `FACEBOOK_CREATE_MULTI_PHOTO_POST` with `page_id`, `photo_urls` set to every URL in slide order, and `message` set to caption.txt. Then `FACEBOOK_GET_POST` with the returned post id and `fields` "id,permalink_url" for the permalink.
+- `reel`: `FACEBOOK_PUBLISH_PAGE_REEL` with `page_id`, `file_url` (the item's url), `description` set to caption.txt, and `video_state` "PUBLISHED". Its permalink is https://www.facebook.com/reel/<video_id>.
+- `video-carousel` (Sunday): Facebook has no carousel of videos. Skip it and record it as skipped with the note "Facebook has no video carousel".
+
 ## STEP 8. Commit the state
 
     python3 tools/morning.py package $W --date <today> --status <posted or failed> --permalink <url> --media-id <id> --note "<one line>"
 
-Leave out --permalink and --media-id when there are none. Then:
+Leave out --permalink and --media-id when there are none. Then record Facebook (leave out --permalink and --id when there are none):
+
+    python3 tools/crosspost.py facebook --record $W/out/post.json --status <posted, failed or skipped> --permalink <url> --id <id> --note "<one line>"
+
+Then:
 
     mkdir -p $R/morning/<today>
     cp $W/out/post.json $R/morning/<today>/post.json
@@ -135,4 +147,4 @@ There is nothing to send. Pushing morning/<today>/post.json triggers the Notify 
 
 ## STEP 10. Reply
 
-One short paragraph: date, format, the verses, whether the Monday photo was staged or drawn (and how many drawings), status, permalink, and anything Ric should know.
+One short paragraph: date, format, the verses, whether the Monday photo was staged or drawn (and how many drawings), status, permalink, the Facebook status and permalink, and anything Ric should know.

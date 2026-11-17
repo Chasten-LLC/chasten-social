@@ -35,6 +35,21 @@ def changed_files():
     return [f for f in out.stdout.split() if f]
 
 
+def facebook_line(p):
+    """The Facebook Page post beside Instagram (tools/crosspost.py), when the routine tried one."""
+    fb = p.get("facebook") or {}
+    if fb.get("status") == "posted":
+        return f"Facebook: <{fb['permalink']}|on the Page>" if fb.get("permalink") else "Facebook: posted"
+    if fb.get("status") in ("failed", "skipped"):
+        return f"Facebook {'did not post' if fb['status'] == 'failed' else 'skipped'}: {fb.get('note') or 'see the run log'}"
+    return None
+
+
+def with_facebook(text, p):
+    line = facebook_line(p)
+    return text + ("\n" + line if line else "")
+
+
 def carousel(path):
     p = json.load(open(os.path.join(REPO, path)))
     if p.get("status") != "posted":
@@ -154,11 +169,11 @@ if __name__ == "__main__":
         if f.startswith("posts/") and f.endswith("/post.json"):
             send(carousel(f)); sent += 1
         elif f.startswith("world/") and f.endswith("/post.json"):
-            send(world(f)); sent += 1
+            send(with_facebook(world(f), json.load(open(os.path.join(REPO, f))))); sent += 1
         elif f.startswith("morning/") and f.endswith("/post.json"):
-            send(morning(f)); sent += 1
+            send(with_facebook(morning(f), json.load(open(os.path.join(REPO, f))))); sent += 1
         elif f.startswith("word/") and f.endswith("/post.json"):
-            send(word(f)); sent += 1
+            send(with_facebook(word(f), json.load(open(os.path.join(REPO, f))))); sent += 1
         elif f == "studio/state/word-switch.json":
             m = word_switch(f)
             if m:

@@ -107,11 +107,17 @@ Load the Composio Instagram tools with ToolSearch. If none are available, set st
 
 If a call fails, retry that one call once. If it still fails, set status "failed" with a one line reason and continue. Never retry more than once and never loop.
 
+Then post the same cards and caption to Facebook, whenever the card URLs answered 200, whether or not Instagram succeeded (if they did not, record Facebook as skipped with the note "media was not public"). Post only to the Chasten Bible App Facebook Page, `page_id` 1260378077162903, and never to any other Page: the same Facebook login manages Pages that are not Chasten's. Pass `account` "chasten" on every Facebook call. Never retry a Facebook call that failed or timed out, because a retry could post twice; record it as failed with a one line reason instead. Facebook never changes the Instagram status, and Instagram never waits on Facebook. `FACEBOOK_CREATE_MULTI_PHOTO_POST` with `page_id`, `photo_urls` set to every card URL in slide order, and `message` set to the same caption. Then `FACEBOOK_GET_POST` with the returned post id and `fields` "id,permalink_url" for the permalink.
+
 ## STEP 6. Commit the state
 
     python3 tools/world_run.py package $W --date <today> --status <posted or failed> --permalink <url> --media-id <id> --note "<one line>"
 
-Add --staged when today was staged. Leave out --permalink and --media-id when there are none. Then:
+Add --staged when today was staged. Leave out --permalink and --media-id when there are none. Then record Facebook (leave out --permalink and --id when there are none):
+
+    python3 tools/crosspost.py facebook --record $W/out/post.json --status <posted, failed or skipped> --permalink <url> --id <id> --note "<one line>"
+
+Then:
 
     mkdir -p $R/world/<today>
     cp $W/out/post.json $R/world/<today>/post.json
@@ -181,11 +187,15 @@ Fix whatever it reports and run it again until it prints "caption ok".
     git add world && git -c user.name="Chasten Bot" -c user.email="ricardo@chasten.ai" commit -q -m "11 AM share slides for <today>" && git push -q origin main
     python3 tools/share_run.py media $S --date <today>
 
-`media` prints every public URL in slide order. Confirm each returns 200 exactly as in STEP 5, with the same retries. If the push fails, set status "failed" with the reason and skip the Instagram calls. Otherwise publish through Composio exactly as STEP 5 describes (the carousel container with every URL in slide order and caption.txt, then publish with `max_wait_seconds` 120, then the permalink), with the same retry rule. Then:
+`media` prints every public URL in slide order. Confirm each returns 200 exactly as in STEP 5, with the same retries. If the push fails, set status "failed" with the reason and skip the Instagram calls. Otherwise publish through Composio exactly as STEP 5 describes (the carousel container with every URL in slide order and caption.txt, then publish with `max_wait_seconds` 120, then the permalink), with the same retry rule, and then post to Facebook exactly as STEP 5 describes, with the same rules. Then:
 
     python3 tools/share_run.py package $S --date <today> --status <posted or failed> --permalink <url> --media-id <id> --note "<one line>"
 
-Leave out --permalink and --media-id when there are none. Then:
+Leave out --permalink and --media-id when there are none. Then record Facebook (leave out --permalink and --id when there are none):
+
+    python3 tools/crosspost.py facebook --record $S/out/post.json --status <posted, failed or skipped> --permalink <url> --id <id> --note "<one line>"
+
+Then:
 
     mkdir -p $R/world/<today>
     cp $S/out/post.json $R/world/<today>/post.json
@@ -206,4 +216,4 @@ There is nothing to send. Pushing world/<today>/post.json triggers the Notify Sl
 
 ## STEP 8. Reply
 
-One short paragraph: date, which post (the theme and look, or the share format and its verse), how many slides posted, anything redrawn, rendered again, left out or fallen back and why, status, permalink, and anything Ric should know.
+One short paragraph: date, which post (the theme and look, or the share format and its verse), how many slides posted, anything redrawn, rendered again, left out or fallen back and why, status, permalink, the Facebook status and permalink, and anything Ric should know.
