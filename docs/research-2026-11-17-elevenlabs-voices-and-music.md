@@ -32,6 +32,8 @@ Not read: the EEA terms, the service-specific terms page, Terms sections 13 to 1
 
 The current Music Terms (Exhibit A) give Starter: "All online and offline commercial use permitted, except film, TV, radio, and Studio Games", no attribution, but **eligibility "For Individual Use Only"**. The plans that allow a business are listed as Scale (under 10 employees) and Business (under 50). Section 1.4 says being on a plan you are not eligible for "may result in suspension or termination of your account or loss of Output". Section 1.5 says Output keeps the terms of the plan in force when it was made, so upgrading later would not, by itself, change a track made on Starter.
 
+Ric said on 2026-11-17 that the account is on the **Creator** plan. Exhibit A gives Creator the same row: eligibility "For Individual Use Only" (as do Free, Starter and Pro); business use begins at Scale ("fewer than 10 employees") and Business ("fewer than 50"). Creator does allow music streaming distribution, which Starter does not. The pricing page lists "Commercial License" and "Music commercial use" on these plans, which does not settle the eligibility row either way.
+
 This was not in our 2026-10-08 notes, which read the Starter column's media rights but not its eligibility row. It touches every ElevenLabs track Chasten LLC posts, not only this theme: the strings bed, the dove's harp and the wing sounds in the 7 AM posts too.
 
 Ways out, for Ric to choose:
