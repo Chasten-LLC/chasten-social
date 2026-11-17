@@ -4,11 +4,12 @@ Plays both daily routines forward from the real records and checks that
 Scripture stays fresh (the rules are in tools/verses.py):
 
   - no verse twice in one post;
-  - no verse in both of a day's posts, a reel's verses included;
+  - no verse in both of a day's posts, a reel's verses included, and none beside the
+    word reel's verse, which the app's calendar fixes;
   - and it reports how long verses rest before they come back, so a pool that
     has grown too small for its format shows up before followers notice.
 
-    python3 tools/check_fresh.py [--weeks 26] [--from YYYY-MM-DD]
+    python3 tools/check_fresh.py [--weeks 26] [--from YYYY-MM-DD] [--word-calendar FILE]
 
 It uses the planners themselves (morning.choose, share_run.choose,
 world_run.pick), so what it checks is what the routines will do. Nothing is
@@ -42,11 +43,20 @@ def main():
     lines = world_run.load(os.path.join(world_run.WORLD, "lines.json"))["lines"]
     scenes = world_run.load(os.path.join(world_run.WORLD, "scenes.json"))["scenes"]
 
+    # The word reel's verse is fixed by the app's calendar: from the repo's schedule, or a
+    # calendar exported ahead (word_render.py calendar), {date: ref}.
+    word = {d: x["ref"] for d, x in (verses._load(os.path.join(verses.ROOT, "word", "schedule.json")) or {}).get("days", {}).items()}
+    if arg("--word-calendar"):
+        word.update(verses._load(arg("--word-calendar")) or {})
     problems, seen = [], collections.defaultdict(list)   # verse -> dates it was posted (reels aside)
     reels, posts = [], 0
     for n in range(weeks * 7):
         day = (start + dt.timedelta(days=n)).isoformat()
         wd = dt.date.fromisoformat(day).weekday()
+
+        word_keys = verses.all_keys([word[day]]) if day in word else set()
+        if word_keys:
+            led.add(day, [word[day]], day_only=True)
 
         # 7 AM
         fmt = morning.WEEK[wd]
@@ -89,6 +99,9 @@ def main():
         both = verses.all_keys(am_refs) & verses.all_keys(pm_refs)
         if both:
             problems.append(f"{day}: both posts carry {sorted(both)}")
+        for name, refs in ((f"7 AM {fmt}", am_refs), (pm_name, pm_refs)):
+            if word_keys & verses.all_keys(refs):
+                problems.append(f"{day}: the {name} carries the word reel's verse {word[day]}")
 
         led.add(day, pm_refs)
         for refs in ([] if reel else [am_refs]) + [pm_refs]:

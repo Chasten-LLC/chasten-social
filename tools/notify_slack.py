@@ -89,6 +89,29 @@ def morning(path):
     return "\n".join(lines)
 
 
+def word(path):
+    """The daily Hebrew or Greek word reel (tools/word_reel.py), beside the 7 AM post."""
+    p = json.load(open(os.path.join(REPO, path)))
+    lang = (p.get("lang") or "").capitalize() or "Word"
+    what = f"{p.get('word', '')} ({p.get('roman', '')}) from {p.get('ref', '')}".strip()
+    if p.get("status") != "posted":
+        note = (p.get("note") or "see the run log").rstrip(".")
+        return (f":warning: *Chasten IG word reel {p['date']}* did not post: {note}."
+                + (f"\nToday's {lang} word was {what}." if p.get("ref") else ""))
+    lines = [f":white_check_mark: *Chasten IG word reel {p['date']}* \u00b7 {lang} word: <{p['permalink']}|{what}>"]
+    if p.get("note"):
+        lines.append(p["note"])
+    return "\n".join(lines)
+
+
+def word_switch(path):
+    s = json.load(open(os.path.join(REPO, path)))
+    if not s.get("on"):
+        return None
+    return (f":sunrise: *Word reels are switched on* from {s.get('since')}: the new Today cards have been seen on production "
+            f"by {s.get('ios')} iPhone and {s.get('android')} Android readers. A reel posts each morning a reel is approved.")
+
+
 def reel(path):
     day = path.split("/")[1]
     meta = json.load(open(os.path.join(REPO, "reels", day, "meta.json")))
@@ -134,6 +157,12 @@ if __name__ == "__main__":
             send(world(f)); sent += 1
         elif f.startswith("morning/") and f.endswith("/post.json"):
             send(morning(f)); sent += 1
+        elif f.startswith("word/") and f.endswith("/post.json"):
+            send(word(f)); sent += 1
+        elif f == "studio/state/word-switch.json":
+            m = word_switch(f)
+            if m:
+                send(m); sent += 1
         elif f.startswith("reels/") and f.endswith("/caption.md"):
             send(reel(f)); sent += 1
         elif f.startswith("reels/") and f.endswith("/shelved.json"):

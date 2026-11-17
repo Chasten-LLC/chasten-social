@@ -10,6 +10,8 @@ on:
       - "posts/*/post.json"
       - "world/*/post.json"
       - "morning/*/post.json"
+      - "word/*/post.json"
+      - "studio/state/word-switch.json"
       - "reels/*/caption.md"
       - "reels/*/shelved.json"
   workflow_dispatch:

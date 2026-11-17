@@ -111,7 +111,8 @@ def reel_verses(verses_, day, led):
     """A reel's verses: those left out of recent reels first, so back-to-back reels
     share as few as the pool allows; ties fall by the date."""
     rng = random.Random(dt.date.fromisoformat(day).toordinal())
-    order = sorted(verses_, key=lambda v: (-led.reel_rest([v["ref"]], day), rng.random()))
+    # A verse already held for today (the word reel's) goes last, so it is not flashed beside it.
+    order = sorted(verses_, key=lambda v: (led.rest([v["ref"]], day) == 0, -led.reel_rest([v["ref"]], day), rng.random()))
     return order[:REEL_VERSES]
 
 

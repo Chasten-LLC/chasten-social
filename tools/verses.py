@@ -13,7 +13,7 @@ The rules every planner follows:
 The record is built from the posts' own records, so there is no second state
 file to keep in step: posts/<date>/post.json (the old 7 AM), morning/<date>/
 post.json (the 7 AM formats) and world/<date>/post.json (the 11 AM, world and
-share). Only posts that went out count. A reel flashes 45 verses, so a reel
+share). The word reel's approved days (word/schedule.json) hold their verse for that day only. Only posts that went out count. A reel flashes 45 verses, so a reel
 counts for its own day only; counting it for weeks would starve every pool.
 
     from verses import from_repo
@@ -88,9 +88,11 @@ class Ledger:
         c.days = {k: set(v) for k, v in self.days.items()}
         return c
 
-    def add(self, date, refs, reel=False):
+    def add(self, date, refs, reel=False, day_only=False):
         ks = all_keys(refs)
         self.days.setdefault(date, set()).update(ks)
+        if day_only:  # the word reel: its verse is fixed by the app's calendar, so it holds its own day only
+            return
         book = self.reel_dates if reel else self.dates
         for k in ks:
             book.setdefault(k, set()).add(date)
@@ -196,6 +198,18 @@ def from_repo(root=ROOT):
         date, moment = name[:10], name[11:]
         if moment in refs_by_moment and _iso(date):
             led.add(date, [refs_by_moment[moment]])
+    # The word reel (tools/word_reel.py): the app's calendar fixes its verse, so it never moves.
+    # Every approved day holds its verse for that day, posted or not yet, and the other two
+    # posts of the day step around it.
+    sched = _load(os.path.join(root, "word", "schedule.json")) or {}
+    for date, day in (sched.get("days") or {}).items():
+        if _iso(date) and day.get("approved") and day.get("ref"):
+            led.add(date, [day["ref"]], day_only=True)
+    for path in glob.glob(os.path.join(root, "word", "*", "post.json")):
+        p = _load(path)
+        date = os.path.basename(os.path.dirname(path))
+        if p and p.get("status") == "posted" and _iso(date):
+            led.add(date, p.get("refs", []), day_only=True)
     for path in glob.glob(os.path.join(root, "world", "*", "staged.json")):
         p = _load(path) or {}
         date = os.path.basename(os.path.dirname(path))
