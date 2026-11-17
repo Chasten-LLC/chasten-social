@@ -325,19 +325,23 @@ def note_html(r):
     return f"{first_html} {e(r['more'])}"
 
 
-def chrome(args):
-    subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--allow-file-access-from-files",
-                    "--virtual-time-budget=8000", "--run-all-compositor-stages-before-draw"] + args,
-                   stdout=subprocess.PIPE if "--dump-dom" in args else subprocess.DEVNULL,
-                   stderr=subprocess.DEVNULL, stdin=subprocess.DEVNULL, timeout=120, check=False)
+def chrome(args, tries=3):
+    """Headless Chrome, which now and then hangs on a busy Mac (2026-11-17, one page in 90):
+    a hang is killed after a minute and the same page is tried again."""
+    for attempt in range(tries):
+        try:
+            return subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--allow-file-access-from-files",
+                                   "--virtual-time-budget=8000", "--run-all-compositor-stages-before-draw"] + args,
+                                  capture_output=True, text=True, stdin=subprocess.DEVNULL, timeout=60, check=False).stdout
+        except subprocess.TimeoutExpired:
+            if attempt == tries - 1:
+                raise SystemExit(f"Chrome hung {tries} times on {args[-1]}")
 
 
 def measure(r, wordmark, work):
     hp = os.path.join(work, "measure.html")
     open(hp, "w").write(page(r, wordmark, measure=True))
-    out = subprocess.run([CHROME, "--headless=new", "--disable-gpu", "--allow-file-access-from-files", "--virtual-time-budget=8000",
-                          f"--window-size={W},{H}", "--dump-dom", "file://" + hp],
-                         capture_output=True, text=True, timeout=120).stdout
+    out = chrome([f"--window-size={W},{H}", "--dump-dom", "file://" + hp])
     a, b = out.find('<pre id="report">'), out.find("</pre>")
     raw = html.unescape(out[a + len('<pre id="report">'):b]) if a >= 0 else ""
     if not raw.strip():
@@ -582,7 +586,7 @@ def timing_for(voice):
     return dict(says=[FIRST_SAY, FIRST_SAY + vlen + GAP_SAYS], voice_len=vlen)
 
 
-def render_one(bank, e, out_dir, work_root, log=print):
+def render_one(bank, e, out_dir, work_root, log=lambda m: print(m, flush=True)):
     from PIL import Image
     r = bank.reel(e)
     work = os.path.join(work_root, e["id"])
@@ -719,7 +723,19 @@ def cmd_render(argv):
     work = os.path.join(out, "_work")
     if "--ids" in a:  # a matrix of entries regardless of date: proves the layout holds for each
         ids = bank.entries if a["--ids"] == "all" else [x for x in bank.entries if x["id"] in a["--ids"].split(",")]
-        fails = [x["id"] for x in ids if render_one(bank, x, out, os.path.join(out, "_work"))["fails"]]
+        fails = []
+        for x in ids:
+            done = os.path.join(out, x["id"] + ".json")
+            if os.path.exists(done):                      # a rerun keeps what already passed from the same app
+                m = json.load(open(done))
+                if not m["fails"] and m.get("app") == bank.commit:
+                    continue
+            try:
+                if render_one(bank, x, out, os.path.join(out, "_work"))["fails"]:
+                    fails.append(x["id"])
+            except SystemExit as err:                       # one entry's trouble never stops the batch
+                print(f"{x['id']}: FAILED {err}", flush=True)
+                fails.append(x["id"])
         print(f"{len(ids)} entries, {len(fails)} failed: {', '.join(fails)}")
         return 1 if fails else 0
     dates = dates_between(a["--from"], a.get("--to", a["--from"]))
