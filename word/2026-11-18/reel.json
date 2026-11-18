@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-18",
+ "id": "mark-12-30",
+ "ref": "Mark 12:30",
+ "word": "ἀγαπάω",
+ "roman": "agapaō",
+ "lang": "greek",
+ "sha256": "edaad8701cfa7003ac19897a29448841779857e5a24761f1719c4c09a84def58",
+ "app": "89c7457",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 3340087,
+  "kbps": 1906,
+  "lufs": -21.1,
+  "peak": -5.2,
+  "voice_peak_lufs": -14.1,
+  "bed_lufs": -30.9
+ },
+ "fit": 0.92,
+ "fails": []
+}
