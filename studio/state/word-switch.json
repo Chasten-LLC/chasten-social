@@ -1,0 +1,7 @@
+{
+ "on": true,
+ "since": "2026-11-18",
+ "ios": 24,
+ "android": 35,
+ "why": "production readers on both platforms sent today_verse_cards_shown"
+}
