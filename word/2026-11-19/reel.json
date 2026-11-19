@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-19",
+ "id": "2-timothy-1-7",
+ "ref": "2 Timothy 1:7",
+ "word": "δύναμις",
+ "roman": "dynamis",
+ "lang": "greek",
+ "sha256": "9fe42533e418edf8ea5860309589eefbbd01d4b2120393cc20eedc9922156c0c",
+ "app": "eaa0f12",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 3902363,
+  "kbps": 2227,
+  "lufs": -23.4,
+  "peak": -5.7,
+  "voice_peak_lufs": -14.4,
+  "bed_lufs": -30.9
+ },
+ "fit": 1,
+ "fails": []
+}
