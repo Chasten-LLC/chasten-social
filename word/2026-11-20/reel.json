@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-20",
+ "id": "psalm-34-8",
+ "ref": "Psalm 34:8",
+ "word": "טוֹב",
+ "roman": "tov",
+ "lang": "hebrew",
+ "sha256": "f8e74b053ee5810b933c07105a846cd34190b350022e354cb4a363916cbca68c",
+ "app": "eaa0f12",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 5332240,
+  "kbps": 3042,
+  "lufs": -24.1,
+  "peak": -5.5,
+  "voice_peak_lufs": -15.2,
+  "bed_lufs": -30.9
+ },
+ "fit": 0.98,
+ "fails": []
+}
