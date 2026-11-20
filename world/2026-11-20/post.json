@@ -1,0 +1,116 @@
+{
+ "id": "2026-11-20",
+ "date": "2026-11-20",
+ "kind": "world",
+ "theme": "love",
+ "look": "golden-hour",
+ "title": "Loved on your best day. Loved on your worst.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/Df-KtBZIaBq/",
+ "mediaId": "18079027871757602",
+ "note": "9 slides; slides 4 and 9 redrawn once (duplicated word, cut-off background lettering)",
+ "audio": "Gratitude by Brandon Lake",
+ "caption": "Which slide are you keeping? Comment its number.\n\nToday is about love, the kind that stays on your best days and your worst ones. We hope one of these meets you right where you are.\n\nRomans 8:39, Psalm 46:11, Psalm 103:12, Isaiah 54:10, Galatians 1:10, 1 John 4:8, 1 Corinthians 13:4, 1 Peter 2:9 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n\n#bibleverse #faith #godslove #loveoneanother",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-loved",
+   "kind": "said",
+   "scene": "cafe-chalkboard",
+   "text": "Loved on your best day. Loved on your worst.",
+   "ref": "Romans 8:39"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "psa-46-11",
+   "kind": "verse",
+   "scene": "split-flap",
+   "text": "The LORD of Hosts is with us",
+   "ref": "Psalm 46:11"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "psa-103-12",
+   "kind": "verse",
+   "scene": "letter-desk",
+   "text": "As far as the east is from the west, so far has He removed our transgressions from us.",
+   "ref": "Psalm 103:12"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "isa-54-10",
+   "kind": "verse",
+   "scene": "shop-window",
+   "text": "My loving devotion will not depart from you",
+   "ref": "Isaiah 54:10"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "say-approval",
+   "kind": "said",
+   "scene": "mug",
+   "text": "Chase God, not approval.",
+   "ref": "Galatians 1:10"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "1jn-4-8",
+   "kind": "verse",
+   "scene": "road-paint",
+   "text": "God is love.",
+   "ref": "1 John 4:8"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "1co-13-4",
+   "kind": "verse",
+   "scene": "fog-window",
+   "text": "Love is patient, love is kind.",
+   "ref": "1 Corinthians 13:4"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "1pe-2-9",
+   "kind": "verse",
+   "scene": "embroidery",
+   "text": "But you are a chosen people",
+   "ref": "1 Peter 2:9"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-found",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Type Amen if one of these found you",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-20/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-20/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-20/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-20/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-20/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-20/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-20/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-20/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-20/9.jpg"
+ ],
+ "drawn": 11,
+ "cost": 1.47,
+ "facebook": {
+  "status": "posted",
+  "permalink": "https://www.facebook.com/122133464535477219/posts/122134322517477219",
+  "id": "1260378077162903_122134322517477219",
+  "note": "9 photos posted to Chasten Page"
+ }
+}

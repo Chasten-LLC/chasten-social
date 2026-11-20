@@ -1,6 +1,6 @@
 {
- "postCount": 34,
- "lastPostDate": "2026-11-17",
+ "postCount": 35,
+ "lastPostDate": "2026-11-20",
  "history": [
   {
    "date": "2026-09-29",
@@ -801,10 +801,33 @@
     "letter-desk",
     "neon"
    ]
+  },
+  {
+   "date": "2026-11-20",
+   "theme": "love",
+   "lines": [
+    "say-loved",
+    "psa-46-11",
+    "psa-103-12",
+    "isa-54-10",
+    "say-approval",
+    "1jn-4-8",
+    "1co-13-4",
+    "1pe-2-9"
+   ],
+   "scenes": [
+    "cafe-chalkboard",
+    "split-flap",
+    "letter-desk",
+    "shop-window",
+    "mug",
+    "road-paint",
+    "fog-window",
+    "embroidery"
+   ]
   }
  ],
  "usedAudio": [
-  "Who You Say I Am by Hillsong Worship",
   "Holy Forever by Chris Tomlin",
   "Reckless Love by Cory Asbury",
   "Trust in God by Elevation Worship",
@@ -815,6 +838,7 @@
   "I Will Trust in You by Lauren Daigle",
   "Peace Be Still by Hope Darst",
   "Battle Belongs by Phil Wickham",
-  "Goodness of God by Bethel Music"
+  "Goodness of God by Bethel Music",
+  "Gratitude by Brandon Lake"
  ]
 }
