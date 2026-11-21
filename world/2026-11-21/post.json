@@ -1,0 +1,116 @@
+{
+ "id": "2026-11-21",
+ "date": "2026-11-21",
+ "kind": "world",
+ "theme": "rest",
+ "look": "warm-film",
+ "title": "The LORD is my shepherd; I shall not want.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DgAvUD-IeRA/",
+ "mediaId": "17944695699374404",
+ "note": "9 slides posted; slide 6 redrawn once for a stray letter",
+ "audio": "It Is Well by Kristene DiMarco",
+ "caption": "Which one did you need today? Tell us its number.\n\nToday is about rest, the kind you find when you let God carry what you cannot. We hope one of these gives you room to breathe.\n\nPsalm 23:1, Matthew 6:33, Philippians 4:4, Isaiah 60:22, Matthew 17:20, Isaiah 49:15, Micah 6:8, Psalm 18:2 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n#bibleverse #faith #rest #sabbath",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "psa-23-1",
+   "kind": "verse",
+   "scene": "church-marquee",
+   "text": "The LORD is my shepherd; I shall not want.",
+   "ref": "Psalm 23:1"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "mat-6-33",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "Seek first the kingdom of God and His righteousness",
+   "ref": "Matthew 6:33"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "php-4-4",
+   "kind": "verse",
+   "scene": "mirror-marker",
+   "text": "Rejoice in the Lord always.",
+   "ref": "Philippians 4:4"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "isa-60-22",
+   "kind": "verse",
+   "scene": "fridge-note",
+   "text": "I am the LORD; in its time I will accomplish it quickly.",
+   "ref": "Isaiah 60:22"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "say-mountains",
+   "kind": "said",
+   "scene": "diner-napkin",
+   "text": "Small faith still moves big mountains.",
+   "ref": "Matthew 17:20"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "say-forgotten",
+   "kind": "said",
+   "scene": "bus-poster",
+   "text": "He has not forgotten you.",
+   "ref": "Isaiah 49:15"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "mic-6-8",
+   "kind": "verse",
+   "scene": "index-card",
+   "text": "To act justly, to love mercy, and to walk humbly with your God",
+   "ref": "Micah 6:8"
+  },
+  {
+   "n": 8,
+   "slide": 8,
+   "line": "psa-18-2",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "The LORD is my rock, my fortress, and my deliverer.",
+   "ref": "Psalm 18:2"
+  },
+  {
+   "n": 9,
+   "slide": 9,
+   "line": "cta-amen",
+   "kind": "cta",
+   "scene": "sidewalk-chalk",
+   "text": "Say Amen if you needed this today",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-21/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-21/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-21/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-21/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-21/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-21/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-21/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-21/8.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-21/9.jpg"
+ ],
+ "drawn": 10,
+ "cost": 1.34,
+ "facebook": {
+  "status": "posted",
+  "permalink": "https://www.facebook.com/122133464535477219/posts/122134656051477219",
+  "id": "1260378077162903_122134656051477219",
+  "note": "multi photo post on Chasten Page"
+ }
+}
