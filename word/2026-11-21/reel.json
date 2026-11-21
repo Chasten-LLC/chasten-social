@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-21",
+ "id": "1-peter-5-7",
+ "ref": "1 Peter 5:7",
+ "word": "ἐπιῤῥίπτω",
+ "roman": "epirrhiptō",
+ "lang": "greek",
+ "sha256": "0ad35fae3a6de7ca95869e90a5b55f346f61e6303c2cd02acdee09e02111d8a0",
+ "app": "af9a373",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 3865273,
+  "kbps": 2205,
+  "lufs": -21.2,
+  "peak": -6.2,
+  "voice_peak_lufs": -13.0,
+  "bed_lufs": -30.9
+ },
+ "fit": 1,
+ "fails": []
+}
