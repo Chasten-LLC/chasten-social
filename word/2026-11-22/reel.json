@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-22",
+ "id": "john-14-27",
+ "ref": "John 14:27",
+ "word": "εἰρήνη",
+ "roman": "eirēnē",
+ "lang": "greek",
+ "sha256": "ecf077d72679883ff2459cc7d7f01a9941d24c73b1259465b7cee514c3105544",
+ "app": "cd544ec",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 2718140,
+  "kbps": 1551,
+  "lufs": -21.9,
+  "peak": -6.6,
+  "voice_peak_lufs": -13.6,
+  "bed_lufs": -30.9
+ },
+ "fit": 0.86,
+ "fails": []
+}
