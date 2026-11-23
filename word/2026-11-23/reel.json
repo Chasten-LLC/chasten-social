@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-23",
+ "id": "amos-5-24",
+ "ref": "Amos 5:24",
+ "word": "מִשְׁפָּט",
+ "roman": "mishpat",
+ "lang": "hebrew",
+ "sha256": "5c03ee9a800aeec36414d18166cd63770f05f6351ba7805e6cad090296d7d081",
+ "app": "cd544ec",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 6919378,
+  "kbps": 3948,
+  "lufs": -22.1,
+  "peak": -2.4,
+  "voice_peak_lufs": -14.7,
+  "bed_lufs": -30.9
+ },
+ "fit": 0.98,
+ "fails": []
+}
