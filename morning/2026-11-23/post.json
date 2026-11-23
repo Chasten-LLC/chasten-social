@@ -1,0 +1,33 @@
+{
+ "date": "2026-11-23",
+ "format": "reveal",
+ "name": "Swipe to reveal",
+ "title": "Therefore encourage and build one another up, just as you are already doing.",
+ "status": "failed",
+ "permalink": null,
+ "mediaId": null,
+ "note": "Verse reference overlaps the friends' hair; band already at top limit so --text-at 0.095 could not move it. Photo drawn once, passed checks.",
+ "refs": [
+  "1 Thessalonians 5:11"
+ ],
+ "verseCount": 1,
+ "reelRefs": [],
+ "items": [
+  "1.jpg",
+  "2.jpg",
+  "3.jpg",
+  "4.jpg",
+  "5.jpg",
+  "6.jpg",
+  "7.jpg",
+  "8.jpg"
+ ],
+ "caption": "",
+ "moment": "picnic",
+ "drawn": 1,
+ "cost": 0.13,
+ "facebook": {
+  "status": "skipped",
+  "note": "media was not public"
+ }
+}
