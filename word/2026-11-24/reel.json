@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-24",
+ "id": "psalm-139-14",
+ "ref": "Psalm 139:14",
+ "word": "יָדָה",
+ "roman": "yadah",
+ "lang": "hebrew",
+ "sha256": "02b0b2b4dbb3c86835b18e363e26e8f22891603383af3152f6c2e5ac8f48c03e",
+ "app": "cd544ec",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 7213445,
+  "kbps": 4116,
+  "lufs": -22.7,
+  "peak": -4.3,
+  "voice_peak_lufs": -13.9,
+  "bed_lufs": -30.9
+ },
+ "fit": 0.96,
+ "fails": []
+}
