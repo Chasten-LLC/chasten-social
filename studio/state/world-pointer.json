@@ -1,6 +1,6 @@
 {
- "postCount": 37,
- "lastPostDate": "2026-11-23",
+ "postCount": 38,
+ "lastPostDate": "2026-11-24",
  "history": [
   {
    "date": "2026-09-29",
@@ -873,10 +873,33 @@
     "billboard",
     "candle-label"
    ]
+  },
+  {
+   "date": "2026-11-24",
+   "theme": "identity",
+   "lines": [
+    "isa-40-31",
+    "say-held",
+    "isa-43-19",
+    "psa-32-8",
+    "say-working",
+    "jas-1-5",
+    "psa-34-18",
+    "heb-10-23"
+   ],
+   "scenes": [
+    "split-flap",
+    "tshirt-back",
+    "cafe-chalkboard",
+    "letter-desk",
+    "fog-window",
+    "shop-window",
+    "mug",
+    "embroidery"
+   ]
   }
  ],
  "usedAudio": [
-  "Trust in God by Elevation Worship",
   "Way Maker by Sinach",
   "How Great Is Our God by Chris Tomlin",
   "Holy Forever by Chris Tomlin",
@@ -887,6 +910,7 @@
   "Goodness of God by Bethel Music",
   "Gratitude by Brandon Lake",
   "It Is Well by Kristene DiMarco",
-  "Firm Foundation (He Won't) by Cody Carnes"
+  "Firm Foundation (He Won't) by Cody Carnes",
+  "Who You Say I Am by Hillsong Worship"
  ]
 }
