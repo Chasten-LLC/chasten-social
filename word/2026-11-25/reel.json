@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-25",
+ "id": "james-1-5",
+ "ref": "James 1:5",
+ "word": "σοφία",
+ "roman": "sophia",
+ "lang": "greek",
+ "sha256": "17d497483a7cf9403a04cbe26816442802ed6fae9c949f7dabbdfa7cea77addd",
+ "app": "cd544ec",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 3958834,
+  "kbps": 2259,
+  "lufs": -21.0,
+  "peak": -4.4,
+  "voice_peak_lufs": -13.7,
+  "bed_lufs": -30.9
+ },
+ "fit": 0.88,
+ "fails": []
+}
