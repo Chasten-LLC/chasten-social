@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-26",
+ "id": "john-1-5",
+ "ref": "John 1:5",
+ "word": "καταλαμβάνω",
+ "roman": "katalambanō",
+ "lang": "greek",
+ "sha256": "f71794cfad08435edbebdd80a7a699f2e6bb3c3dda1cb8537d01668e92bc9f8b",
+ "app": "cd544ec",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 2598870,
+  "kbps": 1483,
+  "lufs": -20.1,
+  "peak": -6.5,
+  "voice_peak_lufs": -14.6,
+  "bed_lufs": -30.9
+ },
+ "fit": 1,
+ "fails": []
+}
