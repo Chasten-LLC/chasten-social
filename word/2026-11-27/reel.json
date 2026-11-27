@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-27",
+ "id": "psalm-136-1",
+ "ref": "Psalm 136:1",
+ "word": "חֶסֶד",
+ "roman": "chesed",
+ "lang": "hebrew",
+ "sha256": "dc933918f1fd5963aeff62ff2f0a8c9a986e8adb335e44ea8ba089bf69c02fa1",
+ "app": "cd544ec",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 8980154,
+  "kbps": 5124,
+  "lufs": -22.4,
+  "peak": -2.3,
+  "voice_peak_lufs": -13.6,
+  "bed_lufs": -30.9
+ },
+ "fit": 0.94,
+ "fails": []
+}
