@@ -1,0 +1,106 @@
+{
+ "id": "2026-11-27",
+ "date": "2026-11-27",
+ "kind": "world",
+ "theme": "presence",
+ "look": "golden-hour",
+ "title": "Keep going. He is not finished with you.",
+ "status": "posted",
+ "permalink": "https://www.instagram.com/p/DgQMIvvFFbG/",
+ "mediaId": "17888328600511964",
+ "note": "presence, golden hour, 8 slides; slide 3 redrawn for ghost text; mirror slide (John 8:12) left out after redraw still had stray dots",
+ "audio": "Holy Forever by Chris Tomlin",
+ "caption": "Which slide are you keeping? Comment its number.\n\nToday is about His presence. Wherever this Friday finds you, in traffic, at the table, or somewhere in between, you are not walking through it alone.\n\nPhilippians 1:6, Psalm 145:18, Exodus 33:14, 2 Timothy 1:7, Ecclesiastes 3:11, Psalm 16:8, Psalm 121:2 (BSB)\n\nSend this to someone who needs it today.\n\n🕯️ Chasten is a free Bible app. chasten.ai\n#bibleverse #faith #godisfaithful #encouragement",
+ "slides": [
+  {
+   "n": 1,
+   "slide": 1,
+   "line": "say-finished",
+   "kind": "said",
+   "scene": "bus-poster",
+   "text": "Keep going. He is not finished with you.",
+   "ref": "Philippians 1:6"
+  },
+  {
+   "n": 2,
+   "slide": 2,
+   "line": "psa-145-18",
+   "kind": "verse",
+   "scene": "diner-napkin",
+   "text": "The LORD is near to all who call on Him",
+   "ref": "Psalm 145:18"
+  },
+  {
+   "n": 3,
+   "slide": 3,
+   "line": "exo-33-14",
+   "kind": "verse",
+   "scene": "dashboard-note",
+   "text": "My Presence will go with you, and I will give you rest.",
+   "ref": "Exodus 33:14"
+  },
+  {
+   "n": 4,
+   "slide": 4,
+   "line": "say-fear",
+   "kind": "said",
+   "scene": "church-marquee",
+   "text": "Faith over fear. Every single time.",
+   "ref": "2 Timothy 1:7"
+  },
+  {
+   "n": 5,
+   "slide": 5,
+   "line": "ecc-3-11",
+   "kind": "verse",
+   "scene": "neon",
+   "text": "He has made everything beautiful in its time.",
+   "ref": "Ecclesiastes 3:11"
+  },
+  {
+   "n": 6,
+   "slide": 6,
+   "line": "psa-16-8",
+   "kind": "verse",
+   "scene": "typewriter",
+   "text": "Because He is at my right hand, I will not be shaken.",
+   "ref": "Psalm 16:8"
+  },
+  {
+   "n": 7,
+   "slide": 7,
+   "line": "psa-121-2",
+   "kind": "verse",
+   "scene": "fridge-note",
+   "text": "My help comes from the LORD, the Maker of heaven and earth.",
+   "ref": "Psalm 121:2"
+  },
+  {
+   "n": 8,
+   "slide": 9,
+   "line": "cta-follow",
+   "kind": "cta",
+   "scene": "lunch-note",
+   "text": "Follow for a verse every day",
+   "ref": "@chasten.app"
+  }
+ ],
+ "cardUrls": [
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-27/1.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-27/2.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-27/3.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-27/4.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-27/5.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-27/6.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-27/7.jpg",
+  "https://raw.githubusercontent.com/Chasten-LLC/chasten-social/main/world/2026-11-27/8.jpg"
+ ],
+ "drawn": 11,
+ "cost": 1.47,
+ "facebook": {
+  "status": "posted",
+  "permalink": "https://www.facebook.com/122133464535477219/posts/122137322691477219",
+  "id": "1260378077162903_122137322691477219",
+  "note": "8 photos to Chasten Bible App Page"
+ }
+}
