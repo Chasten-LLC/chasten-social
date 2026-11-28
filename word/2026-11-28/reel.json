@@ -1,0 +1,21 @@
+{
+ "date": "2026-11-28",
+ "id": "philippians-4-13",
+ "ref": "Philippians 4:13",
+ "word": "ἐνδυναμόω",
+ "roman": "endynamoō",
+ "lang": "greek",
+ "sha256": "33b386c9f9fc9585c98fd222574bb2ea7e368a0310970d39aece62cf901823ae",
+ "app": "cd544ec",
+ "facts": {
+  "seconds": 14.02,
+  "bytes": 5673740,
+  "kbps": 3237,
+  "lufs": -20.5,
+  "peak": -7.3,
+  "voice_peak_lufs": -15.2,
+  "bed_lufs": -30.9
+ },
+ "fit": 1,
+ "fails": []
+}
